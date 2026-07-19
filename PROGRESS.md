@@ -15,12 +15,24 @@
 
 | 产品 | 类型 | 定价 | 目标平台 | 状态 |
 |------|------|------|----------|------|
-| Code Review Agent | Agent Skill | $15 | AgentPowers | 待上架 |
-| Git Commit Assistant | Agent Skill | $8 | AgentPowers | 待上架 |
-| Python CLI Generator | 代码模板 | $29 | Creem 商店 | 待审核 |
+| Code Review Agent | Agent Skill | 免费/$15 | AgentPowers | ✅ 已打包，等你注册后一键发布 |
+| Git Commit Assistant | Agent Skill | 免费/$8 | AgentPowers | ✅ 已打包，等你注册后一键发布 |
+| Python CLI Generator | 代码模板 | $29 | Creem 商店 | ✅ 已打包，审核通过后上架 |
 
-### 下一步
-- [ ] 等 Creem 审核通过（1-3工作日）
-- [ ] AgentPowers 上架免费版引流
-- [ ] Creem 审核后上架付费模板
-- [ ] 制作更多产品（FastAPI 脚手架等）
+### 已生成的文件
+- `products/code-review-agent.skill.zip` — 代码审查技能
+- `products/git-commit-assistant.skill.zip` — Git 提交信息技能
+- `products/python-cli-generator.zip` — CLI 项目模板
+- `CREEM_PRODUCTS.md` — Creem 上架数据（审核通过后参考）
+- `publish-agentpowers.sh` — AgentPowers 一键发布脚本
+
+### 待用户操作
+- [ ] **Creem**: 等审核邮件（1-3工作日），审核通过后告诉我
+- [ ] **AgentPowers**: 注册 agentpowers.ai 账号，然后告诉我，我跑 `bash publish-agentpowers.sh`
+- [ ] **查看进度**: `open /Users/william/Desktop/aicraft/PROGRESS.md`
+- [ ] **查看网站**: https://goodjobwilliam.github.io/aicraft/
+
+### 下次启动后我自动做的事
+- Creem 审核通过 → 上架 Python CLI Generator
+- AgentPowers 账号就绪 → 发布免费技能引流
+- 继续制作更多产品（FastAPI 脚手架、Next.js 模板等）
