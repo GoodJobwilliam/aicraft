@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check HTML validity
+        run: |
+          curl -sI https://aicraft.vip --connect-timeout 10
+          echo "Website check passed"
+
+  mcp-server:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: products/mcp-code-review
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install -e ".[dev]"
+      - name: Lint
+        run: |
+          pip install ruff
+          ruff check src/
+      - name: Test
+        run: |
+          pip install pytest pytest-asyncio
+          python -m pytest tests/ -v
+
+  nextjs-starter:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: products/nextjs-saas-starter
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: products/nextjs-saas-starter/package-lock.json
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Lint
+        run: npx tsc --noEmit
+      - name: Test
+        run: npx vitest run
+      - name: Build
+        run: npm run build
