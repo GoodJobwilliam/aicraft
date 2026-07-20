@@ -25,6 +25,7 @@
 | FastAPI Starter Kit | 代码模板 | $59 | Creem | ✅ 已打包 |
 | AI Agent Prompts Pack | Prompt 合集 | $29 | Creem | ✅ 已打包 |
 | API Development Prompts | Prompt 合集 | $19 | Creem | ✅ 已打包 |
+| Next.js SaaS Starter Kit | 代码模板 | $99 | Creem | ✅ 已打包 |
 
 ### AgentPowers 已上架
 | 技能 | 定价 | 状态 |
@@ -42,6 +43,7 @@
 - `products/python-cli-generator.zip` — CLI 项目模板（$49）
 - `products/fastapi-starter.zip` — FastAPI Starter Kit（$59）
 - `products/api-dev-prompts.zip` — API Development Prompts（$19）
+- `products/nextjs-saas-starter.zip` — Next.js SaaS Starter Kit（$99）
 - `CREEM_PRODUCTS.md` — Creem 上架数据
 
 ### 待用户操作

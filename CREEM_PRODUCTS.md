@@ -113,6 +113,20 @@
 
 ---
 
+## 产品 9：Next.js SaaS Starter Kit
+
+| 字段 | 值 |
+|------|-----|
+| 名称 | Next.js SaaS Starter Kit |
+| 描述 | Production-ready Next.js SaaS boilerplate with Auth.js, Stripe subscriptions, Prisma, Tailwind CSS, and full test suite. |
+| 价格 | $99 USD |
+| 类型 | Digital Download |
+| 文件 | products/nextjs-saas-starter.zip |
+
+**亮点**: Complete SaaS foundation — auth, billing, dashboard, emails. Saves 40+ hours of setup.
+
+---
+
 ## 上架步骤
 1. Creem 后台 → Products → Create Product
 2. 填入名称、描述、价格
