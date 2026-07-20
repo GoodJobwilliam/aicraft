@@ -85,6 +85,20 @@
 
 ---
 
+## 产品 7：AI Agent Prompts Pack
+
+| 字段 | 值 |
+|------|-----|
+| 名称 | AI Agent Prompts Pack |
+| 描述 | 50 prompts for building, debugging, and shipping AI agents. Architecture, prompts, tools, testing, workflows, production ops. |
+| 价格 | $29 USD |
+| 类型 | Digital Download |
+| 文件 | products/ai-agent-prompts.zip |
+
+**亮点**: Framework-agnostic, production-focused, indie developer targeted. Low competition niche.
+
+---
+
 ## 上架步骤
 1. Creem 后台 → Products → Create Product
 2. 填入名称、描述、价格
