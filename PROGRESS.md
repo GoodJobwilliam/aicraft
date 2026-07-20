@@ -24,6 +24,7 @@
 | MCP Code Review Server | MCP 工具 | $49 | Creem | ✅ 已打包 |
 | FastAPI Starter Kit | 代码模板 | $59 | Creem | ✅ 已打包 |
 | AI Agent Prompts Pack | Prompt 合集 | $29 | Creem | ✅ 已打包 |
+| API Development Prompts | Prompt 合集 | $19 | Creem | ✅ 已打包 |
 
 ### AgentPowers 已上架
 | 技能 | 定价 | 状态 |
@@ -40,6 +41,7 @@
 - `products/mcp-code-review.zip` — MCP Code Review Server（$49）
 - `products/python-cli-generator.zip` — CLI 项目模板（$49）
 - `products/fastapi-starter.zip` — FastAPI Starter Kit（$59）
+- `products/api-dev-prompts.zip` — API Development Prompts（$19）
 - `CREEM_PRODUCTS.md` — Creem 上架数据
 
 ### 待用户操作

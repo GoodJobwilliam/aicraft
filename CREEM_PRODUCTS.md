@@ -99,6 +99,20 @@
 
 ---
 
+## 产品 8：API Development Prompts Pack
+
+| 字段 | 值 |
+|------|-----|
+| 名称 | API Development Prompts Pack |
+| 描述 | 35 prompts for designing, building, testing, and documenting REST APIs with AI. Framework-agnostic. |
+| 价格 | $19 USD |
+| 类型 | Digital Download |
+| 文件 | products/api-dev-prompts.zip |
+
+**亮点**: Covers full API lifecycle — design, implement, test, document, operate. Works with any framework.
+
+---
+
 ## 上架步骤
 1. Creem 后台 → Products → Create Product
 2. 填入名称、描述、价格
