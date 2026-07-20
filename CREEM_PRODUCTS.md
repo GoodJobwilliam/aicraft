@@ -69,11 +69,23 @@
 | 文件 | products/mcp-code-review.zip |
 
 **亮点**: 首个付费 MCP code review 工具。OWASP 安全扫描内置。
+---
+
+## 产品 6：FastAPI Starter Kit
+
+| 字段 | 值 |
+|------|-----|
+| 名称 | FastAPI Starter Kit |
+| 描述 | Production-ready FastAPI scaffold with async SQLAlchemy, JWT auth, Alembic, Docker, and pytest. Full REST API foundation. |
+| 价格 | $59 USD |
+| 类型 | Digital Download |
+| 文件 | products/fastapi-starter.zip |
+
+**亮点**: Async SQLAlchemy 2.0, JWT auth baked in, Docker Compose dev environment, full test suite.
 
 ---
 
 ## 上架步骤
-
 1. Creem 后台 → Products → Create Product
 2. 填入名称、描述、价格
 3. 上传对应的 ZIP 文件
