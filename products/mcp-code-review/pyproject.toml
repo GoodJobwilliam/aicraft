@@ -1,0 +1,26 @@
+[project]
+name = "mcp-code-review"
+version = "0.1.0"
+description = "Code review as an MCP server — structured reviews with OWASP security scanning"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.6",
+    "rich>=13.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.25",
+    "ruff>=0.9",
+]
+
+[project.scripts]
+mcp-code-review = "mcp_code_review:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

@@ -21,17 +21,23 @@
 | Git Commit Assistant | Agent Skill | 免费 | AgentPowers | ✅ 已上架 |
 | Python CLI Generator | 代码模板 | $29 | Creem | ✅ 已打包 |
 | Python CLI 中文模板 | 代码模板 | ¥59 | Creem | ✅ 已打包 |
+| MCP Code Review Server | MCP 工具 | $29 | Creem | ✅ 已打包 |
 | FastAPI Starter Kit | 代码模板 | $39 | Creem | ⏳ 待制作 |
+
+### AgentPowers 已上架
+| 技能 | 定价 | 状态 |
+|------|------|------|
+| Code Review Agent | 免费 | ✅ 已上架 |
+| Git Commit Assistant | 免费 | ✅ 已上架 |
+| PR Description Generator | 免费 | ✅ 已上架（安全扫描中）|
 
 ### 已生成的文件
 - `products/100-ai-prompts.zip` — 100个开发者 AI Prompt（$9）
 - `products/ai-trading-prompts.zip` — AI+交易 Prompt 包（$19）
 - `products/python-cli-zh.zip` — 中文 Python CLI 模板（¥59）
-- `products/code-review-agent.skill.zip` — 代码审查技能
-- `products/git-commit-assistant.skill.zip` — Git 提交信息技能
+- `products/mcp-code-review.zip` — MCP Code Review Server（$29）
 - `products/python-cli-generator.zip` — CLI 项目模板（$29）
 - `CREEM_PRODUCTS.md` — Creem 上架数据
-- `publish-agentpowers.sh` — AgentPowers 发布脚本
 
 ### 待用户操作
 ### 当前状态（全部完成 ✅）
