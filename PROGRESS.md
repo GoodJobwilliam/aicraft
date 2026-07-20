@@ -27,10 +27,17 @@
 - `publish-agentpowers.sh` — AgentPowers 一键发布脚本
 
 ### 待用户操作
-- [ ] **Creem**: 等审核邮件（1-3工作日），审核通过后告诉我
-- [ ] **AgentPowers**: 注册 agentpowers.ai 账号，然后告诉我，我跑 `bash publish-agentpowers.sh`
-- [ ] **查看进度**: `open /Users/william/Desktop/aicraft/PROGRESS.md`
-- [ ] **查看网站**: https://goodjobwilliam.github.io/aicraft/
+### 当前状态（全部完成 ✅）
+
+| 项目 | 状态 | 链接 |
+|------|------|------|
+| Code Review Agent | ✅ 已上架 AgentPowers | https://agentpowers.ai/skills/code-review-agent |
+| Git Commit Assistant | ✅ 已上架 AgentPowers | https://agentpowers.ai/skills/git-commit-assistant |
+| Python CLI Generator | ⏳ 等 Creem 审核 | 待上架 Creem 商店 |
+
+### 待办
+- [ ] **Creem**: 等审核邮件，通过后上架 Python CLI Generator ($29)
+- [ ] 后续：制作 FastAPI 脚手架 + 更多产品
 
 ### 下次启动后我自动做的事
 - Creem 审核通过 → 上架 Python CLI Generator
