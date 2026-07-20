@@ -35,6 +35,11 @@
 | Git Commit Assistant | ✅ 已上架 AgentPowers | https://agentpowers.ai/skills/git-commit-assistant |
 | Python CLI Generator | ⏳ 等 Creem 审核 | 待上架 Creem 商店 |
 
+### ✅ CLI 打通
+- AgentPowers API token 获取成功 ✅
+- CLI 已认证（`ap whoami` 返回 `731685147@qq.com`）
+- 以后发布更新可自动完成，无需手动上传
+
 ### 待办
 - [ ] **Creem**: 等审核邮件，通过后上架 Python CLI Generator ($29)
 - [ ] 后续：制作 FastAPI 脚手架 + 更多产品
