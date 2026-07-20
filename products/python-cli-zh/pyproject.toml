@@ -1,0 +1,39 @@
+[project]
+name = "cli-zh"
+version = "0.1.0"
+description = "Python CLI 项目模板（中文版）"
+requires-python = ">=3.11"
+dependencies = [
+    "typer[all]>=0.15",
+    "rich>=13.9",
+    "pydantic-settings>=2.7",
+    "structlog>=25.1",
+    "httpx>=0.28",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "pytest-asyncio>=0.25",
+    "ruff>=0.9",
+    "mypy>=1.15",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "SIM", "ARG"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"
