@@ -1,69 +1,69 @@
-# Creem Product Listings — 准备就绪，审核通过后一键上架
+# Creem 上架清单 — 审核通过后依次创建
 
-## Product 1: Python CLI Generator
-```json
-{
-  "name": "Python CLI Generator",
-  "description": "Production-grade Python CLI project scaffold with Typer, Rich, Pydantic, structlog, httpx, and pytest. Stop starting from scratch — clone, customize, ship.",
-  "price": 29,
-  "currency": "USD",
-  "type": "digital_download",
-  "file": "python-cli-generator.zip",
-  "highlights": [
-    "Typer CLI framework with auto-generated help",
-    "Rich terminal output (tables, progress, panels)",
-    "Pydantic v2 settings management",
-    "structlog structured logging",
-    "Async HTTP client with retry logic",
-    "pytest + coverage test suite",
-    "Ruff linting & formatting",
-    "Makefile for common dev tasks"
-  ]
-}
-```
+---
 
-## Product 2: Code Review Agent (coming to Creem after AgentPowers launch)
-```json
-{
-  "name": "Code Review Agent",
-  "description": "AI-powered code review skill for OpenCode and Claude Code. Detects OWASP Top 10 vulnerabilities, N+1 queries, race conditions, and logic errors before they reach production.",
-  "price": 15,
-  "currency": "USD",
-  "type": "digital_download",
-  "file": "code-review-agent.skill.zip",
-  "highlights": [
-    "4-pass analysis: Security → Performance → Quality → Style",
-    "OWASP Top 10 vulnerability scanning",
-    "N+1 query detection",
-    "Race condition analysis",
-    "Structured output with severity ratings",
-    "Works with OpenCode, Claude Code, Cursor"
-  ]
-}
-```
+## 产品 1：100 Developer AI Prompts
 
-## Product 3: Git Commit Assistant
-```json
-{
-  "name": "Git Commit Assistant",
-  "description": "Writes structured Conventional Commits from git diff output. Supports semantic versioning and project-specific commit styles.",
-  "price": 8,
-  "currency": "USD",
-  "type": "digital_download",
-  "file": "git-commit-assistant.skill.zip",
-  "highlights": [
-    "Conventional Commits format",
-    "Auto-detects type, scope, breaking changes",
-    "Handles large diffs intelligently",
-    "Suggests commit splitting for unrelated changes",
-    "Works with any git-based project"
-  ]
-}
-```
+| 字段 | 值 |
+|------|-----|
+| 名称 | 100 Developer AI Prompts |
+| 描述 | 100 battle-tested prompts for daily dev work. Code review, testing, git, DevOps, security, databases, career, learning. |
+| 价格 | $9 USD |
+| 类型 | Digital Download |
+| 文件 | products/100-ai-prompts.zip |
 
-## Publishing Checklist (when Creem approves)
-- [ ] Go to Creem dashboard → Products → Create Product
-- [ ] Fill in name, description, price from above
-- [ ] Upload the ZIP file
-- [ ] Set as downloadable digital product
-- [ ] Submit for listing
+**亮点**: 7 categories, each with context/task/format/example. No platform dependency.
+
+---
+
+## 产品 2：AI + Trading Prompt Pack
+
+| 字段 | 值 |
+|------|-----|
+| 名称 | AI + Trading Prompt Pack |
+| 描述 | 30 prompts for stock analysis with AI. Order book, technical analysis, fund flow, sentiment, trade journal, screening, backtesting. |
+| 价格 | $19 USD |
+| 类型 | Digital Download |
+| 文件 | products/ai-trading-prompts.zip |
+
+**亮点**: Combines AI with trading domain knowledge. Not available elsewhere.
+
+---
+
+## 产品 3：Python CLI Generator
+
+| 字段 | 值 |
+|------|-----|
+| 名称 | Python CLI Generator |
+| 描述 | Production-grade CLI scaffold with Typer, Rich, Pydantic v2, structlog, httpx, pytest. |
+| 价格 | $29 USD |
+| 类型 | Digital Download |
+| 文件 | products/python-cli-generator.zip |
+
+**亮点**: Full test suite, structured logging, async HTTP client, Makefile.
+
+---
+
+## 产品 4：Python CLI 中文模板
+
+| 字段 | 值 |
+|------|-----|
+| 名称 | Python CLI 中文模板 |
+| 描述 | 生产级 Python CLI 项目脚手架，中文文档和注释。适合中国开发者。 |
+| 价格 | ¥59 CNY |
+| 类型 | Digital Download |
+| 文件 | products/python-cli-zh.zip |
+
+**亮点**: 全中文注释和文档，低单价适合中国市场。
+
+---
+
+## 上架步骤
+
+1. Creem 后台 → Products → Create Product
+2. 填入名称、描述、价格
+3. 上传对应的 ZIP 文件
+4. 类型选 Digital Download
+5. 提交
+
+预计 5 分钟完成全部 4 个产品上架。
