@@ -3,79 +3,81 @@ HANDOFF CONTEXT
 
 USER REQUESTS (AS-IS)
 ---------------------
-- "我启动Prometheus模式吧，然后我想说，既然我想让你自己赚钱，你就不应该问我要做什么，而是你自己去思考可以做什么，应该做什么，我只要收益。你自己去网上找能做的事情，前提是保证我没有风险。"
-- "不不不，我不想使用我的资产，我需要的是你去创造"
-- "能最快收益的，当然你也可以两个都搞"
-- "如果需要你提供一个收款渠道"
-- "国内也用不了paypal吧？"
-- "你怎么确定你的产品有竞争力？也就是说人家为什么要买单你的产品？"
-- "都可以试试，产品多元化吧"
-- "先专注等 Creem，同时我在 AgentPowers 继续发免费技能攒名气？等 Creem 批了直接上架产品，一个渠道先干到 $2000"
-- "$2000每月目标完成绝对给你换市面上数一数二的模型"
-- "关于这个对话，我不想丢失，特别是遇到意外退出的时候，你有什么好办法吗？或者我新启动一个对话后，怎么唤起当前的记忆"
+- "有一个对话卡死了，叫Agents build busy,你帮我看看情况"
+- "是的，我想问的是https://aicraft.vip这个地址我已经可以访问了，但是https还没好，是不是ssl证书还没签发"
+- "可以调整一下"
+- "我需要的是你自己赚钱，不是问我应该多少唉，我负责账号等，你负责生产、推广、销售等一系列工作，我只要看到账户进账就行，而且目标是$2000每月"
+- "把这个项目整体迁移到/Users/william/work/AIcompany下"
 
 GOAL
 ----
-Build and launch a zero-risk digital products business targeting $2000/month revenue, using AI-created skills and templates sold through Creem and AgentPowers.
+Get HTTPS working on aicraft.vip, then go to Creem to request re-review so all 9 products can be listed for sale.
 
 WORK COMPLETED
 --------------
-- Researched viable zero-risk income paths for AI agents: digital products, marketplaces, freelance agent platforms
-- Registered on Creem (merchant of record) with KYC completed and Alipay payout configured — currently awaiting approval
-- Set up GitHub Pages storefront at https://goodjobwilliam.github.io/aicraft/ with Privacy Policy and Terms of Service pages
-- Installed and authenticated AgentPowers CLI using Clerk session token from browser — API key saved to ~/.agentpowers/auth.json
-- Published 2 free skills on AgentPowers: Code Review Agent and Git Commit Assistant
-- Created 4 prepackaged products ready for Creem store: 100 Developer AI Prompts ($9), AI + Trading Prompt Pack ($19), Python CLI Generator ($29), Python CLI Chinese Template (¥59)
-- All source code and assets stored in /Users/william/Desktop/aicraft/ and pushed to GitHub repo GoodJobwilliam/aicraft
-- Added CLI-based publishing capability — can publish new skills via `npx @agentpowers/cli publish --dir ...` without manual uploads
+- Diagnosed a stuck session (ses_08517d416ffeJLknfecIWNinRV) where compaction produced corrupted repeated output, causing Agents build busy state
+- Analyzed market pricing for AI prompts, developer boilerplates, MCP tools; adjusted all prices based on real market data
+- Built 4 new products: FastAPI Starter Kit ($59, 31 files), AI Agent Prompts Pack ($29, 50 prompts), API Development Prompts ($19, 35 prompts), Next.js SaaS Starter Kit ($99, 69 files, 15 tests)
+- Updated website index.html with all 9 products and new pricing
+- Created GitHub repo README with full product catalog
+- Set GitHub Topics (mcp, code-review, security, python, model-context-protocol) for auto-discovery by Glama/PulseMCP
+- Published MCP Code Review Server (free tier) on mcp-marketplace.io
+- Submitted MCP server to mcp.directory (pending review)
+- Created LAUNCHGUIDE.md at repo root for marketplace auto-fill
+- Prepared submission guides in submissions/ directory
+- Moved project from /Users/william/Desktop/aicraft to /Users/william/work/AIcompany/aicraft
 
 CURRENT STATE
 -------------
-- Creem account is under review (1-3 business days expected). Payout set to Alipay (CNY). Identity verification already passed.
-- AgentPowers CLI is authenticated and working
-- GitHub Pages site is live and updated with all products listed
-- All product ZIPs are ready and stored on GitHub
-- Progress tracked in /Users/william/Desktop/aicraft/PROGRESS.md
-- Creem product listing details documented in /Users/william/Desktop/aicraft/CREEM_PRODUCTS.md
+- Project: /Users/william/work/AIcompany/aicraft/ (git: GoodJobwilliam/aicraft)
+- 9 products ready: 100 Developer AI Prompts ($19), AI+Trading Prompt Pack ($29), AI Agent Prompts Pack ($29), API Development Prompts ($19), Python CLI Generator ($49), Python CLI Chinese Template ($19), FastAPI Starter Kit ($59), Next.js SaaS Starter Kit ($99), MCP Code Review Server ($49)
+- 3 free AgentPowers skills: Code Review Agent, Git Commit Assistant, PR Description Generator
+- Website: https://aicraft.vip (HTTP works, HTTPS pending - Let's Encrypt cert not issued yet)
+- MCP Marketplace listing: live (free tier, needs Stripe for paid)
+- Creem store: registered, KYC approved, waiting for HTTPS to re-review
+- Revenue target: $2000/month (avg ~$35/sale, need ~57 sales/month)
 
 PENDING TASKS
 -------------
-- Creem approval pending — once approved, create 4 products in Creem dashboard (takes ~5 min)
-- After Creem approval: promote AgentPowers free skills to drive traffic to Creem store
-- Consider FastAPI Starter Kit ($39) as next product
-- Goal: reach $2000/month across all channels
+- [pending] SSL 签发后去 Creem 点重新审核 (HTTPS still on *.github.io wildcard cert)
+- [pending] Creem 审核通过后上架全部 9 个产品
+- After Stripe availability: switch MCP Marketplace from free to paid ($49)
+- Submit to MCPFind (guide in submissions/mcpfind-submission.yml)
+- Monitor mcp.directory listing status (24h review)
+- Consider subscription/prompt membership for recurring revenue
 
 KEY FILES
 ---------
-- /Users/william/Desktop/aicraft/ — project root with all products and configs
-- /Users/william/Desktop/aicraft/PROGRESS.md — progress tracking log
-- /Users/william/Desktop/aicraft/CREEM_PRODUCTS.md — product listing data for Creem upload
-- /Users/william/Desktop/aicraft/index.html — GitHub Pages storefront
-- /Users/william/Desktop/aicraft/products/ — all product ZIPs and sources
-- /Users/william/Desktop/aicraft/publish-agentpowers.sh — one-shot publishing script
-- ~/.agentpowers/auth.json — AgentPowers API token (expires 2026-10-18)
+- /Users/william/work/AIcompany/aicraft/index.html - Storefront with all 9 products
+- /Users/william/work/AIcompany/aicraft/CREEM_PRODUCTS.md - Product manifest for Creem listing
+- /Users/william/work/AIcompany/aicraft/PROGRESS.md - Progress tracking
+- /Users/william/work/AIcompany/aicraft/LAUNCHGUIDE.md - MCP marketplace auto-fill metadata
+- /Users/william/work/AIcompany/aicraft/products/ - All product ZIPs and source files
+- /Users/william/work/AIcompany/aicraft/submissions/ - MCP directory submission guides
+- /Users/william/work/AIcompany/aicraft/products/nextjs-saas-starter/ - Full SaaS scaffold
+- /Users/william/work/AIcompany/aicraft/products/mcp-code-review/ - MCP server source
+- /Users/william/work/AIcompany/aicraft/README.md - GitHub repo product catalog
+- /Users/william/work/AIcompany/aicraft/HANDOFF.md - This handoff file
 
 IMPORTANT DECISIONS
 -------------------
-- Chose NOT to use the user's existing stock trading system as the monetization asset — they wanted fresh, independent creation
-- Chose Creem over Stripe/LemonSqueezy because Creem supports Chinese individual developers with Alipay payouts
-- Chose GitHub Pages for free hosting (no custom domain needed)
-- AgentPowers skills offered for free as traffic generators, paid products go through Creem
-- Products diversified across 3 categories: prompt packs (low price, high volume), code templates (medium price), and AI skills (free to build reputation)
+- User handles accounts only; AI handles production, marketing, sales autonomously
+- All products sold as one-time purchases via Creem (Alipay payout for China user)
+- Pricing based on Gumroad 2026 market data: $10-19 is death zone, $30-49 converts 28% better
+- MCP server published as free on marketplace because user has no Stripe
+- Target $2000/month across 9 products
 
 EXPLICIT CONSTRAINTS
 --------------------
-- Must be zero risk to the user — no money spent, no legal liability, no trading of user's funds
-- User is in China — Stripe, PayPal, and LemonSqueezy are not available for receiving payments
-- User's wallet cannot be used for any expenditures
-- Products must be created from scratch, not using the user's existing trading system code
-- Must be legal (no gray areas, no unlicensed activities)
+- User cannot spend money from their wallet; all costs must be $0
+- No Stripe/PayPal/crypto available for payouts; Creem (Alipay to China bank) is the primary payout channel
+- User is in China; platforms requiring Stripe/PayPal/crypto are blocked
+- User wants AI to work autonomously; they only provide minimal one-time setup (accounts, domain)
 
 CONTEXT FOR CONTINUATION
 ------------------------
-- When this session resumes, check PROGRESS.md for latest status update
-- If Creem has been approved, go to CREEM_PRODUCTS.md and create the 4 listed products in the Creem dashboard
-- AgentPowers publish commands work via: cd /Users/william/Desktop/aicraft && npx @agentpowers/cli publish --dir ./products/PRODUCT_NAME --price PRICE
-- GitHub Pages site auto-deploys on push to main branch
-- The user (William / 薛耀辉) prefers brief, direct communication — no fluff, just results
-- User's commitment: will upgrade AI model when monthly income reaches $2000
+- First check HTTPS on aicraft.vip; if working, tell user to go Creem > Payout Accounts > Request re-review
+- After Creem approval: create all 9 products in Creem dashboard using ZIPs from products/
+- MCP marketplace listing is live at free tier; switch to paid when user gets Stripe
+- The original stuck session (ses_08517d416ffeJLknfecIWNinRV) is corrupted and should not be revisited
+- All git operations use path: /Users/william/work/AIcompany/aicraft
