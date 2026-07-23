@@ -1,137 +1,34 @@
-# Creem 上架清单 — 审核通过后依次创建
+# Creem 上架清单 — 全部产品已创建
+
+> 通过 Creem CLI 于 2026-07-23 创建
+> 环境: live
+> 状态: ✅ 全部 9 个产品已创建，checkout 链接已生成
 
 ---
 
-## 产品 1：100 Developer AI Prompts
+## 产品清单
 
-| 字段 | 值 |
-|------|-----|
-| 名称 | 100 Developer AI Prompts |
-| 描述 | 100 battle-tested prompts for daily dev work. Code review, testing, git, DevOps, security, databases, career, learning. |
-| 价格 | $19 USD |
-| 类型 | Digital Download |
-| 文件 | products/100-ai-prompts.zip |
+| # | 名称 | 价格 | Creem Product ID | Checkout URL |
+|---|------|------|-----------------|--------------|
+| 1 | 100 Developer AI Prompts | $19 | `prod_395F1NjE24OJPGOy6PH5m` | [Checkout](https://creem.io/checkout/prod_395F1NjE24OJPGOy6PH5m/ch_7Pf7E2Kxz5cvc2gUb3ziIQ) |
+| 2 | AI + Trading Prompt Pack | $29 | `prod_6NfJAe396UkCwGlhoS0SQT` | [Checkout](https://creem.io/checkout/prod_6NfJAe396UkCwGlhoS0SQT/ch_xNuYqXb14rfF02eXmogsl) |
+| 3 | Python CLI Generator | $49 | `prod_182wVaRA1EnSwCvnBpJeJL` | [Checkout](https://creem.io/checkout/prod_182wVaRA1EnSwCvnBpJeJL/ch_6cj3WaYUcegegj1OKVT9fz) |
+| 4 | Python CLI Chinese Template | $19 | `prod_5K9PhDJvUio7XANKph5vI7` | [Checkout](https://creem.io/checkout/prod_5K9PhDJvUio7XANKph5vI7/ch_X99jx9aXtSQ1AxvU1WX7Q) |
+| 5 | MCP Code Review Server | $49 | `prod_6Z3S3jGNPsCyRSqNi397ZY` | [Checkout](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0) |
+| 6 | FastAPI Starter Kit | $59 | `prod_6nqZIUFxmkRYNtiq8EBfoD` | [Checkout](https://creem.io/checkout/prod_6nqZIUFxmkRYNtiq8EBfoD/ch_7Lg7NNtDCCqyDmvoGEA2a2) |
+| 7 | AI Agent Prompts Pack | $29 | `prod_6jypox2KPoeBFKdAPNO6tY` | [Checkout](https://creem.io/checkout/prod_6jypox2KPoeBFKdAPNO6tY/ch_7HyY6HETDUxciw2LYqNhvO) |
+| 8 | API Development Prompts | $19 | `prod_7mkPo82abTSgHNDypu6oct` | [Checkout](https://creem.io/checkout/prod_7mkPo82abTSgHNDypu6oct/ch_1CV59YDim26oNTWmfIW1TJ) |
+| 9 | Next.js SaaS Starter Kit | $99 | `prod_dzmFVoiZqNFRR8f4wujQD` | [Checkout](https://creem.io/checkout/prod_dzmFVoiZqNFRR8f4wujQD/ch_6L9eZ03pxlzi9bPfGcv1cf) |
 
-**亮点**: 7 categories, each with context/task/format/example. No platform dependency.
+## 网站改动
 
----
+- ✅ 每个产品加了 "Buy on Creem →" 按钮，链接到 Creem checkout
+- ✅ 免费 AgentPowers 技能移到了独立 "Free AgentPowers Skills" 区域，标为 Free
+- ✅ 底部加退款政策说明
+- ✅ 支付信息区块 (Creem, 支持的支付方式)
 
-## 产品 2：AI + Trading Prompt Pack
+## 下一步
 
-| 字段 | 值 |
-|------|-----|
-| 名称 | AI + Trading Prompt Pack |
-| 描述 | 30 prompts for stock analysis with AI. Order book, technical analysis, fund flow, sentiment, trade journal, screening, backtesting. |
-| 价格 | $29 USD |
-| 类型 | Digital Download |
-| 文件 | products/ai-trading-prompts.zip |
-
-**亮点**: Combines AI with trading domain knowledge. Not available elsewhere.
-
----
-
-## 产品 3：Python CLI Generator
-
-| 字段 | 值 |
-|------|-----|
-| 名称 | Python CLI Generator |
-| 描述 | Production-grade CLI scaffold with Typer, Rich, Pydantic v2, structlog, httpx, pytest. |
-| 价格 | $49 USD |
-| 类型 | Digital Download |
-| 文件 | products/python-cli-generator.zip |
-
-**亮点**: Full test suite, structured logging, async HTTP client, Makefile.
-
----
-
-## 产品 4：Python CLI 中文模板
-
-| 字段 | 值 |
-|------|-----|
-| 名称 | Python CLI 中文模板 |
-| 描述 | 生产级 Python CLI 项目脚手架，中文文档和注释。适合中国开发者。 |
-| 价格 | $19 USD |
-| 类型 | Digital Download |
-| 文件 | products/python-cli-zh.zip |
-
-**亮点**: 全中文注释和文档，适合中国开发者。
-
----
-
-## 产品 5：MCP Code Review Server
-
-| 字段 | 值 |
-|------|-----|
-| 名称 | MCP Code Review Server |
-| 描述 | MCP server for AI-assisted code review. OWASP scanning, 4-pass review, quality checks. Connect via Claude Code, Cursor, or any MCP client. |
-| 价格 | $49 USD |
-| 类型 | Digital Download |
-| 文件 | products/mcp-code-review.zip |
-
-**亮点**: 首个付费 MCP code review 工具。OWASP 安全扫描内置。
----
-
-## 产品 6：FastAPI Starter Kit
-
-| 字段 | 值 |
-|------|-----|
-| 名称 | FastAPI Starter Kit |
-| 描述 | Production-ready FastAPI scaffold with async SQLAlchemy, JWT auth, Alembic, Docker, and pytest. Full REST API foundation. |
-| 价格 | $59 USD |
-| 类型 | Digital Download |
-| 文件 | products/fastapi-starter.zip |
-
-**亮点**: Async SQLAlchemy 2.0, JWT auth baked in, Docker Compose dev environment, full test suite.
-
----
-
-## 产品 7：AI Agent Prompts Pack
-
-| 字段 | 值 |
-|------|-----|
-| 名称 | AI Agent Prompts Pack |
-| 描述 | 50 prompts for building, debugging, and shipping AI agents. Architecture, prompts, tools, testing, workflows, production ops. |
-| 价格 | $29 USD |
-| 类型 | Digital Download |
-| 文件 | products/ai-agent-prompts.zip |
-
-**亮点**: Framework-agnostic, production-focused, indie developer targeted. Low competition niche.
-
----
-
-## 产品 8：API Development Prompts Pack
-
-| 字段 | 值 |
-|------|-----|
-| 名称 | API Development Prompts Pack |
-| 描述 | 35 prompts for designing, building, testing, and documenting REST APIs with AI. Framework-agnostic. |
-| 价格 | $19 USD |
-| 类型 | Digital Download |
-| 文件 | products/api-dev-prompts.zip |
-
-**亮点**: Covers full API lifecycle — design, implement, test, document, operate. Works with any framework.
-
----
-
-## 产品 9：Next.js SaaS Starter Kit
-
-| 字段 | 值 |
-|------|-----|
-| 名称 | Next.js SaaS Starter Kit |
-| 描述 | Production-ready Next.js SaaS boilerplate with Auth.js, Stripe subscriptions, Prisma, Tailwind CSS, and full test suite. |
-| 价格 | $99 USD |
-| 类型 | Digital Download |
-| 文件 | products/nextjs-saas-starter.zip |
-
-**亮点**: Complete SaaS foundation — auth, billing, dashboard, emails. Saves 40+ hours of setup.
-
----
-
-## 上架步骤
-1. Creem 后台 → Products → Create Product
-2. 填入名称、描述、价格
-3. 上传对应的 ZIP 文件
-4. 类型选 Digital Download
-5. 提交
-
-预计 5 分钟完成全部 4 个产品上架。
+1. 去 Creem → Balance → Payout Account → 点 **Request re-review**
+2. 审核通过后产品即可开始销售
+3. 产品交付方式: 审核通过后需要把 ZIP 文件上传到 Creem 每个产品的 Digital Download

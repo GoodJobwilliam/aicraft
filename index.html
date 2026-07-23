@@ -3,170 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AICraft - AI-Powered Developer Tools</title>
+    <title>AICraft - AI-Powered Developer Tools & Templates</title>
     <link rel="canonical" href="https://aicraft.vip">
+    <meta name="description" content="Production-ready developer tools, AI prompt packs, code templates, and MCP servers. Buy once, use forever.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.6; }
-        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-        
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.6; background: #fafafa; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
         /* Header */
-        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 60px 0; }
-        header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 10px; }
+        header { background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); color: white; padding: 80px 0 60px; }
+        header h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -1px; }
         header h1 span { color: #00d4aa; }
-        header p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
-        
-        /* Features */
-        .features { padding: 60px 0; background: #f8f9fa; }
-        .features h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-        .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #1a1a2e; }
-        .card p { color: #555; }
-        
-        /* Products */
-        .products { padding: 60px 0; }
-        .products h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
-        .product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .product { border: 1px solid #e0e0e0; padding: 24px; border-radius: 12px; }
-        .product h3 { font-size: 1.2rem; margin-bottom: 8px; }
-        .product .price { font-size: 1.5rem; font-weight: 700; color: #00d4aa; margin-bottom: 12px; }
-        .product p { color: #555; font-size: 0.95rem; }
-        .product .badge { display: inline-block; background: #00d4aa; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; margin-bottom: 8px; }
-        .coming-soon { opacity: 0.6; filter: grayscale(0.5); }
-        
+        header p { font-size: 1.2rem; opacity: 0.85; max-width: 600px; margin-bottom: 28px; }
+        header .cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+        header .cta { display: inline-block; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s; }
+        header .cta-primary { background: #00d4aa; color: #0f0f23; }
+        header .cta-primary:hover { background: #00bf9a; transform: translateY(-1px); }
+        header .cta-secondary { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); }
+        header .cta-secondary:hover { background: rgba(255,255,255,0.18); }
+
+        /* Sections */
+        section { padding: 64px 0; }
+        section h2 { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        section .subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 1.05rem; }
+
+        /* Product Grid */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+        .product-card { background: white; border-radius: 12px; padding: 28px; border: 1px solid #e8e8ee; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+        .product-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .product-card .category-tag { display: inline-block; background: #e8f4ff; color: #0066cc; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; width: fit-content; }
+        .product-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+        .product-card p { color: #555; font-size: 0.92rem; flex: 1; margin-bottom: 16px; }
+        .product-card .price-row { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 16px; border-top: 1px solid #eee; }
+        .product-card .price { font-size: 1.6rem; font-weight: 800; color: #1a1a2e; }
+        .product-card .price .currency { font-size: 0.9rem; font-weight: 600; color: #888; }
+        .product-card .buy-btn { display: inline-block; padding: 10px 24px; background: #1a1a2e; color: white; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+        .product-card .buy-btn:hover { background: #00d4aa; color: #0f0f23; }
+
+        /* Free section */
+        .free-section { background: #f0fdf8; }
+        .free-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .free-card { background: white; border-radius: 12px; padding: 24px; border: 1px solid #d0f0e4; display: flex; flex-direction: column; }
+        .free-card .free-badge { display: inline-block; background: #00d4aa; color: white; padding: 2px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; width: fit-content; }
+        .free-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+        .free-card p { color: #555; font-size: 0.9rem; flex: 1; margin-bottom: 12px; }
+        .free-card .free-btn { display: inline-block; padding: 8px 20px; background: #00d4aa; color: #0f0f23; border-radius: 8px; font-weight: 600; font-size: 0.85rem; text-decoration: none; text-align: center; transition: background 0.2s; }
+        .free-card .free-btn:hover { background: #00bf9a; }
+
+        /* Features / Benefits */
+        .features { background: white; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+        .feature-card { text-align: center; padding: 24px; }
+        .feature-card .icon { font-size: 2.2rem; margin-bottom: 12px; }
+        .feature-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        .feature-card p { color: #666; font-size: 0.9rem; }
+
+        /* Payment info */
+        .payment-info { background: #1a1a2e; color: white; text-align: center; padding: 40px 0; }
+        .payment-info p { opacity: 0.8; font-size: 0.95rem; max-width: 600px; margin: 0 auto; }
+        .payment-info .badges { margin-top: 16px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .payment-info .badge { background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; }
+
         /* Footer */
-        footer { background: #1a1a2e; color: white; padding: 30px 0; text-align: center; }
+        footer { background: #0f0f23; color: rgba(255,255,255,0.7); padding: 40px 0 32px; font-size: 0.9rem; }
+        footer .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 24px; }
+        footer h4 { color: white; font-size: 0.95rem; margin-bottom: 12px; }
         footer a { color: #00d4aa; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
-        footer .links { margin-bottom: 10px; }
-        footer .links a { margin: 0 15px; }
+        footer .footer-links { list-style: none; }
+        footer .footer-links li { margin-bottom: 8px; }
+        footer .footer-links a { color: rgba(255,255,255,0.6); }
+        footer .footer-links a:hover { color: #00d4aa; text-decoration: none; }
+        footer .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .product-grid, .free-grid { grid-template-columns: 1fr; }
+            footer .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            footer .footer-bottom { flex-direction: column; text-align: center; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1><span>AICraft</span></h1>
-            <p>AI-powered developer tools, templates, and automation — crafted for engineers who ship fast.</p>
-    <meta name="deploy" content="2026-07-21-rebuild">
-        </div>
-    </header>
 
-    <section class="features">
-        <div class="container">
-            <h2>What We Build</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>⚡ CLI Tools</h3>
-                    <p>Production-ready CLI applications with rich terminal interfaces, argument parsing, and auto-completion.</p>
-                </div>
-                <div class="card">
-                    <h3>🧩 Code Templates</h3>
-                    <p>Full-stack project scaffolds with authentication, payments, and deployment baked in. Stop starting from scratch.</p>
-                </div>
-                <div class="card">
-                    <h3>🤖 AI Agent Skills</h3>
-                    <p>Plug-and-play skills for Cursor, Claude Code, and OpenCode — code review, automation, analysis, and more.</p>
-                </div>
-                <div class="card">
-                    <h3>🔧 Developer Utilities</h3>
-                    <p>One-task tools that solve real pain points: git workflows, CI/CD pipelines, API scaffolding, and monitoring dashboards.</p>
-                </div>
-                <div class="card">
-                    <h3>📦 Starter Kits</h3>
-                    <p>Opinionated project starters for FastAPI, Next.js, and Python CLIs — with testing, linting, and CI pre-configured.</p>
-                </div>
-                <div class="card">
-                    <h3>📊 Automation Scripts</h3>
-                    <p>Python and shell scripts for data processing, report generation, and workflow automation — save hours every week.</p>
-                </div>
+<header>
+    <div class="container">
+        <h1><span>AICraft</span></h1>
+        <p>Production-ready developer tools, AI prompt packs, and code templates. Built by engineers, for engineers. One-time purchase, lifetime updates.</p>
+        <div class="cta-group">
+            <a href="#products" class="cta cta-primary">Browse Products →</a>
+            <a href="#free" class="cta cta-secondary">Free Tools</a>
+        </div>
+    </div>
+</header>
+
+<!-- Features -->
+<section class="features">
+    <div class="container">
+        <h2>What We Build</h2>
+        <p class="subtitle">Developer tools that save you hours — from scaffolding to deployment.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">⚡</div>
+                <h3>CLI Tools & Templates</h3>
+                <p>Production-ready CLI apps with Typer, Rich, and full test suites. Stop starting from scratch.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🧩</div>
+                <h3>Starter Kits</h3>
+                <p>Full-stack scaffolds for FastAPI, Next.js with auth, databases, Docker, and CI pre-configured.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🤖</div>
+                <h3>AI Prompt Packs</h3>
+                <p>Battle-tested prompts for code review, trading, AI agents, and API development. Copy, paste, ship.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔧</div>
+                <h3>MCP Tools</h3>
+                <p>Model Context Protocol servers for AI-assisted code review, security scanning, and automation.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="products">
-        <div class="container">
-            <h2>Featured Products</h2>
-            <div class="product-list">
-                <div class="product">
-                    <span class="badge">$19</span>
-                    <h3>100 Developer AI Prompts</h3>
-                    <div class="price">$19</div>
-                    <p>100 battle-tested prompts for code review, testing, git, DevOps, security, databases, and career. Copy, paste, ship.</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$29</span>
-                    <h3>AI + Trading Prompt Pack</h3>
-                    <div class="price">$29</div>
-                    <p>30 prompts for stock analysis with AI: order book, technical analysis, fund flow, sentiment, trade journal, screening, and backtesting.</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$49</span>
-                    <h3>Python CLI Generator</h3>
-                    <div class="price">$49</div>
-                    <p>Production-grade Python CLI scaffold with Typer, Rich, Pydantic, structlog, httpx, and pytest. Zero to shipped in minutes.</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$49</span>
-                    <h3>MCP Code Review Server</h3>
-                    <div class="price">$49</div>
-                    <p>MCP server for AI-assisted code review. Connect via Claude Code, Cursor, or any MCP client. OWASP scanning built in.</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$29</span>
-                    <h3>AI Agent Prompts Pack</h3>
-                    <div class="price">$29</div>
-                    <p>50 prompts for building and shipping AI agents. Architecture, tool building, debugging, workflows, production ops.</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$19</span>
-                    <h3>API Development Prompts</h3>
-                    <div class="price">$19</div>
-                    <p>35 prompts for designing, building, testing, and documenting REST APIs with AI. Framework agnostic.</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$19</span>
-                    <h3>Python CLI 中文模板</h3>
-                    <div class="price">$19</div>
-                    <p>生产级 Python CLI 项目脚手架，中文文档和注释。适合中国开发者快速上手 Typer + Rich 开发。</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$59</span>
-                    <h3>FastAPI Starter Kit</h3>
-                    <div class="price">$59</div>
-                    <p>Production-ready async FastAPI scaffold with SQLAlchemy, JWT auth, Alembic, Docker, and full test suite.</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$99</span>
-                    <h3>Next.js SaaS Starter Kit</h3>
-                    <div class="price">$99</div>
-                    <p>Complete SaaS boilerplate with Auth.js, Stripe subscriptions, Prisma, Tailwind CSS, and 15 passing tests.</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$19</span>
-                    <h3>Code Review Agent</h3>
-                    <div class="price">$19</div>
-                    <p>AI skill for OpenCode &amp; Claude Code — 4-pass review with OWASP scanning, performance analysis, and quality checks.</p>
-                </div>
-                <div class="product">
-                    <span class="badge">$12</span>
-                    <h3>Git Commit Assistant</h3>
-                    <div class="price">$12</div>
-                    <p>Writes Conventional Commits from git diff. Auto-detects type, scope, and breaking changes. Works with any git project.</p>
-                </div>
+<!-- Paid Products -->
+<section id="products" class="container">
+    <h2>All Products</h2>
+    <p class="subtitle">One-time purchase. Lifetime updates. Secure checkout via Creem.</p>
+
+    <div class="product-grid">
+        <!-- 100 Developer AI Prompts -->
+        <div class="product-card">
+            <span class="category-tag">Prompts</span>
+            <h3>100 Developer AI Prompts</h3>
+            <p>100 battle-tested prompts across 7 categories: code review, testing, git, DevOps, security, databases, and career. No platform dependency.</p>
+            <div class="price-row">
+                <span class="price"><span class="currency">$</span>19</span>
+                <a href="https://creem.io/checkout/prod_395F1NjE24OJPGOy6PH5m/ch_7Pf7E2Kxz5cvc2gUb3ziIQ" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <div class="links">
-                <a href="/privacy">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="mailto:731685147@qq.com">731685147@qq.com</a>
+        <!-- AI + Trading Prompt Pack -->
+        <div class="product-card">
+            <span class="category-tag">Prompts</span>
+            <h3>AI + Trading Prompt Pack</h3>
+            <p>30 prompts for AI-assisted stock analysis. Order book reading, technical analysis, fund flow, sentiment, screening, and backtesting.</p>
+            <div class="price-row">
+                <span class="price"><span class="currency">$</span>29</span>
+                <a href="https://creem.io/checkout/prod_6NfJAe396UkCwGlhoS0SQT/ch_xNuYqXb14rfF02eXmogsl" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
             </div>
-            <p>&copy; 2026 AICraft. All rights reserved.</p>
         </div>
-    </footer>
+
+        <!-- AI Agent Prompts Pack -->
+        <div class="product-card">
+            <span class="category-tag">Prompts</span>
+            <h3>AI Agent Prompts Pack</h3>
+            <p>50 prompts for building, debugging, and shipping AI agents. Architecture, tool building, testing, workflows, and production ops.</p>
+            <div class="price-row">
+                <span class="price"><span class="currency">$</span>29</span>
+                <a href="https://creem.io/checkout/prod_6jypox2KPoeBFKdAPNO6tY/ch_7HyY6HETDUxciw2LYqNhvO" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
+            </div>
+        </div>
+
+        <!-- API Development Prompts -->
+        <div class="product-card">
+            <span class="category-tag">Prompts</span>
+            <h3>API Development Prompts</h3>
+            <p>35 prompts for designing, building, testing, and documenting REST APIs with AI. Framework-agnostic, covers the full API lifecycle.</p>
+            <div class="price-row">
+                <span class="price"><span class="currency">$</span>19</span>
+                <a href="https://creem.io/checkout/prod_7mkPo82abTSgHNDypu6oct/ch_1CV59YDim26oNTWmfIW1TJ" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
+            </div>
+        </div>
+
+        <!-- Python CLI Generator -->
+        <div class="product-card">
+            <span class="category-tag">Template</span>
+            <h3>Python CLI Generator</h3>
+            <p>Production-grade CLI scaffold with Typer, Rich, Pydantic v2, structlog, httpx, and pytest. Full test suite, Makefile, and CI included.</p>
+            <div class="price-row">
+                <span class="price"><span class="currency">$</span>49</span>
+                <a href="https://creem.io/checkout/prod_182wVaRA1EnSwCvnBpJeJL/ch_6cj3WaYUcegegj1OKVT9fz" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
+            </div>
+        </div>
+
+        <!-- Python CLI Chinese Template -->
+        <div class="product-card">
+            <span class="category-tag">Template</span>
+            <h3>Python CLI 中文模板</h3>
+            <p>生产级 Python CLI 项目脚手架，中文文档和注释。适合中国开发者快速上手 Typer + Rich 开发。</p>
+            <div class="price-row">
+                <span class="price"><span class="currency">$</span>19</span>
+                <a href="https://creem.io/checkout/prod_5K9PhDJvUio7XANKph5vI7/ch_X99jx9aXtSQ1AxvU1WX7Q" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
+            </div>
+        </div>
+
+        <!-- FastAPI Starter Kit -->
+        <div class="product-card">
+            <span class="category-tag">Starter Kit</span>
+            <h3>FastAPI Starter Kit</h3>
+            <p>Production-ready async FastAPI scaffold with SQLAlchemy 2.0, JWT auth, Alembic migrations, Docker Compose, and full test suite.</p>
+            <div class="price-row">
+                <span class="price"><span class="currency">$</span>59</span>
+                <a href="https://creem.io/checkout/prod_6nqZIUFxmkRYNtiq8EBfoD/ch_7Lg7NNtDCCqyDmvoGEA2a2" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
+            </div>
+        </div>
+
+        <!-- Next.js SaaS Starter Kit -->
+        <div class="product-card">
+            <span class="category-tag">Starter Kit</span>
+            <h3>Next.js SaaS Starter Kit</h3>
+            <p>Complete SaaS boilerplate with Auth.js, Stripe subscriptions, Prisma ORM, Tailwind CSS, email templates, and 15 passing tests.</p>
+            <div class="price-row">
+                <span class="price"><span class="currency">$</span>99</span>
+                <a href="https://creem.io/checkout/prod_dzmFVoiZqNFRR8f4wujQD/ch_6L9eZ03pxlzi9bPfGcv1cf" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
+            </div>
+        </div>
+
+        <!-- MCP Code Review Server -->
+        <div class="product-card">
+            <span class="category-tag">MCP</span>
+            <h3>MCP Code Review Server</h3>
+            <p>MCP server for AI-assisted code review. OWASP vulnerability scanning, 4-pass review, quality checks. Connect via Claude Code or any MCP client.</p>
+            <div class="price-row">
+                <span class="price"><span class="currency">$</span>49</span>
+                <a href="https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Free AgentPowers Skills -->
+<section id="free" class="free-section">
+    <div class="container">
+        <h2>Free AgentPowers Skills</h2>
+        <p class="subtitle">Plug-and-play AI skills for OpenCode, Claude Code, and Cursor. Free forever.</p>
+        <div class="free-grid">
+            <div class="free-card">
+                <span class="free-badge">Free</span>
+                <h3>Code Review Agent</h3>
+                <p>4-pass AI code review with OWASP security scanning, performance analysis, and quality checks. Works with any codebase.</p>
+                <a href="https://agentpowers.ai/skills/code-review-agent" class="free-btn" target="_blank" rel="noopener">Install from AgentPowers →</a>
+            </div>
+            <div class="free-card">
+                <span class="free-badge">Free</span>
+                <h3>Git Commit Assistant</h3>
+                <p>Writes Conventional Commits from git diff. Auto-detects type, scope, and breaking changes. Works with any git project.</p>
+                <a href="https://agentpowers.ai/skills/git-commit-assistant" class="free-btn" target="_blank" rel="noopener">Install from AgentPowers →</a>
+            </div>
+            <div class="free-card">
+                <span class="free-badge">Free</span>
+                <h3>PR Description Generator</h3>
+                <p>Auto-generates PR descriptions from git history and diff. Saves time on every pull request.</p>
+                <a href="https://agentpowers.ai/skills/pr-description-generator" class="free-btn" target="_blank" rel="noopener">Install from AgentPowers →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Payment Info -->
+<section class="payment-info">
+    <div class="container">
+        <p>All payments are securely processed by <strong>Creem</strong> — our Merchant of Record. We accept Visa, Mastercard, Amex, PayPal, Apple Pay, and Google Pay. Digital goods are delivered instantly after purchase.</p>
+        <div class="badges">
+            <span class="badge">🔒 Secure Checkout</span>
+            <span class="badge">📦 Instant Delivery</span>
+            <span class="badge">💰 One-Time Payment</span>
+            <span class="badge">🔄 Lifetime Updates</span>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>AICraft</h4>
+                <p>AI-powered developer tools, templates, and automation. Built by engineers, for engineers.</p>
+            </div>
+            <div>
+                <h4>Products</h4>
+                <ul class="footer-links">
+                    <li><a href="#products">All Products</a></li>
+                    <li><a href="#free">Free Skills</a></li>
+                    <li><a href="https://github.com/GoodJobwilliam/aicraft" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:731685147@qq.com">Contact Us</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 AICraft. All rights reserved.</span>
+            <span>Refund Policy: Due to the nature of digital goods, all sales are final. If a product is defective (e.g., broken code, missing files), we will fix the issue or provide a replacement within 14 days. Contact us at <a href="mailto:731685147@qq.com">731685147@qq.com</a>.</span>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
