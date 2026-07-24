@@ -8,24 +8,24 @@ Production-ready developer tools, code templates, and AI prompt packs. Built by 
 
 | Product | Price | Description |
 |---------|-------|-------------|
-| [100 Developer AI Prompts](./products/100-ai-prompts/) | $19 | 100 battle-tested prompts for code review, testing, git, DevOps, security, databases, and career |
-| [AI + Trading Prompt Pack](./products/ai-trading-prompts/) | $29 | 30 prompts for AI-assisted stock analysis. Order book, TA, fund flow, sentiment, screening |
-| [AI Agent Prompts Pack](./products/ai-agent-prompts/) | $29 | 50 prompts for building, debugging, and shipping AI agents. Architecture to production |
-| [API Development Prompts](./products/api-dev-prompts/) | $19 | 35 prompts for designing, building, testing, and documenting REST APIs |
+| [100 Developer AI Prompts](./products/100-ai-prompts/) | $19 | 100 battle-tested prompts covering code review, testing, DevOps, security, and APIs. Copy, paste, ship. |
+| [AI + Trading Prompt Pack](./products/ai-trading-prompts/) | $29 | 30 prompts for AI-powered stock analysis. Level 2 order book, technical patterns, fund flow, sentiment, backtesting. |
+| [AI Agent Prompts Pack](./products/ai-agent-prompts/) | $29 | 50 production-tested prompts for building AI agents with Claude Code, LangChain, n8n. Architecture to deployment. |
+| [API Development Prompts](./products/api-dev-prompts/) | $19 | 35 prompts for the full API lifecycle: design, implementation, testing, docs, and production ops. |
 
 ### Code Templates
 
 | Product | Price | Description |
 |---------|-------|-------------|
-| [Python CLI Generator](./products/python-cli-generator/) | $49 | Production-grade CLI scaffold with Typer, Rich, Pydantic v2, structlog, httpx, pytest |
-| [Python CLI 中文模板](./products/python-cli-zh/) | $19 | Production-grade Python CLI scaffold with Chinese documentation and comments |
-| [FastAPI Starter Kit](./products/fastapi-starter/) | $59 | Production-ready async FastAPI scaffold with JWT auth, Alembic, Docker, full test suite |
+| [Python CLI Generator](./products/python-cli-generator/) | $49 | Build beautiful CLI apps in minutes. Modern Python scaffold with Typer, Rich, Pydantic v2, structlog, httpx, CI/CD. |
+| [Python CLI 中文模板](./products/python-cli-zh/) | $19 | 专为中国开发者打造的 Python CLI 脚手架。全中文文档和注释，5 分钟搭建专业级命令行工具。 |
+| [FastAPI Starter Kit](./products/fastapi-starter/) | $59 | Launch your FastAPI backend in 5 minutes. Async SQLAlchemy 2.0, JWT auth, Docker Compose, full test suite. |
 
 ### MCP Tools
 
 | Product | Price | Description |
 |---------|-------|-------------|
-| [MCP Code Review Server](./products/mcp-code-review/) | $49 | MCP server for AI-assisted code review. OWASP scanning, 4-pass review, quality checks |
+| [MCP Code Review Server](./products/mcp-code-review/) | $49 | AI code review in your editor. OWASP scanning, N+1 detection, race analysis, severity ratings. Install in 10 seconds. |
 
 ### AgentPowers Skills (Free)
 
