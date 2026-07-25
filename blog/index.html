@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Code Review 实战：5分钟搭建免费代码审查系统 — AICraft</title>
+<meta name="description" content="5分钟搭建 AI Code Review 系统，不花一分钱。用 MCP Code Review Server 在 Claude Code、Cursor、Cline 中自动审查代码。">
+<link rel="canonical" href="https://aicraft.vip/blog/">
+<style>
+:root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--text:#c4c4cf;--heading:#e4e4ed;--accent:#6366f1;--accent2:#22d3ee;--muted:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;padding:2rem}
+.container{max-width:720px;margin:0 auto}
+h1{color:var(--heading);font-size:2rem;margin-bottom:.5rem;line-height:1.3}
+h2{color:var(--heading);font-size:1.3rem;margin:2rem 0 .8rem}
+h3{color:var(--heading);font-size:1.1rem;margin:1.5rem 0 .5rem}
+p{margin-bottom:1rem}
+a{color:var(--accent2)}
+code{background:var(--card);padding:.15em .4em;border-radius:4px;font-size:.9em;color:var(--accent2)}
+pre{background:var(--card);padding:1rem;border-radius:8px;overflow-x:auto;margin:1rem 0;border:1px solid var(--border)}
+pre code{background:none;padding:0}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+.header{text-align:center;padding:2rem 0 3rem}
+.header a{color:var(--accent);text-decoration:none}
+.cta-box{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;padding:1.5rem;text-align:center;margin:2rem 0}
+.cta-box h3{color:#fff;margin:0 0 .5rem;font-size:1.1rem}
+.cta-box p{color:rgba(255,255,255,.9);margin:0 0 1rem;font-size:.95rem}
+.btn{display:inline-block;background:#fff;color:#0a0a0f;padding:.6rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem}
+.btn:hover{opacity:.9}
+ul,ol{margin:0 0 1rem 1.5rem}
+li{margin-bottom:.3rem}
+</style>
+</head>
+<body>
+<div class="header">
+  <a href="https://aicraft.vip">← AICraft 主页</a>
+  <h1 style="margin-top:1rem">AI Code Review 实战：5 分钟搭建免费代码审查系统</h1>
+  <div class="meta">2026-07-25 · 阅读约 5 分钟</div>
+</div>
+
+<div class="container">
+
+<p>每次提交代码前都要手动 Review？太慢了。用 AI 做 Code Review 已经不是什么新鲜事，但大多数人要么用 ChatGPT 复制粘贴，要么付费买 GitHub Copilot。</p>
+
+<p><strong>有没有不花钱的办法？</strong>有。</p>
+
+<p>这篇教程教你在 <strong>5 分钟内</strong>搭一套 AI Code Review 系统。你只需要：一个 LLM API Key（或者本地模型），和一个终端。</p>
+
+<h2>你需要什么</h2>
+<ul>
+  <li>Python 3.11+</li>
+  <li>一个 LLM API Key（OpenAI / Anthropic / Groq 都行）</li>
+  <li>Claude Code / Cursor / Cline 任意一个（免费版即可）</li>
+</ul>
+
+<h2>第一步：安装 MCP Code Review Server</h2>
+<p>一条命令搞定：</p>
+<pre><code>pip install mcp-code-review</code></pre>
+
+<p>这个包自带三个工具：<code>review_code</code>（审查代码片段）、<code>review_diff</code>（审查 Git 变更）、<code>review_file</code>（审查本地文件）。</p>
+
+<h2>第二步：配置到你的 AI 客户端</h2>
+
+<h3>Claude Code</h3>
+<p>在项目根目录创建 <code>CLAUDE.md</code>，添加：</p>
+<pre><code># MCP 配置
+mcp_servers:
+  - name: code-review
+    command: mcp-code-review</code></pre>
+<p>或者直接运行：</p>
+<pre><code>claude mcp add code-review -- mcp-code-review</code></pre>
+
+<h3>Cursor</h3>
+<p>在 <code>.cursor/mcp.json</code> 中添加：</p>
+<pre><code>{
+  "mcpServers": {
+    "code-review": {
+      "command": "mcp-code-review"
+    }
+  }
+}</code></pre>
+
+<h3>Cline (VS Code 插件)</h3>
+<p>在 Cline 设置中的 MCP Servers 添加：</p>
+<pre><code>{
+  "mcpServers": {
+    "code-review": {
+      "command": "mcp-code-review"
+    }
+  }
+}</code></pre>
+
+<h2>第三步：开始审查代码</h2>
+<p>配置好后，你可以在对话中直接使用：</p>
+<pre><code>"帮我把这段代码 review 一下"
+"审查一下这次 commit 的 diff"
+"检查一下 src/main.py 有没有安全问题"</code></pre>
+
+<p>AI 会自动调用 Code Review Server，返回结构化的审查结果，包含：</p>
+<ul>
+  <li>🔴 <strong>严重问题</strong> — 安全漏洞、逻辑错误</li>
+  <li>🟡 <strong>潜在风险</strong> — 性能问题、边界情况</li>
+  <li>🔵 <strong>改进建议</strong> — 代码质量、最佳实践</li>
+</ul>
+
+<h2>为什么选这个方案？</h2>
+<ul>
+  <li><strong>💰 零成本</strong> — 代码审查功能完全免费，无需订阅</li>
+  <li><strong>🔒 私有部署</strong> — 代码不会上传到第三方平台</li>
+  <li><strong>🔌 即插即用</strong> — 兼容所有 MCP 客户端</li>
+  <li><strong>🛡️ OWASP 扫描</strong> — 内置安全检测规则</li>
+</ul>
+
+<div class="cta-box">
+  <h3>🚀 立即开始使用</h3>
+  <p>MCP Code Review Server — 一次购买，永久使用</p>
+  <a class="btn" href="https://aicraft.vip">$49 获取 →</a>
+</div>
+
+<h2>进阶技巧</h2>
+<h3>结合 CI/CD</h3>
+<p>你可以把 Code Review Server 集成到 GitHub Actions 中，每次 PR 自动触发审查：</p>
+<pre><code>name: AI Code Review
+on: [pull_request]
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install mcp-code-review
+      - run: git diff main...HEAD | mcp-code-review</code></pre>
+
+<h3>自定义审查规则</h3>
+<p>通过 LLM 的系统提示词，你可以自定义审查重点——比如只关注安全漏洞，或者只检查性能问题。</p>
+
+<hr style="border-color:var(--border);margin:3rem 0">
+<p style="text-align:center;color:var(--muted);font-size:.85rem">
+  AICraft — 不花钱，你自己能干<br>
+  <a href="https://aicraft.vip">aicraft.vip</a>
+</p>
+
+</div>
+</body>
+</html>
