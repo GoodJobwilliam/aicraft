@@ -48,3 +48,19 @@ EXPLICIT CONSTRAINTS
 - $0 budget for everything
 - No Stripe/PayPal/crypto for payouts; Creem (Alipay → China bank) is the only payout channel
 - User is in China; user provides minimal setup (accounts, domain); AI handles everything else
+
+
+PROMOTION UPDATES (2026-07-25)
+-------------------------------
+### ✅ Done
+1. **awesome-mcp-servers** — PR #10918 submitted to punkpeye/awesome-mcp-servers (91k★, 13k forks). Fast-track requested via 🤖🤖🤖
+2. **Tutorial Blog** — "AI Code Review实战：5分钟搭建免费代码审查系统" published at https://aicraft.vip/blog/
+3. **Social Media Drafts** — Reddit (r/MCP, r/ClaudeAI), Product Hunt, HN Show HN posts drafted in SOCIAL_MEDIA.md
+4. **Website Footer** — Added blog link
+
+### ⏳ Pending (user action needed)
+- **Reddit** — Post to r/ClaudeAI, r/MCP, r/Python (drafts ready)
+- **Product Hunt** — Launch (draft ready)
+- **Hacker News** — Show HN post (draft ready)
+- **Smithery.ai** — Requires API key from https://smithery.ai/account/api-keys
+- **PyPI publish** — Run `uv build && uv publish` for mcp-code-review
