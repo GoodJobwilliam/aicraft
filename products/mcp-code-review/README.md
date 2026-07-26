@@ -1,5 +1,7 @@
 # MCP Code Review Server
 
+[![smithery badge](https://smithery.ai/badge/yaohuixue1/mcp-code-review)](https://smithery.ai/servers/yaohuixue1/mcp-code-review)
+
 Code review as an MCP server. Connect it to Claude Code, Cursor, or any MCP-compatible AI assistant.
 
 ## Features
