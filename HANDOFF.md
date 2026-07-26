@@ -49,7 +49,6 @@ EXPLICIT CONSTRAINTS
 - No Stripe/PayPal/crypto for payouts; Creem (Alipay → China bank) is the only payout channel
 - User is in China; user provides minimal setup (accounts, domain); AI handles everything else
 
-
 PROMOTION UPDATES (2026-07-25)
 -------------------------------
 ### ✅ Done
@@ -77,3 +76,9 @@ PROMOTION UPDATES (2026-07-25)
 ### ⏳ 待办（需要用户配合）
 - **PyPI 发布** — 注册 PyPI 账号拿 API token，然后我执行 `uv publish`
 - **Reddit / PH / HN 发帖** — 草稿在 `SOCIAL_MEDIA.md`
+
+REVENUE TARGET
+--------------
+- Monthly Goal: **$2,000/month**
+- Set: 2026-07-25
+- Strategy: Zero-cost organic promotion via MCP directories, social channels, and SEO

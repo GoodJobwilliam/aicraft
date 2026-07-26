@@ -1,0 +1,12 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+    required: []
+  commandFunction:
+    |-
+      (config) => ({
+        "command": "uv",
+        "args": ["run", "--directory", "/app", "mcp-code-review"]
+      })
