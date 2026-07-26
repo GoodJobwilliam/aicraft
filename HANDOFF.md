@@ -64,3 +64,16 @@ PROMOTION UPDATES (2026-07-25)
 - **Hacker News** — Show HN post (draft ready)
 - **Smithery.ai** — Requires API key from https://smithery.ai/account/api-keys
 - **PyPI publish** — Run `uv build && uv publish` for mcp-code-review
+
+
+## 2026-07-26 推广进展
+
+### ✅ 完成
+1. **Smithery.ai** — 已部署 yaohuixue1/mcp-code-review（状态: PENDING，扫描连接标准IO需要额外配置）
+2. **smithery.yaml** — 已添加到仓库根目录，用于后续自动部署
+3. **PyPI 包已构建** — `uv build` 成功，等待 PyPI token 发布
+4. **awesome-mcp-servers PR** — [#10918](https://github.com/punkpeye/awesome-mcp-servers/pull/10918) 已提交
+
+### ⏳ 待办（需要用户配合）
+- **PyPI 发布** — 注册 PyPI 账号拿 API token，然后我执行 `uv publish`
+- **Reddit / PH / HN 发帖** — 草稿在 `SOCIAL_MEDIA.md`
