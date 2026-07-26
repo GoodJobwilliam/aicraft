@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "label": "MCP Code Review Server",
+  "description": "AI-powered code review MCP server with OWASP security scanning, bug detection, and structured quality reports for Claude Code, Cursor, and Cline.",
+  "icon": "https://aicraft.vip/favicon.ico",
+  "type": "stdio",
+  "command": "uv",
+  "args": ["run", "--directory", "products/mcp-code-review", "mcp-code-review"],
+  "install": {
+    "pip": "aicraft-code-review",
+    "uvx": "aicraft-code-review"
+  },
+  "tools": [
+    {
+      "name": "review_code",
+      "description": "Review source code for bugs, security, performance, and quality issues.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "code": { "type": "string", "description": "The source code to review" },
+          "language": { "type": "string", "description": "Programming language" }
+        },
+        "required": ["code"]
+      }
+    },
+    {
+      "name": "review_diff",
+      "description": "Review a git diff for potential issues before merging.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "diff": { "type": "string", "description": "The git diff output to review" }
+        },
+        "required": ["diff"]
+      }
+    },
+    {
+      "name": "review_file",
+      "description": "Review a local file for code quality and security issues.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "Absolute path to the file" },
+          "language": { "type": "string", "description": "Programming language" }
+        },
+        "required": ["path"]
+      }
+    }
+  ]
+}
