@@ -16,7 +16,7 @@ Powered by the same methodology as our Code Review Agent: OWASP Top 10 scanning,
 
 ```bash
 # Add to your Claude Code MCP config:
-claude mcp add code-review -- uvx mcp-code-review
+claude mcp add code-review -- uvx aicraft-code-review
 ```
 
 Or add to your `~/.cursor/mcp.json` or `claude_desktop_config.json`:
@@ -35,7 +35,7 @@ Or add to your `~/.cursor/mcp.json` or `claude_desktop_config.json`:
 ### Via pip
 
 ```bash
-pip install mcp-code-review
+pip install aicraft-code-review
 python -m mcp_code_review
 ```
 
@@ -75,8 +75,8 @@ The AI will call the MCP server and return structured results.
 ## Development
 
 ```bash
-git clone https://github.com/GoodJobwilliam/mcp-code-review
-cd mcp-code-review
+git clone https://github.com/GoodJobwilliam/aicraft
+cd aicraft
 pip install -e ".[dev]"
 python -m mcp_code_review  # Start server
 ```
