@@ -1,0 +1,46 @@
+{
+  "version": "1",
+  "server": {
+    "name": "MCP Code Review Server",
+    "description": "AI-powered code review as an MCP server — structured reviews with OWASP security scanning. Works with Claude Code, Cursor, Cline, and any MCP client.",
+    "command": "uv",
+    "args": ["run", "--directory", "/app", "mcp-code-review"],
+    "env": {}
+  },
+  "capabilities": {
+    "tools": {
+      "review_code": {
+        "description": "Review source code for bugs, security, performance, and quality issues.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "code": {"type": "string", "description": "The source code to review"},
+            "language": {"type": "string", "description": "Programming language"}
+          },
+          "required": ["code"]
+        }
+      },
+      "review_diff": {
+        "description": "Review a git diff for potential issues before merging.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "diff": {"type": "string", "description": "The git diff output to review"}
+          },
+          "required": ["diff"]
+        }
+      },
+      "review_file": {
+        "description": "Review a local file for code quality and security issues.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {"type": "string", "description": "Absolute path to the file"},
+            "language": {"type": "string", "description": "Programming language"}
+          },
+          "required": ["path"]
+        }
+      }
+    }
+  }
+}

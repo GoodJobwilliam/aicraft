@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "aicraft-code-review"
 version = "0.1.0"
@@ -16,7 +20,13 @@ dev = [
 ]
 
 [project.scripts]
-mcp-code-review = "mcp_code_review:main"
+mcp-code-review = "mcp_code_review:run"
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.ruff]
 line-length = 100
