@@ -1,84 +1,51 @@
-HANDOFF CONTEXT
+HANDOFF CONTEXT (updated 2026-07-29)
 ===============
-
-GOAL ACHIEVED
--------------
-✅ Creem store fully approved and ready to accept payments!
-
-PROMOTION WORK COMPLETED (2026-07-25)
---------------------------------------
-1. ✅ GitHub Topics Added (12 tags)
-   - mcp, model-context-protocol, code-review, security, developer-tools, python
-   - saas-boilerplate, fastapi, starter-kit, cli-template, ai-prompts, nextjs
-   - → Auto-discovers on Glama (glama.ai) and PulseMCP (pulsemcp.com)
-
-2. ✅ Cline MCP Marketplace Submitted
-   - Issue #2106: https://github.com/cline/mcp-marketplace/issues/2106
-   - MCP Code Review Server submitted with logo, install instructions, and testing confirmation
-   - Also created llms-install.md for better AI-agent compatibility
-
-3. ✅ Product Descriptions Upgraded (both Creem + website + README)
-   - All 9 products now have benefit-driven, compelling copy
-
-4. ✅ Website & Repo Updated
-   - index.html descriptions synced with Creem
-   - README.md descriptions updated
 
 CURRENT STATE
 -------------
-- Website: https://aicraft.vip - live with Buy on Creem buttons
-- Creem: 9 products live, payout active (Alipay → China bank), $19-$99
-- GitHub: GoodJobwilliam/aicraft - topics set, MCP submissions in progress
-- MCP directories: Glama/PulseMCP auto-indexing (24-48h), Cline marketplace pending review
+- Website: https://aicraft.vip — live, has Smithery + Creem links
+- Creem: 9 products live, payout active (Alipay → China bank)
+- GitHub: GoodJobwilliam/aicraft — all changes pushed
+- Email for accounts: yaohuixue1@gmail.com
 
-CUSTOMER JOURNEY
-----------------
-Discover → GitHub/Google/MCP directories → aicraft.vip → Buy on Creem → Download ZIP → Use
+LAUNCH STATUS (2026-07-29)
+---------------------------
 
-NEXT PROMOTION OPPORTUNITIES (zero-cost)
------------------------------------------
-1. [pending] Smithery.ai deployment - requires their CLI
-2. [pending] Post to r/ClaudeAI, r/MCP, r/Python on Reddit
-3. [pending] Product Hunt launch (free tier available)
-4. [pending] Hacker News "Show HN" post
-5. [pending] Write tutorial blog posts linking to products
+| Platform | Status | Notes |
+|----------|--------|-------|
+| **Smithery.ai** | ✅ Live | [yaohuixue1/mcp-code-review](https://smithery.ai/servers/yaohuixue1/mcp-code-review) — published via MCPB bundle, quality score 52/100 |
+| **Product Hunt** | ✅ Launching | Scheduled for July 29 at 12:01 AM PDT. Images uploaded, comments active. [Edit page](https://www.producthunt.com/posts/mcp-code-review-server/edit) |
+| **Hacker News** | ✅ Posted | [Item #49058442](https://news.ycombinator.com/item?id=49058442) — Show HN blocked (new account), posted as regular link |
+| **Reddit r/mcp** | ⚠️ Removed | [Post](https://www.reddit.com/r/mcp/comments/1v76tt5/) caught by spam filter. Needs account aging or modmail appeal |
+| **Reddit r/ClaudeAI** | ❌ Blocked | New account post button disabled. Draft in SOCIAL_MEDIA.md |
+| **PitchHut** | ⏳ Pending | Signup link sent to yaohuixue1@gmail.com. Click in inbox to claim [preview page](https://pitchhut.com/project/aicraft-ai-tools-templates) |
+| **PyPI** | ✅ Done | `pip install mcp-code-review` works |
+| **awesome-mcp-servers** | ✅ PR submitted | [#10918](https://github.com/punkpeye/awesome-mcp-servers/pull/10918) |
+| **Cline MCP Marketplace** | ✅ Submitted | [Issue #2106](https://github.com/cline/mcp-marketplace/issues/2106) |
 
-EXPLICIT CONSTRAINTS
---------------------
-- $0 budget for everything
-- No Stripe/PayPal/crypto for payouts; Creem (Alipay → China bank) is the only payout channel
-- User is in China; user provides minimal setup (accounts, domain); AI handles everything else
+CODE FIXES PUSHED (2026-07-26/29)
+----------------------------------
+- `pyproject.toml` — Added `build-system`, `tool.uv.package = true`, entry point fix
+- `__init__.py` — Added `asyncio.run()` wrapper for async main
+- `__main__.py` — New file for `python -m mcp_code_review`
+- `smithery.yaml` — Updated config schema with llmApiKey
+- `.well-known/mcp/server-card.json` — Static server metadata
+- `index.html` — Added Smithery marketplace link
+- `README.md` — Added Smithery badge + Product Hunt launch badge
+- `mcp-code-review.mcpb` — MCPB bundle for Smithery deployment
 
-PROMOTION UPDATES (2026-07-25)
--------------------------------
-### ✅ Done
-1. **awesome-mcp-servers** — PR #10918 submitted to punkpeye/awesome-mcp-servers (91k★, 13k forks). Fast-track requested via 🤖🤖🤖
-2. **Tutorial Blog** — "AI Code Review实战：5分钟搭建免费代码审查系统" published at https://aicraft.vip/blog/
-3. **Social Media Drafts** — Reddit (r/MCP, r/ClaudeAI), Product Hunt, HN Show HN posts drafted in SOCIAL_MEDIA.md
-4. **Website Footer** — Added blog link
+NEXT STEPS (new conversation)
+------------------------------
+1. **PitchHut** — Check yaohuixue1@gmail.com for login link, claim project page
+2. **Product Hunt** — Check live launch stats, reply to user comments
+3. **Reddit r/mcp** — Account aged (2 days), could try reposting or modmail appeal
+4. **Reddit r/ClaudeAI** — Same account restriction, draft ready in SOCIAL_MEDIA.md
+5. **Smithery quality** — 52/100, improvements: TXT record on aicraft.vip, link from website to Smithery (done), paid plan
 
-### ⏳ Pending (user action needed)
-- **Reddit** — Post to r/ClaudeAI, r/MCP, r/Python (drafts ready)
-- **Product Hunt** — Launch (draft ready)
-- **Hacker News** — Show HN post (draft ready)
-- **Smithery.ai** — Requires API key from https://smithery.ai/account/api-keys
-- **PyPI publish** — Run `uv build && uv publish` for mcp-code-review
-
-
-## 2026-07-26 推广进展
-
-### ✅ 完成
-1. **Smithery.ai** — 已部署 yaohuixue1/mcp-code-review（状态: PENDING，扫描连接标准IO需要额外配置）
-2. **smithery.yaml** — 已添加到仓库根目录，用于后续自动部署
-3. **PyPI 包已构建** — `uv build` 成功，等待 PyPI token 发布
-4. **awesome-mcp-servers PR** — [#10918](https://github.com/punkpeye/awesome-mcp-servers/pull/10918) 已提交
-
-### ⏳ 待办（需要用户配合）
-- **PyPI 发布** — 注册 PyPI 账号拿 API token，然后我执行 `uv publish`
-- **Reddit / PH / HN 发帖** — 草稿在 `SOCIAL_MEDIA.md`
-
-REVENUE TARGET
---------------
-- Monthly Goal: **$2,000/month**
-- Set: 2026-07-25
-- Strategy: Zero-cost organic promotion via MCP directories, social channels, and SEO
+CONSTRAINTS
+-----------
+- $0 budget
+- Creem (Alipay → China bank) for payouts
+- User in China
+- Browser interactions via Playwright CDP (ws://127.0.0.1:9229)
+- Smithery API key: smry_EtMB... (in CLI config)
