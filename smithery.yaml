@@ -3,13 +3,6 @@
 
 startCommand:
   type: stdio
-  configSchema:
-    type: object
-    properties:
-      llmApiKey:
-        type: string
-        description: "Your LLM API key (OpenAI, Anthropic, or Groq)"
-    required: []
   commandFunction:
     |-
       (config) => ({
