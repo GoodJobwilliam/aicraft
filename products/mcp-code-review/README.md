@@ -30,7 +30,7 @@ Or add to your `~/.cursor/mcp.json` or `claude_desktop_config.json`:
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["mcp-code-review"]
+      "args": ["aicraft-code-review"]
     }
   }
 }

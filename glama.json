@@ -1,0 +1,37 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "name": "aicraft-code-review",
+  "title": "MCP Code Review Server",
+  "description": "Code review as an MCP server — structured code quality reviews with OWASP security scanning. Review code snippets, git diffs, and local files for bugs, security, performance, and quality issues.",
+  "maintainers": [
+    "GoodJobwilliam"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoodJobwilliam/aicraft"
+  },
+  "homepage": "https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review",
+  "transport": "stdio",
+  "command": "mcp-code-review",
+  "dockerfile": "products/mcp-code-review/Dockerfile",
+  "categories": [
+    "code-analysis",
+    "developer-tools",
+    "security"
+  ],
+  "tags": [
+    "code-review",
+    "security",
+    "owasp",
+    "static-analysis",
+    "mcp",
+    "code-quality",
+    "python"
+  ],
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false
+  }
+}

@@ -17,7 +17,7 @@
 > It integrates with Claude Code, Cursor, Cline — any MCP client. The review includes OWASP security pattern scanning out of the box.
 >
 > GitHub: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
-> Install: `pip install mcp-code-review`
+> Install: `pip install aicraft-code-review`
 >
 > Would love feedback from the community!
 
@@ -31,8 +31,8 @@
 > Just discovered this workflow and wanted to share:
 >
 > ```
-> pip install mcp-code-review
-> claude mcp add code-review -- mcp-code-review
+> pip install aicraft-code-review
+> claude mcp add code-review -- uvx aicraft-code-review
 > ```
 >
 > Now you can just ask Claude to "review this code" and it runs structural analysis + OWASP checks before responding. No more pasting into ChatGPT.
@@ -56,7 +56,7 @@
 > - 💰 One-time $49 payment, lifetime updates
 >
 > **How it works:**
-> 1. `pip install mcp-code-review`
+> 1. `pip install aicraft-code-review`
 > 2. Add to your MCP client config
 > 3. Ask your AI to review any code
 
@@ -78,6 +78,6 @@
 >
 > Tech stack: Python, MCP protocol, supports any LLM backend (OpenAI, Anthropic, Groq, local models).
 >
-> Install: pip install mcp-code-review
+> Install: pip install aicraft-code-review
 > Repo: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
 > Site: https://aicraft.vip

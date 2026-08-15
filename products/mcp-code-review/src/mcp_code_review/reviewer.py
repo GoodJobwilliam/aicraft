@@ -173,7 +173,7 @@ class CodeReviewer:
                 if func_match:
                     findings.append(Finding(
                         "info", i, f"Function '{func_match.group(1)}' should be snake_case",
-                        "style", "Rename to {func_match.group(1).lower()}"
+                        "style", f"Rename to {func_match.group(1).lower()}"
                     ))
 
                 # Class names should be PascalCase

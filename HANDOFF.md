@@ -1,30 +1,39 @@
-HANDOFF CONTEXT (updated 2026-07-29)
+HANDOFF CONTEXT (updated 2026-08-15 CST)
 ===============
 
 CURRENT STATE
 -------------
 - Website: https://aicraft.vip — live, has Smithery + Creem links
-- Creem: 9 products live, payout active (Alipay → China bank)
-- GitHub: GoodJobwilliam/aicraft — all changes pushed
+- Creem: 9 products live, payout active (Alipay → China bank); all 9 checkout links verified 200 this round
+- GitHub: GoodJobwilliam/aicraft — all changes pushed; 2 stars, 0 forks
 - Email for accounts: yaohuixue1@gmail.com
+- Browser login states (in-app browser; a new CDP tab via http://127.0.0.1:9229/json/new shares the same session): Google ✅ / Reddit ✅ / PitchHut ✅ / Product Hunt ❌ logged out / GitHub ✅ (GoodJobwilliam, tab B97CF33D7CE0A9A76CC72D29B953D4DE)
 
-LAUNCH STATUS (2026-07-29)
+LAUNCH STATUS (2026-08-15)
 ---------------------------
 
 | Platform | Status | Notes |
 |----------|--------|-------|
-| **Smithery.ai** | ✅ Live | [yaohuixue1/mcp-code-review](https://smithery.ai/servers/yaohuixue1/mcp-code-review) — published via MCPB bundle, quality score 52/100 |
-| **Product Hunt** | ✅ Launching | Scheduled for July 29 at 12:01 AM PDT. Images uploaded, comments active. [Edit page](https://www.producthunt.com/posts/mcp-code-review-server/edit) |
-| **Hacker News** | ✅ Posted | [Item #49058442](https://news.ycombinator.com/item?id=49058442) — Show HN blocked (new account), posted as regular link |
-| **Reddit r/mcp** | ⚠️ Removed | [Post](https://www.reddit.com/r/mcp/comments/1v76tt5/) caught by spam filter. Needs account aging or modmail appeal |
-| **Reddit r/ClaudeAI** | ❌ Blocked | New account post button disabled. Draft in SOCIAL_MEDIA.md |
-| **PitchHut** | ⏳ Pending | Signup link sent to yaohuixue1@gmail.com. Click in inbox to claim [preview page](https://pitchhut.com/project/aicraft-ai-tools-templates) |
-| **PyPI** | ✅ Done | `pip install mcp-code-review` works |
-| **awesome-mcp-servers** | ✅ PR submitted | [#10918](https://github.com/punkpeye/awesome-mcp-servers/pull/10918) |
-| **Cline MCP Marketplace** | ✅ Submitted | [Issue #2106](https://github.com/cline/mcp-marketplace/issues/2106) |
+| **Smithery.ai** | ✅ Live | [yaohuixue1/mcp-code-review](https://smithery.ai/servers/yaohuixue1/mcp-code-review) — quality score 52/100 unchanged, "No capabilities found" (stdio not introspected), deployed ~20 days ago |
+| **Product Hunt** | ✅ Launched | 3 upvotes, 12 followers. Still no new comments (5 total, all replied). Minor: reply to `tiffany` still starts with `@ajax_cao` — fixing requires PH login, session is logged out |
+| **Hacker News** | ✅ Posted | [Item #49058442](https://news.ycombinator.com/item?id=49058442) — 1 point, 0 comments, dormant |
+| **Reddit r/mcp** | ⚠️ Removed | TWO posts both caught by spam filter: [1v76tt5](https://www.reddit.com/r/mcp/comments/1v76tt5/) and [1v9xgip](https://www.reddit.com/r/mcp/comments/1v9xgip/). All Reddit messaging blocked server-side (verified 2026-08-15): modmail + PMs to punkpeye/lucgagan all return `You can't message that user.` — account-level restriction (20d old, 1 link karma). Posts still `removed_by_category: reddit`. ✅ 2026-08-15: asked punkpeye via PR comment [issuecomment-5302901572](https://github.com/punkpeye/awesome-mcp-servers/pull/10918#issuecomment-5302901572) to check the mod queue |
+| **Reddit r/ClaudeAI** | ⏳ Never posted | Account has only the 2 r/mcp posts — r/ClaudeAI draft in SOCIAL_MEDIA.md (now uses correct package name) |
+| **PitchHut** | ✅ Claimed | [aicraft-ai-tools-templates](https://www.pitchhut.com/project/aicraft-ai-tools-templates) — published, 47 page views, 0 pitch URL clicks, not boosting. Logged in as `cheap_copper_rodie` |
+| **PyPI** | ✅ Name consistent | `aicraft-code-review` v0.1.0 — 666 total / 153 last month / 2 last week. All repo copy now uses `aicraft-code-review` (fixed 2026-08-15) |
+| **awesome-mcp-servers** | ⏳ PR open | [#10918](https://github.com/punkpeye/awesome-mcp-servers/pull/10918) — maintainer is waiting for us to submit/claim Glama and add a Glama badge to README |
+| **Cline MCP Marketplace** | ⏳ Issue open | [#2106](https://github.com/cline/mcp-marketplace/issues/2106) — no comments since Jul 24 |
 
-CODE FIXES PUSHED (2026-07-26/29)
-----------------------------------
+RECENT CODE CHANGES (2026-07-29)
+---------------------------------
+- `products/mcp-code-review/src/mcp_code_review/reviewer.py` — **Bug fix**: f-string in style pass was showing `{func_match.group(1).lower()}` literally instead of evaluating it. Added missing `f` prefix. All 11 tests pass.
+
+DOC FIXES (2026-08-15)
+----------------------
+- PyPI naming consistency: `LAUNCHGUIDE.md`, `products/mcp-code-review/LAUNCHGUIDE.md`, `products/mcp-code-review/llms-install.md`, `products/mcp-code-review/README.md`, `SOCIAL_MEDIA.md` — all install commands now use `aicraft-code-review` (incl. uvx args)
+
+PREVIOUS CODE FIXES (2026-07-26/29)
+------------------------------------
 - `pyproject.toml` — Added `build-system`, `tool.uv.package = true`, entry point fix
 - `__init__.py` — Added `asyncio.run()` wrapper for async main
 - `__main__.py` — New file for `python -m mcp_code_review`
@@ -34,18 +43,19 @@ CODE FIXES PUSHED (2026-07-26/29)
 - `README.md` — Added Smithery badge + Product Hunt launch badge
 - `mcp-code-review.mcpb` — MCPB bundle for Smithery deployment
 
-NEXT STEPS (new conversation)
-------------------------------
-1. **PitchHut** — Check yaohuixue1@gmail.com for login link, claim project page
-2. **Product Hunt** — Check live launch stats, reply to user comments
-3. **Reddit r/mcp** — Account aged (2 days), could try reposting or modmail appeal
-4. **Reddit r/ClaudeAI** — Same account restriction, draft ready in SOCIAL_MEDIA.md
-5. **Smithery quality** — 52/100, improvements: TXT record on aicraft.vip, link from website to Smithery (done), paid plan
+NEXT STEPS
+-----------
+1. 🔴 **Glama** — Submit/claim the server on Glama, add Glama badge to README, then update awesome-mcp-servers PR #10918 (maintainer is explicitly waiting on this)
+2. 🟡 **Reddit r/mcp** — Modmail/PM all rejected by Reddit servers. ✅ PR comment sent 2026-08-15 asking punkpeye (r/mcp mod) to check mod queue; waiting for reply. Fallback if no response: delete both posts + one clean repost (no "test body")
+3. 🟢 **Product Hunt** — Fix the `@ajax_cao` mis-mention in the reply to `tiffany`. Needs PH login first (session logged out; user can sign in with Google in the in-app browser tab)
+4. ✅ **PyPI naming** — DONE 2026-08-15, all repo copy uses `aicraft-code-review`
+5. 🟢 **Cline MCP Marketplace** — No activity since Jul 24, could follow up on #2106
+6. 🟢 **Smithery quality (52/100)** — Still "No capabilities found" (stdio-only servers aren't introspected). Options unchanged: TXT domain verification on aicraft.vip, or paid remote hosting
 
 CONSTRAINTS
 -----------
 - $0 budget
 - Creem (Alipay → China bank) for payouts
-- User in China
-- Browser interactions via Playwright CDP (ws://127.0.0.1:9229)
+- User in China (Gmail/VPN may be needed for some platforms)
+- Browser via raw CDP on ws://127.0.0.1:9229 (helper script /tmp/cdp.py) — new tabs via PUT /json/new share the in-app browser session
 - Smithery API key: smry_EtMB... (in CLI config)

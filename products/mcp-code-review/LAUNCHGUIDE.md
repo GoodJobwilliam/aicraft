@@ -44,10 +44,10 @@ code-review, security, owasp, static-analysis, developer-tools, python
 ## Install Commands
 ```bash
 # Via uvx (recommended, no install)
-uvx mcp-code-review
+uvx aicraft-code-review
 
 # Via pip
-pip install mcp-code-review
+pip install aicraft-code-review
 python -m mcp_code_review
 ```
 

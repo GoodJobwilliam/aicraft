@@ -23,3 +23,6 @@ env/
 *.swp
 *.swo
 *~
+
+# Internal agent sessions
+.omo/
