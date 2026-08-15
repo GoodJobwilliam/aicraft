@@ -1,0 +1,23 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.GoodJobwilliam/aicraft-code-review",
+  "title": "MCP Code Review Server",
+  "description": "Code review as an MCP server \u2014 structured reviews with OWASP security scanning.",
+  "version": "0.1.0",
+  "websiteUrl": "https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review",
+  "repository": {
+    "url": "https://github.com/GoodJobwilliam/aicraft",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "aicraft-code-review",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
