@@ -7,14 +7,14 @@ CURRENT STATE
 - Creem: 9 products live, payout active (Alipay → China bank); all 9 checkout links verified 200 this round
 - GitHub: GoodJobwilliam/aicraft — all changes pushed; 2 stars, 0 forks
 - Email for accounts: yaohuixue1@gmail.com
-- Browser login states (in-app browser; a new CDP tab via http://127.0.0.1:9229/json/new shares the same session): Google ✅ / Reddit ✅ / PitchHut ✅ / Product Hunt ❌ logged out / GitHub ✅ (GoodJobwilliam, tab B97CF33D7CE0A9A76CC72D29B953D4DE)
+- Browser login states (in-app browser; a new CDP tab via http://127.0.0.1:9229/json/new shares the same session): Google ✅ / Reddit ✅ / PitchHut ✅ / Product Hunt ❌ logged out / GitHub ✅ (tab B97CF33D7CE0A9A76CC72D29B953D4DE) / Smithery ✅ (Google login, tab EB2A5316171BDBA656A7BF5FE7845F73) / Glama ✅ (yaohuixue1@gmail.com, tab 534F2F4A63022AC533A0DE84C48F4BB2)
 
 LAUNCH STATUS (2026-08-15)
 ---------------------------
 
 | Platform | Status | Notes |
 |----------|--------|-------|
-| **Smithery.ai** | ✅ Live | [yaohuixue1/mcp-code-review](https://smithery.ai/servers/yaohuixue1/mcp-code-review) — quality score 52/100 unchanged, "No capabilities found" (stdio not introspected), deployed ~20 days ago |
+| **Smithery.ai** | ✅ Live | [yaohuixue1/mcp-code-review](https://smithery.ai/servers/yaohuixue1/mcp-code-review) — 52/100, "No capabilities found". History shows many FAILURE releases ("Build — No values to set") from empty configSchema. 2026-08-16: simplified smithery.yaml (removed configSchema) and pushed; republish from Releases page. Note: Verification requires paid developer plan (blocked by $0 budget); TXT record + backlink needed for score anyway |
 | **Glama** | ⏳ Submitted | Submitted `aicraft-code-review` via Add Server 2026-08-15 (logged in as yaohuixue1@gmail.com). Repo pushed with `glama.json`, `products/mcp-code-review/Dockerfile`, MIT LICENSE. Awaiting Glama review/checks → then claim + quality badge for PR #10918 |
 | **Official MCP Registry** | ⏳ Pending creds | `products/mcp-code-review/registry/server.json` valid (name `io.github.GoodJobwilliam/aicraft-code-review`). Publish blocked: PyPI README must contain `mcp-name: io.github.GoodJobwilliam/aicraft-code-review` (added to repo README) → need PyPI token to release 0.1.1. mcp-publisher installed at /tmp/mcp-publisher, already logged in via GitHub |
 | **Product Hunt** | ✅ Launched | 3 upvotes, 12 followers. Still no new comments (5 total, all replied). Minor: reply to `tiffany` still starts with `@ajax_cao` — fixing requires PH login, session is logged out |
@@ -52,8 +52,15 @@ NEXT STEPS
 3. 🟡 **Official MCP Registry** — server.json ready + CLI authenticated. Needs PyPI 0.1.1 release with `mcp-name` line in README (token required from user), then `mcp-publisher publish` from products/mcp-code-review/registry
 4. 🟢 **Product Hunt** — Fix the `@ajax_cao` mis-mention in the reply to `tiffany`. Needs PH login first (session logged out; user can sign in with Google in the in-app browser tab)
 4. ✅ **PyPI naming** — DONE 2026-08-15, all repo copy uses `aicraft-code-review`
-5. 🟢 **Cline MCP Marketplace** — No activity since Jul 24, could follow up on #2106
-6. 🟢 **Smithery quality (52/100)** — Still "No capabilities found" (stdio-only servers aren't introspected). Options unchanged: TXT domain verification on aicraft.vip, or paid remote hosting
+5. 🟡 **Cline MCP Marketplace** — ✅ bumped #2106 on 2026-08-16 with corrected install commands (`aicraft-code-review`); waiting for review
+6. 🟡 **Smithery quality (52/100)** — Config fixed & pushed (smithery.yaml). Republish via Releases page → watch for SUCCESS + capabilities. Verification itself needs paid plan. TXT DNS + homepage backlink would help score; needs user DNS access
+
+USER ACTIONS NEEDED (2026-08-16)
+----------------------------------
+1. PyPI token — to publish `aicraft-code-review` 0.1.1 (README now has `mcp-name` line) so official MCP Registry publish passes ownership validation
+2. Product Hunt login (Google) — to fix the `@ajax_cao` mis-mention reply; session logged out
+3. aicraft.vip DNS access — Smithery TXT verification record + homepage backlink (verification also needs paid plan)
+4. GitHub PAT with workflow scope — to push `.github/workflows/ci.yml` (local file ready; current OAuth creds lack scope)
 
 CONSTRAINTS
 -----------
