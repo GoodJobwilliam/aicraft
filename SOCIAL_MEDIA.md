@@ -81,3 +81,10 @@
 > Install: pip install aicraft-code-review
 > Repo: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
 > Site: https://aicraft.vip
+
+## Dev.to — Published 2026-08-16
+
+> **URL:** https://dev.to/goodjobwilliam/i-built-an-mcp-server-that-reviews-code-locally-no-saas-no-uploads-568a
+> **Title:** I Built an MCP Server That Reviews Code Locally — No SaaS, No Uploads
+> **Tags:** #mcp #opensource #python
+> **Account:** goodjobwilliam (GitHub OAuth)
