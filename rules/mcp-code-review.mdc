@@ -1,0 +1,54 @@
+---
+description: How to use the MCP Code Review Server for AI-assisted code review
+globs: **/*
+alwaysApply: false
+---
+
+# MCP Code Review Server
+
+Professional-grade code review for your AI coding assistant. Runs entirely locally — no SaaS fees, no code uploads.
+
+## Install
+
+The server is available as `aicraft-code-review` on PyPI and connects via stdio:
+
+```json
+{
+  "mcpServers": {
+    "mcp-code-review": {
+      "command": "uvx",
+      "args": ["aicraft-code-review"]
+    }
+  }
+}
+```
+
+Or install with pip/uv:
+
+```bash
+pip install aicraft-code-review
+# or
+uv tool install aicraft-code-review
+```
+
+Then add the server to your MCP client (Claude Code, Cursor, Cline, etc.).
+
+## Review workflow
+
+1. Run `review_code` against a git range (e.g. `HEAD~3..HEAD`) or two branches.
+2. Filter findings by author with `--author` to focus on your own changes.
+3. Open the generated HTML report — findings include severity ratings, file locations, and actionable fixes.
+
+## What it checks
+
+- OWASP security scanning (injection, auth, crypto misuse)
+- Bug and vulnerability detection
+- N+1 query analysis
+- Performance profiling (hotspots, I/O, memory)
+- Style and complexity issues (configurable rules)
+
+## Tips
+
+- Review small diffs frequently; the report is easiest to consume per-PR.
+- Treat severity ratings as a queue: Critical/High first, then Medium/Low.
+- The report is fully local — safe for proprietary code.
