@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aicraft-code-review"
-version = "0.1.0"
+version = "0.1.1"
 description = "Code review as an MCP server — structured reviews with OWASP security scanning"
 requires-python = ">=3.11"
 dependencies = [

@@ -2,7 +2,7 @@
 
 All notable changes to the MCP Code Review Server are documented here.
 
-## Unreleased
+## 0.1.1 — 2026-08-16
 
 ### Added
 
