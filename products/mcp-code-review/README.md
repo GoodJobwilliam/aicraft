@@ -47,6 +47,22 @@ pip install aicraft-code-review
 python -m mcp_code_review
 ```
 
+### CLI mode (no MCP client needed)
+
+```bash
+# Review a local file (discovers .mcp-code-review.yaml from the file's directory)
+mcp-code-review review-file path/to/file.py
+
+# Review a git diff
+git diff | mcp-code-review review-diff
+mcp-code-review review-diff --git
+
+# Review a snippet
+mcp-code-review review-code "import os; os.system('ls')"
+```
+
+Exit codes are CI-friendly: `0` clean, `1` high/medium issues, `2` critical issues.
+
 ## Usage Examples
 
 Once connected, ask your AI assistant:

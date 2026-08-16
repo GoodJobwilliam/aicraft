@@ -6,6 +6,8 @@ All notable changes to the MCP Code Review Server are documented here.
 
 ### Added
 
+- CLI mode: `mcp-code-review review-file PATH` / `review-diff` / `review-code` run reviews directly from the terminal (no MCP client needed), with CI-friendly exit codes (0/1/2).
+
 - Custom rules & team profiles: commit a `.mcp-code-review.yaml` (or `.yml` / `.json`) to your repo to define custom regex rules, disable checks, override severities, and set a minimum severity threshold.
 - Team-shared configs via the `MCP_CODE_REVIEW_CONFIG` environment variable.
 - Per-repo config discovery: `review_file` looks for a config file from the reviewed file's directory upward.
