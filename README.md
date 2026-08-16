@@ -27,6 +27,8 @@ Production-ready developer tools, code templates, and AI prompt packs. Built by 
 |---------|-------|-------------|
 | [MCP Code Review Server](./products/mcp-code-review/) | $49 | AI code review in your editor. OWASP scanning, N+1 detection, race analysis, severity ratings. Install in 10 seconds. |
 
+Custom rules & team profiles: commit a `.mcp-code-review.yaml` to your repo for shared regex rules, disabled checks, severity overrides, and per-repo thresholds.
+
 ### AgentPowers Skills (Free)
 
 | Skill | Description |
@@ -67,4 +69,3 @@ Each product is licensed individually. See product READMEs for details.
 ---
 
 Built by [GoodJobWilliam](https://github.com/GoodJobwilliam)
-

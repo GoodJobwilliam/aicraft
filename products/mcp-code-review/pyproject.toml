@@ -19,6 +19,10 @@ dev = [
     "ruff>=0.9",
 ]
 
+yaml = [
+    "PyYAML>=6.0",
+]
+
 [project.scripts]
 mcp-code-review = "mcp_code_review:run"
 

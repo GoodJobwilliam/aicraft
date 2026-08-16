@@ -1,8 +1,13 @@
 """
 Core review logic — 4-pass analysis: Security → Performance → Quality → Style.
+
+Every finding carries a stable `check` id so that a ReviewConfig can
+disable it, override its severity, or filter by minimum severity.
 """
 import re
 from typing import NamedTuple
+
+from mcp_code_review.config import SEVERITY_ORDER, ReviewConfig, load_config
 
 
 class Finding(NamedTuple):
@@ -11,13 +16,18 @@ class Finding(NamedTuple):
     issue: str
     category: str  # security, performance, quality, style
     fix: str
+    check: str = ""  # stable check id for config filtering/overrides
 
 
 class CodeReviewer:
     """
     Multi-pass code reviewer.
-    Runs Security, Performance, Quality, and Style passes.
+    Runs Security, Performance, Quality, and Style passes, then applies
+    the active ReviewConfig (custom rules, disabled checks, thresholds).
     """
+
+    def __init__(self, config: ReviewConfig | None = None) -> None:
+        self.config = config if config is not None else load_config()
 
     def review_code(self, code: str, language: str = "auto") -> str:
         """Review source code snippet."""
@@ -29,6 +39,7 @@ class CodeReviewer:
         findings.extend(self._quality_pass(code, lines))
         findings.extend(self._style_pass(code, lines, language))
 
+        findings = self._apply_config(findings, code)
         return self._format_report(findings)
 
     def review_diff(self, diff: str) -> str:
@@ -42,31 +53,75 @@ class CodeReviewer:
         code = "\n".join(added_lines)
         return self.review_code(code, "auto")
 
+    # ── Config application ────────────────────────────────────────
+
+    def _apply_config(self, findings: list[Finding], code: str) -> list[Finding]:
+        """Apply ReviewConfig: custom rules, disabled checks, overrides, thresholds."""
+        config = self.config
+
+        # Custom rules first so they participate in filtering/overrides too.
+        for rule in config.custom_rules:
+            try:
+                regex = re.compile(rule.pattern)
+            except re.error as exc:
+                findings.append(Finding(
+                    "info", 1,
+                    f"Invalid regex in custom rule '{rule.name}': {exc}",
+                    "quality",
+                    "Fix the rule pattern in your config",
+                    rule.name,
+                ))
+                continue
+            for match in regex.finditer(code):
+                line_num = code[:match.start()].count("\n") + 1
+                findings.append(Finding(
+                    rule.severity, line_num, rule.issue,
+                    rule.category, rule.fix, rule.name,
+                ))
+
+        disabled = set(config.disabled_checks)
+        applied: list[Finding] = []
+        for finding in findings:
+            if finding.check and finding.check in disabled:
+                continue
+            severity = finding.severity
+            if finding.check and finding.check in config.severity_overrides:
+                severity = config.severity_overrides[finding.check]
+            if severity != finding.severity:
+                finding = finding._replace(severity=severity)
+            applied.append(finding)
+
+        if config.min_severity is not None:
+            cutoff = SEVERITY_ORDER[config.min_severity]
+            applied = [f for f in applied if SEVERITY_ORDER.get(f.severity, 99) <= cutoff]
+
+        return applied
+
     # ── Pass 1: Security ──────────────────────────────────────────
 
     def _security_pass(self, code: str, lines: list[str]) -> list[Finding]:
         findings = []
 
         patterns = [
-            (r"(?i)exec\(|eval\(|compile\(|__import__\(", "Use of dynamic code execution", 
-             "Replace with safer alternatives (ast.literal_eval, subprocess with args)"),
+            (r"(?i)exec\(|eval\(|compile\(|__import__\(", "Use of dynamic code execution",
+             "Replace with safer alternatives (ast.literal_eval, subprocess with args)", "dynamic_exec"),
             (r"(?i)(cursor\.execute|connection\.execute|session\.execute)\s*\(\s*f['\"]",
-             "SQL injection via f-string", "Use parameterized queries: cursor.execute(sql, params)"),
+             "SQL injection via f-string", "Use parameterized queries: cursor.execute(sql, params)", "sql_injection"),
             (r"(?i)pickle\.loads?\(|yaml\.load\s*\(|marshal\.loads?\(",
-             "Insecure deserialization", "Use safe alternatives (json, or yaml.safe_load)"),
+             "Insecure deserialization", "Use safe alternatives (json, or yaml.safe_load)", "deserialization"),
             (r"(?i)os\.system\(|subprocess\.Popen\(|subprocess\.call\(|child_process\.exec\b",
-             "Command injection risk", "Use subprocess.run with args list, not shell=True"),
-            (r"(?i)input\s*\(\s*\)", "Bare input() in Python 2", "Use raw_input() or validate input"),
+             "Command injection risk", "Use subprocess.run with args list, not shell=True", "command_injection"),
+            (r"(?i)input\s*\(\s*\)", "Bare input() in Python 2", "Use raw_input() or validate input", "input_py2"),
             (r"(?i)\.innerHTML\s*=|\.outerHTML\s*=|dangerouslySetInnerHTML",
-             "XSS via innerHTML", "Use textContent or DOMPurify for sanitization"),
+             "XSS via innerHTML", "Use textContent or DOMPurify for sanitization", "xss_innerhtml"),
             (r"(?i)secret|api[_-]?key|password|token\s*=\s*['\"][^'\"]+['\"]",
-             "Hardcoded credential/secret", "Move to environment variable or secret manager"),
+             "Hardcoded credential/secret", "Move to environment variable or secret manager", "hardcoded_secret"),
         ]
 
-        for pattern, issue, fix in patterns:
+        for pattern, issue, fix, check in patterns:
             for match in re.finditer(pattern, code):
                 line_num = code[:match.start()].count("\n") + 1
-                findings.append(Finding("high", line_num, issue, "security", fix))
+                findings.append(Finding("high", line_num, issue, "security", fix, check))
 
         return findings
 
@@ -74,7 +129,7 @@ class CodeReviewer:
 
     def _performance_pass(self, code: str, lines: list[str]) -> list[Finding]:
         findings = []
-        
+
         # N+1 query patterns (loop with DB query)
         for i, line in enumerate(lines, 1):
             stripped = line.strip()
@@ -86,7 +141,8 @@ class CodeReviewer:
                     if any(db in next_line for db in [".query(", ".execute(", ".find(", ".filter("]):
                         findings.append(Finding(
                             "high", i, "N+1 query: DB query inside loop",
-                            "performance", "Use batch query or eager loading (select_related / includes)"
+                            "performance", "Use batch query or eager loading (select_related / includes)",
+                            "nplus1",
                         ))
                         break
 
@@ -101,7 +157,8 @@ class CodeReviewer:
                 if "break" not in code[append_pattern.start():append_pattern.start() + 200] and "limit" not in code.lower():
                     findings.append(Finding(
                         "medium", line_num, f"Unbounded list '{var_name}' growth",
-                        "performance", "Add size limit or use pagination/yield"
+                        "performance", "Add size limit or use pagination/yield",
+                        "unbounded_list",
                     ))
 
         return findings
@@ -118,7 +175,8 @@ class CodeReviewer:
             if re.match(r"except\s*:", stripped):
                 findings.append(Finding(
                     "high", i, "Bare except clause catches all exceptions",
-                    "quality", "Use specific exception types (except ValueError:)"
+                    "quality", "Use specific exception types (except ValueError:)",
+                    "bare_except",
                 ))
 
             # Pass in except block
@@ -128,7 +186,8 @@ class CodeReviewer:
                     if lines[j - 1].strip() == "pass":
                         findings.append(Finding(
                             "medium", i, "Empty except block swallows errors",
-                            "quality", "At minimum log the exception: logger.exception()"
+                            "quality", "At minimum log the exception: logger.exception()",
+                            "empty_except",
                         ))
                         break
 
@@ -136,7 +195,8 @@ class CodeReviewer:
             if re.match(r"\s*#\s*(TODO|FIXME|HACK|XXX)", stripped):
                 findings.append(Finding(
                     "info", i, f"Unresolved comment: {stripped.strip()}",
-                    "quality", "Address before merging or create a tracking issue"
+                    "quality", "Address before merging or create a tracking issue",
+                    "todo_comment",
                 ))
 
         # Missing return type annotation (Python)
@@ -146,7 +206,8 @@ class CodeReviewer:
             if "->" not in func_def:
                 findings.append(Finding(
                     "info", line_num, "Missing return type annotation",
-                    "quality", "Add -> ReturnType to function signature"
+                    "quality", "Add -> ReturnType to function signature",
+                    "missing_return_type",
                 ))
 
         return findings
@@ -160,8 +221,9 @@ class CodeReviewer:
         for i, line in enumerate(lines, 1):
             if len(line.rstrip("\n")) > 100 and not line.strip().startswith("#"):
                 findings.append(Finding(
-                    "info", i, f"Line too long ({len(line.rstrip())} chars)", 
-                    "style", "Break into multiple lines (<100 chars recommended)"
+                    "info", i, f"Line too long ({len(line.rstrip())} chars)",
+                    "style", "Break into multiple lines (<100 chars recommended)",
+                    "long_lines",
                 ))
 
         # Check naming conventions for Python
@@ -173,7 +235,8 @@ class CodeReviewer:
                 if func_match:
                     findings.append(Finding(
                         "info", i, f"Function '{func_match.group(1)}' should be snake_case",
-                        "style", f"Rename to {func_match.group(1).lower()}"
+                        "style", f"Rename to {func_match.group(1).lower()}",
+                        "snake_case",
                     ))
 
                 # Class names should be PascalCase
@@ -181,7 +244,8 @@ class CodeReviewer:
                 if class_match:
                     findings.append(Finding(
                         "info", i, f"Class '{class_match.group(1)}' should be PascalCase",
-                        "style", "Capitalize first letter of class name"
+                        "style", "Capitalize first letter of class name",
+                        "pascal_case",
                     ))
 
         return findings
@@ -192,8 +256,7 @@ class CodeReviewer:
         if not findings:
             return "## Review Results\n\nNo issues found. Code looks clean! ✅"
 
-        severity_order = {"critical": 0, "high": 1, "medium": 2, "info": 3}
-        findings.sort(key=lambda f: (severity_order.get(f.severity, 99), f.line))
+        findings.sort(key=lambda f: (SEVERITY_ORDER.get(f.severity, 99), f.line))
 
         sections = {
             "critical": [],
@@ -208,13 +271,11 @@ class CodeReviewer:
         sev_labels = {"critical": "Critical", "high": "High", "medium": "Medium", "info": "Info"}
 
         output = ["## Review Results\n"]
-        has_any = False
 
         for severity in ["critical", "high", "medium", "info"]:
             items = sections[severity]
             if not items:
                 continue
-            has_any = True
             icon = sev_icons[severity]
             label = sev_labels[severity]
             output.append(f"### {icon} {label} ({len(items)})")
@@ -228,10 +289,7 @@ class CodeReviewer:
         output.append("### Summary")
         for severity in ["critical", "high", "medium", "info"]:
             count = len(sections[severity])
-            if count > 0:
-                output.append(f"- **{sev_labels[severity]}**: {count}")
-            else:
-                output.append(f"- **{sev_labels[severity]}**: 0")
+            output.append(f"- **{sev_labels[severity]}**: {count}")
 
         total = len(findings)
         if total > 0:

@@ -6,17 +6,22 @@ Exposes tools:
   - review_diff: Review a git diff
   - review_file: Review a local file
 """
-from typing import Optional
 from pathlib import Path
 
-import mcp.types as types
+from mcp import types
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 
+from mcp_code_review.config import discover_config_path, load_config
 from mcp_code_review.reviewer import CodeReviewer
 
 app = Server("code-review")
-reviewer = CodeReviewer()
+
+
+def _reviewer_for(start_dir: Path | None = None) -> CodeReviewer:
+    """Create a reviewer with config discovered from start_dir (or server cwd)."""
+    config_path = discover_config_path(start_dir)
+    return CodeReviewer(load_config(config_path))
 
 
 @app.list_tools()
@@ -66,11 +71,11 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
         case "review_code":
             code = arguments["code"]
             language = arguments.get("language", "auto")
-            result = reviewer.review_code(code, language)
+            result = _reviewer_for().review_code(code, language)
 
         case "review_diff":
             diff = arguments["diff"]
-            result = reviewer.review_diff(diff)
+            result = _reviewer_for().review_diff(diff)
 
         case "review_file":
             path = Path(arguments["path"])
@@ -78,7 +83,7 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
                 return [types.TextContent(type="text", text=f"Error: File not found: {path}")]
             language = arguments.get("language", _detect_language(path))
             code = path.read_text(encoding="utf-8")
-            result = reviewer.review_code(code, language)
+            result = _reviewer_for(path.parent).review_code(code, language)
 
         case _:
             return [types.TextContent(type="text", text=f"Unknown tool: {name}")]

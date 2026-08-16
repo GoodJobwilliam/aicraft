@@ -78,6 +78,59 @@ The AI will call the MCP server and return structured results.
 - **Info**: 0
 ```
 
+## Custom Rules & Team Profiles
+
+Ship your team's code standards as a config file — no code changes needed.
+
+- **`.mcp-code-review.yaml` / `.yml` / `.json`** — auto-discovered from the reviewed file's directory upward; for snippets and diffs it is looked up from the server's working directory
+- **`MCP_CODE_REVIEW_CONFIG` env var** — point every teammate at a shared config committed to your repo (team-shared rule profiles)
+- **Custom regex rules** with severity, message, and suggested fix
+- **`disabled_checks`** — silence noisy checks
+- **`severity_overrides`** — bump or lower any check (e.g. make hardcoded secrets blocking)
+- **`min_severity`** — only report findings at or above a threshold (per-repo noise control)
+
+### Example `.mcp-code-review.yaml`
+
+```yaml
+disabled_checks:
+  - todo_comment
+
+severity_overrides:
+  hardcoded_secret: critical
+
+min_severity: medium
+
+custom_rules:
+  - name: no-console-log
+    pattern: "console\\.log\\("
+    severity: high
+    category: quality
+    issue: Console logging left in production code
+    fix: Use a structured logger instead
+```
+
+### Team setup
+
+Commit the file to a shared repo, then wire every teammate's MCP client to it:
+
+```json
+{
+  "mcpServers": {
+    "code-review": {
+      "command": "uvx",
+      "args": ["aicraft-code-review"],
+      "env": {
+        "MCP_CODE_REVIEW_CONFIG": "/path/to/team-repo/.mcp-code-review.yaml"
+      }
+    }
+  }
+}
+```
+
+Available check ids: `dynamic_exec`, `sql_injection`, `deserialization`, `command_injection`, `input_py2`, `xss_innerhtml`, `hardcoded_secret`, `nplus1`, `unbounded_list`, `bare_except`, `empty_except`, `todo_comment`, `missing_return_type`, `long_lines`, `snake_case`, `pascal_case`.
+
+YAML configs need `pip install "aicraft-code-review[yaml]"`; JSON configs work with no extra dependencies.
+
 ## Development
 
 ```bash
