@@ -19,6 +19,7 @@ LAUNCH STATUS (2026-08-16)
 | **mcpservers.org** | ✅ Live | APPROVED 2026-08-16: [goodjobwilliam/aicraft](https://mcpservers.org/servers/goodjobwilliam/aicraft). Listed in READMEs for backlinks |
 | **cursor.directory** | ✅ Live | Plugin [mcp-code-review-server](https://cursor.directory/plugins/mcp-code-review-server) public with 1 Rule + 1 MCP Server + "Add to Cursor" button |
 | **PyPI** | ✅ Live 0.1.0 | `aicraft-code-review` v0.1.0 — 666 total / 153 last month / 2 last week. Custom-rules feature pushed to repo but NOT yet released (needs PyPI token for 0.1.1) |
+| **PyPI** | 🔧 0.1.1 ready to publish | `aicraft-code-review` v0.1.0 live (666 total / 153 last month / 2 last week). v0.1.1 fully staged 2026-08-16: pyproject/registry/CHANGELOG bumped (commit a79a6fb), dist built (`uv build`), fresh-venv install verified (mcp resolves 1.29.0, CLI runs). Only remaining: PyPI API token — browser tab 9BBC8AAD open at pypi.org/account/login/ waiting for user login |
 | **Product Hunt** | ✅ Launched | 3 upvotes, 12 followers, 7 comments (5 external all replied + 2 new maker replies). Verified: tiffany's username IS `@ajax_cao`, so the mention was correct all along — no fix needed. 2026-08-16: replied to tiffany (comment 5789058) and energypro (comment 5789059) announcing the custom-rules feature |
 | **Product Hunt** | ✅ Launched | 3 upvotes, 12 followers, 7 comments (5 external all replied + 2 new maker replies). Verified: tiffany's username IS `@ajax_cao`, so the mention was correct all along — no fix needed. 2026-08-16: replied to tiffany (comment 5789058) and energypro (comment 5789059) announcing the custom-rules feature. Forum thread approved & visible 2026-08-16 (1 new notification in PH inbox) |
 | **Dev.to** | ✅ Published | Article 1: [no-SaaS code review](https://dev.to/goodjobwilliam/i-built-an-mcp-server-that-reviews-code-locally-no-saas-no-uploads-568a) + Article 2: [team-shared rules](https://dev.to/goodjobwilliam/team-shared-code-review-rules-for-your-mcp-ai-assistant-542j) (2026-08-16, via API key `GEdbXASUJqszsj4fBTX7nvK9`). Writing Debut badge earned |
@@ -35,6 +36,7 @@ LAUNCH STATUS (2026-08-16)
 | **Indie Hackers** | ✅ Live + approved | [mcp-code-review](https://www.indiehackers.com/product/mcp-code-review) — approved 2026-08-16 (all 4 checklist gates green). Post "custom rules & team profiles" live with 1 like. Revenue self-reported $0/mo |
 | **Docker MCP Registry** | ⏳ PR open | [#4699](https://github.com/docker/mcp-registry/pull/4699) — official Docker catalog entry (image mcp/mcp-code-review, pinned commit 2940d6e). Root Dockerfile + LICENSE + SECURITY.md added to aicraft repo |
 | **PulseMCP** | ⏳ Paused | Submissions paused until mid-August 2026; will auto-pick-up servers from the Official MCP Registry once resumed. Re-check weekly |
+| **PulseMCP** | ⏳ Paused | Submissions paused until mid-August 2026; will auto-pick-up servers from the Official MCP Registry once resumed. Re-checked 2026-08-16: still paused (same notice). Re-check weekly |
 
 RECENT CODE CHANGES (2026-08-16)
 ---------------------------------
@@ -70,6 +72,7 @@ TOOLING NOTES
 USER ACTIONS NEEDED (2026-08-16)
 ----------------------------------
 1. **PyPI token** — release `aicraft-code-review` 0.1.1 (custom rules + team profiles feature is in the repo). Unlocks: official MCP Registry publish via mcp-publisher (from products/mcp-code-review/registry)
+1. **PyPI 登录（只需登录，无需密码给我）** — 浏览器已打开 pypi.org/account/login/（标签 9BBC8AAD），用户登录后我在设置页创建 API token，随后 `uvx twine upload -u __token__ -p <token> dist/aicraft_code_review-0.1.1*` → `mcp-publisher publish`（官方 registry）。0.1.1 已全部就绪: 版本号已 bump (a79a6fb)、dist 已构建、全新 venv 安装验证通过（mcp 1.29.0、CLI 正常运行）
    - ⚠️ 现在更紧迫：PyPI 0.1.0 的 `mcp>=1.6` 无上限，mcp 2.0.0 已发布并会导致 CLI 导入崩溃 — 新装用户全是坏的，尽快发 0.1.1（pyproject 已修好）
 2. **GitHub PAT with workflow scope** — to push `.github/workflows/ci.yml` (local file ready; current OAuth creds lack scope)
 3. Reddit — waiting on punkpeye mod-queue check; fallback needs a fresh account or aged karma
@@ -89,6 +92,7 @@ NEXT STEPS
 7. Next Dev.to article: Glama badge + registry listings roundup once Glama approves
 8. PulseMCP — recheck after mid-August; if resumed and official registry publish done, confirm auto-listing
 9. Patrol log 2026-08-16 (all checked, no new actionables): Gmail 无新回复; Creem $0/MRR $0; PH 12 followers 无新互动; Glama 未收录、工单待审; awesome-mcp #10918 未动; MCPFind #139 open (Vercel bot 注释); Cline mcp-marketplace #2106 未动; HN 1 point; Dev.to 两文 0 互动; PyPI 162/月; GitHub 2 stars
+10. Patrol log 2026-08-16 (round 2): PH 论坛帖已批准可见（1 view），已发 quick-start 评论（单引号 YAML 示例，发布成功）; Creem 仍 0 销售 MRR $0; Docker PR #4699 open/mergeable 无评论无 CI; awesome #10918 4 条评论（无维护者新回复）; MCPFind #139 open; Cline #2106 open; Glama 工单仍只有 Fin 机器人回复; PulseMCP 仍暂停; IH 帖 1 like 0 评论; aicraft.vip 与 Smithery 均 200。本轮提交: 6e199de (HANDOFF), a79a6fb (0.1.1 version bump)
 
 CONSTRAINTS
 -----------
