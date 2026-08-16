@@ -107,6 +107,19 @@
         .payment-info .badges { margin-top: 16px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
         .payment-info .badge { background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; }
 
+        /* Social proof */
+        .social-proof { background: white; padding: 24px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .social-proof .stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; text-align: center; }
+        .social-proof .stat strong { display: block; font-size: 1.5rem; color: #0f0f23; }
+        .social-proof .stat span { color: #666; font-size: 0.85rem; }
+        .social-proof a { color: #00d4aa; text-decoration: none; }
+
+        /* FAQ */
+        .faq-section { padding: 64px 0; background: #fff; }
+        .faq-item { max-width: 720px; margin: 0 auto 20px; padding: 20px 24px; border: 1px solid #eee; border-radius: 10px; background: #fafafa; }
+        .faq-item h3 { font-size: 1rem; margin-bottom: 8px; }
+        .faq-item p { color: #555; font-size: 0.9rem; line-height: 1.6; }
+
         /* Footer */
         footer { background: #0f0f23; color: rgba(255,255,255,0.7); padding: 40px 0 32px; font-size: 0.9rem; }
         footer .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 24px; }
@@ -269,7 +282,8 @@
         <div class="product-card">
             <span class="category-tag">MCP</span>
             <h3>MCP Code Review Server</h3>
-            <p>AI code review in your editor. Connect to Claude Code or Cursor. OWASP scanning, N+1 detection, race analysis, severity ratings. Custom rules & team profiles via <code>.mcp-code-review.yaml</code>. Install in 10 seconds.</p>
+<p>AI code review in your editor. Connect to Claude Code or Cursor. OWASP scanning, N+1 detection, race analysis, severity ratings. Custom rules & team profiles via <code>.mcp-code-review.yaml</code>. Install in 10 seconds.</p>
+<p style="font-size:0.8rem;color:#888;margin-top:8px;">Open-source (MIT) & free to install via PyPI — the $49 license funds development and unlocks lifetime updates + direct email support.</p>
             <div class="price-row">
                 <span class="price"><span class="currency">$</span>49</span>
                 <a href="https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0" class="buy-btn" target="_blank" rel="noopener">Buy on Creem →</a>
@@ -277,6 +291,19 @@
                 <a href="https://mcpservers.org/servers/goodjobwilliam/aicraft" class="free-btn" target="_blank" rel="noopener" style="margin-left:8px;">mcpservers.org →</a>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Social Proof -->
+<section class="social-proof">
+    <div class="container">
+        <div class="stats">
+            <div class="stat"><strong>600+</strong><span>PyPI downloads</span></div>
+            <div class="stat"><strong>3</strong><span>MCP marketplaces</span></div>
+            <div class="stat"><strong>2</strong><span>Dev.to articles</span></div>
+            <div class="stat"><strong>9</strong><span>Products live</span></div>
+        </div>
+        <p style="text-align:center;color:#666;font-size:0.85rem;margin-top:12px;">Listed on <a href="https://smithery.ai/servers/yaohuixue1/mcp-code-review">Smithery</a> · <a href="https://mcpservers.org/servers/goodjobwilliam/aicraft">mcpservers.org</a> · <a href="https://cursor.directory/plugins/mcp-code-review-server">cursor.directory</a> · <a href="https://www.producthunt.com/products/mcp-code-review-server?launch=mcp-code-review-server">Product Hunt</a></p>
     </div>
 </section>
 
@@ -304,6 +331,33 @@
                 <p>Auto-generates PR descriptions from git history and diff. Saves time on every pull request.</p>
                 <a href="https://agentpowers.ai/skills/pr-description-generator" class="free-btn" target="_blank" rel="noopener">Install from AgentPowers →</a>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="container">
+        <h2 style="text-align:center;">FAQ</h2>
+        <div class="faq-item">
+            <h3>How do I receive my purchase?</h3>
+            <p>Digital goods are delivered instantly after checkout via Creem (our merchant of record). Your order confirmation email contains the download link.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is the MCP Code Review Server free?</h3>
+            <p>Yes — the server is open-source (MIT) and free to install from PyPI. The $49 license funds development and unlocks lifetime updates plus direct email support.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>Visa, Mastercard, Amex, PayPal, Apple Pay, and Google Pay — all processed securely by Creem.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is your refund policy?</h3>
+            <p>Digital products are non-refundable. If a product is defective (broken code, missing files), we fix it or provide a replacement within 14 days.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do updates cost extra?</h3>
+            <p>No. Every product includes lifetime updates — pay once, get all future improvements.</p>
         </div>
     </div>
 </section>
