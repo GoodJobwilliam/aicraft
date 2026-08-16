@@ -99,6 +99,7 @@ NEXT STEPS
 9. Patrol log 2026-08-16 (all checked, no new actionables): Gmail 无新回复; Creem $0/MRR $0; PH 12 followers 无新互动; Glama 未收录、工单待审; awesome-mcp #10918 未动; MCPFind #139 open (Vercel bot 注释); Cline mcp-marketplace #2106 未动; HN 1 point; Dev.to 两文 0 互动; PyPI 162/月; GitHub 2 stars
 10. Patrol log 2026-08-16 (round 2): PH 论坛帖已批准可见（1 view），已发 quick-start 评论（单引号 YAML 示例，发布成功）; Creem 仍 0 销售 MRR $0; Docker PR #4699 open/mergeable 无评论无 CI; awesome #10918 4 条评论（无维护者新回复）; MCPFind #139 open; Cline #2106 open; Glama 工单仍只有 Fin 机器人回复; PulseMCP 仍暂停; IH 帖 1 like 0 评论; aicraft.vip 与 Smithery 均 200。本轮提交: 6e199de (HANDOFF), a79a6fb (0.1.1 version bump)
 11. Patrol log 2026-08-16 (round 3): Dev.to 文章 3 发布 (4408280) + IH 交叉发布成功; 官网加 PH 真实评论 + 650+ 数字 (1fac689); Glama Dockerfile 改 pinned commit 安装 (8dca404); Reddit 第一条 karma 评论已发（r/mcp 1 point），第二条被新号频率限制/API 403 挡住，下次轮再发; Docker PR 仍无 check_runs; PH/Creem/Gmail 无新动态; PyPI 用户仍未登录。本轮提交: 1fac689, 8dca404, 5038bc5
+12. Patrol log 2026-08-16 (round 4): 给 Frank (frank@glama.ai) 回复了工单邮件（告知 Dockerfile 已修复 + GitHub 连接 bug 仍存在，请求加速审核）; 官网新增真实示例报告区 (40243df，已上线); Reddit 第二条 karma 评论发布成功（testing 帖）— 关键发现: 老版 reddit 提交后有隐藏冷却 (14 秒)，等待后再点 save 即可; Glama 仍未收录; awesome/Docker/MCPFind/Cline 均无变化; PyPI 仍未登录。本轮提交: 40243df
 
 CONSTRAINTS
 -----------
