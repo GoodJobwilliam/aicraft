@@ -295,6 +295,24 @@
 </section>
 
 <!-- Social Proof -->
+<!-- Sample Report -->
+<section id="sample-report" class="container" style="padding:64px 0;">
+    <h2 style="text-align:center;">Real output from <code>mcp-code-review</code></h2>
+    <p class="subtitle">Run locally against your own code — nothing is uploaded, ever.</p>
+    <div style="max-width:760px;margin:0 auto;background:#0f172a;border-radius:12px;padding:24px 28px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.82rem;line-height:1.55;color:#e2e8f0;overflow-x:auto;">
+        <div style="color:#94a3b8;margin-bottom:10px;">$ mcp-code-review review_file main.py</div>
+        <div style="color:#fbbf24;">## Review Results</div>
+        <div style="color:#f87171;margin-top:8px;">### High (3)</div>
+        <div>| Line | Issue | Category | Fix |</div>
+        <div>| 4 | Command injection risk | security | Use subprocess.run with args list |</div>
+        <div>| 9 | N+1 query: DB query inside loop | performance | Batch query or eager loading |</div>
+        <div>| 10 | SQL injection via f-string | security | Use parameterized queries |</div>
+        <div style="color:#fbbf24;margin-top:8px;">### Medium (1) — unbounded list growth · fix: pagination/yield</div>
+        <div style="color:#34d399;margin-top:8px;">### Info (2) — missing return type annotations</div>
+        <div style="margin-top:10px;color:#e2e8f0;"><strong>Verdict: Conditional Pass</strong> — address high/medium issues</div>
+    </div>
+    <p style="text-align:center;margin-top:16px;"><a href="https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review" target="_blank" rel="noopener">View docs on GitHub →</a></p>
+</section>
 <section class="social-proof">
     <div class="container">
         <div class="stats">
