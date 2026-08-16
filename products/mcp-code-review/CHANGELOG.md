@@ -1,0 +1,25 @@
+# Changelog
+
+All notable changes to the MCP Code Review Server are documented here.
+
+## Unreleased
+
+### Added
+
+- Custom rules & team profiles: commit a `.mcp-code-review.yaml` (or `.yml` / `.json`) to your repo to define custom regex rules, disable checks, override severities, and set a minimum severity threshold.
+- Team-shared configs via the `MCP_CODE_REVIEW_CONFIG` environment variable.
+- Per-repo config discovery: `review_file` looks for a config file from the reviewed file's directory upward.
+- Stable check ids for every built-in finding: `dynamic_exec`, `sql_injection`, `deserialization`, `command_injection`, `input_py2`, `xss_innerhtml`, `hardcoded_secret`, `nplus1`, `unbounded_list`, `bare_except`, `empty_except`, `todo_comment`, `missing_return_type`, `long_lines`, `snake_case`, `pascal_case`.
+- Optional `[yaml]` extra for PyYAML support (JSON configs need no extra dependencies).
+
+## 0.1.0 — 2026-07-29
+
+### Added
+
+- Initial release: `review_code`, `review_diff`, and `review_file` tools over MCP stdio.
+- Four review passes: security (OWASP patterns), performance (N+1 queries, unbounded growth), quality (exception handling, TODO comments, type annotations), and style (line length, naming).
+- Structured Markdown report with severity sections and summary.
+
+### Fixed
+
+- Style pass f-string that rendered `{func_match.group(1).lower()}` literally instead of the suggested name.
