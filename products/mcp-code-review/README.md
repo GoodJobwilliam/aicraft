@@ -104,7 +104,7 @@ min_severity: medium
 
 custom_rules:
   - name: no-console-log
-    pattern: "console\\.log\\("
+    pattern: 'console\.log\('
     severity: high
     category: quality
     issue: Console logging left in production code
