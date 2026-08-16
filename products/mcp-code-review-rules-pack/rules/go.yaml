@@ -1,0 +1,99 @@
+# Go security & quality rules for aicraft-code-review
+# Copy to your repo root as .mcp-code-review.yaml, or point MCP_CODE_REVIEW_CONFIG at this file.
+min_severity: info
+
+severity_overrides:
+  hardcoded_secret: critical
+  todo_comment: medium
+
+custom_rules:
+  - name: no-sql-sprintf
+    pattern: '(?i)\b(fmt\.Sprintf|\.\+)\b[^;]*\b(SELECT|INSERT|UPDATE|DELETE|WHERE)\b'
+    severity: high
+    category: security
+    issue: "SQL built with fmt.Sprintf/concatenation is SQL-injection prone"
+    fix: "Use placeholders ($1, ?) with database/sql arguments"
+
+  - name: no-http-no-timeout
+    pattern: '\bhttp\.(Get|Post)\s*\([^,)]*\)'
+    severity: high
+    category: reliability
+    issue: "http.Get/Post uses no timeout — a hanging host blocks forever (check you pass a client with Timeout)"
+    fix: "Use http.Client{Timeout: 10 * time.Second}"
+
+  - name: no-client-no-timeout
+    pattern: '\bhttp\.Client\s*\{\s*\}'
+    severity: high
+    category: reliability
+    issue: "http.Client with no Timeout can hang forever"
+    fix: "Set Timeout on the client"
+
+  - name: no-panic
+    pattern: '\bpanic\s*\('
+    severity: medium
+    category: correctness
+    issue: "panic() crashes the whole process unless recovered"
+    fix: "Return errors; reserve panic for truly unrecoverable states"
+
+  - name: no-defer-in-loop
+    pattern: 'for\s+[^{]*\{\s*[^}]*\bdefer\s+'
+    severity: medium
+    category: correctness
+    issue: "defer inside a loop runs when the function returns, not per iteration"
+    fix: "Wrap the body in a closure or call the cleanup explicitly"
+
+  - name: no-weak-hash
+    pattern: '\b(md5\.Sum|sha1\.Sum)\s*\('
+    severity: high
+    category: security
+    issue: "MD5/SHA1 are cryptographically broken"
+    fix: "Use sha256, or bcrypt/argon2 for passwords"
+
+  - name: no-math-rand-secrets
+    pattern: '\bmath/rand\b'
+    severity: high
+    category: security
+    issue: "math/rand is predictable — never use for tokens or crypto"
+    fix: "Use crypto/rand"
+
+  - name: no-world-writable
+    pattern: '0(7|6)77'
+    severity: high
+    category: security
+    issue: "World-writable file permissions"
+    fix: "Use 0600/0644 and explicit permission bits"
+
+  - name: no-log-fatal-lib
+    pattern: '\blog\.(Fatal|Fatalf|Panic|Panicf)\s*\('
+    severity: medium
+    category: quality
+    issue: "log.Fatal in library code exits the host program"
+    fix: "Return errors to the caller"
+
+  - name: no-error-ignored
+    pattern: '^\s*_\s*=\s*\w+\s*$'
+    severity: info
+    category: correctness
+    issue: "Error possibly discarded via blank identifier"
+    fix: "Handle the error explicitly"
+
+  - name: no-tls-insecure-skip
+    pattern: 'InsecureSkipVerify\s*:\s*true'
+    severity: critical
+    category: security
+    issue: "TLS certificate verification disabled"
+    fix: "Remove it; if a dev cert is needed, gate it behind an env flag"
+
+  - name: no-println-debug
+    pattern: '\bfmt\.Println\s*\('
+    severity: info
+    category: quality
+    issue: "Leftover debug output"
+    fix: "Use the log/slog package with levels"
+
+  - name: no-decoder-unknown-fields
+    pattern: 'json\.NewDecoder\s*\('
+    severity: info
+    category: quality
+    issue: "json.NewDecoder silently ignores unknown fields by default"
+    fix: "Call .DisallowUnknownFields() on the decoder"

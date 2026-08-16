@@ -1,0 +1,121 @@
+# JavaScript / TypeScript security & quality rules for aicraft-code-review
+# Copy to your repo root as .mcp-code-review.yaml, or point MCP_CODE_REVIEW_CONFIG at this file.
+min_severity: info
+
+severity_overrides:
+  xss_innerhtml: high
+  hardcoded_secret: critical
+  todo_comment: medium
+
+custom_rules:
+  - name: no-eval
+    pattern: '\beval\s*\('
+    severity: critical
+    category: security
+    issue: "eval() executes arbitrary code from strings"
+    fix: "Use JSON.parse for data or a proper parser"
+
+  - name: no-new-function
+    pattern: '\bnew\s+Function\s*\('
+    severity: critical
+    category: security
+    issue: "new Function() compiles strings into executable code"
+    fix: "Refactor to real functions or a whitelisted dispatch table"
+
+  - name: no-document-write
+    pattern: '\bdocument\.write\s*\('
+    severity: high
+    category: security
+    issue: "document.write() can inject markup and breaks CSP"
+    fix: "Use DOM APIs like textContent/createElement"
+
+  - name: no-v-html
+    pattern: '\bv-html\s*='
+    severity: high
+    category: security
+    issue: "v-html renders unescaped HTML (XSS risk in Vue)"
+    fix: "Use text interpolation and render content through components"
+
+  - name: no-dangerously-set-inner-html
+    pattern: '\bdangerouslySetInnerHTML\b'
+    severity: high
+    category: security
+    issue: "dangerouslySetInnerHTML skips React escaping (XSS risk)"
+    fix: "Render plain text or sanitize with DOMPurify first"
+
+  - name: no-child-process-exec
+    pattern: '\b(exec|execSync)\s*\(\s*[`"\x27][^"\x27`]*\$\{'
+    severity: high
+    category: security
+    issue: "child_process.exec with string interpolation is command injection prone"
+    fix: "Use execFile/spawn with an args array"
+
+  - name: no-token-in-localstorage
+    pattern: '\blocalStorage\.setItem\s*\(\s*["\x27](token|access_token|refresh_token|id_token|jwt)'
+    severity: high
+    category: security
+    issue: "Auth tokens in localStorage are readable by any XSS"
+    fix: "Use httpOnly cookies or in-memory storage"
+
+  - name: no-console-log
+    pattern: '\bconsole\.log\s*\('
+    severity: medium
+    category: quality
+    issue: "Console logging left in production code"
+    fix: "Remove or route through a structured logger with levels"
+
+  - name: no-debugger
+    pattern: '^\s*debugger\s*;?\s*$'
+    severity: high
+    category: quality
+    issue: "debugger statement left in code"
+    fix: "Remove it"
+
+  - name: no-loose-equality
+    pattern: '\s==\s|\s!=\s'
+    severity: info
+    category: quality
+    issue: "Loose equality coerces types; confirm === is not intended"
+    fix: "Use === / !== unless coercion is deliberate"
+
+  - name: no-any-ts
+    pattern: '\bany\b'
+    severity: info
+    category: quality
+    issue: "TypeScript any disables type checking (only valid in .ts files)"
+    fix: "Use the concrete type or unknown with narrowing"
+
+  - name: no-fetch-without-error
+    pattern: 'await\s+fetch\s*\('
+    severity: medium
+    category: reliability
+    issue: "fetch() does not throw on 4xx/5xx — check res.ok and wrap in try/catch"
+    fix: "Check res.ok and handle non-2xx responses explicitly"
+
+  - name: no-settimeout-string
+    pattern: 'setTimeout\s*\(\s*["\x27`]'
+    severity: high
+    category: security
+    issue: "setTimeout with a string compiles code dynamically"
+    fix: "Pass a function reference"
+
+  - name: no-password-field
+    pattern: '(?i)(password|passwd|secret|api[_-]?key|token)\s*[:=]\s*["\x27`][^"\x27`]{8,}["\x27`]'
+    severity: critical
+    category: security
+    issue: "Hardcoded secret in source code"
+    fix: "Move to environment variables or a secrets manager"
+
+  - name: no-innerhtml-concat
+    pattern: '\.innerHTML\s*[+=]\s*[^=].*[\+`\$]'
+    severity: high
+    category: security
+    issue: "innerHTML built from concatenated/interpolated strings is XSS-prone"
+    fix: "Use textContent, createElement, or sanitize with DOMPurify"
+
+  - name: no-json-parse-unwrapped
+    pattern: 'JSON\.parse\s*\('
+    severity: info
+    category: reliability
+    issue: "JSON.parse throws on invalid input — wrap in try/catch or validate first"
+    fix: "Add try/catch and a schema check for the result"

@@ -1,0 +1,22 @@
+# .gitlab-ci.yml — mcp-code-review MR gate
+# Requires a python:3.12 image; aicraft-code-review is installed from PyPI.
+
+code-review:
+  image: python:3.12
+  stage: test
+  script:
+    - pip install aicraft-code-review
+    - |
+      if [ -n "$CI_MERGE_REQUEST_TARGET_BRANCH_SHA" ]; then
+        BASE="$CI_MERGE_REQUEST_TARGET_BRANCH_SHA"
+      else
+        BASE=$(git rev-parse HEAD~1)
+      fi
+      git diff "$BASE"...HEAD > /tmp/changes.diff
+    - mcp-code-review review-diff --git-diff /tmp/changes.diff || true
+  allow_failure:
+    exit_codes: 1
+  artifacts:
+    when: always
+    paths:
+      - review-report.txt

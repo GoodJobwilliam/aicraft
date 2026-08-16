@@ -1,0 +1,158 @@
+# Python security & quality rules for aicraft-code-review
+# Copy to your repo root as .mcp-code-review.yaml, or point MCP_CODE_REVIEW_CONFIG at this file.
+min_severity: info
+
+severity_overrides:
+  bare_except: high
+  todo_comment: medium
+  hardcoded_secret: critical
+  sql_injection: critical
+  command_injection: critical
+
+custom_rules:
+  - name: no-eval
+    pattern: '\beval\s*\('
+    severity: critical
+    category: security
+    issue: "eval() executes arbitrary code from strings"
+    fix: "Use ast.literal_eval for data, or a parser like json.loads"
+
+  - name: no-exec
+    pattern: '\bexec\s*\('
+    severity: critical
+    category: security
+    issue: "exec() executes arbitrary code from strings"
+    fix: "Replace with explicit function calls or a safe DSL"
+
+  - name: no-pickle-loads
+    pattern: '\bpickle\.loads?\s*\('
+    severity: high
+    category: security
+    issue: "pickle.load/loads can execute arbitrary code during unpickling"
+    fix: "Use json, or pickle only for trusted data"
+
+  - name: no-subprocess-shell
+    pattern: 'shell\s*=\s*True'
+    severity: high
+    category: security
+    issue: "subprocess with shell=True is vulnerable to command injection"
+    fix: "Pass args as a list with shell=False"
+
+  - name: no-os-system
+    pattern: '\bos\.system\s*\('
+    severity: high
+    category: security
+    issue: "os.system() runs commands through the shell"
+    fix: "Use subprocess.run([...]) with shell=False"
+
+  - name: no-mktemp
+    pattern: '\btempfile\.mktemp\s*\('
+    severity: high
+    category: security
+    issue: "tempfile.mktemp() is insecure (race condition)"
+    fix: "Use tempfile.mkstemp() or TemporaryDirectory()"
+
+  - name: no-weak-hash
+    pattern: '\bhashlib\.(md5|sha1)\s*\('
+    severity: high
+    category: security
+    issue: "MD5/SHA1 are cryptographically broken"
+    fix: "Use hashlib.sha256 or a password KDF (argon2, bcrypt, scrypt)"
+
+  - name: no-assert-data-validation
+    pattern: '^\s*assert\s'
+    severity: medium
+    category: correctness
+    issue: "assert can be stripped with python -O; never use it to validate data or enforce security"
+    fix: "Raise ValueError/TypeError explicitly"
+
+  - name: no-mutable-default
+    pattern: 'def\s+\w+\s*\([^)]*=\s*(\[\]|\{\})'
+    severity: high
+    category: correctness
+    issue: "Mutable default argument is shared across all calls"
+    fix: "Default to None and create the object inside the function"
+
+  - name: no-wildcard-import
+    pattern: '^\s*from\s+[\w.]+\s+import\s+\*'
+    severity: medium
+    category: quality
+    issue: "Wildcard imports pollute the namespace and hide typos"
+    fix: "Import the names you use explicitly"
+
+  - name: no-print-debug
+    pattern: '^\s*print\s*\('
+    severity: info
+    category: quality
+    issue: "Looks like leftover debug output"
+    fix: "Use logging.getLogger(__name__) and remove before merge"
+
+  - name: no-global
+    pattern: '^\s*global\s+\w+'
+    severity: medium
+    category: quality
+    issue: "global state makes code hard to reason about and test"
+    fix: "Return values or use an explicit state object"
+
+  - name: no-fstring-logging
+    pattern: 'logging\.\w+\s*\(\s*f["\x27]'
+    severity: info
+    category: quality
+    issue: "f-strings in log calls evaluate eagerly and leak data in logs"
+    fix: "Use lazy %-formatting: logger.info(\"x=%s\", x)"
+
+  - name: no-open-no-context
+    pattern: '^\s*\w+\s*=\s*open\s*\('
+    severity: medium
+    category: correctness
+    issue: "open() without a context manager can leak file handles"
+    fix: "Use with open(...) as f:"
+
+  - name: no-compare-boolean-literal
+    pattern: '==\s*(True|False)\b|\b(True|False)\s*=='
+    severity: info
+    category: quality
+    issue: "Comparing directly to True/False is redundant"
+    fix: "Use the value or `is True` when identity matters"
+
+  - name: no-silent-except-pass
+    pattern: 'except[^:]*:\s*\n\s+pass'
+    severity: high
+    category: correctness
+    issue: "Swallowed exception hides failures"
+    fix: "Log the exception or re-raise; at minimum add a comment why it is safe"
+
+  - name: no-requests-no-timeout
+    pattern: '\brequests\.(get|post|put|delete|patch)\s*\([^)]*\)'
+    severity: medium
+    category: reliability
+    issue: "HTTP call may hang forever without a timeout (check the call has timeout=)"
+    fix: "Pass timeout=10 (or your SLA) to every request"
+
+  - name: no-hardcoded-secret-value
+    pattern: '(?i)(password|passwd|secret|api[_-]?key|token)\s*=\s*["\x27][^"\x27]{8,}["\x27]'
+    severity: critical
+    category: security
+    issue: "Hardcoded secret in source code"
+    fix: "Move to environment variables or a secrets manager"
+
+  - name: no-yaml-load
+    pattern: '\byaml\.load\s*\('
+    severity: high
+    category: security
+    issue: "yaml.load() can execute arbitrary code (it is unsafe by default)"
+    fix: "Use yaml.safe_load()"
+
+  - name: no-xml-parse
+    pattern: '\bxml\.etree\.ElementTree\.parse\s*\('
+    severity: medium
+    category: security
+    issue: "XML parsing can be vulnerable to XXE and billion-laughs attacks"
+    fix: "Use defusedxml or disable external entities"
+
+  - name: no-catch-baseexception
+    pattern: 'except\s+BaseException\b'
+    severity: medium
+    category: correctness
+    issue: "Catching BaseException also swallows KeyboardInterrupt and SystemExit"
+    fix: "Catch Exception or the specific error type"

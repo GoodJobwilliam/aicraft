@@ -1,0 +1,99 @@
+# Java security & quality rules for aicraft-code-review
+# Copy to your repo root as .mcp-code-review.yaml, or point MCP_CODE_REVIEW_CONFIG at this file.
+min_severity: info
+
+severity_overrides:
+  hardcoded_secret: critical
+  todo_comment: medium
+
+custom_rules:
+  - name: no-runtime-exec
+    pattern: '\bRuntime\.getRuntime\(\)\.exec\s*\('
+    severity: high
+    category: security
+    issue: "Runtime.exec with user-controlled input is command-injection prone"
+    fix: "Use ProcessBuilder with an args array and validate inputs"
+
+  - name: no-statement-concat
+    pattern: '(?i)\bStatement\b[^;]*\bexecute(Query|Update)?\s*\('
+    severity: high
+    category: security
+    issue: "Statement with concatenated SQL is SQL-injection prone (verify the query uses no string concat)"
+    fix: "Use PreparedStatement with bind parameters"
+
+  - name: no-weak-hash
+    pattern: '(?i)MessageDigest\.getInstance\s*\(\s*"(MD5|SHA-1|SHA1)"'
+    severity: high
+    category: security
+    issue: "MD5/SHA-1 are cryptographically broken"
+    fix: "Use SHA-256 or a password KDF (BCrypt, Argon2, PBKDF2)"
+
+  - name: no-printstacktrace
+    pattern: '\.printStackTrace\s*\('
+    severity: medium
+    category: quality
+    issue: "printStackTrace writes raw traces to stderr, bypassing logging config"
+    fix: "Log the exception with a logger: log.error(\"msg\", e)"
+
+  - name: no-so-println
+    pattern: '\bSystem\.out\.println\s*\('
+    severity: info
+    category: quality
+    issue: "Leftover debug output"
+    fix: "Use a logger (SLF4J) or remove"
+
+  - name: no-securerandom-fallback
+    pattern: '\bnew\s+Random\s*\('
+    severity: high
+    category: security
+    issue: "java.util.Random is predictable — unsafe for tokens/security"
+    fix: "Use SecureRandom"
+
+  - name: no-socket-no-timeout
+    pattern: '\bnew\s+Socket\s*\([^)]*\)'
+    severity: medium
+    category: reliability
+    issue: "Socket without connect/read timeout can block forever"
+    fix: "Call socket.connect(addr, timeout) and setSoTimeout()"
+
+  - name: no-thread-unbounded
+    pattern: '\bnew\s+Thread\s*\('
+    severity: info
+    category: quality
+    issue: "Raw Thread creation doesn't scale — prefer executors"
+    fix: "Use ExecutorService / CompletableFuture"
+
+  - name: no-catch-ignore
+    pattern: 'catch\s*\([^)]*\)\s*\{\s*\}'
+    severity: medium
+    category: correctness
+    issue: "Empty catch block hides failures"
+    fix: "Log the exception or re-throw"
+
+  - name: no-tls-insecure
+    pattern: '(?i)setHostnameVerifier\s*\([^)]*true|SSLContext[^;]*TrustAll|X509TrustManager'
+    severity: critical
+    category: security
+    issue: "TLS certificate validation appears disabled (trust-all pattern)"
+    fix: "Use the default verifier and proper keystores"
+
+  - name: no-file-delete-unchecked
+    pattern: '\.delete\s*\(\s*\)'
+    severity: info
+    category: reliability
+    issue: "File.delete() silently fails — check the return value or use Files.delete()"
+    fix: "Use Files.delete(path) which throws on failure"
+
+  - name: no-float-money
+    pattern: '\b(double|float)\s+\w+\s*=.*(price|amount|balance|fee|total)'
+    severity: high
+    category: correctness
+    issue: "Floating point for money loses precision"
+    fix: "Use BigDecimal or integer cents"
+
+  - name: no-string-switch-case
+    pattern: 'switch\s*\(\s*[^)]*\)\s*\{'
+    severity: info
+    category: quality
+    issue: "Check the switch covers all cases or has a default"
+    fix: "Add default handling for unexpected values"
