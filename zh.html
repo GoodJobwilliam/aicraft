@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICraft — AI 开发者工具：MCP 代码审查、CLI 模板、Prompt 包 | 一次买断</title>
+    <link rel="canonical" href="https://aicraft.vip/zh.html">
+    <meta name="description" content="AICraft：给 Claude Code / Cursor / Cline 用的 MCP 代码审查服务器（本地运行、OWASP 扫描），以及 Python CLI 模板、FastAPI/Next.js 脚手架、AI Prompt 包。一次买断，终身更新。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AICraft">
+    <meta property="og:title" content="AICraft — AI 开发者工具（中文）">
+    <meta property="og:description" content="MCP 代码审查、CLI 模板、脚手架、Prompt 包。一次买断，终身更新。">
+    <meta property="og:url" content="https://aicraft.vip/zh.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; color: #1a1a2e; line-height: 1.7; background: #fafafa; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        header { background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); color: white; padding: 64px 0 48px; }
+        header .top { display:flex; justify-content:space-between; align-items:center; margin-bottom:48px; }
+        header .top a { color:#ccc; text-decoration:none; font-size:.9rem; }
+        header h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -1px; }
+        header h1 span { color: #00d4aa; }
+        header p { font-size: 1.15rem; opacity: 0.85; max-width: 640px; margin-bottom: 28px; }
+        .btn { display:inline-block; background:#00d4aa; color:#0f0f23; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:700; margin-right:12px; }
+        .btn.ghost { background:transparent; border:1px solid #556; color:#fff; }
+        .term { background:#0f172a; border-radius:12px; padding:20px 24px; margin-top:32px; font-family:ui-monospace,Menlo,monospace; font-size:.85rem; color:#e2e8f0; max-width:640px; overflow-x:auto; }
+        .term .c { color:#94a3b8; }
+        section { padding: 56px 0; }
+        section h2 { font-size: 1.8rem; font-weight: 700; text-align:center; margin-bottom: 8px; }
+        section .subtitle { text-align:center; color:#666; margin-bottom: 36px; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+        .card { background:#fff; border:1px solid #e8e8e8; border-radius:12px; padding:22px; display:flex; flex-direction:column; }
+        .card h3 { font-size:1.1rem; margin-bottom:8px; }
+        .card p { color:#555; font-size:.92rem; flex:1; margin-bottom:14px; }
+        .tag { display:inline-block; font-size:.75rem; background:#eef2ff; color:#4f46e5; border-radius:4px; padding:2px 8px; margin-bottom:10px; align-self:flex-start; }
+        .price-row { display:flex; align-items:center; gap:12px; }
+        .price { font-size:1.4rem; font-weight:800; }
+        .price small { font-size:.8rem; color:#888; font-weight:400; }
+        .buy { background:#4f46e5; color:#fff; text-decoration:none; padding:8px 16px; border-radius:8px; font-size:.9rem; font-weight:600; }
+        .free { color:#4f46e5; text-decoration:none; padding:8px 12px; border-radius:8px; font-size:.9rem; border:1px solid #c7d2fe; }
+        .sample { max-width:760px; margin:0 auto; background:#0f172a; border-radius:12px; padding:22px 26px; font-family:ui-monospace,Menlo,monospace; font-size:.8rem; line-height:1.6; color:#e2e8f0; overflow-x:auto; }
+        .sample .y { color:#fbbf24; } .sample .r { color:#f87171; } .sample .g { color:#34d399; } .sample .m { color:#94a3b8; }
+        .proof { max-width:760px; margin:0 auto; }
+        .quote { background:#fff; border:1px solid #e8e8e8; border-radius:12px; padding:18px 20px; margin-bottom:14px; font-size:.92rem; }
+        .quote footer { margin-top:8px; font-size:.8rem; color:#888; }
+        .faq { max-width:760px; margin:0 auto; }
+        .faq h3 { font-size:1.05rem; margin:22px 0 6px; }
+        .faq p { color:#555; font-size:.92rem; }
+        footer { background:#0f0f23; color:#ccc; padding:32px 0; font-size:.85rem; }
+        footer a { color:#00d4aa; text-decoration:none; }
+        .payline { text-align:center; color:#666; font-size:.9rem; margin-top:24px; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="top">
+            <strong>AICraft</strong>
+            <a href="https://aicraft.vip">English</a>
+        </div>
+        <h1>给 AI 时代的<span>开发者工具</span></h1>
+        <p>MCP 代码审查、Python CLI 模板、FastAPI/Next.js 脚手架、AI Prompt 包。一次买断，终身更新，代码和提示词都是你的。</p>
+        <a class="btn" href="#mcp">了解 MCP 代码审查</a>
+        <a class="btn ghost" href="#products">全部产品</a>
+        <div class="term">
+            <div class="c"># 10 秒装好，本地运行，代码不出本机</div>
+            <div>claude mcp add code-review -- uvx aicraft-code-review</div>
+        </div>
+    </div>
+</header>
+
+<section id="mcp">
+    <div class="container">
+        <h2>MCP Code Review Server</h2>
+        <p class="subtitle">接进 Claude Code / Cursor / Cline，AI 直接在编辑器里做代码审查</p>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:32px;">
+            <div>
+                <div class="card" style="height:100%;">
+                    <span class="tag">开源 MIT · PyPI 650+ 安装</span>
+                    <h3>完全本地运行，零上传</h3>
+                    <p>OWASP Top 10 安全扫描、SQL 注入/命令注入/反序列化检测、N+1 查询、无界列表增长，结构化分级报告 + 修复建议。支持自定义规则（<code>.mcp-code-review.yaml</code>）和团队共享配置（<code>MCP_CODE_REVIEW_CONFIG</code>）。</p>
+                    <div class="price-row">
+                        <a class="buy" href="https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0" target="_blank" rel="noopener">$49 终身授权</a>
+                        <a class="free" href="https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review" target="_blank" rel="noopener">开源免费装</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sample">
+                <div class="m">$ mcp-code-review review_file main.py</div>
+                <div class="y">## Review Results</div>
+                <div class="r" style="margin-top:8px">### High (3)</div>
+                <div>| 4 | 命令注入风险 | security | 改用 subprocess.run 参数列表 |</div>
+                <div>| 9 | N+1 查询 | performance | 批量查询 / 预加载 |</div>
+                <div>| 10 | f-string SQL 注入 | security | 使用参数化查询 |</div>
+                <div class="y" style="margin-top:8px">### Medium (1) — 列表无界增长 · 加限制或分页</div>
+                <div class="g" style="margin-top:8px">### Info (2) — 缺少返回类型标注</div>
+                <div style="margin-top:10px"><strong>Verdict: Conditional Pass</strong> — 先处理 High/Medium</div>
+            </div>
+        </div>
+        <p style="text-align:center;color:#666;font-size:.85rem;margin-top:20px;">已收录：Smithery · mcpservers.org · cursor.directory · Product Hunt（审核中：Glama / Docker 官方目录 / awesome-mcp-servers）</p>
+    </div>
+</section>
+
+<section style="background:#fff;">
+    <div class="container">
+        <h2>真实用户反馈</h2>
+        <p class="subtitle">来自 Product Hunt 的评论，两条都已经做进产品</p>
+        <div class="proof">
+            <div class="quote">“本地运行这一点对我来说是巨大的加分项。如果能加上团队共享的规则配置就更好了，这样全队就不会出现反馈不一致的问题。”<footer>— tiffany（Product Hunt）· <em>已实现：团队共享配置</em></footer></div>
+            <div class="quote">“喜欢它本地运行、内置 OWASP 扫描。默认规则很扎实，但每个代码库都有自己的习惯，通用规则总会漏。”<footer>— energypro（Product Hunt）· <em>已实现：每个仓库的自定义规则</em></footer></div>
+        </div>
+    </div>
+</section>
+
+<section id="products">
+    <div class="container">
+        <h2>全部产品</h2>
+        <p class="subtitle">一次买断 · 终身更新 · Creem 安全结算（支持 Visa / Mastercard / Amex / PayPal / Apple Pay / Google Pay）</p>
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Prompt 包</span>
+                <h3>100 条开发者 AI Prompt</h3>
+                <p>覆盖代码审查、重构、测试、安全、DevOps、API 的 100 条实战 Prompt。复制即用，省下大量调 Prompt 的时间。</p>
+                <div class="price-row"><span class="price">$19</span><a class="buy" href="https://creem.io/checkout/prod_395F1NjE24OJPGOy6PH5m/ch_7Pf7E2Kxz5cvc2gUb3ziIQ" target="_blank" rel="noopener">购买</a></div>
+            </div>
+            <div class="card">
+                <span class="tag">Prompt 包</span>
+                <h3>AI + 交易 Prompt 包</h3>
+                <p>30 条 AI 股票分析 Prompt：Level 2 订单簿、技术形态、资金流、情绪、回测。给认真用 AI 做交易的人。</p>
+                <div class="price-row"><span class="price">$29</span><a class="buy" href="https://creem.io/checkout/prod_6NfJAe396UkCwGlhoS0SQT/ch_xNuYqXb14rfF02eXmogsl" target="_blank" rel="noopener">购买</a></div>
+            </div>
+            <div class="card">
+                <span class="tag">Prompt 包</span>
+                <h3>AI Agent Prompt 包</h3>
+                <p>50 条做 AI Agent 的实战 Prompt，适配 Claude Code、Cursor、LangChain、n8n：架构、工具、测试、部署全流程。</p>
+                <div class="price-row"><span class="price">$29</span><a class="buy" href="https://creem.io/checkout/prod_6jypox2KPoeBFKdAPNO6tY/ch_7HyY6HETDUxciw2LYqNhvO" target="_blank" rel="noopener">购买</a></div>
+            </div>
+            <div class="card">
+                <span class="tag">Prompt 包</span>
+                <h3>API 开发 Prompt 包</h3>
+                <p>35 条 API 全生命周期 Prompt：设计、实现、测试、文档、上线运维。适配 FastAPI、Express、Django、Gin、Spring Boot。</p>
+                <div class="price-row"><span class="price">$19</span><a class="buy" href="https://creem.io/checkout/prod_7mkPo82abTSgHNDypu6oct/ch_1CV59YDim26oNTWmfIW1TJ" target="_blank" rel="noopener">购买</a></div>
+            </div>
+            <div class="card">
+                <span class="tag">模板</span>
+                <h3>Python CLI Generator</h3>
+                <p>几分钟搭出漂亮的命令行应用：Typer、Rich、Pydantic v2、structlog、httpx，自带完整 CI/CD 测试套件。</p>
+                <div class="price-row"><span class="price">$49</span><a class="buy" href="https://creem.io/checkout/prod_182wVaRA1EnSwCvnBpJeJL/ch_6cj3WaYUcegegj1OKVT9fz" target="_blank" rel="noopener">购买</a></div>
+            </div>
+            <div class="card">
+                <span class="tag">模板</span>
+                <h3>Python CLI 中文模板</h3>
+                <p>专为中国开发者打造的 Python CLI 脚手架，全中文文档和注释，基于 Typer + Rich + Pydantic v2，5 分钟搭出专业级命令行工具。</p>
+                <div class="price-row"><span class="price">$19</span><a class="buy" href="https://creem.io/checkout/prod_5K9PhDJvUio7XANKph5vI7/ch_X99jx9aXtSQ1AxvU1WX7Q" target="_blank" rel="noopener">购买</a></div>
+            </div>
+            <div class="card">
+                <span class="tag">脚手架</span>
+                <h3>FastAPI Starter Kit</h3>
+                <p>5 分钟启动 FastAPI 后端：Async SQLAlchemy 2.0、JWT 认证、Alembic 迁移、Docker Compose（PostgreSQL + Redis）、完整测试。</p>
+                <div class="price-row"><span class="price">$59</span><a class="buy" href="https://creem.io/checkout/prod_6nqZIUFxmkRYNtiq8EBfoD/ch_7Lg7NNtDCCqyDmvoGEA2a2" target="_blank" rel="noopener">购买</a></div>
+            </div>
+            <div class="card">
+                <span class="tag">脚手架</span>
+                <h3>Next.js SaaS Starter Kit</h3>
+                <p>几天而不是几个月上线你的 SaaS：Auth.js（Google + GitHub OAuth）、Stripe 订阅、仪表盘、邮件、暗色模式、Docker。省 40+ 小时。</p>
+                <div class="price-row"><span class="price">$99</span><a class="buy" href="https://creem.io/checkout/prod_dzmFVoiZqNFRR8f4wujQD/ch_6L9eZ03pxlzi9bPfGcv1cf" target="_blank" rel="noopener">购买</a></div>
+            </div>
+            <div class="card" style="border:2px solid #4f46e5;">
+                <span class="tag">MCP</span>
+                <h3>MCP Code Review Server</h3>
+                <p>AI 代码审查进编辑器：接 Claude Code / Cursor / Cline。OWASP 扫描、N+1 检测、严重度分级、自定义规则与团队配置。10 秒安装。</p>
+                <p style="font-size:.8rem;color:#888;">开源（MIT）可从 PyPI 免费安装——$49 授权用于支持开发，并解锁终身更新与邮件支持。</p>
+                <div class="price-row"><span class="price">$49</span><a class="buy" href="https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0" target="_blank" rel="noopener">购买</a><a class="free" href="https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review" target="_blank" rel="noopener">开源安装</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="background:#fff;">
+    <div class="container">
+        <div class="faq">
+            <h2 style="text-align:center;margin-bottom:20px;">常见问题</h2>
+            <h3>购买后怎么收货？</h3>
+            <p>数字商品在支付完成后立即通过 Creem（官方收款方）交付，订单确认邮件里有下载链接。</p>
+            <h3>MCP Code Review Server 免费吗？</h3>
+            <p>是的——服务器开源（MIT），可从 PyPI 免费安装。$49 授权支持开发，并解锁终身更新 + 直接邮件支持。</p>
+            <h3>支持哪些支付方式？</h3>
+            <p>Visa、Mastercard、Amex、PayPal、Apple Pay、Google Pay，全部由 Creem 安全处理。</p>
+            <h3>更新要额外付费吗？</h3>
+            <p>不用。所有产品终身更新——一次付费，永久享受后续所有改进。</p>
+        </div>
+        <p class="payline">所有支付由 <strong>Creem</strong>（Merchant of Record）安全处理 · 数字商品即时交付 · 14 天内如有缺陷可修复或更换</p>
+    </div>
+</section>
+
+<footer>
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+            <strong>AICraft</strong>
+            <p style="margin-top:6px;">AI 驱动的开发者工具、模板与自动化。</p>
+        </div>
+        <div>
+            <a href="https://aicraft.vip">英文站</a> ·
+            <a href="https://aicraft.vip/blog/distribution-playbook.html">分发复盘</a> ·
+            <a href="https://github.com/GoodJobwilliam/aicraft">GitHub</a> ·
+            <a href="https://aicraft.vip/privacy/">隐私政策</a> ·
+            <a href="https://aicraft.vip/terms/">条款</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
