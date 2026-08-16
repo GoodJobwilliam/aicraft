@@ -12,7 +12,7 @@
 |---|---------|------|------|------------|
 | 1 | **Next.js SaaS Starter Kit** | $99 | Ship Your SaaS in Days, Not Months — Auth.js, Stripe, dashboard, emails, Docker | `prod_dzmFVoiZqNFRR8f4wujQD` |
 | 2 | **FastAPI Starter Kit** | $59 | Launch Your FastAPI Backend in 5 Minutes — Async SQLAlchemy, JWT, Docker Compose | `prod_6nqZIUFxmkRYNtiq8EBfoD` |
-| 3 | **MCP Code Review Server** | $49 | AI Code Review in Your Editor — OWASP scanning, MCP protocol, Claude Code + Cursor | `prod_6Z3S3jGNPsCyRSqNi397ZY` |
+| 3 | **MCP Code Review — Team Rules Pack & CI Playbook** | $49 | 63 validated rules (Python/JS·TS/Go/Java) + CI workflows that block merges on critical findings + 20 LLM review prompts for the free OSS server | `prod_6Z3S3jGNPsCyRSqNi397ZY` |
 | 4 | **Python CLI Generator** | $49 | Build Beautiful CLI Apps in Minutes — Typer, Rich, Pydantic v2, CI/CD | `prod_182wVaRA1EnSwCvnBpJeJL` |
 | 5 | **Python CLI 中文模板** | $19 | 专为中国开发者打造的 Python CLI 脚手架 — 全中文文档注释 | `prod_5K9PhDJvUio7XANKph5vI7` |
 | 6 | **100 Developer AI Prompts** | $19 | 100 battle-tested prompts — code, testing, DevOps, security | `prod_395F1NjE24OJPGOy6PH5m` |
