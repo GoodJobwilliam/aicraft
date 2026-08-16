@@ -29,6 +29,8 @@ Production-ready developer tools, code templates, and AI prompt packs. Built by 
 
 Custom rules & team profiles: commit a `.mcp-code-review.yaml` to your repo for shared regex rules, disabled checks, severity overrides, and per-repo thresholds.
 
+Marketplaces: [Smithery](https://smithery.ai/servers/yaohuixue1/mcp-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server) · [PyPI](https://pypi.org/project/aicraft-code-review/)
+
 ### AgentPowers Skills (Free)
 
 | Skill | Description |
