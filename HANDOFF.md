@@ -30,9 +30,16 @@ LAUNCH STATUS (2026-08-16)
 | **Reddit r/mcp** | ⚠️ Removed | Two posts both spam-filtered (1v76tt5, 1v9xgip). All messaging blocked account-level. Asked punkpeye via PR #10918 comment to check mod queue — no reply yet. Fallback: delete both + one clean repost |
 | **Cline MCP Marketplace** | ⏳ Issue open | #2106 bumped 2026-08-16 with corrected install commands; no maintainer response yet |
 | **mcp.so** | ❌ Paid only | $39 one-time (Stripe). Skipped under $0 budget |
+| **Indie Hackers** | ✅ Live + approved | [mcp-code-review](https://www.indiehackers.com/product/mcp-code-review) — approved 2026-08-16 (all 4 checklist gates green). Post "custom rules & team profiles" live with 1 like. Revenue self-reported $0/mo |
+| **Docker MCP Registry** | ⏳ PR open | [#4699](https://github.com/docker/mcp-registry/pull/4699) — official Docker catalog entry (image mcp/mcp-code-review, pinned commit 2940d6e). Root Dockerfile + LICENSE + SECURITY.md added to aicraft repo |
+| **PulseMCP** | ⏳ Paused | Submissions paused until mid-August 2026; will auto-pick-up servers from the Official MCP Registry once resumed. Re-check weekly |
 
 RECENT CODE CHANGES (2026-08-16)
 ---------------------------------
+- **Docker registry readiness + mcp pin fix** (commit 2940d6e, pushed to main):
+  - Root `Dockerfile` (builds products/mcp-code-review from source, ENTRYPOINT mcp-code-review), root `LICENSE` (MIT — required for GitHub license detection by registry validation), `SECURITY.md` (security contact yaohuixue1@gmail.com)
+  - **BUGFIX**: pyproject pinned `mcp>=1.6,<2`. Fresh installs were pulling mcp 2.0.0 which removed `Server.list_tools` → CLI crashed at import. Verified fresh install now pulls mcp 1.29.0 and imports cleanly; 28 tests pass. ⚠️ PyPI 0.1.0 still has the unpinned dep → new users installing today get broken mcp 2.x until 0.1.1 ships (PyPI token blocked)
+- **PH forum thread** posted 2026-08-16: [We shipped custom rules & team-shared profiles](https://www.producthunt.com/p/mcp-code-review-server/we-shipped-custom-rules-team-shared-profiles) — notifies the 12 product followers
 - **Website SEO** (commit 16604f5): OG/Twitter meta + JSON-LD (Organization, WebSite, ItemList of 9 products) in index.html; `sitemap.xml` + `robots.txt` live on aicraft.vip
 - **GitHub repo metadata**: description, homepage (aicraft.vip), 10 topics set via API (mcp, mcp-server, code-review, ai, developer-tools, ai-prompts, python, claude-code, cursor, static-analysis) — helps Glama quality score
 - **CHANGELOG.md** added in products/mcp-code-review/ (0.1.0 + Unreleased entries)
@@ -52,10 +59,14 @@ TOOLING NOTES
 - PH comment editing: GraphQL endpoint https://www.producthunt.com/frontend/graphql, mutation `CommentUpdate` needs `X-CSRF-Token` (cookie `csrf_token`); page-level fetch returns 500 but React internals succeed
 - PH reply posting (verified working): click `[data-test="action-bar-reply-button"]`, then in the ProseMirror `div[contenteditable=true]` use `execCommand('insertText', ...)` after placing caret at end, then click `[data-test="reply-submit-button"]`
 - GitHub creds: `printf "protocol=https\nhost=github.com\n\n" | git credential fill` (token = password line). OAuth token lacks `workflow` scope → cannot push `.github/workflows/ci.yml` (file is ready locally, untracked)
+- **IH (Indie Hackers)**: username `aicraftbuilder`, email yaohuixue1@gmail.com, password Aicraft2026#IH, Firebase localId yS93JYgPhUOv7Tj3GBfwYfqkalu1. RTDB REST read: `curl "https://indie-hackers.firebaseio.com/products/mcp-code-review.json?auth=<idToken>"` (idToken cache /tmp/ih_idtoken.json, refresh via REST verifyPassword, apiKey AIzaSyB6rUw_KY1UObdN61ni2YbdBG-M45nX7bQ). Product approved → `approvedTimestamp` set. App source /tmp/ih_app.js
+- IH tabs: use 421E260A (product page); 28598133 is a stuck renderer — avoid
+- Docker MCP Registry: PR from fork GoodJobwilliam/mcp-registry; validation = prettier YAML + Title Case + 40-char commit pin + GitHub-detected license; build clones source repo at pinned commit and needs root Dockerfile
 
 USER ACTIONS NEEDED (2026-08-16)
 ----------------------------------
 1. **PyPI token** — release `aicraft-code-review` 0.1.1 (custom rules + team profiles feature is in the repo). Unlocks: official MCP Registry publish via mcp-publisher (from products/mcp-code-review/registry)
+   - ⚠️ 现在更紧迫：PyPI 0.1.0 的 `mcp>=1.6` 无上限，mcp 2.0.0 已发布并会导致 CLI 导入崩溃 — 新装用户全是坏的，尽快发 0.1.1（pyproject 已修好）
 2. **GitHub PAT with workflow scope** — to push `.github/workflows/ci.yml` (local file ready; current OAuth creds lack scope)
 3. Reddit — waiting on punkpeye mod-queue check; fallback needs a fresh account or aged karma
 4. aicraft.vip DNS access — Smithery TXT verification record + homepage backlink (also needs paid Smithery plan)
@@ -63,13 +74,17 @@ USER ACTIONS NEEDED (2026-08-16)
 
 NEXT STEPS
 -----------
+0. **IH upkeep**: post a new timeline update weekly (likes/comments drive discovery on IH); reply to every comment within 24h
 1. When PyPI token arrives: bump version to 0.1.1, build + publish, then `mcp-publisher publish` for official MCP Registry
 2. Glama: watch ticket #125096481 + listing; when listed → claim, quality checks, add badge to README, update PR #10918
 3. MCPFind #139 / Cline #2106 — check weekly
+3b. Docker MCP Registry #4699 — watch CI (validate/build); fix YAML or Dockerfile issues if checks fail
 4. Reddit fallback if punkpeye doesn't respond: delete both removed posts, one clean repost after account ages
 5. Check Creem sales weekly (731685147@qq.com store) — currently $0, MRR $0
 6. Cross-post Dev.to article 2 to HN/PH once it gains traction; share on Reddit after account restriction clears
 7. Next Dev.to article: Glama badge + registry listings roundup once Glama approves
+8. PulseMCP — recheck after mid-August; if resumed and official registry publish done, confirm auto-listing
+9. Patrol log 2026-08-16 (all checked, no new actionables): Gmail 无新回复; Creem $0/MRR $0; PH 12 followers 无新互动; Glama 未收录、工单待审; awesome-mcp #10918 未动; MCPFind #139 open (Vercel bot 注释); Cline mcp-marketplace #2106 未动; HN 1 point; Dev.to 两文 0 互动; PyPI 162/月; GitHub 2 stars
 
 CONSTRAINTS
 -----------
