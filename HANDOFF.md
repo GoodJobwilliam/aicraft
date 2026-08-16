@@ -101,6 +101,7 @@ NEXT STEPS
 11. Patrol log 2026-08-16 (round 3): Dev.to 文章 3 发布 (4408280) + IH 交叉发布成功; 官网加 PH 真实评论 + 650+ 数字 (1fac689); Glama Dockerfile 改 pinned commit 安装 (8dca404); Reddit 第一条 karma 评论已发（r/mcp 1 point），第二条被新号频率限制/API 403 挡住，下次轮再发; Docker PR 仍无 check_runs; PH/Creem/Gmail 无新动态; PyPI 用户仍未登录。本轮提交: 1fac689, 8dca404, 5038bc5
 12. Patrol log 2026-08-16 (round 4): 给 Frank (frank@glama.ai) 回复了工单邮件（告知 Dockerfile 已修复 + GitHub 连接 bug 仍存在，请求加速审核）; 官网新增真实示例报告区 (40243df，已上线); Reddit 第二条 karma 评论发布成功（testing 帖）— 关键发现: 老版 reddit 提交后有隐藏冷却 (14 秒)，等待后再点 save 即可; Glama 仍未收录; awesome/Docker/MCPFind/Cline 均无变化; PyPI 仍未登录。本轮提交: 40243df
 13. Patrol log 2026-08-16 (round 5): 中文博客《0 预算把 MCP 工具铺到 12 个分发渠道》发布 (blog/distribution-playbook.html, 已入 sitemap + 首页 footer + blog 索引, commit eb2cb1d, 已上线 200); PulseMCP 仍暂停; Creem 仍 0 销售; V2EX (tab 2D98E744) 与掘金 (tab 3B10777E) 登录页已打开等用户登录; PH 无新互动; PyPI 仍待登录
+14. Patrol log 2026-08-16 (round 6): Reddit 第三条 karma 评论发布成功（r/ClaudeAI 会话上下文导出帖，3 条评论全部为纯技术干货，账号现 3 条评论在攒 karma）; V2EX 帖子草稿 (/tmp/v2ex_post.md) 与掘金文章草稿 (/tmp/juejin_article.md) 已写好，用户登录后即可发; awesome bot 要求已逐条核对（仅剩 Glama 收录+徽章）; Docker PR server.yaml 合规且 pin 的 commit 已含全部功能; Glama/Gmail/HN 无变化; PyPI/V2EX/掘金登录页仍待用户
 
 CONSTRAINTS
 -----------
