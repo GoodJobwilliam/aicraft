@@ -15,11 +15,12 @@ LAUNCH STATUS (2026-08-16)
 | Platform | Status | Notes |
 |----------|--------|-------|
 | **Smithery.ai** | ✅ Live | [yaohuixue1/mcp-code-review](https://smithery.ai/servers/yaohuixue1/mcp-code-review) — 52/100. Redeploy channel broken post-Arcade migration (UI Publish fires nothing; API POST /releases 404). Server still live + installable. Verification needs paid plan + TXT/backlink |
+| **mcp-get / OpenTools** | ❌ Skipped | mcp-get deprecated (recommends Smithery); OpenTools free listing doesn't exist (paid launch only) |
 | **mcpservers.org** | ✅ Live | APPROVED 2026-08-16: [goodjobwilliam/aicraft](https://mcpservers.org/servers/goodjobwilliam/aicraft). Listed in READMEs for backlinks |
 | **cursor.directory** | ✅ Live | Plugin [mcp-code-review-server](https://cursor.directory/plugins/mcp-code-review-server) public with 1 Rule + 1 MCP Server + "Add to Cursor" button |
 | **PyPI** | ✅ Live 0.1.0 | `aicraft-code-review` v0.1.0 — 666 total / 153 last month / 2 last week. Custom-rules feature pushed to repo but NOT yet released (needs PyPI token for 0.1.1) |
 | **Product Hunt** | ✅ Launched | 3 upvotes, 12 followers, 7 comments (5 external all replied + 2 new maker replies). Verified: tiffany's username IS `@ajax_cao`, so the mention was correct all along — no fix needed. 2026-08-16: replied to tiffany (comment 5789058) and energypro (comment 5789059) announcing the custom-rules feature |
-| **Dev.to** | ✅ Published | [Article](https://dev.to/goodjobwilliam/i-built-an-mcp-server-that-reviews-code-locally-no-saas-no-uploads-568a) (tags #mcp #opensource #python). Writing Debut badge earned |
+| **Dev.to** | ✅ Published | Article 1: [no-SaaS code review](https://dev.to/goodjobwilliam/i-built-an-mcp-server-that-reviews-code-locally-no-saas-no-uploads-568a) + Article 2: [team-shared rules](https://dev.to/goodjobwilliam/team-shared-code-review-rules-for-your-mcp-ai-assistant-542j) (2026-08-16, via API key `GEdbXASUJqszsj4fBTX7nvK9`). Writing Debut badge earned |
 | **PitchHut** | ✅ Claimed | 47 page views, 0 pitch URL clicks, not boosting. Logged in as `cheap_copper_rodie` |
 | **Glama** | ⏳ Submitted | `aicraft-code-review` submitted via Add Server 2026-08-15, still not listed (search only fuzzy-matches other servers). Frank Fiegel's welcome email replied; support ticket **#125096481** opened (Fin bot: "We'll pick up your ticket soon"). Awaiting review → claim + quality badge for PR #10918 |
 | **awesome-mcp-servers** | ⏳ PR open | [#10918](https://github.com/punkpeye/awesome-mcp-servers/pull/10918) — open, mergeable. Waiting for Glama listing/badge. (Repo now 92k stars — merging here is the biggest distribution win) |
@@ -32,6 +33,10 @@ LAUNCH STATUS (2026-08-16)
 
 RECENT CODE CHANGES (2026-08-16)
 ---------------------------------
+- **Website SEO** (commit 16604f5): OG/Twitter meta + JSON-LD (Organization, WebSite, ItemList of 9 products) in index.html; `sitemap.xml` + `robots.txt` live on aicraft.vip
+- **GitHub repo metadata**: description, homepage (aicraft.vip), 10 topics set via API (mcp, mcp-server, code-review, ai, developer-tools, ai-prompts, python, claude-code, cursor, static-analysis) — helps Glama quality score
+- **CHANGELOG.md** added in products/mcp-code-review/ (0.1.0 + Unreleased entries)
+
 - **Custom Rules & Team Profiles** (commit f0c0b40, pushed to main) — implements the two Product Hunt feature requests:
   - `config.py` (new): `ReviewConfig` / `CustomRule` / `load_config()` — auto-discovers `.mcp-code-review.yaml|.yml|.json` from the reviewed file's dir upward (snippets/diffs use server cwd), or via `MCP_CODE_REVIEW_CONFIG` env var (team-shared profiles)
   - `reviewer.py`: every finding now carries a stable `check` id; `_apply_config()` applies custom regex rules → disabled checks → severity overrides → min-severity threshold. Check ids: dynamic_exec, sql_injection, deserialization, command_injection, input_py2, xss_innerhtml, hardcoded_secret, nplus1, unbounded_list, bare_except, empty_except, todo_comment, missing_return_type, long_lines, snake_case, pascal_case
@@ -63,6 +68,8 @@ NEXT STEPS
 3. MCPFind #139 / Cline #2106 — check weekly
 4. Reddit fallback if punkpeye doesn't respond: delete both removed posts, one clean repost after account ages
 5. Check Creem sales weekly (731685147@qq.com store) — currently $0, MRR $0
+6. Cross-post Dev.to article 2 to HN/PH once it gains traction; share on Reddit after account restriction clears
+7. Next Dev.to article: Glama badge + registry listings roundup once Glama approves
 
 CONSTRAINTS
 -----------
