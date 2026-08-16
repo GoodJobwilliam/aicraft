@@ -82,7 +82,7 @@ USER ACTIONS NEEDED (2026-08-16)
 2. **GitHub PAT with workflow scope** — to push `.github/workflows/ci.yml` (local file ready; current OAuth creds lack scope)
 3. Reddit — waiting on punkpeye mod-queue check; fallback needs a fresh account or aged karma
 4. aicraft.vip DNS access — Smithery TXT verification record + homepage backlink (also needs paid Smithery plan)
-5. Optional growth: 掘金 / V2EX 中文社区帖子需要用户自己的账号（未创建）；X/Twitter 无账号
+5. Optional growth: 掘金 / V2EX 中文社区 — 登录页已打开（V2EX tab 2D98E744, 掘金 tab 3B10777E），等用户登录即可发文；X/Twitter 无账号
 
 NEXT STEPS
 -----------
@@ -100,6 +100,7 @@ NEXT STEPS
 10. Patrol log 2026-08-16 (round 2): PH 论坛帖已批准可见（1 view），已发 quick-start 评论（单引号 YAML 示例，发布成功）; Creem 仍 0 销售 MRR $0; Docker PR #4699 open/mergeable 无评论无 CI; awesome #10918 4 条评论（无维护者新回复）; MCPFind #139 open; Cline #2106 open; Glama 工单仍只有 Fin 机器人回复; PulseMCP 仍暂停; IH 帖 1 like 0 评论; aicraft.vip 与 Smithery 均 200。本轮提交: 6e199de (HANDOFF), a79a6fb (0.1.1 version bump)
 11. Patrol log 2026-08-16 (round 3): Dev.to 文章 3 发布 (4408280) + IH 交叉发布成功; 官网加 PH 真实评论 + 650+ 数字 (1fac689); Glama Dockerfile 改 pinned commit 安装 (8dca404); Reddit 第一条 karma 评论已发（r/mcp 1 point），第二条被新号频率限制/API 403 挡住，下次轮再发; Docker PR 仍无 check_runs; PH/Creem/Gmail 无新动态; PyPI 用户仍未登录。本轮提交: 1fac689, 8dca404, 5038bc5
 12. Patrol log 2026-08-16 (round 4): 给 Frank (frank@glama.ai) 回复了工单邮件（告知 Dockerfile 已修复 + GitHub 连接 bug 仍存在，请求加速审核）; 官网新增真实示例报告区 (40243df，已上线); Reddit 第二条 karma 评论发布成功（testing 帖）— 关键发现: 老版 reddit 提交后有隐藏冷却 (14 秒)，等待后再点 save 即可; Glama 仍未收录; awesome/Docker/MCPFind/Cline 均无变化; PyPI 仍未登录。本轮提交: 40243df
+13. Patrol log 2026-08-16 (round 5): 中文博客《0 预算把 MCP 工具铺到 12 个分发渠道》发布 (blog/distribution-playbook.html, 已入 sitemap + 首页 footer + blog 索引, commit eb2cb1d, 已上线 200); PulseMCP 仍暂停; Creem 仍 0 销售; V2EX (tab 2D98E744) 与掘金 (tab 3B10777E) 登录页已打开等用户登录; PH 无新互动; PyPI 仍待登录
 
 CONSTRAINTS
 -----------
