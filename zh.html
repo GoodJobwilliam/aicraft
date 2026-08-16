@@ -86,15 +86,17 @@
                 </div>
             </div>
             <div class="sample">
-                <div class="m">$ mcp-code-review review_file main.py</div>
+                <div class="m">$ MCP_CODE_REVIEW_CONFIG=rules/python.yaml mcp-code-review review-file main.py</div>
                 <div class="y">## Review Results</div>
-                <div class="r" style="margin-top:8px">### High (3)</div>
-                <div>| 4 | 命令注入风险 | security | 改用 subprocess.run 参数列表 |</div>
-                <div>| 9 | N+1 查询 | performance | 批量查询 / 预加载 |</div>
-                <div>| 10 | f-string SQL 注入 | security | 使用参数化查询 |</div>
-                <div class="y" style="margin-top:8px">### Medium (1) — 列表无界增长 · 加限制或分页</div>
-                <div class="g" style="margin-top:8px">### Info (2) — 缺少返回类型标注</div>
-                <div style="margin-top:10px"><strong>Verdict: Conditional Pass</strong> — 先处理 High/Medium</div>
+                <div class="r" style="margin-top:8px">### 🔴 Critical (3)</div>
+                <div>| 5 | 硬编码密钥 | security | 改用环境变量 / 密钥管理 |</div>
+                <div class="y" style="margin-top:8px">### 🟠 High (5)</div>
+                <div>| 15 | pickle 反序列化漏洞 | security | 改用 json / yaml.safe_load |</div>
+                <div>| 19 | shell=True 命令注入 | security | 参数列表 + shell=False |</div>
+                <div>| 29 | 裸 except 吞掉异常 | correctness | 捕获具体异常类型 |</div>
+                <div class="g" style="margin-top:8px">### Info (5) — 缺少返回类型标注</div>
+                <div style="margin-top:10px"><strong>Verdict: Block</strong> — 必须修复 Critical（CI 退出码 2）</div>
+                <div style="margin-top:8px;font-size:.8rem;color:#94a3b8">↑ 由 $49 团队规则包（63 条规则）生成</div>
             </div>
         </div>
         <p style="text-align:center;color:#666;font-size:.85rem;margin-top:20px;">已收录：Smithery · mcpservers.org · cursor.directory · Product Hunt（审核中：Glama / Docker 官方目录 / awesome-mcp-servers）</p>
