@@ -12,6 +12,10 @@ All notable changes to the MCP Code Review Server are documented here.
 - Stable check ids for every built-in finding: `dynamic_exec`, `sql_injection`, `deserialization`, `command_injection`, `input_py2`, `xss_innerhtml`, `hardcoded_secret`, `nplus1`, `unbounded_list`, `bare_except`, `empty_except`, `todo_comment`, `missing_return_type`, `long_lines`, `snake_case`, `pascal_case`.
 - Optional `[yaml]` extra for PyYAML support (JSON configs need no extra dependencies).
 
+### Fixed
+
+- Pinned `mcp` to `>=1.6,<2` so fresh installs don't pull the incompatible `mcp` 2.x API (which removed `Server.list_tools`).
+
 ## 0.1.0 — 2026-07-29
 
 ### Added

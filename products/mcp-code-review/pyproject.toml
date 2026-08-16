@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Code review as an MCP server — structured reviews with OWASP security scanning"
 requires-python = ">=3.11"
 dependencies = [
-    "mcp>=1.6",
+    "mcp>=1.6,<2",
     "rich>=13.9",
 ]
 
