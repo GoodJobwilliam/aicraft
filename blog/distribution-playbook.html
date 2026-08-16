@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>0 预算把 MCP 工具铺到 12 个分发渠道：30 天实战复盘 — AICraft</title>
+<meta name="description" content="MCP Server 零预算分发实战：PyPI、Smithery、mcpservers.org、Product Hunt、Glama、awesome-mcp-servers 等 12 个渠道的真实数据、坑与经验。">
+<link rel="canonical" href="https://aicraft.vip/blog/distribution-playbook.html">
+<style>
+:root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--text:#c4c4cf;--heading:#e4e4ed;--accent:#6366f1;--accent2:#22d3ee;--muted:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;padding:2rem}
+.container{max-width:720px;margin:0 auto}
+h1{color:var(--heading);font-size:1.9rem;margin-bottom:.5rem;line-height:1.35}
+h2{color:var(--heading);font-size:1.3rem;margin:2rem 0 .8rem}
+h3{color:var(--heading);font-size:1.1rem;margin:1.5rem 0 .5rem}
+p{margin-bottom:1rem}
+a{color:var(--accent2)}
+code{background:var(--card);padding:.15em .4em;border-radius:4px;font-size:.9em;color:var(--accent2)}
+pre{background:var(--card);padding:1rem;border-radius:8px;overflow-x:auto;margin:1rem 0;border:1px solid var(--border)}
+pre code{background:none;padding:0}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.5rem .7rem;text-align:left}
+th{color:var(--heading);background:var(--card)}
+.meta{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+.header{text-align:center;padding:2rem 0 3rem}
+.header a{color:var(--accent);text-decoration:none}
+.cta-box{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;padding:1.5rem;text-align:center;margin:2rem 0}
+.cta-box h3{color:#fff;margin:0 0 .5rem;font-size:1.1rem}
+.cta-box p{color:rgba(255,255,255,.9);margin:0 0 1rem;font-size:.95rem}
+.btn{display:inline-block;background:#fff;color:#0a0a0f;padding:.6rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem}
+.btn:hover{opacity:.9}
+ul,ol{margin:0 0 1rem 1.5rem}
+li{margin-bottom:.3rem}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+  <a href="https://aicraft.vip">← AICraft 主页</a>
+  <h1 style="margin-top:1rem">0 预算把 MCP 工具铺到 12 个分发渠道：30 天实战复盘</h1>
+  <div class="meta">2026-08-16 · 阅读约 8 分钟 · 数据截至 2026-08-16</div>
+</div>
+
+<p>一个月前，我发布了 <a href="https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review">aicraft-code-review</a>——一个完全本地运行的 MCP 代码审查服务器（OWASP 安全扫描、N+1 检测、代码风格检查），支持 Claude Code、Cursor 和 Cline。预算：<strong>0 元</strong>。粉丝：<strong>0</strong>。</p>
+
+<p>一个月后：PyPI 安装量 650+，Product Hunt 12 个关注者，5 个目录收录，另有 4 个待审。全程没有花一分钱。这篇文章是完整复盘，包括没成功的那部分。</p>
+
+<h2>12 个渠道的真实成绩单</h2>
+
+<table>
+<tr><th>渠道</th><th>成本</th><th>状态</th><th>花了什么</th></tr>
+<tr><td>PyPI</td><td>0</td><td>✅ 650+ 安装</td><td>一个下午：pyproject + 打包 + 上传</td></tr>
+<tr><td>Smithery</td><td>0</td><td>✅ 已上线</td><td>CLI 部署，质量分 52/100</td></tr>
+<tr><td>mcpservers.org</td><td>0</td><td>✅ 约 1 天过审</td><td>简单表单</td></tr>
+<tr><td>cursor.directory</td><td>0</td><td>✅ 已上线</td><td>插件 + MCP Server + Rule</td></tr>
+<tr><td>Product Hunt</td><td>0</td><td>✅ 已发布</td><td>免费发布，收到真实反馈</td></tr>
+<tr><td>Glama</td><td>0</td><td>⏳ 审核中</td><td>提交 + glama.json + Dockerfile</td></tr>
+<tr><td>awesome-mcp-servers</td><td>0</td><td>⏳ PR 待合</td><td>需先有 Glama 收录和质量徽章</td></tr>
+<tr><td>Docker MCP Registry</td><td>0</td><td>⏳ PR 待合</td><td>根目录 Dockerfile + LICENSE + SECURITY.md</td></tr>
+<tr><td>官方 MCP Registry</td><td>0</td><td>⏳ 下一步</td><td>mcp-publisher 发布</td></tr>
+<tr><td>MCPFind / Cline 市场</td><td>0</td><td>⏳ PR 待审</td><td>元数据 + 等维护者</td></tr>
+<tr><td>Hacker News</td><td>0</td><td>✅ 1 个赞</td><td>一篇诚实的 Show HN</td></tr>
+<tr><td>Reddit r/mcp</td><td>0</td><td>❌ 失败</td><td>见下文</td></tr>
+</table>
+
+<h2>什么真正有效</h2>
+
+<h3>1. 目录收录会复利</h3>
+<p>每个目录收录都多一条安装路径、一个外链、以及下一个目录审核时的社交证明。mcpservers.org 一天就过审了，这个收录又让 cursor.directory 的提交更有说服力。</p>
+
+<h3>2. Product Hunt 给了我们路线图</h3>
+<p>我们只有 3 个赞——但两条评论直接变成了下个版本：</p>
+<ul>
+<li>“希望全队能同步审查规则” → 做了 <code>MCP_CODE_REVIEW_CONFIG</code> 团队共享配置</li>
+<li>“希望每个仓库有自己的规则集” → 做了 <code>.mcp-code-review.yaml</code> 自动发现</li>
+</ul>
+<p>真实用户告诉你该做什么，比任何猜测都值。</p>
+
+<h3>3. awesome-mcp-servers 是终极大奖</h3>
+<p>这个仓库有 92k star，README 是绝大多数人发现 MCP 服务器的方式。但门槛是真的：必须先收录进 Glama 并有质量分数徽章。给审核留出两周时间。</p>
+
+<h2>什么没成功（帮你省一周）</h2>
+
+<h3>Reddit 新号 = 隐形人</h3>
+<p>两篇 r/mcp 帖子都被静默移除，新号连给版主发私信都不行。教训：在你有东西要推广之前，先在技术板块攒 karma。</p>
+
+<h3>HN 是彩票</h3>
+<p>1 个赞 0 评论。没关系，帖子本身是个永久外链。</p>
+
+<h3>付费目录来得早</h3>
+<p>mcp.so 收 39 美元，OpenTools 只收付费。起步阶段全部跳过。</p>
+
+<h2>差点毁掉新装用户的 bug</h2>
+<p>0.1.0 发布两周后，<code>mcp</code> 2.0.0 带着破坏性 API 变更上线了——新安装我的服务器直接 import 崩溃。原因是我锁了 <code>mcp&gt;=1.6</code> 但没有上限。</p>
+<p>如果你今天要发布 Python MCP 服务器：<strong>立刻把依赖锁成 <code>mcp&gt;=1.6,&lt;2</code></strong>。</p>
+
+<h2>诚实的数字</h2>
+<ul>
+<li>PyPI：650+ 安装，150/月</li>
+<li>Product Hunt：3 赞，12 关注，7 评论（全部回复）</li>
+<li>GitHub：2 star（对，两个）</li>
+<li>收入：$0——先把分发做起来，变现是下一章</li>
+</ul>
+
+<h2>五步打法（可直接抄）</h2>
+<ol>
+<li><strong>先发 PyPI/npm。</strong>所有其他渠道都会引用你的包。</li>
+<li><strong>一次性备齐通用材料：</strong>Dockerfile、LICENSE、SECURITY.md、glama.json、安装文档。每个目录要的都是这些的子集。</li>
+<li><strong>并行投免费目录。</strong>快速过审能带起节奏。</li>
+<li><strong>收集反馈并快速发货</strong>（PH 评论、issue），然后告诉大家你发货了。</li>
+<li><strong>最后攻两个大 PR：</strong>awesome-mcp-servers 和 Docker MCP Registry，等质量分和材料都齐了再上。</li>
+</ol>
+
+<div class="cta-box">
+  <h3>试试 MCP Code Review</h3>
+  <p>MIT 开源，本地运行，不传代码。一行命令装好。</p>
+  <a class="btn" href="https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review">安装文档 →</a>
+  <p style="margin-top:.8rem"><code>pip install aicraft-code-review</code></p>
+</div>
+
+<p style="text-align:center;color:var(--muted);font-size:.85rem">英文完整版见 <a href="https://dev.to/goodjobwilliam/the-0-distribution-playbook-for-mcp-servers-12-channels-30-days-real-numbers-b4o">Dev.to</a>。有问题欢迎在 GitHub issue 交流。</p>
+</div>
+</body>
+</html>
