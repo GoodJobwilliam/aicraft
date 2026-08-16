@@ -103,6 +103,7 @@ NEXT STEPS
 13. Patrol log 2026-08-16 (round 5): 中文博客《0 预算把 MCP 工具铺到 12 个分发渠道》发布 (blog/distribution-playbook.html, 已入 sitemap + 首页 footer + blog 索引, commit eb2cb1d, 已上线 200); PulseMCP 仍暂停; Creem 仍 0 销售; V2EX (tab 2D98E744) 与掘金 (tab 3B10777E) 登录页已打开等用户登录; PH 无新互动; PyPI 仍待登录
 14. Patrol log 2026-08-16 (round 6): Reddit 第三条 karma 评论发布成功（r/ClaudeAI 会话上下文导出帖，3 条评论全部为纯技术干货，账号现 3 条评论在攒 karma）; V2EX 帖子草稿 (/tmp/v2ex_post.md) 与掘金文章草稿 (/tmp/juejin_article.md) 已写好，用户登录后即可发; awesome bot 要求已逐条核对（仅剩 Glama 收录+徽章）; Docker PR server.yaml 合规且 pin 的 commit 已含全部功能; Glama/Gmail/HN 无变化; PyPI/V2EX/掘金登录页仍待用户
 15. Patrol log 2026-08-16 (round 7): 中文落地页 zh.html 上线 (commit 933d319, 200 OK) — hero 为 MCP 产品 + 真实示例报告 + 全部 9 产品 + 中文 FAQ + PH 真实评论; 英文首页 footer 加「中文」入口，sitemap 已收录; V2EX/掘金草稿已改为指向 zh.html; Smithery 仍 52/100 且 "No capabilities found"（Arcade 迁移后 redeploy 通道坏，支持入口仅 Discord）; Bing 上 aicraft-code-review 尚未收录（需时间）; PyPI/V2EX/掘金登录页仍待用户
+16. Patrol log 2026-08-16 (round 8): 产品新功能上线 — CLI 直跑模式 (commit fff7cda): `mcp-code-review review-file PATH` / `review-diff [--git]` / `review-code CODE`，CI 友好退出码 (0 clean / 1 high-medium / 2 critical)，配置自动发现，33 个测试全过，README+CHANGELOG 已更新，0.1.1 dist 重新构建待发布; PH 论坛补发修正版配置示例评论（首条评论的 YAML 键名是错的：rules/message/warning → 修正为 custom_rules/issue/high）; PH 评论编辑 UI 程序化点击无效（菜单不展开），后续如需编辑用 Apollo client mutate（payload 字段名未探明，已记录）; PyPI/V2EX/掘金登录页仍待用户
 
 CONSTRAINTS
 -----------
