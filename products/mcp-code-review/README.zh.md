@@ -25,7 +25,7 @@ English docs: [README.md](./README.md)
 
 ```bash
 # 添加到 Claude Code 的 MCP 配置：
-claude mcp add code-review -- uvx aicraft-code-review
+claude mcp add code-review -- uvx --with "mcp<2" aicraft-code-review
 ```
 
 或写进 `~/.cursor/mcp.json` / `claude_desktop_config.json`：
@@ -35,7 +35,7 @@ claude mcp add code-review -- uvx aicraft-code-review
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["aicraft-code-review"]
+      "args": ["--with", "mcp<2", "aicraft-code-review"]
     }
   }
 }
@@ -44,9 +44,11 @@ claude mcp add code-review -- uvx aicraft-code-review
 ### 通过 pip
 
 ```bash
-pip install aicraft-code-review
+pip install "aicraft-code-review" "mcp<2"
 python -m mcp_code_review
 ```
+
+> ⚠️ PyPI 0.1.0 未限制 `mcp` 版本，mcp 2.0.0 移除了 `Server.list_tools`，全新安装会导致 CLI 崩溃。在 0.1.1（自动锁定版本）发布前请固定 `mcp<2`。
 
 ### CLI 直跑模式（不需要 MCP 客户端）
 
@@ -134,7 +136,7 @@ custom_rules:
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["aicraft-code-review"],
+      "args": ["--with", "mcp<2", "aicraft-code-review"],
       "env": {
         "MCP_CODE_REVIEW_CONFIG": "/path/to/team-repo/.mcp-code-review.yaml"
       }

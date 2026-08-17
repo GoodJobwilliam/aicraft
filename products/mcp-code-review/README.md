@@ -26,7 +26,7 @@ Powered by the same methodology as our Code Review Agent: OWASP Top 10 scanning,
 
 ```bash
 # Add to your Claude Code MCP config:
-claude mcp add code-review -- uvx aicraft-code-review
+claude mcp add code-review -- uvx --with "mcp<2" aicraft-code-review
 ```
 
 Or add to your `~/.cursor/mcp.json` or `claude_desktop_config.json`:
@@ -36,7 +36,7 @@ Or add to your `~/.cursor/mcp.json` or `claude_desktop_config.json`:
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["aicraft-code-review"]
+      "args": ["--with", "mcp<2", "aicraft-code-review"]
     }
   }
 }
@@ -45,9 +45,11 @@ Or add to your `~/.cursor/mcp.json` or `claude_desktop_config.json`:
 ### Via pip
 
 ```bash
-pip install aicraft-code-review
+pip install "aicraft-code-review" "mcp<2"
 python -m mcp_code_review
 ```
+
+> ⚠️ PyPI 0.1.0 does not cap `mcp`, and mcp 2.0.0 removes `Server.list_tools`, which crashes the CLI on fresh installs. Pin `mcp<2` until 0.1.1 (which pins it automatically) is published.
 
 ### CLI mode (no MCP client needed)
 
@@ -138,7 +140,7 @@ Commit the file to a shared repo, then wire every teammate's MCP client to it:
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["aicraft-code-review"],
+      "args": ["--with", "mcp<2", "aicraft-code-review"],
       "env": {
         "MCP_CODE_REVIEW_CONFIG": "/path/to/team-repo/.mcp-code-review.yaml"
       }
