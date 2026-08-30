@@ -8,7 +8,7 @@ You get in **minutes** what normally takes teams weeks: production-grade rule pr
 
 | File | What it does |
 |------|--------------|
-| `rules/python.yaml` | 22 security/correctness/quality rules for Python |
+| `rules/python.yaml` | 21 security/correctness/quality rules for Python |
 | `rules/javascript.yaml` | 16 rules for JavaScript & TypeScript (React, Vue, Node) |
 | `rules/go.yaml` | 13 rules for Go |
 | `rules/java.yaml` | 13 rules for Java |
