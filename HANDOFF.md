@@ -123,4 +123,5 @@
 - 漏斗统计仍为 0 contacts / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR；提交 8fb171e 已推送到 main。
 - 2026-08-30（收入主线 round 30）：基于 GitHub 公共 API 核验候选仓库的 issue 开放状态与最近提交，新增 `OUTREACH_QUEUE.md` 固化 8 个优先候选和技术开场问题；新增中英文 `trial-feedback` Issue Forms，记录试用发现、共享规则、误报/遗漏、下一步意向与决策时间；试用页和 issue 配置已接入反馈入口。未发送外部消息，未把候选项目或表单提交计入收入。
 - 2026-08-30（收入主线 round 31）：修复 CLI `review-diff --git` 文案与实现不一致问题，新增 `--staged` 使用 `git diff --cached` 检查 index；对文件/Git 错误返回简洁的 CI exit 2；补充帮助、staged 调用和缺失文件回归测试；同步 README、中文 README、AI 安装指南与 CHANGELOG。源码 lint 通过，MCP 测试 36 passed，漏斗测试 5 passed。该修复尚未发布新的 PyPI 版本，线上仍为 0.1.2。收入证据仍为 0。
+- 2026-08-30（收入主线 round 33）：MCP server 增加参数对象、必填字符串、路径类型和 UTF-8 读取校验，避免编辑器调用时抛 `KeyError` 或原始文件异常；新增 5 个 server 输入/文件错误测试。源码 lint 通过，MCP 测试 42 passed，漏斗测试 5 passed。修复仍只在 GitHub `main`，PyPI 线上仍为 0.1.2。
 - 2026-08-30（收入主线 round 32）：补充真实 Git 仓库 staged/unstaged 对照回归测试，MCP 测试达到 37 passed；修复测试文件 import lint 提示。GitHub `main` 源码已包含 CLI 修复，但 PyPI 仍为 0.1.2，未把未发布代码当作线上版本。
