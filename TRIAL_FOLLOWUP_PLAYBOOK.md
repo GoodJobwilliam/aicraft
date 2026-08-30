@@ -22,6 +22,7 @@ If they report a real finding, ask whether the same rule should run in every rep
 ### 3. Offer selection
 
 - **Rules only**: point to the free config workflow first; offer the `$49` Team Rules Pack when the team wants the validated multi-language profiles, CI templates, and prompts.
+- **Rules-only checkout**: after the team confirms the pack solves the stated problem, send the [Creem checkout link](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0) and record the payment only after Creem confirms it.
 - **Ongoing maintenance**: explain the founding pilot at `$19/month` or `$190/year`: first 30 days include one shared profile, one CI setup review, one false-positive/rule-tuning review, and rollout email support. Confirm exact scope and start date before charging.
 - **No decision yet**: leave the free server and trial kit as the next step; do not push a checkout link.
 

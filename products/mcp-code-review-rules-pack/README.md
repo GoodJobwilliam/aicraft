@@ -71,6 +71,10 @@ disabled_checks:
 
 Full docs: <https://github.com/GoodJobwilliam/aicraft>
 
+## Purchase
+
+The Team Rules Pack is a one-time **$49** purchase with lifetime updates. [Open secure checkout via Creem](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0).
+
 ## License
 
 You may use these rule files and workflows in any number of projects, including commercial ones, within your team. Redistribution/resale of the pack itself is not permitted.
