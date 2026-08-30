@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: write
+      issues: write
+      pull-requests: read
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,8 +40,16 @@ jobs:
           echo "exit_code=$EXIT" >> "$GITHUB_OUTPUT"
           exit 0
 
+      - name: Upload review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-code-review-report
+          path: review-report.txt
+          if-no-files-found: error
+
       - name: Comment on pull request
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/github-script@v7
         with:
           script: |

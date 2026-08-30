@@ -37,5 +37,9 @@ def test_gitlab_template_persists_report_and_propagates_exit_code():
 def test_github_template_can_comment_on_pull_requests():
     template = (ROOT / "ci/github-actions.yml").read_text(encoding="utf-8")
     assert "contents: read" in template
-    assert "pull-requests: write" in template
+    assert "issues: write" in template
+    assert "pull-requests: read" in template
     assert "issues.createComment" in template
+    assert "github.event.pull_request.head.repo.full_name == github.repository" in template
+    assert "actions/upload-artifact@v4" in template
+    assert "name: mcp-code-review-report" in template
