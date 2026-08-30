@@ -30,7 +30,7 @@ If they report a real finding, ask whether the same rule should run in every rep
 
 ### First reply (English)
 
-Thanks for sharing the context. I understand that **[pain]** is affecting **[workflow]** for a **[team size]-person [language]** team. Please run the [10-minute trial kit](https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review/trial) and reply with: (1) what it caught, (2) which rule you would share across repositories, and (3) what was noisy. No source code or secrets are needed.
+Thanks for sharing the context. I understand that **[pain]** is affecting **[workflow]** for a **[team size]-person [language]** team. Please run the [10-minute trial kit](https://aicraft.vip/trial.html) and reply by issue or email with: (1) what it caught, (2) which rule you would share across repositories, and (3) what was noisy. No source code or secrets are needed.
 
 ### Trial review (English)
 
@@ -38,7 +38,7 @@ That is useful signal. Should this rule run in every repository, and should CI b
 
 ### 首次回复（中文）
 
-感谢你补充背景。我理解 **[痛点]** 正在影响 **[流程]**，团队规模约 **[人数]**，主要使用 **[语言]**。请先运行[10 分钟自助试用包](https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review/trial)，然后回复三点：1）发现了什么；2）哪些规则希望所有仓库共享；3）哪些结果属于误报。不需要提供源代码或密钥。
+感谢你补充背景。我理解 **[痛点]** 正在影响 **[流程]**，团队规模约 **[人数]**，主要使用 **[语言]**。请先运行[10 分钟自助试用包](https://aicraft.vip/trial.zh.html)，然后在 issue 或邮件中回复三点：1）发现了什么；2）哪些规则希望所有仓库共享；3）哪些结果属于误报。不需要提供源代码或密钥。
 
 ### 试用复盘（中文）
 
