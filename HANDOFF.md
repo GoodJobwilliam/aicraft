@@ -95,6 +95,7 @@
 - **2026-08-30（收入主线 round 22）**: 修正 Team Rules Pack Python 规则数（实际 21 条）；从当前交接文档移除 Dev.to API key。该 key 曾出现在历史提交，需在 Dev.to 侧轮换，不能视为已撤销。
 - **2026-08-30（收入主线 round 23）**: 全局统一首页、博客、LLM 安装指南和规则包 CI 示例到 PyPI 0.1.2 + `mcp<2`；修正 CI 示例使用当前 CLI 的 stdin diff 形式，避免新装兼容性错误。
 - **2026-08-30（收入主线 round 24）**: 将中英文产品 README 的 pip 安装命令也固定到 `aicraft-code-review==0.1.2`，完成所有主要公开安装入口的一致性收口。
+- **2026-08-30（收入主线 round 25）**: 为 `scripts/funnel_report.py` 新增 5 个回归测试，覆盖空日志、一次性收入与 MRR 分离、中文状态值、缺列和负数收入校验。
 - **2026-08-30（收入主线 round 20）**: 在 `TRIAL_FOLLOWUP_PLAYBOOK.md` 增加中英文首回复/试用复盘/报价模板和跟进时点；`OUTREACH_LOG.csv` 增加 GitHub issue 编号与下次跟进日期，漏斗脚本同步新 schema。
 - **2026-08-30（收入主线 round 21）**: 将 Team Updates 收敛为可验收的 founding pilot：首 30 天包含共享规则档案、CI 接入复核、规则/误报复盘和邮件支持；明确不含托管扫描、全天候支持或无限定制，并同步双语页面、推广包、GTM 和跟进手册。
 - **2026-08-17（round 13）**: 官网示例报告区上线验证 ✅；github.com 被墙 → 建立 API 推送流程并推送成功（remote 1fb9ff7→7342e40→cbe82eb）；CI workflow 推送被 workflow scope 拦截（404，等 PAT）；IH 交叉发帖根因定位——帖文在 Firestore `posts` 集合（非 RTDB），firestore.googleapis.com 被墙，浏览器内 fetch 也 Failed to fetch → **需 VPN**；**实测确认 0.1.0 新装即崩**（mcp 2.0.0 移除 list_tools）→ 全部安装指引改 pin `mcp<2` 止损（cbe82eb，zh.html 已生效）；Creem 复查 0 销售；Glama 仍 0 收录（72k servers 无 aicraft）；awesome #10918 open/clean、Docker #4699 open、MCPFind #139 open、Cline #2106 已被关；HN 1 point；ai-bot.cn 未收录；PH 会话过期需重登；已为 PyPI/V2EX/掘金 开好登录标签
