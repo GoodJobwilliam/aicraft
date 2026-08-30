@@ -51,7 +51,7 @@ Then configure:
 ```
 
 ## Requirements
-- Python 3.10+
+- Python 3.11+
 - `uvx` (for Option 1) or `pip` (for Option 2)
 - No API keys required
 - No environment variables needed

@@ -43,7 +43,7 @@ mcp-code-review review-file path/to/file.py
 - 哪些结果属于误报或遗漏？
 - 每月规则更新、CI 工作流刷新或上线支持是否能节省审查时间？
 
-如果答案指向持续的团队需求，可以使用[中文团队试用申请表](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial-zh.yml&title=%5B%E5%9B%A2%E9%98%9F%E8%AF%95%E7%94%A8%5D)，填写团队规模、语言、流程和痛点。请勿提交源代码或密钥。
+如果答案指向持续的团队需求，可以提交[中文结构化试用反馈](https://github.com/GoodJobwilliam/aicraft/issues/new?template=trial-feedback-zh.yml&title=%5B%E8%AF%95%E7%94%A8%E5%8F%8D%E9%A6%88%5D)，或使用[中文团队试用申请表](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial-zh.yml&title=%5B%E5%9B%A2%E9%98%9F%E8%AF%95%E7%94%A8%5D)开始一次引导式团队测试。填写团队规模、语言、流程和痛点即可。请勿提交源代码或密钥。
 
 可选的 **Team Rules Pack** 为一次性 `$49`，可[通过 Creem 安全结算](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0)。**Team Updates** 是 `$19/月` 或 `$190/年` 的早期体验；收费前会先确认范围和开始时间。
 

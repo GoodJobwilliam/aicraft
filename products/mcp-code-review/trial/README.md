@@ -43,6 +43,6 @@ After one review, ask:
 - Which finding was noisy or missing?
 - Would monthly rule drops, CI workflow refreshes, or rollout help save review time?
 
-If the answer points to an ongoing team need, use the [free team trial request form](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request) and include the team size, languages, workflow, and pain. Do not include source code or secrets.
+If the answer points to an ongoing team need, share the outcome in the [structured trial feedback form](https://github.com/GoodJobwilliam/aicraft/issues/new?template=trial-feedback.yml&title=Trial%20feedback), or use the [free team trial request form](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request) for a guided team test. Include the team size, languages, workflow, and pain. Do not include source code or secrets.
 
 The optional **Team Rules Pack** is a one-time `$49` add-on with [secure checkout via Creem](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0). **Team Updates** is an early-access offer at `$19/month` or `$190/year`; scope and launch date are confirmed before charging.

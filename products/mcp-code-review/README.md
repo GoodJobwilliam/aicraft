@@ -63,9 +63,12 @@ For a structured, free team trial, [open the GitHub trial request form](https://
 # Review a local file (discovers .mcp-code-review.yaml from the file's directory)
 mcp-code-review review-file path/to/file.py
 
-# Review a git diff
+# Review an unstaged git diff
 git diff | mcp-code-review review-diff
 mcp-code-review review-diff --git
+
+# Review staged changes before committing
+mcp-code-review review-diff --staged
 
 # Review a snippet
 mcp-code-review review-code "import os; os.system('ls')"

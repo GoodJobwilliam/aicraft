@@ -3,6 +3,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from mcp_code_review import cli
+
 VENV_PY = Path(__file__).resolve().parents[1] / ".venv" / "bin" / "python"
 SRC = str(Path(__file__).resolve().parents[1] / "src")
 
@@ -14,6 +16,7 @@ def run_cli(*args: str, stdin: str = "") -> subprocess.CompletedProcess:
         text=True,
         input=stdin,
         env={"PYTHONPATH": SRC, "PATH": "/usr/bin:/bin"},
+        check=False,
     )
 
 
@@ -56,3 +59,30 @@ class TestCliReviewDiff:
         result = run_cli("--help")
         assert "review-file" in result.stdout
         assert result.returncode == 0
+
+    def test_help_distinguishes_staged_changes(self):
+        result = run_cli("review-diff", "--help")
+        assert "--staged" in result.stdout
+        assert "unstaged working-tree" in result.stdout
+
+    def test_staged_diff_uses_cached_git_diff(self, monkeypatch):
+        calls = []
+
+        class Result:
+            returncode = 0
+            stdout = "+eval('1')"
+            stderr = ""
+
+        def fake_run(command, **kwargs):
+            calls.append(command)
+            return Result()
+
+        monkeypatch.setattr(cli.subprocess, "run", fake_run)
+        assert "eval" in cli._git_diff(staged=True)
+        assert calls == [["git", "diff", "--cached"]]
+
+    def test_missing_file_returns_error_without_traceback(self, tmp_path):
+        result = run_cli("review-file", str(tmp_path / "missing.py"))
+        assert result.returncode == 2
+        assert "error:" in result.stderr
+        assert "Traceback" not in result.stderr

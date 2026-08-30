@@ -62,9 +62,12 @@ python -m mcp_code_review
 # 审查本地文件（自动从文件所在目录向上发现 .mcp-code-review.yaml）
 mcp-code-review review-file path/to/file.py
 
-# 审查 git diff
+# 审查未暂存的 git diff
 git diff | mcp-code-review review-diff
 mcp-code-review review-diff --git
+
+# 提交前审查已暂存的改动
+mcp-code-review review-diff --staged
 
 # 审查代码片段
 mcp-code-review review-code "import os; os.system('ls')"
