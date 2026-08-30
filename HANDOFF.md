@@ -86,6 +86,7 @@
 - **2026-08-30（收入主线 round 11）**: 将 10 分钟自助试用和中英文 GitHub 团队申请入口直接接入首页 Team Updates 区，减少从访问到验证的跳转。
 - **2026-08-30（收入主线 round 12）**: 修正英文首页团队 CTA 的页面级按钮样式，确保自助试用和团队申请入口在首屏之外仍清晰可见。
 - **2026-08-30（收入主线 round 13）**: 在中英文团队试用表单加入决策角色与付费决策时间字段，并同步更新 `OUTREACH_LOG.md` / `GTM_NEXT_STEPS.md`；开始按可验证购买时点筛选线索。
+- **2026-08-30（收入主线 round 14）**: 修正 GitHub Issue Template 配置中“自动回复”的过时描述，明确当前由维护者在公开 issue 线程人工跟进；未新增任何外部服务。
 - **2026-08-17（round 13）**: 官网示例报告区上线验证 ✅；github.com 被墙 → 建立 API 推送流程并推送成功（remote 1fb9ff7→7342e40→cbe82eb）；CI workflow 推送被 workflow scope 拦截（404，等 PAT）；IH 交叉发帖根因定位——帖文在 Firestore `posts` 集合（非 RTDB），firestore.googleapis.com 被墙，浏览器内 fetch 也 Failed to fetch → **需 VPN**；**实测确认 0.1.0 新装即崩**（mcp 2.0.0 移除 list_tools）→ 全部安装指引改 pin `mcp<2` 止损（cbe82eb，zh.html 已生效）；Creem 复查 0 销售；Glama 仍 0 收录（72k servers 无 aicraft）；awesome #10918 open/clean、Docker #4699 open、MCPFind #139 open、Cline #2106 已被关；HN 1 point；ai-bot.cn 未收录；PH 会话过期需重登；已为 PyPI/V2EX/掘金 开好登录标签
 - **2026-08-16（round 12）**: Glama 提交确认在审核队列（弹窗 "already pending review"）；官网示例报告区用真实 CLI 输出重做（3 Critical/5 High/Block）；PyPI/V2EX/掘金仍待登录；IH cross-post 受阻（UNPUBLISHED DRAFT 残留，编辑器未出现）
 - **2026-08-16（round 10，转化专项）**: Team Rules Pack 上线（63 规则 + CI + prompts，全部验证）；Creem 产品更新为 $49 规则包；官网双层文案；PH 论坛发规则包公告；Dev.to 文章 5（id 4408698）
