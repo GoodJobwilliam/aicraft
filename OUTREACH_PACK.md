@@ -6,7 +6,7 @@ Use the same message across free channels. The goal is not raw traffic; it is fi
 
 I built an open-source MCP server that reviews code locally in Claude Code, Cursor, or Cline. It checks security, performance, quality, and style without uploading source code.
 
-For teams, there is a companion rules pack with shared profiles and CI merge gates. I am validating a founding Team Updates pilot ($19/month or $190/year): the first 30 days include one shared profile, one CI setup review, one rule/false-positive review, and rollout email support.
+For teams, there is a companion rules pack with shared profiles and CI merge gates. I am validating two Team Updates pilots: Starter ($19/month or $190/year, up to 3 engineers) and Team Pilot ($99/month or $990/year, up to 10 engineers with CI and tuning support).
 
 Try the free 10-minute trial: https://aicraft.vip/trial.html
 Team Updates details: https://aicraft.vip/team-updates.html
@@ -16,7 +16,7 @@ Free team trial form: https://github.com/GoodJobwilliam/aicraft/issues/new?templ
 
 我做了一个开源 MCP 代码审查服务器，可以接进 Claude Code、Cursor、Cline，在本地检查安全、性能、质量和风格，代码不上传。
 
-团队还可以使用共享规则和 CI 合并门禁。我正在验证 Team Updates founding pilot（$19/月或 $190/年）：首 30 天包含一份共享规则档案、一次 CI 接入复核、一次规则/误报复盘和上线邮件支持。
+团队还可以使用共享规则和 CI 合并门禁。我正在验证两个 Team Updates 档位：Starter（最多 3 人，$19/月或 $190/年）和 Team Pilot（最多 10 人，$99/月或 $990/年，包含 CI 与调优支持）。
 
 免费 10 分钟试用：https://aicraft.vip/trial.zh.html
 团队更新：https://aicraft.vip/team-updates.zh.html

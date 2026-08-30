@@ -16,6 +16,7 @@ HEADER = [
     "current_workflow",
     "decision_role",
     "decision_window",
+    "offer_tier",
     "qualified_reply",
     "team_test",
     "paid_signal",
@@ -78,6 +79,18 @@ def test_missing_column_is_rejected(tmp_path: Path):
     path = tmp_path / "log.csv"
     path.write_text("date,channel\n2026-08-30,test\n", encoding="utf-8")
     with pytest.raises(ValueError, match="missing required columns"):
+        report(path)
+
+
+def test_offer_tier_column_is_required(tmp_path: Path):
+    path = tmp_path / "log.csv"
+    path.write_text(
+        "date,channel,contact_or_audience,qualified_reply,team_test,paid_signal,precommitment,"
+        "rules_pack_sales,team_updates_subscribers,one_time_revenue_usd,mrr_usd,next_follow_up\n"
+        "2026-08-30,test,sample,,,,,,,,,\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="offer_tier"):
         report(path)
 
 

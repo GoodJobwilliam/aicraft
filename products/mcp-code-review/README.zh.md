@@ -52,7 +52,7 @@ python -m mcp_code_review
 
 ### Team Updates（早期体验）
 
-需要持续规则更新、CI 工作流刷新和上线支持的团队，可以加入 **Team Updates** 早期名单：[$19/月或 $190/年](https://aicraft.vip/team-updates.zh.html)。目前只和少量团队验证，收费前会先确认交付范围和上线时间。
+需要持续规则更新、CI 工作流刷新和上线支持的团队，可以加入 **Team Updates** 早期名单：Starter 为[$19/月或 $190/年](https://aicraft.vip/team-updates.zh.html)（最多 3 人），Team Pilot 为 $99/月或 $990/年（最多 10 人）。目前只和少量团队验证，收费前会先确认交付范围和上线时间。
 
 如需结构化、免费的团队试用，可以[打开 GitHub 中文试用申请表](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial-zh.yml&title=%5B%E5%9B%A2%E9%98%9F%E8%AF%95%E7%94%A8%5D)。请勿提交源代码、凭据或其他机密信息。
 

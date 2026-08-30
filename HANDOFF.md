@@ -118,6 +118,8 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-08-30（收入主线 round 42）：将双层 Team Updates offer 统一到首页、中文页、产品 README、发布指南、试用包、Issue Form、GTM、推广包、跟进手册和市场提交说明；漏斗 `offer_tier` 已纳入必填字段并新增缺列回归测试。Starter 为最多 3 人 `$19/月`，Team Pilot 为最多 10 人 `$99/月`；当前仍无真实付款或预承诺。
+- 2026-08-30（收入主线 round 41）：将 Team Updates 从单一 `$19/月` 早期体验调整为可验证双层 offer：Starter（最多 3 人，$19/月或 $190/年）与 Team Pilot（最多 10 人，$99/月或 $990/年，含 CI/调优支持）；同步首页、中英文产品文档、试用包、GTM、推广包、跟进手册和四个 Issue Form；漏斗 CSV 新增 `offer_tier` 字段，后续可区分不同价格意向。目标数学为 21 个 Team Pilot 约 $2,079 MRR；当前真实收入仍为 0。
 - 2026-08-30（收入主线 round 40）：收紧免费 server 的 `hardcoded_secret` 内置规则：只有凭据字段被赋值为字符串字面量时才触发，不再把函数名、注释或 `os.environ` 查找误报为硬编码密钥；新增回归测试。尚未发布新 PyPI 版本，线上仍为 `0.1.2`；收入证据仍为 0。
 - 2026-08-30（收入主线 round 39）：将 Team Rules Pack GitHub Actions 拆为只读 `review` job 与独立 `comment` job：执行 PR 内容的 job 不再持有写权限；评论 job 只下载 artifact、使用 `issues: write`，并仅对同仓库 PR 运行；fork PR 仍保留报告 artifact；Critical 门禁通过 review job 输出保持生效。README、测试与 ZIP 已同步更新。
 - 2026-08-30（收入主线 round 38）：继续修正 Team Rules Pack GitHub Actions 交付：`issues.createComment` 改用正确的 `issues: write` 权限；来自 fork 的 PR 跳过写评论以适配 GitHub 只读 token；新增 `actions/upload-artifact@v4` 始终上传 `review-report.txt`。README、回归测试与 ZIP 已同步更新。

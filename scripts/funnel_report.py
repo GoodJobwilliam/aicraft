@@ -17,6 +17,7 @@ REQUIRED_COLUMNS = {
     "team_test",
     "paid_signal",
     "precommitment",
+    "offer_tier",
     "rules_pack_sales",
     "team_updates_subscribers",
     "one_time_revenue_usd",

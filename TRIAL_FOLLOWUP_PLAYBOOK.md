@@ -23,7 +23,7 @@ If they report a real finding, ask whether the same rule should run in every rep
 
 - **Rules only**: point to the free config workflow first; offer the `$49` Team Rules Pack when the team wants the validated multi-language profiles, CI templates, and prompts.
 - **Rules-only checkout**: after the team confirms the pack solves the stated problem, send the [Creem checkout link](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0) and record the payment only after Creem confirms it.
-- **Ongoing maintenance**: explain the founding pilot at `$19/month` or `$190/year`: first 30 days include one shared profile, one CI setup review, one false-positive/rule-tuning review, and rollout email support. Confirm exact scope and start date before charging.
+- **Ongoing maintenance**: offer Starter at `$19/month` or `$190/year` for up to 3 engineers, or Team Pilot at `$99/month` or `$990/year` for up to 10 engineers with the first-30-day CI and tuning reviews. Confirm exact scope and start date before charging.
 - **No decision yet**: leave the free server and trial kit as the next step; do not push a checkout link.
 
 ## Copy-ready replies
@@ -34,7 +34,7 @@ Thanks for sharing the context. I understand that **[pain]** is affecting **[wor
 
 ### Trial review (English)
 
-That is useful signal. Should this rule run in every repository, and should CI block on it? If the rule set is the main need, the one-time `$49` Team Rules Pack includes validated Python/JS/TS/Go/Java profiles, CI templates, and review prompts. If keeping the rules current is the bigger problem, Team Updates is being validated at `$19/month` or `$190/year`; we confirm scope and start date before charging.
+That is useful signal. Should this rule run in every repository, and should CI block on it? If the rule set is the main need, the one-time `$49` Team Rules Pack includes validated Python/JS/TS/Go/Java profiles, CI templates, and review prompts. If keeping the rules current is the bigger problem, Starter is `$19/month` or `$190/year` for up to 3 engineers, while Team Pilot is `$99/month` or `$990/year` for up to 10 engineers with CI and tuning support; we confirm scope and start date before charging.
 
 ### 首次回复（中文）
 
@@ -42,7 +42,7 @@ That is useful signal. Should this rule run in every repository, and should CI b
 
 ### 试用复盘（中文）
 
-这个反馈很有价值。你们是否希望这条规则在每个仓库都执行？CI 是否应该在命中时阻止合并？如果主要需求是现成规则，$49 Team Rules Pack 包含 Python/JS/TS/Go/Java 规则档案、CI 模板和审查提示词；如果主要问题是持续维护，可以了解 $19/月或 $190/年的 Team Updates。收费前会先确认范围和开始时间。
+这个反馈很有价值。你们是否希望这条规则在每个仓库都执行？CI 是否应该在命中时阻止合并？如果主要需求是现成规则，$49 Team Rules Pack 包含 Python/JS/TS/Go/Java 规则档案、CI 模板和审查提示词；如果主要问题是持续维护，Starter 是最多 3 人的 $19/月或 $190/年，Team Pilot 是最多 10 人的 $99/月或 $990/年，后者包含 CI 和调优支持。收费前会先确认范围和开始时间。
 
 ### Follow-up timing
 
@@ -56,13 +56,13 @@ Record these in `OUTREACH_LOG.csv`:
 
 - **Qualified reply**: describes a recurring review pain and answers the workflow questions.
 - **Team test**: runs the sample or a real non-confidential test and reports an outcome.
-- **Paid signal**: explicitly says they would buy the `$49` pack or consider Team Updates at the stated price.
+- **Paid signal**: explicitly says they would buy the `$49` pack or consider Team Updates Starter/Team Pilot at one of the stated prices; record the selected tier in `offer_tier`.
 - **Pre-commitment**: names a target start month and accepts the stated scope and price, subject to the final checkout link.
 - **Customer**: payment is confirmed in Creem; a message or intent does not count as revenue.
 
 ## Revenue math
 
-The `$2,000` MRR target requires 106 Team Updates customers at the current `$19/month` founding price. Annual plans are tracked as recurring revenue using their monthly equivalent (`$190/year` = `$15.83` MRR per customer). Team Rules Pack purchases add one-time revenue but do not count toward MRR.
+The `$2,000` MRR target can be reached with 21 Team Pilot customers at `$99/month` (`$2,079` MRR). Starter remains a low-friction option for smaller teams. Annual plans are tracked as recurring revenue using their monthly equivalent (`$990/year` = `$82.50` MRR; `$190/year` = `$15.83` MRR per customer). Team Rules Pack purchases add one-time revenue but do not count toward MRR.
 
 Do not treat one-time `$49` purchases as MRR. Track one-time revenue and recurring revenue separately.
 

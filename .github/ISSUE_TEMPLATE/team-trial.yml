@@ -73,7 +73,8 @@ body:
       options:
         - I only want the free server
         - I would test the $49 Team Rules Pack
-        - I would consider Team Updates at $19/month or $190/year
+        - I would consider Team Updates Starter at $19/month or $190/year
+        - I would consider Team Pilot at $99/month or $990/year
         - I need to understand the scope first
     validations:
       required: true

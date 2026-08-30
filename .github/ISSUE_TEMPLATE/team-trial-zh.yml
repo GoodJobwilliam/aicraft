@@ -73,7 +73,8 @@ body:
       options:
         - 我只想使用免费服务器
         - 我愿意测试 $49 Team Rules Pack
-        - 我会考虑 $19/月或 $190/年的 Team Updates
+        - 我会考虑 $19/月或 $190/年的 Team Updates Starter
+        - 我会考虑 $99/月或 $990/年的 Team Pilot
         - 需要先了解具体交付范围
     validations:
       required: true

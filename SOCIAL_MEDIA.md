@@ -54,7 +54,8 @@
 > - 📊 Structured severity ratings
 > - 🔌 Works with Claude Code, Cursor, Cline
 > - 💰 Free MIT server; optional one-time $49 Team Rules Pack
-> - 🔁 Team Updates early access at $19/month or $190/year
+> - 🔁 Team Updates Starter: $19/month or $190/year (up to 3 engineers)
+> - 🔁 Team Pilot: $99/month or $990/year (up to 10 engineers)
 >
 > **How it works:**
 > 1. `uvx --with "mcp<2" aicraft-code-review` (PyPI 0.1.2)

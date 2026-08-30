@@ -51,7 +51,7 @@ Most products are one-time purchases with lifetime updates. The MCP Code Review 
 
 ### Team Updates (early access)
 
-The free MCP server and the one-time Team Rules Pack remain available. Team Updates is being validated with a small number of teams at a founding price of **$19/month or $190/year**. Early access is collected by email first; the delivery scope and launch date are confirmed before charging.
+The free MCP server and the one-time Team Rules Pack remain available. Team Updates is being validated in two tiers: **Starter ($19/month or $190/year, up to 3 engineers)** and **Team Pilot ($99/month or $990/year, up to 10 engineers)**. Early access is collected by email first; the delivery scope and launch date are confirmed before charging.
 
 Details: [Team Updates](./team-updates.html) · [中文页面](./team-updates.zh.html)
 

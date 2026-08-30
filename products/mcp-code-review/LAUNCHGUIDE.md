@@ -28,7 +28,8 @@ code-review, security, owasp, static-analysis, developer-tools, python
 ## Pricing and offer structure
 - **Free server**: the MCP Code Review Server is MIT-licensed and runs locally.
 - **Team Rules Pack**: one-time **$49** purchase with 63 validated rules, CI merge-gate workflows, and 20 LLM review prompts; lifetime updates for the pack.
-- **Team Updates**: early-access recurring offer at **$19/month or $190/year** for monthly rule drops, workflow refreshes, and rollout support. Scope and launch date are confirmed before charging; this is not yet an automated subscription.
+- **Team Updates Starter**: early-access recurring offer at **$19/month or $190/year** for up to 3 engineers, with monthly rule drops and lightweight rollout support.
+- **Team Updates Team Pilot**: early-access recurring offer at **$99/month or $990/year** for up to 10 engineers, including a shared profile, CI setup review, false-positive tuning review, and first-30-day rollout support. Scope and launch date are confirmed before charging; this is not yet an automated subscription.
 
 ## Tech
 - Python 3.11+

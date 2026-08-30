@@ -11,8 +11,9 @@
   - monthly rule drops
   - CI workflow refreshes
   - rollout/help email support
-- Founding price to test: $19/month or $190/year
-- Founding pilot scope: first 30 days = one shared profile, one CI setup review, one rule/false-positive review, and rollout email support
+- Starter founding price to test: $19/month or $190/year (up to 3 engineers)
+- Team Pilot founding price to test: $99/month or $990/year (up to 10 engineers)
+- Team Pilot scope: first 30 days = one shared profile, one CI setup review, one rule/false-positive review, and rollout email support
 - Pre-sale flow: collect interest by email first; charge only after delivery scope and launch date are confirmed
 
 ## What is already done
@@ -28,7 +29,7 @@
 2. Use public project channels only; invite qualified replies to the GitHub team-trial form, follow `TRIAL_FOLLOWUP_PLAYBOOK.md`, and record every contact in `OUTREACH_LOG.md`.
 3. Offer the free server first; invite qualified teams to test the Team Rules Pack.
 4. Record decision role and paid-decision timing in `OUTREACH_LOG.md`; prioritize teams that can decide this month or next.
-5. Ask testers whether they would explicitly pre-commit to Team Updates before any recurring checkout is created.
+5. Ask testers which tier they would explicitly pre-commit to before any recurring checkout is created; target Team Pilot when CI and tuning work is requested.
 6. Run `python3 scripts/funnel_report.py` weekly; review the log after 20 contacts and adjust the offer around repeated pain, not vanity metrics.
 
 ## External blockers
