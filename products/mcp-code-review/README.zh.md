@@ -54,6 +54,8 @@ python -m mcp_code_review
 
 需要持续规则更新、CI 工作流刷新和上线支持的团队，可以加入 **Team Updates** 早期名单：[$19/月或 $190/年](https://aicraft.vip/team-updates.zh.html)。目前只和少量团队验证，收费前会先确认交付范围和上线时间。
 
+如需结构化、免费的团队试用，可以[打开 GitHub 试用申请表](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request)。请勿提交源代码、凭据或其他机密信息。
+
 ### CLI 直跑模式（不需要 MCP 客户端）
 
 ```bash

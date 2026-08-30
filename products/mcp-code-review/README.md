@@ -55,6 +55,8 @@ python -m mcp_code_review
 
 Teams that want ongoing rule drops, CI workflow refreshes, and rollout support can join the **Team Updates** early-access list at [$19/month or $190/year](https://aicraft.vip/team-updates.html). The service is being validated with a small number of teams; delivery scope and launch date are confirmed before charging.
 
+For a structured, free team trial, [open the GitHub trial request form](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request). Do not include source code, credentials, or other confidential information.
+
 ### CLI mode (no MCP client needed)
 
 ```bash
