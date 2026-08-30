@@ -59,8 +59,8 @@ Details: [Team Updates](./team-updates.html) · [中文页面](./team-updates.zh
 
 - [x] Initial product lineup (8 products)
 - [x] GitHub Pages storefront with custom domain
-- [x] Creem store (pending approval)
-- [ ] MCP Marketplace listing
+- [x] Creem store (checkout live)
+- [x] Official MCP Registry listing (0.1.2 active)
 - [ ] Next.js SaaS Starter Kit
 - [ ] Team Updates recurring offer (early access validation in progress)
 
