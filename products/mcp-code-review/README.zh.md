@@ -76,7 +76,7 @@ mcp-code-review review-code "import os; os.system('ls')"
 
 ## 10 分钟团队试用
 
-运行[自助试用包](./trial/)，用一个故意包含风险的示例测试共享 JSON 规则。它使用免费的本地服务器，不会产生收费，并帮助团队判断是否需要 Team Rules Pack 或 Team Updates。
+运行[中文自助试用包](./trial/README.zh.md)，用一个故意包含风险的示例测试共享 JSON 规则。它使用免费的本地服务器，不会产生收费，并帮助团队判断是否需要 Team Rules Pack 或 Team Updates。
 
 接好后直接问你的 AI 助手：
 
