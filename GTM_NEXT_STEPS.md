@@ -18,6 +18,7 @@
 - tighten homepage copy further
 - add a dedicated Team Updates page
 - draft outreach messages for email / V2EX / 掘金 / IH
+- use `OUTREACH_PACK.md` as the single source for channel copy and qualification questions
 - update product README files to match the new offer split
 
 ## What I need from you
