@@ -19,6 +19,7 @@
 - dedicated Team Updates pages are live, with a structured GitHub team-trial form
 - outreach copy and qualification questions are in `OUTREACH_PACK.md`
 - manual follow-up and conversion criteria are in `TRIAL_FOLLOWUP_PLAYBOOK.md`
+- weekly funnel reporting uses `OUTREACH_LOG.csv` and `scripts/funnel_report.py`
 - public launch guides and product READMEs use the current PyPI 0.1.2 install path
 
 ## Next zero-budget execution loop
@@ -27,7 +28,7 @@
 3. Offer the free server first; invite qualified teams to test the Team Rules Pack.
 4. Record decision role and paid-decision timing in `OUTREACH_LOG.md`; prioritize teams that can decide this month or next.
 5. Ask testers whether they would explicitly pre-commit to Team Updates before any recurring checkout is created.
-6. Review the log after 20 contacts and adjust the offer around repeated pain, not vanity metrics.
+6. Run `python3 scripts/funnel_report.py` weekly; review the log after 20 contacts and adjust the offer around repeated pain, not vanity metrics.
 
 ## External blockers
 - PyPI, V2EX, 掘金, Product Hunt, or Indie Hackers login/OTP/CAPTCHA may require an in-browser action.
