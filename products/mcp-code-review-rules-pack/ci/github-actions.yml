@@ -7,10 +7,11 @@ on:
 
 jobs:
   review:
+    outputs:
+      exit_code: ${{ steps.review.outputs.exit_code }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      issues: write
       pull-requests: read
     steps:
       - uses: actions/checkout@v4
@@ -48,8 +49,27 @@ jobs:
           path: review-report.txt
           if-no-files-found: error
 
+      - name: Block merge on critical issues
+        if: steps.review.outputs.exit_code == '2'
+        run: |
+          echo "::error::Critical issues found — fix them before merging."
+          exit 1
+
+  comment:
+    needs: review
+    if: ${{ always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: read
+    steps:
+      - name: Download review report
+        uses: actions/download-artifact@v4
+        with:
+          name: mcp-code-review-report
+
       - name: Comment on pull request
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/github-script@v7
         with:
           script: |
@@ -61,9 +81,3 @@ jobs:
               repo: context.repo.repo,
               body: '## 🤖 Code Review (mcp-code-review)\n\n```\n' + report + '\n```'
             });
-
-      - name: Block merge on critical issues
-        if: steps.review.outputs.exit_code == '2'
-        run: |
-          echo "::error::Critical issues found — fix them before merging."
-          exit 1

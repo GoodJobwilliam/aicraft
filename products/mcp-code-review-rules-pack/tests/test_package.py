@@ -3,7 +3,6 @@
 from pathlib import Path
 from zipfile import ZipFile
 
-
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = ROOT / "mcp-code-review-rules-pack.zip"
 EXPECTED_FILES = (
@@ -39,7 +38,12 @@ def test_github_template_can_comment_on_pull_requests():
     assert "contents: read" in template
     assert "issues: write" in template
     assert "pull-requests: read" in template
+    assert "outputs:" in template
+    assert "exit_code: ${{ steps.review.outputs.exit_code }}" in template
+    assert "if: steps.review.outputs.exit_code == '2'" in template
     assert "issues.createComment" in template
     assert "github.event.pull_request.head.repo.full_name == github.repository" in template
     assert "actions/upload-artifact@v4" in template
     assert "name: mcp-code-review-report" in template
+    review_job = template.split("  comment:", 1)[0]
+    assert "issues: write" not in review_job

@@ -44,7 +44,8 @@ What you get:
 - Exit code `1` — high/medium findings → a report comment is posted on the PR, merge stays open.
 - Exit code `2` — critical findings → **the workflow fails and blocks the merge.**
 - GitLab CI keeps `review-report.txt` as an artifact even when the review job fails, so reviewers can inspect the findings.
-- Both templates keep the text report as a downloadable artifact. The GitHub Actions template requests `contents: read`, `issues: write`, and `pull-requests: read`; PR comments are enabled only for same-repository PRs because fork tokens are read-only.
+- Both templates keep the text report as a downloadable artifact. The GitHub Actions template runs review code with read-only permissions, then uses a separate write-scoped comment job only for same-repository PRs; fork PRs still receive the downloadable report without write access.
+- Critical findings are gated in the read-only review job before the optional comment job runs.
 
 ## How to customize
 
