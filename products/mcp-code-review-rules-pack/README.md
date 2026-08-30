@@ -13,7 +13,7 @@ You get in **minutes** what normally takes teams weeks: production-grade rule pr
 | `rules/go.yaml` | 13 rules for Go |
 | `rules/java.yaml` | 13 rules for Java |
 | `ci/github-actions.yml` | GitHub Actions workflow: review every PR, comment the report, **block merge on critical findings** |
-| `ci/gitlab-ci.yml` | GitLab CI MR gate with the same behavior |
+| `ci/gitlab-ci.yml` | GitLab CI MR gate with the same behavior; keeps `review-report.txt` as an artifact |
 | `llm-prompts.md` | 20 prompts for deep semantic review with Claude/GPT/Gemini |
 
 Every rule uses the stable `custom_rules` schema (name / pattern / severity / category / issue / fix) plus tuned `severity_overrides` for the built-in checks — validated against MCP Code Review v0.1.2.
@@ -43,6 +43,7 @@ What you get:
 - Exit code `0` — clean, nothing happens.
 - Exit code `1` — high/medium findings → a report comment is posted on the PR, merge stays open.
 - Exit code `2` — critical findings → **the workflow fails and blocks the merge.**
+- GitLab CI keeps `review-report.txt` as an artifact even when the review job fails, so reviewers can inspect the findings.
 
 ## How to customize
 

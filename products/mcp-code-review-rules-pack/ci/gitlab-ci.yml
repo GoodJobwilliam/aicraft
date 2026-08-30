@@ -13,7 +13,12 @@ code-review:
         BASE=$(git rev-parse HEAD~1)
       fi
       git diff "$BASE"...HEAD > /tmp/changes.diff
-    - mcp-code-review review-diff < /tmp/changes.diff || true
+    - |
+      set +e
+      mcp-code-review review-diff < /tmp/changes.diff > review-report.txt
+      EXIT=$?
+      cat review-report.txt
+      exit "$EXIT"
   allow_failure:
     exit_codes: 1
   artifacts:
