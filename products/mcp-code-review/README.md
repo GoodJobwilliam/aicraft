@@ -7,7 +7,7 @@ mcp-name: io.github.GoodJobwilliam/aicraft-code-review
 
 中文文档：[README.zh.md](./README.zh.md)
 
-Listed on: [Smithery](https://smithery.ai/servers/yaohuixue1/mcp-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server)
+Listed on: [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.GoodJobwilliam%2Faicraft-code-review) · [Smithery](https://smithery.ai/servers/yaohuixue1/mcp-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server)
 
 
 Code review as an MCP server. Connect it to Claude Code, Cursor, or any MCP-compatible AI assistant.
