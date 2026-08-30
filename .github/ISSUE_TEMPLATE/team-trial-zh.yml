@@ -1,0 +1,87 @@
+name: 团队试用申请
+description: 申请 MCP Code Review 的免费本地团队试用
+title: "[团队试用] "
+labels:
+  - team-trial
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的关注。这个表单用于验证 MCP Code Review 和 Team Rules Pack 的免费短期团队试用。
+
+        请勿在这里粘贴源代码、凭据、API 密钥或其他机密信息。
+
+  - type: input
+    id: team-size
+    attributes:
+      label: 团队规模
+      description: 有多少名工程师会参与试用？
+      placeholder: 例如：4
+    validations:
+      required: true
+
+  - type: input
+    id: languages
+    attributes:
+      label: 主要语言
+      description: 试用需要覆盖哪些语言？
+      placeholder: 例如：Python、TypeScript
+    validations:
+      required: true
+
+  - type: dropdown
+    id: workflow
+    attributes:
+      label: 当前审查流程
+      description: 本地审查最适合接入你们现有流程的哪个位置？
+      options:
+        - 编辑器（Claude Code、Cursor 或 Cline）
+        - Pull Request
+        - CI 流水线
+        - 编辑器和 Pull Request
+        - 编辑器、Pull Request 和 CI
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: pain
+    attributes:
+      label: 最大的审查痛点
+      description: 用一两句话描述反复出现的问题，请勿包含私有代码。
+      placeholder: 例如：不同仓库的共享规则经常漂移，误报拖慢合并。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: trial-window
+    attributes:
+      label: 试用时间
+      options:
+        - 本周
+        - 两周内
+        - 本月
+        - 仅了解一下
+    validations:
+      required: true
+
+  - type: dropdown
+    id: updates-interest
+    attributes:
+      label: 持续更新意向
+      description: 这只是调研，提交表单不会产生收费或订阅。
+      options:
+        - 我只想使用免费服务器
+        - 我愿意测试 $49 Team Rules Pack
+        - 我会考虑 $19/月或 $190/年的 Team Updates
+        - 需要先了解具体交付范围
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contact
+    attributes:
+      label: 后续联系
+      options:
+        - label: 我同意在这个公开 issue 线程中收到回复。
+          required: true

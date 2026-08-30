@@ -20,7 +20,7 @@ Free team trial form: https://github.com/GoodJobwilliam/aicraft/issues/new?templ
 
 免费安装：https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
 团队更新：https://aicraft.vip/team-updates.zh.html
-免费团队试用表单：https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request
+免费团队试用表单：https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial-zh.yml&title=%5B%E5%9B%A2%E9%98%9F%E8%AF%95%E7%94%A8%5D
 
 ## Direct message
 
