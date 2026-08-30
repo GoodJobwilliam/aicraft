@@ -78,6 +78,32 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: decision-role
+    attributes:
+      label: 你在决策中的角色
+      description: 哪一项最符合你在本次试用中的角色？
+      options:
+        - 我负责购买决策
+        - 我向决策者推荐工具
+        - 我是参与测试的工程师
+        - 我只是调研选项
+    validations:
+      required: true
+
+  - type: dropdown
+    id: decision-window
+    attributes:
+      label: 决策时间
+      description: 如果试用有效，团队何时可能决定购买增值服务？
+      options:
+        - 本月
+        - 下月
+        - 本季度
+        - 暂无付费计划
+    validations:
+      required: true
+
   - type: checkboxes
     id: contact
     attributes:

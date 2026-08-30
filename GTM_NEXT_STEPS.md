@@ -24,8 +24,9 @@
 1. Send 20 targeted messages using `OUTREACH_PACK.md`.
 2. Use `OUTREACH_TARGETS.md` to choose public, relevant projects; invite qualified replies to the GitHub team-trial form and record every contact in `OUTREACH_LOG.md`.
 3. Offer the free server first; invite qualified teams to test the Team Rules Pack.
-4. Ask testers whether they would explicitly pre-commit to Team Updates before any recurring checkout is created.
-5. Review the log after 20 contacts and adjust the offer around repeated pain, not vanity metrics.
+4. Record decision role and paid-decision timing in `OUTREACH_LOG.md`; prioritize teams that can decide this month or next.
+5. Ask testers whether they would explicitly pre-commit to Team Updates before any recurring checkout is created.
+6. Review the log after 20 contacts and adjust the offer around repeated pain, not vanity metrics.
 
 ## External blockers
 - PyPI, V2EX, 掘金, Product Hunt, or Indie Hackers login/OTP/CAPTCHA may require an in-browser action.

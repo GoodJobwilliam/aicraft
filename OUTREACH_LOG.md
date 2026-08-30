@@ -12,8 +12,8 @@ Zero-budget customer validation for MCP Code Review. Keep this file factual: rec
 
 ## Contact ledger
 
-| Date | Channel | Contact / audience | Team size | Main languages | Current workflow | Reply | Test | Offer signal | Next action |
-|---|---|---|---:|---|---|---|---|---|---|
+| Date | Channel | Contact / audience | Team size | Main languages | Current workflow | Decision role | Decision window | Reply | Test | Offer signal | Next action |
+|---|---|---|---:|---|---|---|---|---|---|---|---|
 
 ## Weekly review
 
