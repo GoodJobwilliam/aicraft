@@ -15,6 +15,18 @@ Read each repository README, contribution guide, and recent issues before contac
 | 7 | [PyModel/pythinker-cli](https://github.com/PyModel/pythinker-cli) | Issues enabled; 34 open issues; last push 2026-08-27; Python | [Issues](https://github.com/PyModel/pythinker-cli/issues) | Would machine-readable severity and CI exit codes fit your review-first shell loop? |
 | 8 | [HeJiguang/codescan](https://github.com/HeJiguang/codescan) | Issues enabled; 9 open issues; last push 2026-04-02; Python | [Issues](https://github.com/HeJiguang/codescan/issues) | Which security checks need team-specific severity overrides when the scanner runs through MCP? |
 
+## Fresh candidates (API rechecked 2026-08-30)
+
+These candidates were added after a second public-API search. The evidence is intentionally limited to repository metadata and README claims; inspect contribution rules and recent issues before any contact.
+
+| Priority | Public repository | Evidence checked | Issue link | Suggested opener |
+|---:|---|---|---|---|
+| 9 | [varungor365/mcp-audit-scanner](https://github.com/varungor365/mcp-audit-scanner) | Issues enabled; 7 open issues; last push 2026-08-30; Python AST scanner for MCP servers | [Issues](https://github.com/varungor365/mcp-audit-scanner/issues) | How do you want teams to turn read-only MCP audit findings into a shared local policy and CI gate without uploading server source? |
+| 10 | [MichaelFu1998-create/pr-review-assistant](https://github.com/MichaelFu1998-create/pr-review-assistant) | Issues enabled; 0 open issues; last push 2026-08-30; MIT agentic GitHub PR reviewer | [Issues](https://github.com/MichaelFu1998-create/pr-review-assistant/issues) | Could deterministic local checks with stable severity and exit codes complement the agentic PR investigation before a fix is proposed? |
+| 11 | [lgtm-hq/py-lintro](https://github.com/lgtm-hq/py-lintro) | Issues enabled; 164 open issues; last push 2026-08-30; Python CLI, GitHub Action, and MCP server | [Issues](https://github.com/lgtm-hq/py-lintro/issues) | Where do users need a committed cross-repository policy profile or false-positive control beyond the existing linter orchestration? |
+| 12 | [msaad00/agent-bom](https://github.com/msaad00/agent-bom) | Issues enabled; 4 open issues; last push 2026-08-30; Apache-2.0 AI/MCP/cloud security scanner | [Issues](https://github.com/msaad00/agent-bom/issues) | Would a small local rule profile and merge-gate template help teams enforce MCP-specific checks alongside your broader evidence model? |
+| 13 | [navapbc/rebar](https://github.com/navapbc/rebar) | Issues enabled; 1 open issue; last push 2026-08-30; Python CLI and MCP server; GitHub mirror is read-only | [Issues](https://github.com/navapbc/rebar/issues) | Since this mirror is read-only and review runs in Gerrit, which local policy or CI signal would be useful to validate agent-generated changes before merge? |
+
 ## Contact Protocol
 
 1. Ask the opener question in the project public channel; do not paste a sales pitch into an unrelated issue.
@@ -22,4 +34,4 @@ Read each repository README, contribution guide, and recent issues before contac
 3. Discuss the `$49` Team Rules Pack only after the problem is confirmed; discuss Team Updates only when ongoing maintenance is requested.
 4. Log the date, URL, response, and next follow-up. A public reply is a contact, not revenue; only a confirmed payment belongs in revenue fields.
 
-These are public prospects, not customers. Do not infer interest from stars, downloads, or open-issue counts.
+These are public prospects, not customers. Do not infer interest from stars, downloads, or open-issue counts. The fresh-candidate metadata is an audit snapshot, not evidence of contact, trial, pre-commitment, or payment.
