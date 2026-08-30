@@ -1,0 +1,15 @@
+{
+  "severity_overrides": {
+    "hardcoded_secret": "critical"
+  },
+  "custom_rules": [
+    {
+      "name": "no-print-in-production",
+      "pattern": "\\bprint\\s*\\(",
+      "severity": "medium",
+      "category": "team-convention",
+      "issue": "Direct print output is not allowed in production code",
+      "fix": "Use the team's structured logger instead"
+    }
+  ]
+}

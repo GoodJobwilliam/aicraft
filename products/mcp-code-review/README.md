@@ -75,6 +75,10 @@ Exit codes are CI-friendly: `0` clean, `1` high/medium issues, `2` critical issu
 
 ## Usage Examples
 
+## 10-minute team trial
+
+Run the [self-serve trial kit](./trial/) to test a shared JSON profile against a deliberately unsafe sample. It uses the free local server, creates no charge, and gives the team a concrete basis for evaluating the optional Team Rules Pack and Team Updates.
+
 Once connected, ask your AI assistant:
 
 > "Review this Python code for security issues: [paste code]"
