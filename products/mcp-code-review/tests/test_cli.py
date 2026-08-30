@@ -101,3 +101,15 @@ class TestCliReviewDiff:
         assert result.returncode == 2
         assert "error:" in result.stderr
         assert "Traceback" not in result.stderr
+
+    def test_invalid_config_returns_error_without_traceback(self, tmp_path):
+        config = tmp_path / ".mcp-code-review.json"
+        config.write_text('{"min_severity":', encoding="utf-8")
+        target = tmp_path / "sample.py"
+        target.write_text("x = 1\n", encoding="utf-8")
+
+        result = run_cli("review-file", str(target))
+
+        assert result.returncode == 2
+        assert "Invalid JSON config" in result.stderr
+        assert "Traceback" not in result.stderr

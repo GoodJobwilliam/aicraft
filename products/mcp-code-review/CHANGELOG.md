@@ -9,6 +9,7 @@ All notable changes to the MCP Code Review Server are documented here.
 - Clarified `review-diff --git` as the unstaged working-tree review and added `review-diff --staged` for index changes.
 - CLI file and Git errors now return a concise error with CI exit code `2` instead of a traceback or silent empty review.
 - MCP tool calls now validate required arguments and return actionable errors for invalid paths, unreadable files, or malformed input.
+- Invalid JSON/YAML team configs now return actionable errors in both CLI and MCP modes instead of raw parser tracebacks.
 
 ## 0.1.2 — 2026-08-17
 

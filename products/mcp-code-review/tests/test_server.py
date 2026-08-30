@@ -39,3 +39,13 @@ async def test_review_file_reads_utf8_and_reviews(tmp_path):
 @pytest.mark.asyncio
 async def test_unknown_tool_returns_error():
     assert text(await call_tool("no_such_tool", {})) == "Error: Unknown tool: no_such_tool"
+
+
+@pytest.mark.asyncio
+async def test_invalid_config_returns_error_instead_of_traceback(tmp_path, monkeypatch):
+    (tmp_path / ".mcp-code-review.json").write_text('{"min_severity":', encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+
+    result = await call_tool("review_code", {"code": "x = 1"})
+
+    assert text(result).startswith("Error: Invalid JSON config")

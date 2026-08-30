@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-08-30（收入主线 round 34）：修复团队共享配置损坏时的体验问题：JSON/YAML 解析错误现在带文件路径及行列信息；CLI 统一返回 exit `2`，MCP 工具返回可读 `Error:`，不再把 parser traceback 暴露给客户端；新增 CLI/MCP 回归测试。产品测试 `44 passed`、漏斗测试 `5 passed`、Ruff 和 `git diff --check` 全部通过。未发布新 PyPI 版本，线上仍为 `0.1.2`；收入证据仍为 0。
 - 2026-08-30（收入主线 round 29）：首页中英文首屏增加免费试用 CTA；试用页增加无 Git 直接下载命令和公开 trial-config.json（下载后保存为 .mcp-code-review.json 以触发自动发现）；试用结果增加邮件回复入口；英文/中文产品 README 与跟进手册统一到官网试用页。
 - 本地 CLI 实测得到 1 High + 1 Medium、退出码 1；生产页面 trial.html、trial.zh.html、sample.py、trial-config.json 均返回 200。
 - 漏斗统计仍为 0 contacts / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR；提交 8fb171e 已推送到 main。

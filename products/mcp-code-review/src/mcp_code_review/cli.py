@@ -87,7 +87,7 @@ def main(argv: list[str] | None = None) -> int:
         else:
             parser.print_help()
             return 0
-    except (OSError, RuntimeError) as exc:
+    except (OSError, UnicodeError, RuntimeError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
 

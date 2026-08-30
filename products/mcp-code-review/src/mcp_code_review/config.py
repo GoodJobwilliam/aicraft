@@ -98,8 +98,14 @@ def _parse_text(text: str, path: Path) -> dict:
             data = yaml.safe_load(text)
         except ImportError:
             raise ValueError("YAML config requires PyYAML; use a .json config instead") from None
+        except yaml.YAMLError as exc:
+            raise ValueError(f"Invalid YAML config {path}: {exc}") from None
     else:
-        data = json.loads(text)
+        try:
+            data = json.loads(text)
+        except json.JSONDecodeError as exc:
+            message = f"Invalid JSON config {path}: {exc.msg} (line {exc.lineno}, column {exc.colno})"
+            raise ValueError(message) from None
     return data if isinstance(data, dict) else {}
 
 

@@ -75,42 +75,45 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
     elif not isinstance(arguments, dict):
         return error("'arguments' must be an object")
 
-    match name:
-        case "review_code":
-            code = arguments.get("code")
-            if not isinstance(code, str) or not code.strip():
-                return error("'code' must be a non-empty string")
-            language = arguments.get("language", "auto")
-            if not isinstance(language, str):
-                return error("'language' must be a string")
-            result = _reviewer_for().review_code(code, language)
+    try:
+        match name:
+            case "review_code":
+                code = arguments.get("code")
+                if not isinstance(code, str) or not code.strip():
+                    return error("'code' must be a non-empty string")
+                language = arguments.get("language", "auto")
+                if not isinstance(language, str):
+                    return error("'language' must be a string")
+                result = _reviewer_for().review_code(code, language)
 
-        case "review_diff":
-            diff = arguments.get("diff")
-            if not isinstance(diff, str) or not diff.strip():
-                return error("'diff' must be a non-empty string")
-            result = _reviewer_for().review_diff(diff)
+            case "review_diff":
+                diff = arguments.get("diff")
+                if not isinstance(diff, str) or not diff.strip():
+                    return error("'diff' must be a non-empty string")
+                result = _reviewer_for().review_diff(diff)
 
-        case "review_file":
-            raw_path = arguments.get("path")
-            if not isinstance(raw_path, str) or not raw_path.strip():
-                return error("'path' must be a non-empty string")
-            path = Path(raw_path).expanduser()
-            if not path.exists():
-                return error(f"File not found: {path}")
-            if not path.is_file():
-                return error(f"Path is not a file: {path}")
-            language = arguments.get("language", _detect_language(path))
-            if not isinstance(language, str):
-                return error("'language' must be a string")
-            try:
-                code = path.read_text(encoding="utf-8")
-            except (OSError, UnicodeError) as exc:
-                return error(f"Cannot read file {path}: {exc}")
-            result = _reviewer_for(path.parent).review_code(code, language)
+            case "review_file":
+                raw_path = arguments.get("path")
+                if not isinstance(raw_path, str) or not raw_path.strip():
+                    return error("'path' must be a non-empty string")
+                path = Path(raw_path).expanduser()
+                if not path.exists():
+                    return error(f"File not found: {path}")
+                if not path.is_file():
+                    return error(f"Path is not a file: {path}")
+                language = arguments.get("language", _detect_language(path))
+                if not isinstance(language, str):
+                    return error("'language' must be a string")
+                try:
+                    code = path.read_text(encoding="utf-8")
+                except (OSError, UnicodeError) as exc:
+                    return error(f"Cannot read file {path}: {exc}")
+                result = _reviewer_for(path.parent).review_code(code, language)
 
-        case _:
-            return error(f"Unknown tool: {name}")
+            case _:
+                return error(f"Unknown tool: {name}")
+    except (OSError, UnicodeError, TypeError, ValueError) as exc:
+        return error(str(exc))
 
     return [types.TextContent(type="text", text=result)]
 
