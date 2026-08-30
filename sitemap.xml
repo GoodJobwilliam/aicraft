@@ -21,6 +21,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aicraft.vip/trial.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aicraft.vip/trial.zh.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aicraft.vip/blog/distribution-playbook.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
