@@ -2,7 +2,7 @@ name: Team trial request
 description: Request a free, local-first MCP Code Review team trial
 title: "[Team trial] "
 labels:
-  - team-trial
+  - question
 body:
   - type: markdown
     attributes:

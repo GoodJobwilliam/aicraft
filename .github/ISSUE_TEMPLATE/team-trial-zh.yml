@@ -2,7 +2,7 @@ name: 团队试用申请
 description: 申请 MCP Code Review 的免费本地团队试用
 title: "[团队试用] "
 labels:
-  - team-trial
+  - question
 body:
   - type: markdown
     attributes:
