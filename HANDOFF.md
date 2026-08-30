@@ -3,9 +3,9 @@
 ## CURRENT STATE
 - **目标**: aicraft 达到 $2,000 MRR；预算 $0；工作区 `/Users/william/work/AIcompany/aicraft`
 - **策略更新（2026-08-30）**: 聚焦 `mcp-code-review` 主线；免费开源 server + $49 Team Rules Pack + Team Updates 早期体验（$19/月或 $190/年）。不新增任何付费工具、广告或基础设施。
-- **本轮已完成**: 英文/中文首页首屏收敛到 MCP Code Review；新增 `team-updates.html` / `team-updates.zh.html`；新增预售说明、价格、邮件收集入口和中英文 GitHub team-trial Issue Forms（使用仓库已有 `question` 标签和标题前缀，避免依赖额外权限）；仓库禁用空白 issue 并提供文档/早期体验联系入口；中英文产品 README 也接入对应试用表单与 10 分钟自助试用包；README、发布指南、市场提交信息和社交草稿同步 Team Updates 口径；新增 `OUTREACH_LOG.md`。
+- **本轮已完成**: 英文/中文首页首屏收敛到 MCP Code Review；新增 `team-updates.html` / `team-updates.zh.html`；新增预售说明、价格、邮件收集入口和中英文 GitHub team-trial Issue Forms（使用仓库已有 `question` 标签和标题前缀，避免依赖额外权限）；仓库禁用空白 issue 并提供文档/早期体验联系入口；中英文产品 README 也接入对应试用表单与 10 分钟自助试用包；README、发布指南、市场提交信息和社交草稿同步 Team Updates 口径；新增 `OUTREACH_LOG.md`；新增同域名中英文自助试用页 `trial.html` / `trial.zh.html`，首页与 Team Updates CTA 已切换，sitemap 已收录。
 - **新增分发资产**: `OUTREACH_PACK.md`（中英文短帖、私信模板、资格问题和以付费承诺为准的验证标准）、`OUTREACH_TARGETS.md`（20 个公开 GitHub 候选项目和技术切入点）、`TRIAL_FOLLOWUP_PLAYBOOK.md`（人工跟进、证据阈值和收入统计口径）以及 `OUTREACH_LOG.csv` + `scripts/funnel_report.py`（可重复的漏斗统计）。
-- **Website**: https://aicraft.vip (EN) + /zh.html (CN) — live。首页示例报告区展示 Team Rules Pack 真实输出（`MCP_CODE_REVIEW_CONFIG=rules/python.yaml mcp-code-review review-file main.py`，3 Critical / 5 High / Block，exit 2）并直链 Creem $49 结算页（commit 已上线，remote 1fb9ff7）
+- **Website**: https://aicraft.vip (EN) + /zh.html (CN) — live；新增 `/trial.html` 与 `/trial.zh.html` 自助试用页，生产环境已返回 200。首页示例报告区展示 Team Rules Pack 真实输出（`MCP_CODE_REVIEW_CONFIG=rules/python.yaml mcp-code-review review-file main.py`，3 Critical / 5 High / Block，exit 2）并直链 Creem $49 结算页（本轮 commit `b5ae2b7`）
 - **Creem**: 9 产品 live，**0 销售 / 0 订阅 / 0 客户**（2026-08-17 复查，无变化）。账号 731685147@qq.com。增值产品 Team Rules Pack `prod_6Z3S3jGNPsCyRSqNi397ZY`（63 条规则 + CI playbook + LLM prompts，$49）
 - **GitHub**: GoodJobwilliam/aicraft，2 stars / 0 forks。⚠️ github.com 直连被墙（api.github.com 可达）→ **推送必须走 API**（recipe 见 TOOLING NOTES）。OAuth token 无 `workflow` scope → `.github/workflows/ci.yml` 无法推送（本地就绪，等 PAT）
 - **登录状态（in-app browser, CDP 9229）**: Google ✅ / GitHub ✅ / Smithery ✅ / Glama ✅ / Creem ✅（QQ 账号）/ IH ✅（Firebase，但 Firestore 被墙不可用）。⚠️ Product Hunt 会话已过期（需重新登录）；PyPI / V2EX / 掘金 未登录——**登录页标签已开好**（PyPI=E60305F8、V2EX=76D6EA55、掘金=BC42B4FB）
@@ -98,6 +98,7 @@
 - **2026-08-30（收入主线 round 25）**: 为 `scripts/funnel_report.py` 新增 5 个回归测试，覆盖空日志、一次性收入与 MRR 分离、中文状态值、缺列和负数收入校验。
 - **2026-08-30（收入主线 round 26）**: 将 Team Rules Pack 的 Creem `$49` 结算链接补入自助试用包、规则包 README 和跟进手册，打通“试用结果 → 购买”最后一步；Team Updates 仍保持人工确认后收费。
 - **2026-08-30（收入主线 round 27）**: 新增中文自助试用说明 `trial/README.zh.md`，中文首页、Team Updates 页面和产品 README 均直连本地化文档。
+- **2026-08-30（收入主线 round 28）**: 新增同域名中英文自助试用页 `trial.html` / `trial.zh.html`，包含安装、克隆、示例审查、预期 High/Medium 与退出码、共享规则、自定义规则、团队试用和 `$49` 规则包入口；首页、Team Updates CTA 切换到本地页面，sitemap 更新；HTML/sitemap 解析、HTTP 200、漏斗 5 测试与 MCP 33 测试全部通过；提交并推送 `b5ae2b7`。生产页最初短暂返回 404，随后 GitHub Pages 同步完成并复查为 200。
 - **2026-08-30（收入主线 round 20）**: 在 `TRIAL_FOLLOWUP_PLAYBOOK.md` 增加中英文首回复/试用复盘/报价模板和跟进时点；`OUTREACH_LOG.csv` 增加 GitHub issue 编号与下次跟进日期，漏斗脚本同步新 schema。
 - **2026-08-30（收入主线 round 21）**: 将 Team Updates 收敛为可验收的 founding pilot：首 30 天包含共享规则档案、CI 接入复核、规则/误报复盘和邮件支持；明确不含托管扫描、全天候支持或无限定制，并同步双语页面、推广包、GTM 和跟进手册。
 - **2026-08-17（round 13）**: 官网示例报告区上线验证 ✅；github.com 被墙 → 建立 API 推送流程并推送成功（remote 1fb9ff7→7342e40→cbe82eb）；CI workflow 推送被 workflow scope 拦截（404，等 PAT）；IH 交叉发帖根因定位——帖文在 Firestore `posts` 集合（非 RTDB），firestore.googleapis.com 被墙，浏览器内 fetch 也 Failed to fetch → **需 VPN**；**实测确认 0.1.0 新装即崩**（mcp 2.0.0 移除 list_tools）→ 全部安装指引改 pin `mcp<2` 止损（cbe82eb，zh.html 已生效）；Creem 复查 0 销售；Glama 仍 0 收录（72k servers 无 aicraft）；awesome #10918 open/clean、Docker #4699 open、MCPFind #139 open、Cline #2106 已被关；HN 1 point；ai-bot.cn 未收录；PH 会话过期需重登；已为 PyPI/V2EX/掘金 开好登录标签
