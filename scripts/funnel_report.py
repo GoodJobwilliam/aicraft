@@ -12,6 +12,7 @@ REQUIRED_COLUMNS = {
     "date",
     "channel",
     "contact_or_audience",
+    "github_issue",
     "qualified_reply",
     "team_test",
     "paid_signal",
@@ -20,6 +21,7 @@ REQUIRED_COLUMNS = {
     "team_updates_subscribers",
     "one_time_revenue_usd",
     "mrr_usd",
+    "next_follow_up",
 }
 
 

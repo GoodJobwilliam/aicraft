@@ -25,9 +25,33 @@ If they report a real finding, ask whether the same rule should run in every rep
 - **Ongoing maintenance**: explain Team Updates at `$19/month` or `$190/year`, including monthly rules, CI refreshes, and rollout email support.
 - **No decision yet**: leave the free server and trial kit as the next step; do not push a checkout link.
 
+## Copy-ready replies
+
+### First reply (English)
+
+Thanks for sharing the context. I understand that **[pain]** is affecting **[workflow]** for a **[team size]-person [language]** team. Please run the [10-minute trial kit](https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review/trial) and reply with: (1) what it caught, (2) which rule you would share across repositories, and (3) what was noisy. No source code or secrets are needed.
+
+### Trial review (English)
+
+That is useful signal. Should this rule run in every repository, and should CI block on it? If the rule set is the main need, the one-time `$49` Team Rules Pack includes validated Python/JS/TS/Go/Java profiles, CI templates, and review prompts. If keeping the rules current is the bigger problem, Team Updates is being validated at `$19/month` or `$190/year`; we confirm scope and start date before charging.
+
+### 首次回复（中文）
+
+感谢你补充背景。我理解 **[痛点]** 正在影响 **[流程]**，团队规模约 **[人数]**，主要使用 **[语言]**。请先运行[10 分钟自助试用包](https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review/trial)，然后回复三点：1）发现了什么；2）哪些规则希望所有仓库共享；3）哪些结果属于误报。不需要提供源代码或密钥。
+
+### 试用复盘（中文）
+
+这个反馈很有价值。你们是否希望这条规则在每个仓库都执行？CI 是否应该在命中时阻止合并？如果主要需求是现成规则，$49 Team Rules Pack 包含 Python/JS/TS/Go/Java 规则档案、CI 模板和审查提示词；如果主要问题是持续维护，可以了解 $19/月或 $190/年的 Team Updates。收费前会先确认范围和开始时间。
+
+### Follow-up timing
+
+- Set `next_follow_up` to 2 business days after the first reply.
+- Set it to 7 days after a trial result if the team has not chosen an offer.
+- Stop after the close-the-loop message unless the applicant reopens the conversation.
+
 ## Evidence thresholds
 
-Record these in `OUTREACH_LOG.md`:
+Record these in `OUTREACH_LOG.csv`:
 
 - **Qualified reply**: describes a recurring review pain and answers the workflow questions.
 - **Team test**: runs the sample or a real non-confidential test and reports an outcome.
