@@ -81,6 +81,21 @@ class TestCliReviewDiff:
         assert "eval" in cli._git_diff(staged=True)
         assert calls == [["git", "diff", "--cached"]]
 
+    def test_staged_diff_reads_index_in_real_git_repo(self, tmp_path, monkeypatch):
+        subprocess.run(["git", "init"], cwd=tmp_path, check=True, capture_output=True)
+        subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=tmp_path, check=True)
+        subprocess.run(["git", "config", "user.name", "Test"], cwd=tmp_path, check=True)
+        target = tmp_path / "sample.py"
+        target.write_text("safe = True\n")
+        subprocess.run(["git", "add", "sample.py"], cwd=tmp_path, check=True)
+        subprocess.run(["git", "commit", "-m", "baseline"], cwd=tmp_path, check=True, capture_output=True)
+        target.write_text("eval('unsafe')\n")
+        subprocess.run(["git", "add", "sample.py"], cwd=tmp_path, check=True)
+        monkeypatch.chdir(tmp_path)
+
+        assert "eval('unsafe')" in cli._git_diff(staged=True)
+        assert cli._git_diff(staged=False) == ""
+
     def test_missing_file_returns_error_without_traceback(self, tmp_path):
         result = run_cli("review-file", str(tmp_path / "missing.py"))
         assert result.returncode == 2

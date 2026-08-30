@@ -2,6 +2,7 @@
 Tests for the Code Review MCP server.
 """
 import pytest
+
 from mcp_code_review.reviewer import CodeReviewer
 
 
