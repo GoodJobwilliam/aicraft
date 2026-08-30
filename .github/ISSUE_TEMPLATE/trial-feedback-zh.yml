@@ -1,0 +1,83 @@
+name: 试用反馈
+description: 分享本地 MCP Code Review 试用结果
+title: "[试用反馈] "
+labels:
+  - question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你完成试用。这里只分享非机密观察，请勿粘贴源代码、凭据、API 密钥或私有仓库细节。
+
+  - type: input
+    id: team-size
+    attributes:
+      label: 团队规模
+      placeholder: 例如：4
+    validations:
+      required: true
+
+  - type: input
+    id: languages
+    attributes:
+      label: 主要语言
+      placeholder: 例如：Python、TypeScript
+    validations:
+      required: true
+
+  - type: textarea
+    id: caught
+    attributes:
+      label: 试用发现了什么？
+      description: 描述问题类别和严重度，不要提交私有代码。
+      placeholder: 例如：发现 High 命令注入和 Medium 团队规范问题。
+    validations:
+      required: true
+
+  - type: textarea
+    id: shared-rule
+    attributes:
+      label: 希望共享的规则
+      description: 哪条规则应该在每个仓库执行？
+    validations:
+      required: true
+
+  - type: textarea
+    id: noisy
+    attributes:
+      label: 误报或遗漏
+      description: 哪些结果太吵、不清楚或没有发现？
+    validations:
+      required: true
+
+  - type: dropdown
+    id: next-step
+    attributes:
+      label: 下一步
+      options:
+        - 只使用免费服务器
+        - 测试 $49 Team Rules Pack
+        - 讨论 $19/月或 $190/年的 Team Updates
+        - 需要先了解交付范围
+    validations:
+      required: true
+
+  - type: dropdown
+    id: decision-window
+    attributes:
+      label: 决策时间
+      options:
+        - 本月
+        - 下月
+        - 本季度
+        - 暂无付费计划
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contact
+    attributes:
+      label: 后续联系
+      options:
+        - label: 我同意在这个公开 issue 线程中收到回复。
+          required: true

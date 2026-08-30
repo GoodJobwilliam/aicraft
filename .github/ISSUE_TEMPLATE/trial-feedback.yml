@@ -1,0 +1,83 @@
+name: Trial feedback
+description: Share the result of a local MCP Code Review trial
+title: "[Trial feedback] "
+labels:
+  - question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for running the trial. Share only non-confidential observations. Do not paste source code, credentials, API keys, or private repository details.
+
+  - type: input
+    id: team-size
+    attributes:
+      label: Team size
+      placeholder: e.g. 4
+    validations:
+      required: true
+
+  - type: input
+    id: languages
+    attributes:
+      label: Main languages
+      placeholder: e.g. Python, TypeScript
+    validations:
+      required: true
+
+  - type: textarea
+    id: caught
+    attributes:
+      label: What did the trial catch?
+      description: Describe the finding category and severity, not private code.
+      placeholder: e.g. High command-injection finding and Medium team-convention finding.
+    validations:
+      required: true
+
+  - type: textarea
+    id: shared-rule
+    attributes:
+      label: Rule to share
+      description: Which rule should run in every repository?
+    validations:
+      required: true
+
+  - type: textarea
+    id: noisy
+    attributes:
+      label: Noisy or missing result
+      description: What was noisy, unclear, or missing?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: next-step
+    attributes:
+      label: Next step
+      options:
+        - Free server only
+        - Test the $49 Team Rules Pack
+        - Discuss Team Updates at $19/month or $190/year
+        - Need scope clarification first
+    validations:
+      required: true
+
+  - type: dropdown
+    id: decision-window
+    attributes:
+      label: Decision timing
+      options:
+        - This month
+        - Next month
+        - This quarter
+        - No paid decision planned
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contact
+    attributes:
+      label: Follow-up
+      options:
+        - label: I am comfortable receiving a reply in this public issue thread.
+          required: true

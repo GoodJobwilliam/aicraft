@@ -121,3 +121,4 @@
 - 2026-08-30（收入主线 round 29）：首页中英文首屏增加免费试用 CTA；试用页增加无 Git 直接下载命令和公开 trial-config.json（下载后保存为 .mcp-code-review.json 以触发自动发现）；试用结果增加邮件回复入口；英文/中文产品 README 与跟进手册统一到官网试用页。
 - 本地 CLI 实测得到 1 High + 1 Medium、退出码 1；生产页面 trial.html、trial.zh.html、sample.py、trial-config.json 均返回 200。
 - 漏斗统计仍为 0 contacts / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR；提交 8fb171e 已推送到 main。
+- 2026-08-30（收入主线 round 30）：基于 GitHub 公共 API 核验候选仓库的 issue 开放状态与最近提交，新增 `OUTREACH_QUEUE.md` 固化 8 个优先候选和技术开场问题；新增中英文 `trial-feedback` Issue Forms，记录试用发现、共享规则、误报/遗漏、下一步意向与决策时间；试用页和 issue 配置已接入反馈入口。未发送外部消息，未把候选项目或表单提交计入收入。

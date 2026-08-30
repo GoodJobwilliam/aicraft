@@ -6,3 +6,9 @@ contact_links:
   - name: Team Updates early access
     url: https://aicraft.vip/team-updates.html
     about: See the recurring offer and email option. Submitting a trial request creates no charge; the maintainer will follow up in the public issue thread.
+  - name: Share trial feedback
+    url: https://github.com/GoodJobwilliam/aicraft/issues/new?template=trial-feedback.yml&title=Trial%20feedback
+    about: Report what the local trial caught, which rule matters, and what should happen next.
+  - name: 提交中文试用反馈
+    url: https://github.com/GoodJobwilliam/aicraft/issues/new?template=trial-feedback-zh.yml&title=%5B%E8%AF%95%E7%94%A8%E5%8F%8D%E9%A6%88%5D
+    about: 分享本地试用发现、共享规则和下一步意向。
