@@ -47,7 +47,13 @@ All products are priced based on market research and the value they deliver:
 - **Code templates** at $49-$59 save 10-40 hours of setup time — priced at a fraction of the time they save
 - **MCP tools** at $49 are among the first paid MCP servers on the market
 
-No subscriptions. No DRM. One-time purchases, lifetime updates.
+Most products are one-time purchases with lifetime updates. The MCP Code Review line also has a planned Team Updates add-on for teams that want monthly rule drops, CI workflow refreshes, and rollout support.
+
+### Team Updates (early access)
+
+The free MCP server and the one-time Team Rules Pack remain available. Team Updates is being validated with a small number of teams at a founding price of **$19/month or $190/year**. Early access is collected by email first; the delivery scope and launch date are confirmed before charging.
+
+Details: [Team Updates](./team-updates.html) · [中文页面](./team-updates.zh.html)
 
 ## Roadmap
 
@@ -56,7 +62,7 @@ No subscriptions. No DRM. One-time purchases, lifetime updates.
 - [x] Creem store (pending approval)
 - [ ] MCP Marketplace listing
 - [ ] Next.js SaaS Starter Kit
-- [ ] Subscription membership for fresh prompts monthly
+- [ ] Team Updates recurring offer (early access validation in progress)
 
 ## Tech Stack
 

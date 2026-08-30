@@ -49,7 +49,11 @@ pip install "aicraft-code-review" "mcp<2"
 python -m mcp_code_review
 ```
 
-> ⚠️ PyPI 0.1.0 does not cap `mcp`, and mcp 2.0.0 removes `Server.list_tools`, which crashes the CLI on fresh installs. Pin `mcp<2` until 0.1.1 (which pins it automatically) is published.
+> ⚠️ PyPI 0.1.0 does not cap `mcp`, and mcp 2.0.0 removes `Server.list_tools`, which crashes the CLI on fresh installs. Install 0.1.1+ (which pins `mcp<2` automatically) or pin `mcp<2` yourself.
+
+### Team Updates (early access)
+
+Teams that want ongoing rule drops, CI workflow refreshes, and rollout support can join the **Team Updates** early-access list at [$19/month or $190/year](https://aicraft.vip/team-updates.html). The service is being validated with a small number of teams; delivery scope and launch date are confirmed before charging.
 
 ### CLI mode (no MCP client needed)
 

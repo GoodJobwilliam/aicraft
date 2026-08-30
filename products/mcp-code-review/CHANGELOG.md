@@ -2,6 +2,12 @@
 
 All notable changes to the MCP Code Review Server are documented here.
 
+## 0.1.2 — 2026-08-17
+
+### Added
+
+- Publish `README.md` in PyPI metadata (official MCP Registry `mcp-name` ownership validation).
+
 ## 0.1.1 — 2026-08-16
 
 ### Added

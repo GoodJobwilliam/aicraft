@@ -3,7 +3,7 @@
   "name": "io.github.GoodJobwilliam/aicraft-code-review",
   "title": "MCP Code Review Server",
   "description": "Code review as an MCP server \u2014 structured reviews with OWASP security scanning.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "websiteUrl": "https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review",
   "repository": {
     "url": "https://github.com/GoodJobwilliam/aicraft",
@@ -13,7 +13,7 @@
     {
       "registryType": "pypi",
       "identifier": "aicraft-code-review",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"

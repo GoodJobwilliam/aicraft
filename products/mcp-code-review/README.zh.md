@@ -48,7 +48,11 @@ pip install "aicraft-code-review" "mcp<2"
 python -m mcp_code_review
 ```
 
-> ⚠️ PyPI 0.1.0 未限制 `mcp` 版本，mcp 2.0.0 移除了 `Server.list_tools`，全新安装会导致 CLI 崩溃。在 0.1.1（自动锁定版本）发布前请固定 `mcp<2`。
+> ⚠️ PyPI 0.1.0 未限制 `mcp` 版本，mcp 2.0.0 移除了 `Server.list_tools`，全新安装会导致 CLI 崩溃。请安装 0.1.1+（自动锁定 `mcp<2`），或手动固定 `mcp<2`。
+
+### Team Updates（早期体验）
+
+需要持续规则更新、CI 工作流刷新和上线支持的团队，可以加入 **Team Updates** 早期名单：[$19/月或 $190/年](https://aicraft.vip/team-updates.zh.html)。目前只和少量团队验证，收费前会先确认交付范围和上线时间。
 
 ### CLI 直跑模式（不需要 MCP 客户端）
 
