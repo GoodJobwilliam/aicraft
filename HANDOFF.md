@@ -116,3 +116,8 @@
 - $0 budget；Creem (Alipay → 中国银行) 收款；用户在中国大陆（部分平台需 VPN）
 - 中文回复用户；每轮结束更新本文件并推送（github.com 不通时走 API 流程）
 - 不虚构数据；所有公开数字来自真实平台复查
+
+## LATEST ROUND
+- 2026-08-30（收入主线 round 29）：首页中英文首屏增加免费试用 CTA；试用页增加无 Git 直接下载命令和公开 trial-config.json（下载后保存为 .mcp-code-review.json 以触发自动发现）；试用结果增加邮件回复入口；英文/中文产品 README 与跟进手册统一到官网试用页。
+- 本地 CLI 实测得到 1 High + 1 Medium、退出码 1；生产页面 trial.html、trial.zh.html、sample.py、trial-config.json 均返回 200。
+- 漏斗统计仍为 0 contacts / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR；提交 8fb171e 已推送到 main。
