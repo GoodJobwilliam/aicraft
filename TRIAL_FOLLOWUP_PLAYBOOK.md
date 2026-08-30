@@ -22,7 +22,7 @@ If they report a real finding, ask whether the same rule should run in every rep
 ### 3. Offer selection
 
 - **Rules only**: point to the free config workflow first; offer the `$49` Team Rules Pack when the team wants the validated multi-language profiles, CI templates, and prompts.
-- **Ongoing maintenance**: explain Team Updates at `$19/month` or `$190/year`, including monthly rules, CI refreshes, and rollout email support.
+- **Ongoing maintenance**: explain the founding pilot at `$19/month` or `$190/year`: first 30 days include one shared profile, one CI setup review, one false-positive/rule-tuning review, and rollout email support. Confirm exact scope and start date before charging.
 - **No decision yet**: leave the free server and trial kit as the next step; do not push a checkout link.
 
 ## Copy-ready replies

@@ -12,6 +12,7 @@
   - CI workflow refreshes
   - rollout/help email support
 - Founding price to test: $19/month or $190/year
+- Founding pilot scope: first 30 days = one shared profile, one CI setup review, one rule/false-positive review, and rollout email support
 - Pre-sale flow: collect interest by email first; charge only after delivery scope and launch date are confirmed
 
 ## What is already done
