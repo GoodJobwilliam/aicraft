@@ -28,7 +28,7 @@ MCP server that provides AI-assisted code review capabilities. Analyzes source c
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["aicraft-code-review"]
+      "args": ["--with", "mcp<2", "aicraft-code-review"]
     }
   }
 }
@@ -36,7 +36,7 @@ MCP server that provides AI-assisted code review capabilities. Analyzes source c
 
 ### Option 2: pip
 ```bash
-pip install aicraft-code-review
+pip install "aicraft-code-review==0.1.2" "mcp<2"
 ```
 Then configure:
 ```json

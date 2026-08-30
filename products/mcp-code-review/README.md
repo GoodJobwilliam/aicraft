@@ -45,7 +45,7 @@ Or add to your `~/.cursor/mcp.json` or `claude_desktop_config.json`:
 ### Via pip
 
 ```bash
-pip install "aicraft-code-review" "mcp<2"
+pip install "aicraft-code-review==0.1.2" "mcp<2"
 python -m mcp_code_review
 ```
 

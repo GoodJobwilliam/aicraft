@@ -56,7 +56,7 @@ li{margin-bottom:.3rem}
 
 <h2>第一步：安装 MCP Code Review Server</h2>
 <p>一条命令搞定：</p>
-<pre><code>pip install aicraft-code-review</code></pre>
+<pre><code>uvx --with "mcp&lt;2" aicraft-code-review</code></pre>
 
 <p>这个包自带三个工具：<code>review_code</code>（审查代码片段）、<code>review_diff</code>（审查 Git 变更）、<code>review_file</code>（审查本地文件）。</p>
 
@@ -128,7 +128,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pip install aicraft-code-review
+      - run: pip install "aicraft-code-review==0.1.2" "mcp&lt;2"
       - run: git diff main...HEAD | mcp-code-review</code></pre>
 
 <h3>自定义审查规则</h3>

@@ -5,7 +5,7 @@ code-review:
   image: python:3.12
   stage: test
   script:
-    - pip install aicraft-code-review
+    - pip install "aicraft-code-review==0.1.2" "mcp<2"
     - |
       if [ -n "$CI_MERGE_REQUEST_TARGET_BRANCH_SHA" ]; then
         BASE="$CI_MERGE_REQUEST_TARGET_BRANCH_SHA"
@@ -13,7 +13,7 @@ code-review:
         BASE=$(git rev-parse HEAD~1)
       fi
       git diff "$BASE"...HEAD > /tmp/changes.diff
-    - mcp-code-review review-diff --git-diff /tmp/changes.diff || true
+    - mcp-code-review review-diff < /tmp/changes.diff || true
   allow_failure:
     exit_codes: 1
   artifacts:

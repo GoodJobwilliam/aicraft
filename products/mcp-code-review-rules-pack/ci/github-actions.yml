@@ -21,7 +21,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install aicraft-code-review
-        run: pip install aicraft-code-review
+        run: pip install "aicraft-code-review==0.1.2" "mcp<2"
 
       - name: Run review on changed files
         id: review
@@ -33,7 +33,7 @@ jobs:
             BASE=${{ github.event.before }}
           fi
           git diff "$BASE"...HEAD > /tmp/changes.diff
-          mcp-code-review review-diff --git-diff /tmp/changes.diff > review-report.txt
+          mcp-code-review review-diff < /tmp/changes.diff > review-report.txt
           EXIT=$?
           cat review-report.txt
           echo "exit_code=$EXIT" >> "$GITHUB_OUTPUT"

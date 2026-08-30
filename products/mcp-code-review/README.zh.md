@@ -44,7 +44,7 @@ claude mcp add code-review -- uvx --with "mcp<2" aicraft-code-review
 ### 通过 pip
 
 ```bash
-pip install "aicraft-code-review" "mcp<2"
+pip install "aicraft-code-review==0.1.2" "mcp<2"
 python -m mcp_code_review
 ```
 
