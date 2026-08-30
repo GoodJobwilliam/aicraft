@@ -23,6 +23,16 @@ class TestSecurityPass:
         result = reviewer.review_code(code)
         assert "credential" in result.lower() or "secret" in result.lower()
 
+    def test_secret_word_without_literal_assignment_is_not_flagged(self, reviewer: CodeReviewer):
+        code = """
+def get_secret_from_env():
+    return os.environ.get("API_KEY")
+
+# The secret is supplied at runtime.
+"""
+        result = reviewer.review_code(code)
+        assert "Hardcoded credential/secret" not in result
+
     def test_detects_command_injection(self, reviewer: CodeReviewer):
         code = 'os.system(f"rm -rf {user_input}")'
         result = reviewer.review_code(code)

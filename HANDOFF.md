@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-08-30（收入主线 round 40）：收紧免费 server 的 `hardcoded_secret` 内置规则：只有凭据字段被赋值为字符串字面量时才触发，不再把函数名、注释或 `os.environ` 查找误报为硬编码密钥；新增回归测试。尚未发布新 PyPI 版本，线上仍为 `0.1.2`；收入证据仍为 0。
 - 2026-08-30（收入主线 round 39）：将 Team Rules Pack GitHub Actions 拆为只读 `review` job 与独立 `comment` job：执行 PR 内容的 job 不再持有写权限；评论 job 只下载 artifact、使用 `issues: write`，并仅对同仓库 PR 运行；fork PR 仍保留报告 artifact；Critical 门禁通过 review job 输出保持生效。README、测试与 ZIP 已同步更新。
 - 2026-08-30（收入主线 round 38）：继续修正 Team Rules Pack GitHub Actions 交付：`issues.createComment` 改用正确的 `issues: write` 权限；来自 fork 的 PR 跳过写评论以适配 GitHub 只读 token；新增 `actions/upload-artifact@v4` 始终上传 `review-report.txt`。README、回归测试与 ZIP 已同步更新。
 - 2026-08-30（收入主线 round 37）：修复 Team Rules Pack GitHub Actions 模板的真实运行权限：PR 评论步骤从 `pull-requests: read` 改为 `pull-requests: write`；README 明确最小权限范围；归档同步测试增加权限回归；ZIP 已同步更新。尚未发布新 PyPI 版本，收入证据仍为 0。

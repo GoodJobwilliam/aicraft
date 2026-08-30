@@ -114,7 +114,7 @@ class CodeReviewer:
             (r"(?i)input\s*\(\s*\)", "Bare input() in Python 2", "Use raw_input() or validate input", "input_py2"),
             (r"(?i)\.innerHTML\s*=|\.outerHTML\s*=|dangerouslySetInnerHTML",
              "XSS via innerHTML", "Use textContent or DOMPurify for sanitization", "xss_innerhtml"),
-            (r"(?i)secret|api[_-]?key|password|token\s*=\s*['\"][^'\"]+['\"]",
+            (r"(?i)\b(?:secret|passwd|password|api[_-]?key|token)\b\s*(?:=|:)\s*['\"][^'\"]+['\"]",
              "Hardcoded credential/secret", "Move to environment variable or secret manager", "hardcoded_secret"),
         ]
 
