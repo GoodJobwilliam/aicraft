@@ -25,10 +25,10 @@ code-review, security, owasp, static-analysis, developer-tools, python
 | `review_diff` | Review a git diff for potential issues before merging |
 | `review_file` | Review a local file by path |
 
-## Pricing
-- **One-time purchase**: $49
-- License key delivered after purchase
-- Lifetime updates for v1.x
+## Pricing and offer structure
+- **Free server**: the MCP Code Review Server is MIT-licensed and runs locally.
+- **Team Rules Pack**: one-time **$49** purchase with 63 validated rules, CI merge-gate workflows, and 20 LLM review prompts; lifetime updates for the pack.
+- **Team Updates**: early-access recurring offer at **$19/month or $190/year** for monthly rule drops, workflow refreshes, and rollout support. Scope and launch date are confirmed before charging; this is not yet an automated subscription.
 
 ## Tech
 - Python 3.11+
@@ -44,12 +44,14 @@ code-review, security, owasp, static-analysis, developer-tools, python
 ## Install Commands
 ```bash
 # Via uvx (recommended, no install)
-uvx aicraft-code-review
+uvx --with "mcp<2" aicraft-code-review
 
 # Via pip
-pip install aicraft-code-review
+pip install "aicraft-code-review==0.1.2" "mcp<2"
 python -m mcp_code_review
 ```
+
+The `mcp<2` constraint keeps the server compatible with the current MCP Python SDK API.
 
 ## Repository
 https://github.com/GoodJobwilliam/aicraft

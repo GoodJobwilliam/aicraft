@@ -14,17 +14,23 @@
 - Founding price to test: $19/month or $190/year
 - Pre-sale flow: collect interest by email first; charge only after delivery scope and launch date are confirmed
 
-## What I can do next
-- tighten homepage copy further
-- add a dedicated Team Updates page
-- draft outreach messages for email / V2EX / 掘金 / IH
-- use `OUTREACH_PACK.md` as the single source for channel copy and qualification questions
-- update product README files to match the new offer split
+## What is already done
+- homepage and Chinese landing page focus on the MCP Code Review funnel
+- dedicated Team Updates pages are live
+- outreach copy and qualification questions are in `OUTREACH_PACK.md`
+- public launch guides and product READMEs use the current PyPI 0.1.2 install path
 
-## What I need from you
-- PyPI login confirmation so the release can be published
-- VPN on when we need Firestore / IH posting
-- approval on the recurring price point before I wire more copy around it
+## Next zero-budget execution loop
+1. Send 20 targeted messages using `OUTREACH_PACK.md`.
+2. Record every contact in `OUTREACH_LOG.md`, including replies and objections.
+3. Offer the free server first; invite qualified teams to test the Team Rules Pack.
+4. Ask testers whether they would explicitly pre-commit to Team Updates before any recurring checkout is created.
+5. Review the log after 20 contacts and adjust the offer around repeated pain, not vanity metrics.
+
+## External blockers
+- PyPI, V2EX, 掘金, Product Hunt, or Indie Hackers login/OTP/CAPTCHA may require an in-browser action.
+- VPN-dependent channels remain unavailable while the existing connection is off.
+- No paid tools, ads, subscriptions, or infrastructure are required for this validation loop.
 
 ## First outreach questions
 - How many engineers are on your team?

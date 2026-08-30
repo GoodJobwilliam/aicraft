@@ -17,7 +17,7 @@
 > It integrates with Claude Code, Cursor, Cline — any MCP client. The review includes OWASP security pattern scanning out of the box.
 >
 > GitHub: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
-> Install: `pip install aicraft-code-review`
+> Install: `uvx --with "mcp<2" aicraft-code-review` (PyPI 0.1.2)
 >
 > Would love feedback from the community!
 
@@ -31,13 +31,13 @@
 > Just discovered this workflow and wanted to share:
 >
 > ```
-> pip install aicraft-code-review
-> claude mcp add code-review -- uvx aicraft-code-review
+> uvx --with "mcp<2" aicraft-code-review
+> claude mcp add code-review -- uvx --with "mcp<2" aicraft-code-review
 > ```
 >
 > Now you can just ask Claude to "review this code" and it runs structural analysis + OWASP checks before responding. No more pasting into ChatGPT.
 >
-> It's an open MCP server, works with Cursor/Cline too. The review output is way more detailed than what Claude gives you by default because it's running purpose-built analysis tools.
+> It's an open MCP server, works with Cursor/Cline too. The review output is way more detailed than what Claude gives you by default because it's running purpose-built analysis tools. The optional Team Rules Pack is a one-time $49 add-on; Team Updates is still an early-access offer, not a live subscription.
 
 ---
 
@@ -53,10 +53,11 @@
 > - 🐛 Bug and vulnerability detection
 > - 📊 Structured severity ratings
 > - 🔌 Works with Claude Code, Cursor, Cline
-> - 💰 One-time $49 payment, lifetime updates
+> - 💰 Free MIT server; optional one-time $49 Team Rules Pack
+> - 🔁 Team Updates early access at $19/month or $190/year
 >
 > **How it works:**
-> 1. `pip install aicraft-code-review`
+> 1. `uvx --with "mcp<2" aicraft-code-review` (PyPI 0.1.2)
 > 2. Add to your MCP client config
 > 3. Ask your AI to review any code
 
@@ -74,11 +75,11 @@
 > - review_diff(diff) → review git changes before merging
 > - review_file(path) → review any file by path
 >
-> Why I built it: all the AI code review tools I found were either SaaS (upload your code to someone's server) or required a paid Copilot subscription. This runs locally, uses your existing LLM, and costs $49 once.
+> Why I built it: all the AI code review tools I found were either SaaS (upload your code to someone's server) or required a paid Copilot subscription. This runs locally and uses your existing LLM. The free server has an optional $49 Team Rules Pack; Team Updates is being validated with early-access teams.
 >
 > Tech stack: Python, MCP protocol, supports any LLM backend (OpenAI, Anthropic, Groq, local models).
 >
-> Install: pip install aicraft-code-review
+> Install: uvx --with "mcp<2" aicraft-code-review (PyPI 0.1.2)
 > Repo: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
 > Site: https://aicraft.vip
 

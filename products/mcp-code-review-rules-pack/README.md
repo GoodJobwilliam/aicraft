@@ -16,12 +16,12 @@ You get in **minutes** what normally takes teams weeks: production-grade rule pr
 | `ci/gitlab-ci.yml` | GitLab CI MR gate with the same behavior |
 | `llm-prompts.md` | 20 prompts for deep semantic review with Claude/GPT/Gemini |
 
-Every rule uses the stable `custom_rules` schema (name / pattern / severity / category / issue / fix) plus tuned `severity_overrides` for the built-in checks — validated against v0.1.1.
+Every rule uses the stable `custom_rules` schema (name / pattern / severity / category / issue / fix) plus tuned `severity_overrides` for the built-in checks — validated against MCP Code Review v0.1.2.
 
 ## Install (2 minutes)
 
 ```bash
-pip install aicraft-code-review
+pip install "aicraft-code-review==0.1.2" "mcp<2"
 
 # Copy the profile for your language to your repo root
 cp rules/python.yaml .mcp-code-review.yaml

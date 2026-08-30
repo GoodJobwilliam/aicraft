@@ -3,14 +3,14 @@
 ## CURRENT STATE
 - **目标**: aicraft 达到 $2,000 MRR；预算 $0；工作区 `/Users/william/work/AIcompany/aicraft`
 - **策略更新（2026-08-30）**: 聚焦 `mcp-code-review` 主线；免费开源 server + $49 Team Rules Pack + Team Updates 早期体验（$19/月或 $190/年）。不新增任何付费工具、广告或基础设施。
-- **本轮已完成**: 英文/中文首页首屏收敛到 MCP Code Review；新增 `team-updates.html` / `team-updates.zh.html`；新增预售说明、价格和邮件收集入口；README 与产品文档同步 Team Updates 口径。
+- **本轮已完成**: 英文/中文首页首屏收敛到 MCP Code Review；新增 `team-updates.html` / `team-updates.zh.html`；新增预售说明、价格和邮件收集入口；README、发布指南、市场提交信息和社交草稿同步 Team Updates 口径；新增 `OUTREACH_LOG.md`。
 - **新增分发资产**: `OUTREACH_PACK.md`，包含中英文短帖、私信模板、资格问题和以付费承诺为准的验证标准。
 - **Website**: https://aicraft.vip (EN) + /zh.html (CN) — live。首页示例报告区展示 Team Rules Pack 真实输出（`MCP_CODE_REVIEW_CONFIG=rules/python.yaml mcp-code-review review-file main.py`，3 Critical / 5 High / Block，exit 2）并直链 Creem $49 结算页（commit 已上线，remote 1fb9ff7）
 - **Creem**: 9 产品 live，**0 销售 / 0 订阅 / 0 客户**（2026-08-17 复查，无变化）。账号 731685147@qq.com。增值产品 Team Rules Pack `prod_6Z3S3jGNPsCyRSqNi397ZY`（63 条规则 + CI playbook + LLM prompts，$49）
 - **GitHub**: GoodJobwilliam/aicraft，2 stars / 0 forks。⚠️ github.com 直连被墙（api.github.com 可达）→ **推送必须走 API**（recipe 见 TOOLING NOTES）。OAuth token 无 `workflow` scope → `.github/workflows/ci.yml` 无法推送（本地就绪，等 PAT）
 - **登录状态（in-app browser, CDP 9229）**: Google ✅ / GitHub ✅ / Smithery ✅ / Glama ✅ / Creem ✅（QQ 账号）/ IH ✅（Firebase，但 Firestore 被墙不可用）。⚠️ Product Hunt 会话已过期（需重新登录）；PyPI / V2EX / 掘金 未登录——**登录页标签已开好**（PyPI=E60305F8、V2EX=76D6EA55、掘金=BC42B4FB）
 - **网络**: github.com、googleapis.com（Firestore/identitytoolkit）不通——**用户 VPN（MotionPro 同济 vpn.tongji.cn）当前断开**。其余（PyPI/PH/Glama/Dev.to/Smithery/Creem/mcpservers）均可达
-- **PyPI 0.1.1 就绪待发**: dist 已构建、fresh venv 验证通过（mcp 1.29.0）。只差用户登录 PyPI 后建 token。⚠️ 0.1.0 的 `mcp>=1.6` 无上限，mcp 2.0.0 已致新装用户 CLI 崩溃
+- **PyPI 0.1.2 live**: package metadata now pins `mcp>=1.6,<2`; public install path and docs are aligned.
 
 ## LAUNCH STATUS (2026-08-17)
 
@@ -19,7 +19,7 @@
 | **Smithery.ai** | ✅ Live | [yaohuixue1/mcp-code-review](https://smithery.ai/servers/yaohuixue1/mcp-code-review) 52/100。Arcade 迁移后 redeploy 通道坏（UI Publish 无反应，API POST /releases 404）。验证需付费计划 |
 | **mcpservers.org** | ✅ Live | APPROVED: [goodjobwilliam/aicraft](https://mcpservers.org/servers/goodjobwilliam/aicraft)，已用于 backlinks |
 | **cursor.directory** | ✅ Live | [mcp-code-review-server](https://cursor.directory/plugins/mcp-code-review-server) 公开（1 Rule + 1 MCP Server） |
-| **PyPI** | ✅ 0.1.0 live | 666 总下载 / 153 月 / 2 周。⚠️ mcp 2.x 崩溃问题待 0.1.1 修复；**等用户登录 PyPI** |
+| **PyPI** | ✅ 0.1.2 live | Public package metadata pins `mcp<2`; install path verified against the live release. |
 | **Product Hunt** | ✅ Launched | 3 upvotes / 12 followers / 7 comments（外部 5 条全部回复 + 2 条 maker 回复）。论坛帖 approved。⚠️ 浏览器会话已过期，需重新登录才能继续互动 |
 | **Dev.to** | ✅ 5 篇文章 | [主页](https://dev.to/goodjobwilliam)。文章 5（id 4408698, 63 规则）0 反应。API key `GEdbXASUJqszsj4fBTX7nvK9`（POST/PUT 需浏览器 UA）。总 30 views |
 | **PitchHut** | ✅ Claimed | 47 page views, 0 pitch clicks。账号 cheap_copper_rodie |
@@ -27,7 +27,7 @@
 | **awesome-mcp-servers** | ⏳ PR open | [#10918](https://github.com/punkpeye/awesome-mcp-servers/pull/10918) open/clean/4 comments，无维护者新回复。只差 Glama 收录+徽章 |
 | **MCPFind** | ⏳ PR open | [#139](https://github.com/MCPFind/mcp-find/pull/139) open/unstable/1 comment |
 | **Cline MCP Marketplace** | ❌ Issue closed | #2106 已被维护者关闭（2025-12-30），不再追 |
-| **Official MCP Registry** | ⏳ 阻塞于 PyPI | `products/mcp-code-review/registry/server.json` valid；PyPI 0.1.1 发布后 `mcp-publisher publish` |
+| **Official MCP Registry** | ⏳ Pending publisher action | `products/mcp-code-review/registry/server.json` valid; publish can proceed with a logged-in registry session. |
 | **Hacker News** | ✅ 1 point | Item #49058442，0 comments，dormant |
 | **Reddit r/mcp** | ⚠️ 限流中 | 两帖被 spam 过滤（1v76tt5/1v9xgip）。账号级 blocked，punkpeye 未回复 mod queue 请求。已在攒 karma：4 条技术评论（r/mcp×3 + r/ClaudeAI×1）。等待账号成熟后 clean repost |
 | **mcp.so** | ❌ $39 付费 | $0 预算跳过 |
@@ -46,7 +46,7 @@
 - **SEO/中文站**（16604f5/933d319）: OG/Twitter/JSON-LD/sitemap/robots；zh.html 中文落地页
 - **YAML 示例修复**（2abd0e2）: README regex pattern 单引号
 - **Glama Dockerfile**（8dca404）: pinned git commit 安装（防 mcp 2.x）
-- **mcp<2 安装指引**（cbe82eb，已上线）: README/README.zh/zh.html 所有安装命令改为 pin `mcp<2`（实测确认 0.1.0 + mcp 2.0.0 新装必崩: `AttributeError: 'Server' object has no attribute 'list_tools'`）——0.1.1 发布前的止损措施
+- **mcp pin fix**（2940d6e，已上线）: package metadata and all install guides use `mcp<2`; the live PyPI 0.1.2 release no longer needs a manual compatibility workaround.
 - **待推送（本地）**: `.github/workflows/ci.yml`（需 PAT workflow scope，Git Data API 也会 404）
 
 ## TOOLING NOTES
@@ -58,14 +58,14 @@
 - **Smithery**: API key smry_EtMB... 在 CLI config
 
 ## USER ACTIONS NEEDED（按优先级）
-1. **PyPI 登录**（最高优先，0.1.1 已就绪）: 标签已开好，登录后我建 token → `uvx twine upload -u __token__ -p <token> dist/aicraft_code_review-0.1.1*` → `mcp-publisher publish`。解锁：修复 mcp 2.x 崩溃 + 官方 MCP Registry + PulseMCP 自动收录
+1. **官方 MCP Registry 登录/发布**: `mcp-publisher publish` can now use the live 0.1.2 package; this is the highest-leverage free distribution step still pending.
 2. **打开 VPN**（MotionPro 同济）: 解锁 github.com 直连、IH Firestore（发帖/清理草稿）、identitytoolkit
 3. **V2EX + 掘金登录**: 标签已开好，草稿就绪，登录后立即可发
 4. **Product Hunt 重新登录**: 会话已过期，重新登录后可继续评论互动
 5. **GitHub PAT（含 workflow scope）**: 解锁 CI workflow 推送
 
 ## NEXT STEPS
-1. PyPI 登录后: 发布 0.1.1 → `mcp-publisher publish` → Glama 收录后 claim + badge → 更新 awesome PR #10918
+1. Official MCP Registry publish for 0.1.2 → Glama 收录后 claim + badge → 更新 awesome PR #10918
 2. VPN 恢复后: IH 发新 timeline 更新 + 清理 UNPUBLISHED DRAFT（Firestore 查询法已就绪）
 3. V2EX/掘金登录后: 发中文引流帖 → zh.html
 4. Glama 工单 #125096481 持续跟进；GitHub OAuth 连接 bug 48h 重试
@@ -74,7 +74,7 @@
 7. Creem 销售每周复查（当前 $0）；Dev.to 文章 6 选题: Glama badge + registry 收录 roundup
 
 ## PATROL LOG
-- **2026-08-30（收入主线 round 1）**: 在零预算约束下将官网叙事收敛到 MCP Code Review；新增 `team-updates.html` / `team-updates.zh.html`，早期价格 $19/月或 $190/年，先登记后收费；同步 README、产品文档、sitemap；本地 MCP 测试 33 passed；四个线上页面均返回 200；本轮提交已推送到远端 `e99c302`。
+- **2026-08-30（收入主线 round 2）**: 统一公开发布指南、市场提交信息、社交草稿与产品 README 到 PyPI 0.1.2；明确免费 MIT server、$49 Team Rules Pack 与尚未自动收费的 Team Updates；新增 `OUTREACH_LOG.md` 记录 20 个零预算定向触达目标。本地测试与线上页面复查待本轮提交后执行。
 - **2026-08-17（round 13）**: 官网示例报告区上线验证 ✅；github.com 被墙 → 建立 API 推送流程并推送成功（remote 1fb9ff7→7342e40→cbe82eb）；CI workflow 推送被 workflow scope 拦截（404，等 PAT）；IH 交叉发帖根因定位——帖文在 Firestore `posts` 集合（非 RTDB），firestore.googleapis.com 被墙，浏览器内 fetch 也 Failed to fetch → **需 VPN**；**实测确认 0.1.0 新装即崩**（mcp 2.0.0 移除 list_tools）→ 全部安装指引改 pin `mcp<2` 止损（cbe82eb，zh.html 已生效）；Creem 复查 0 销售；Glama 仍 0 收录（72k servers 无 aicraft）；awesome #10918 open/clean、Docker #4699 open、MCPFind #139 open、Cline #2106 已被关；HN 1 point；ai-bot.cn 未收录；PH 会话过期需重登；已为 PyPI/V2EX/掘金 开好登录标签
 - **2026-08-16（round 12）**: Glama 提交确认在审核队列（弹窗 "already pending review"）；官网示例报告区用真实 CLI 输出重做（3 Critical/5 High/Block）；PyPI/V2EX/掘金仍待登录；IH cross-post 受阻（UNPUBLISHED DRAFT 残留，编辑器未出现）
 - **2026-08-16（round 10，转化专项）**: Team Rules Pack 上线（63 规则 + CI + prompts，全部验证）；Creem 产品更新为 $49 规则包；官网双层文案；PH 论坛发规则包公告；Dev.to 文章 5（id 4408698）

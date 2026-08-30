@@ -49,7 +49,7 @@ pip install "aicraft-code-review" "mcp<2"
 python -m mcp_code_review
 ```
 
-> ⚠️ PyPI 0.1.0 does not cap `mcp`, and mcp 2.0.0 removes `Server.list_tools`, which crashes the CLI on fresh installs. Install 0.1.1+ (which pins `mcp<2` automatically) or pin `mcp<2` yourself.
+> Compatibility note: PyPI `0.1.2` pins `mcp<2`. If you install the older `0.1.0` release, add the `mcp<2` constraint manually because MCP 2.0 removes `Server.list_tools`.
 
 ### Team Updates (early access)
 
