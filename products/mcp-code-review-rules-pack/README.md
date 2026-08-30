@@ -44,6 +44,7 @@ What you get:
 - Exit code `1` — high/medium findings → a report comment is posted on the PR, merge stays open.
 - Exit code `2` — critical findings → **the workflow fails and blocks the merge.**
 - GitLab CI keeps `review-report.txt` as an artifact even when the review job fails, so reviewers can inspect the findings.
+- The GitHub Actions template requests only `contents: read` plus `pull-requests: write`, which is required for its PR report comment.
 
 ## How to customize
 

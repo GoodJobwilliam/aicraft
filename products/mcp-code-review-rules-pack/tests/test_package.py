@@ -32,3 +32,10 @@ def test_gitlab_template_persists_report_and_propagates_exit_code():
     assert "cat review-report.txt" in template
     assert 'exit "$EXIT"' in template
     assert "when: always" in template
+
+
+def test_github_template_can_comment_on_pull_requests():
+    template = (ROOT / "ci/github-actions.yml").read_text(encoding="utf-8")
+    assert "contents: read" in template
+    assert "pull-requests: write" in template
+    assert "issues.createComment" in template

@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-08-30（收入主线 round 37）：修复 Team Rules Pack GitHub Actions 模板的真实运行权限：PR 评论步骤从 `pull-requests: read` 改为 `pull-requests: write`；README 明确最小权限范围；归档同步测试增加权限回归；ZIP 已同步更新。尚未发布新 PyPI 版本，收入证据仍为 0。
 - 2026-08-30（收入主线 round 36）：基于 GitHub 公共 API 二次搜索并核验 README/仓库元数据，向 `OUTREACH_QUEUE.md` 增加 5 个新候选（MCP Audit Scanner、PR Review Assistant、Lintro、agent-bom、Rebar），每个候选附公开 issue 链接和技术问题开场；明确这些只是审计快照，未发送任何外部消息，也不计入联系人、试用或收入。漏斗仍为 `$0 MRR`。
 - 2026-08-30（收入主线 round 35）：修复 Team Rules Pack 的 GitLab CI 交付缺陷：模板现在将报告写入 `review-report.txt`、始终作为 artifact 保留，并传递真实退出码（Critical=`2` 阻断，High/Medium=`1` 按现有策略允许失败）；同步更新规则包 README，重建 8 文件 ZIP；新增归档同步测试。规则包测试 `2 passed`，MCP 产品测试 `44 passed`，漏斗测试 `5 passed`，Ruff 和 `git diff --check` 通过。未发布新 PyPI 版本，线上仍为 `0.1.2`；收入证据仍为 0。
 - 2026-08-30（收入主线 round 34）：修复团队共享配置损坏时的体验问题：JSON/YAML 解析错误现在带文件路径及行列信息；CLI 统一返回 exit `2`，MCP 工具返回可读 `Error:`，不再把 parser traceback 暴露给客户端；新增 CLI/MCP 回归测试。产品测试 `44 passed`、漏斗测试 `5 passed`、Ruff 和 `git diff --check` 全部通过。未发布新 PyPI 版本，线上仍为 `0.1.2`；收入证据仍为 0。
