@@ -16,13 +16,13 @@
 
 ## What is already done
 - homepage and Chinese landing page focus on the MCP Code Review funnel
-- dedicated Team Updates pages are live
+- dedicated Team Updates pages are live, with a structured GitHub team-trial form
 - outreach copy and qualification questions are in `OUTREACH_PACK.md`
 - public launch guides and product READMEs use the current PyPI 0.1.2 install path
 
 ## Next zero-budget execution loop
 1. Send 20 targeted messages using `OUTREACH_PACK.md`.
-2. Use `OUTREACH_TARGETS.md` to choose public, relevant projects; record every contact in `OUTREACH_LOG.md`, including replies and objections.
+2. Use `OUTREACH_TARGETS.md` to choose public, relevant projects; invite qualified replies to the GitHub team-trial form and record every contact in `OUTREACH_LOG.md`.
 3. Offer the free server first; invite qualified teams to test the Team Rules Pack.
 4. Ask testers whether they would explicitly pre-commit to Team Updates before any recurring checkout is created.
 5. Review the log after 20 contacts and adjust the offer around repeated pain, not vanity metrics.

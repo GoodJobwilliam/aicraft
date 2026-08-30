@@ -1,0 +1,87 @@
+name: Team trial request
+description: Request a free, local-first MCP Code Review team trial
+title: "[Team trial] "
+labels:
+  - team-trial
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest. This form is for a short, free validation trial of MCP Code Review and the Team Rules Pack.
+
+        Do not paste source code, credentials, API keys, or confidential information here.
+
+  - type: input
+    id: team-size
+    attributes:
+      label: Team size
+      description: How many engineers would test the workflow?
+      placeholder: e.g. 4
+    validations:
+      required: true
+
+  - type: input
+    id: languages
+    attributes:
+      label: Main languages
+      description: Which languages should the trial cover?
+      placeholder: e.g. Python, TypeScript
+    validations:
+      required: true
+
+  - type: dropdown
+    id: workflow
+    attributes:
+      label: Current review workflow
+      description: Where would local review fit today?
+      options:
+        - Editor (Claude Code, Cursor, or Cline)
+        - Pull request
+        - CI pipeline
+        - Editor and pull request
+        - Editor, pull request, and CI
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: pain
+    attributes:
+      label: Biggest review pain
+      description: Describe the recurring problem in one or two sentences. Do not include private code.
+      placeholder: e.g. Shared rules drift between repositories and false positives slow merges.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: trial-window
+    attributes:
+      label: Trial timing
+      options:
+        - This week
+        - Within two weeks
+        - This month
+        - Exploring only
+    validations:
+      required: true
+
+  - type: dropdown
+    id: updates-interest
+    attributes:
+      label: Ongoing updates interest
+      description: This is research only; no charge is created by submitting this form.
+      options:
+        - I only want the free server
+        - I would test the $49 Team Rules Pack
+        - I would consider Team Updates at $19/month or $190/year
+        - I need to understand the scope first
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contact
+    attributes:
+      label: Follow-up
+      options:
+        - label: I am comfortable receiving a reply in this public issue thread.
+          required: true

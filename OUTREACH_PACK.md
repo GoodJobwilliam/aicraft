@@ -10,6 +10,7 @@ For teams, there is a companion rules pack with shared profiles and CI merge gat
 
 Try the free server: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
 Team Updates details: https://aicraft.vip/team-updates.html
+Free team trial form: https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request
 
 ## 中文短帖
 
@@ -19,6 +20,7 @@ Team Updates details: https://aicraft.vip/team-updates.html
 
 免费安装：https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
 团队更新：https://aicraft.vip/team-updates.zh.html
+免费团队试用表单：https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request
 
 ## Direct message
 
@@ -41,3 +43,5 @@ If the workflow is useful, I can include your language mix and rollout needs in 
 - 1 paid or explicitly pre-committed Team Updates customer
 
 Do not count impressions, likes, or directory listings as customer validation.
+
+For public replies, use the GitHub team-trial form so team size, workflow, timing, and offer signal are recorded consistently in the issue thread. Submitting the form creates no charge or subscription.
