@@ -4,6 +4,6 @@
 #    Server Name: MCP Code Review Server
 #    GitHub URL: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
 #    Package Name: mcp-code-review (PyPI)
-#    Short Description: Code review as an MCP server. Structured reviews with OWASP security scanning for Claude Code, Cursor, and any MCP client.
+#    Short Description: Code review as an MCP server. Structured local checks for common security, performance, quality, and style patterns in Claude Code, Cursor, and any MCP client.
 #    Category: Developer Tools
 # 3. Click "Open GitHub Editor" and follow the prompts to create a PR
