@@ -11,6 +11,7 @@ import argparse
 import json
 import subprocess
 import sys
+from importlib.resources import files
 from pathlib import Path
 
 from mcp_code_review.config import discover_config_path, load_config
@@ -63,6 +64,12 @@ def _json_report(findings: list) -> str:
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
+def _schema_json() -> str:
+    """Return the bundled result schema so CI consumers need no repository checkout."""
+    schema = files("mcp_code_review").joinpath("schema/review-result.schema.json")
+    return schema.read_text(encoding="utf-8")
+
+
 def _git_diff(*, staged: bool = False) -> str:
     """Read a working-tree or staged diff and fail clearly outside a Git repo."""
     command = ["git", "diff"]
@@ -78,6 +85,8 @@ def _git_diff(*, staged: bool = False) -> str:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="mcp-code-review", description="Review code locally from the terminal.")
     sub = parser.add_subparsers(dest="command")
+
+    sub.add_parser("schema", help="Print the machine-readable review result schema")
 
     p_file = sub.add_parser("review-file", help="Review a local file by path")
     p_file.add_argument("path", help="Path to the file to review")
@@ -96,6 +105,10 @@ def main(argv: list[str] | None = None) -> int:
     p_code.add_argument("--format", choices=("markdown", "json"), default="markdown", dest="output_format", help="Output format")
 
     args = parser.parse_args(argv)
+
+    if args.command == "schema":
+        print(_schema_json())
+        return 0
 
     try:
         if args.command == "review-file":

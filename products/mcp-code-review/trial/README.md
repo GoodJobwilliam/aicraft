@@ -2,6 +2,8 @@
 
 This free, local trial lets a small team test shared review rules before discussing the paid Team Rules Pack or Team Updates. No source code leaves the machine, and no payment is created by running these commands.
 
+After the review, you can inspect the machine-readable contract with `mcp-code-review schema`; it is included in the installed package for CI consumers.
+
 ## 1. Install
 
 ```bash

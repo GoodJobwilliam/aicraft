@@ -6,6 +6,7 @@ Usage:
     mcp-code-review review-file PATH # Run a review directly from the terminal
     mcp-code-review review-diff ...  # Review a git diff
     mcp-code-review review-code ...  # Review a code snippet
+    mcp-code-review schema             # Print the JSON result schema
     python -m mcp_code_review        # Same as mcp-code-review
 """
 import asyncio

@@ -22,6 +22,12 @@ def run_cli(*args: str, stdin: str = "") -> subprocess.CompletedProcess:
 
 
 class TestCliReviewCode:
+    def test_schema_command_prints_bundled_contract(self):
+        result = run_cli("schema")
+        payload = json.loads(result.stdout)
+        assert result.returncode == 0
+        assert payload["properties"]["schema_version"] == {"const": 1}
+
     def test_review_code_flags_security_finding(self):
         result = run_cli("review-code", 'import os\nos.system("ls")\n')
         assert "Command injection" in result.stdout
