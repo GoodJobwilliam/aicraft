@@ -79,6 +79,10 @@ mcp-code-review review-code "import os; os.system('ls')"
 
 退出码适配 CI：`0` 干净 / `1` 存在 High 或 Medium / `2` 存在 Critical。
 
+### 免费 GitHub Actions 起步模板
+
+仓库内提供了可直接复制的 [GitHub Actions 起步工作流](./examples/github-actions/mcp-code-review.yml)。它使用当前 PyPI 版本审查 Pull Request diff，不需要 API 密钥，并沿用现有退出码策略。起步模板只运行内置检查；可选的 Team Rules Pack 才包含共享规则档案、持续维护的 CI 模板和团队专属策略。
+
 如果 CI 需要机器可读结果，可以给 CLI 命令增加 `--format json`。JSON 包含稳定的 `schema_version`、带 check id 的问题记录、严重度计数、`verdict`，以及和 Markdown 输出一致的 `exit_code`。该模式目前已在仓库源码中提供；在新的软件包发布前，PyPI `0.1.2` 仍是文档中的稳定版本。
 
 输出契约见 [`schema/review-result.schema.json`](./schema/review-result.schema.json)。

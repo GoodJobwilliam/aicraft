@@ -22,6 +22,7 @@ def test_free_server_archive_contains_current_tracked_runtime_files():
         ".well-known/mcp/server-card.json",
         "uv.lock",
         "schema/review-result.schema.json",
+        "examples/github-actions/mcp-code-review.yml",
         "src/mcp_code_review/__init__.py",
         "src/mcp_code_review/__main__.py",
         "src/mcp_code_review/cli.py",
