@@ -104,6 +104,33 @@ def test_free_github_actions_starter_is_documented_and_secretless():
     assert "Free GitHub Actions starter" in readme
 
 
+def test_release_workflow_is_tagged_trusted_and_validates_artifacts():
+    workflow = (ROOT / ".github/workflows/mcp-code-review-release.yml").read_text(encoding="utf-8")
+    releasing = (ROOT / "products/mcp-code-review/RELEASING.md").read_text(encoding="utf-8")
+    assert '"aicraft-code-review-v*"' in workflow
+    assert "id-token: write" in workflow
+    assert "uv build --clear --out-dir dist-release" in workflow
+    assert "uv publish dist-release/* --trusted-publishing always" in workflow
+    assert "schema/review-result.schema.json" in workflow
+    assert "long-lived PyPI" in releasing
+    assert "0.1.2" in releasing
+
+
+def test_published_package_contains_the_json_schema():
+    import zipfile
+    import subprocess
+    import tempfile
+
+    product = ROOT / "products/mcp-code-review"
+    with tempfile.TemporaryDirectory() as temp_dir:
+        output = Path(temp_dir)
+        subprocess.run(["uv", "build", "--clear", "--wheel", "--out-dir", str(output)], cwd=product, check=True, capture_output=True, text=True)
+        wheel = next(output.glob("*.whl"))
+        with zipfile.ZipFile(wheel) as archive:
+            packaged = archive.read("mcp_code_review/schema/review-result.schema.json")
+    assert packaged == (product / "schema/review-result.schema.json").read_bytes()
+
+
 def test_cli_json_output_validates_against_published_schema():
     import json
     import subprocess
