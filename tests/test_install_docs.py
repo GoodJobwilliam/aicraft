@@ -39,3 +39,14 @@ def test_free_server_docs_do_not_claim_unimplemented_race_detection():
         assert "race condition analysis" not in content, path
         assert "race analysis" not in content, path
         assert "竞态分析" not in content, path
+
+
+def test_mcp_metadata_describes_deterministic_local_checks():
+    for path in [
+        ROOT / "products/mcp-code-review/pyproject.toml",
+        ROOT / "products/mcp-code-review/registry/server.json",
+        ROOT / "products/mcp-code-review/.well-known/mcp/server-card.json",
+    ]:
+        content = path.read_text(encoding="utf-8").casefold()
+        assert "deterministic" in content or "structured local security-pattern" in content, path
+        assert "owasp top 10" not in content, path

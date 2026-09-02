@@ -2,7 +2,7 @@
   "version": "1",
   "server": {
     "name": "MCP Code Review Server",
-    "description": "AI-powered code review as an MCP server — structured reviews with OWASP security scanning. Works with Claude Code, Cursor, Cline, and any MCP client.",
+    "description": "Local code review as an MCP server — deterministic security-pattern checks and structured findings. Works with Claude Code, Cursor, Cline, and any MCP client.",
     "command": "uv",
     "args": ["run", "--directory", "/app", "mcp-code-review"],
     "env": {}
