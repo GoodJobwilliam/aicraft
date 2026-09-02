@@ -39,7 +39,7 @@
 - `products/ai-trading-prompts.zip` — AI+交易 Prompt 包（$29）
 - `products/ai-agent-prompts.zip` — AI Agent 构建 Prompt 包（$29）
 - `products/python-cli-zh.zip` — 中文 Python CLI 模板（$19）
-- `products/mcp-code-review.zip` — MCP Code Review Server（$49）
+- `products/mcp-code-review.zip` — MCP Code Review Server（免费 MIT）；配套 Team Rules Pack 为 $49
 - `products/python-cli-generator.zip` — CLI 项目模板（$49）
 - `products/fastapi-starter.zip` — FastAPI Starter Kit（$59）
 - `products/api-dev-prompts.zip` — API Development Prompts（$19）
