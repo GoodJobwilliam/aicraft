@@ -23,12 +23,18 @@ MCP server that provides AI-assisted code review capabilities. Analyzes source c
 ## Installation
 
 ### Option 1: uvx (recommended, no install)
+The equivalent terminal command is:
+
+```bash
+uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
+```
+
 ```json
 {
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["--with", "mcp<2", "aicraft-code-review"]
+      "args": ["--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"]
     }
   }
 }

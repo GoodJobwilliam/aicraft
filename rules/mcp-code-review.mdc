@@ -41,7 +41,7 @@ Then add the server to your MCP client (Claude Code, Cursor, Cline, etc.).
 
 ## What it checks
 
-- OWASP security scanning (injection, auth, crypto misuse)
+- Deterministic local security-pattern checks (injection, deserialization, credentials, and XSS patterns)
 - Bug and vulnerability detection
 - N+1 query analysis
 - Performance profiling (hotspots, I/O, memory)

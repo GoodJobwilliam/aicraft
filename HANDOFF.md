@@ -119,6 +119,8 @@
 
 ## LATEST ROUND
 - 2026-09-03（收入主线 round 78）：收敛中英文首页的主转化路径，在首屏后增加“安装 → 10 分钟验证 → 团队上线”三步入口，降低从免费 MCP server 到 Team Pilot 的理解成本；试用页增加结构化 GitHub 反馈之外的预填邮件反馈入口，覆盖 GitHub 访问受限或不愿公开发帖的试用者；新增回归测试，根测试 27 passed。未发送外部消息、未新增付费支出，公开试用与收入漏斗仍为 0。
+- 2026-09-03（收入主线 round 79）：修复 AI agent 安装指南仍使用旧 uvx --with ... aicraft-code-review 命令的问题，统一到已实测的 uvx --from aicraft-code-review --with "mcp<2" mcp-code-review；新增安装文案回归覆盖该指南。未发送外部消息、未新增付费支出，公开试用与收入漏斗仍为 0。
+- 2026-09-03（收入主线 round 80）：审计公开分发元数据，修正 LAUNCHGUIDE、Glama 配置、MCP marketplace 提交模板和安装规则中的旧 OWASP/Top 10 承诺，统一为可验证的 deterministic local security-pattern checks；新增元数据回归测试。未发送外部消息、未新增付费支出，公开试用与收入漏斗仍为 0。
 - 2026-09-03（收入主线 round 77）：新增独立 `products/mcp-code-review-trial.zip` 试用包（示例、隐藏 JSON 配置、中英文说明），中英文试用页加入直接下载入口和归档同步测试；减少首次试用的文件复制摩擦，未新增付费支出。
 - 2026-09-03（收入主线 round 76）：在根 README 的 MCP 产品段增加免费 10 分钟试用、结构化反馈、团队试用和 Team Pilot 范围入口，并新增回归测试；缩短 GitHub 访问者从安装到反馈/团队转化的路径。未发送外部消息、未新增付费支出。
 - 2026-09-03（收入主线 round 75）：新增根目录 `pytest.ini`，将默认 `python3 -m pytest` 限定到仓库级漏斗、归档和文案测试，避免递归收集其他产品的独立依赖；MCP 产品仍通过其 `uv run --locked pytest` 单独验证。

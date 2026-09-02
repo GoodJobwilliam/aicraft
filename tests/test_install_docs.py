@@ -13,6 +13,7 @@ def test_public_install_docs_use_the_pypi_package_and_console_script_names():
         ROOT / "products/mcp-code-review/README.zh.md",
         ROOT / "products/mcp-code-review/trial/README.md",
         ROOT / "products/mcp-code-review/trial/README.zh.md",
+        ROOT / "products/mcp-code-review/llms-install.md",
         ROOT / "trial.html",
         ROOT / "trial.zh.html",
         ROOT / "index.html",
@@ -52,12 +53,27 @@ def test_mcp_metadata_describes_deterministic_local_checks():
         assert "owasp top 10" not in content, path
 
 
+def test_public_launch_metadata_matches_implemented_capabilities():
+    paths = [ROOT / "LAUNCHGUIDE.md", ROOT / "glama.json", ROOT / "submissions/mcp-marketplace-submission.md", ROOT / "rules/mcp-code-review.mdc"]
+    for path in paths:
+        content = path.read_text(encoding="utf-8").casefold()
+        assert "owasp top 10" not in content, path
+        assert "owasp security scanning" not in content, path
+    assert "deterministic" in (ROOT / "LAUNCHGUIDE.md").read_text(encoding="utf-8").casefold()
+
+
 def test_root_readme_exposes_trial_and_team_feedback_paths():
     content = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "https://aicraft.vip/trial.html" in content
     assert "template=trial-feedback.yml" in content
     assert "template=team-trial.yml" in content
     assert "TEAM_PILOT_BRIEF.md" in content
+
+
+def test_ai_agent_install_guide_uses_the_real_console_script():
+    content = (ROOT / "products/mcp-code-review/llms-install.md").read_text(encoding="utf-8")
+    assert '"--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"' in content
+    assert '"--with", "mcp<2", "aicraft-code-review"' not in content
 
 
 def test_trial_pages_offer_a_low_friction_email_feedback_path():

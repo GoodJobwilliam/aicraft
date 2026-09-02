@@ -2,7 +2,7 @@
   "$schema": "https://glama.ai/mcp/schemas/server.json",
   "name": "aicraft-code-review",
   "title": "MCP Code Review Server",
-  "description": "Code review as an MCP server — structured code quality reviews with OWASP security scanning. Review code snippets, git diffs, and local files for bugs, security, performance, and quality issues.",
+  "description": "Code review as an MCP server — structured local checks for common security, performance, quality, and style patterns. Review code snippets, git diffs, and local files with severity ratings and actionable fixes.",
   "maintainers": [
     "GoodJobwilliam"
   ],
@@ -23,7 +23,6 @@
   "tags": [
     "code-review",
     "security",
-    "owasp",
     "static-analysis",
     "mcp",
     "code-quality",
