@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 50）：重建仓库内的 `products/mcp-code-review.zip` 免费 Server 分发包，使其与当前 27 个跟踪源码文件字节同步；移除旧版 7 月代码、build/cache/egg-info 等污染内容，新增 `tests/test_mcp_archive.py` 防止下载包再次落后。归档测试 1 passed，漏斗/issue 测试 13 passed，MCP 严格测试 45 passed，Ruff 与 `git diff --check` 通过。未发布 PyPI 0.1.3，也未修改 Creem。
 - 2026-09-03（收入主线 round 49）：修正 `PROGRESS.md` 中将整个 MCP Code Review Server 写成 `$49` 的历史性价目表述，明确免费 MIT Server 与 `$49` Team Rules Pack 的边界；没有修改收入数据或 Creem 已有文件。
 - 2026-09-03（收入主线 round 48）：重新核验 GitHub 公共 API 的候选仓库状态，刷新 `OUTREACH_QUEUE.md` 的日期、开放 issue 数和最近更新时间，并新增 `kopfrechner/gitlab-mr-mcp` 与 `mattzcarey/shippie` 两个技术问题候选。没有发送任何外部消息；候选仍不计入联系人、试用或收入。
 - 2026-09-03（收入主线 round 47）：修正 `products/mcp-code-review/uv.lock` 与 `pyproject.toml` 的本地包版本漂移（0.1.0 -> 0.1.2），使 `uv run --locked` 可复现安装；严格产品测试 45 passed，漏斗/issue 报告测试 12 passed，Ruff 与 `git diff --check` 通过。
