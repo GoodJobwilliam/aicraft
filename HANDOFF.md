@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 52）：为 `OUTREACH_LOG.csv` 和 `scripts/funnel_report.py` 增加 `payment_reference` 证据字段；任何正的一次性收入或 MRR 若没有可核验的 Creem 订单/订阅引用都会被拒绝，避免误把表单意向或手工数字当成收入。空漏斗仍为 0，漏斗测试 8 passed。
 - 2026-09-03（收入主线 round 51）：将 `scripts/github_trial_report.py` 改为分页读取 GitHub 公共 Issues，并排除 Pull Request；新增分页回归测试，避免公开线索超过 100 条后静默漏读。工具仍只读、不写 issue、不更新收入。相关测试 14 passed，Ruff 与 `git diff --check` 通过；当前 API 仍为 0 条试用/反馈 issue。
 - 2026-09-03（收入主线 round 50）：重建仓库内的 `products/mcp-code-review.zip` 免费 Server 分发包，使其与当前 27 个跟踪源码文件字节同步；移除旧版 7 月代码、build/cache/egg-info 等污染内容，新增 `tests/test_mcp_archive.py` 防止下载包再次落后。归档测试 1 passed，漏斗/issue 测试 13 passed，MCP 严格测试 45 passed，Ruff 与 `git diff --check` 通过。未发布 PyPI 0.1.3，也未修改 Creem。
 - 2026-09-03（收入主线 round 49）：修正 `PROGRESS.md` 中将整个 MCP Code Review Server 写成 `$49` 的历史性价目表述，明确免费 MIT Server 与 `$49` Team Rules Pack 的边界；没有修改收入数据或 Creem 已有文件。

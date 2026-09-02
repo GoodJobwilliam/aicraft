@@ -2,7 +2,6 @@ import csv
 from pathlib import Path
 
 import pytest
-
 from scripts.funnel_report import report
 
 HEADER = [
@@ -24,6 +23,7 @@ HEADER = [
     "team_updates_subscribers",
     "one_time_revenue_usd",
     "mrr_usd",
+    "payment_reference",
     "next_follow_up",
     "next_action",
 ]
@@ -56,8 +56,8 @@ def test_revenue_and_mrr_are_separate(tmp_path: Path):
     write_rows(
         path,
         [
-            row(qualified_reply="yes", team_test="yes", paid_signal="yes", rules_pack_sales="1", one_time_revenue_usd="49"),
-            row(precommitment="yes", team_updates_subscribers="1", mrr_usd="19"),
+            row(qualified_reply="yes", team_test="yes", paid_signal="yes", rules_pack_sales="1", one_time_revenue_usd="49", payment_reference="creem:order-1"),
+            row(precommitment="yes", team_updates_subscribers="1", mrr_usd="19", payment_reference="creem:subscription-1"),
         ],
     )
     output = report(path)
@@ -85,7 +85,7 @@ def test_offer_tier_column_is_required(tmp_path: Path):
     path = tmp_path / "log.csv"
     path.write_text(
         "date,channel,contact_or_audience,qualified_reply,team_test,paid_signal,precommitment,"
-        "rules_pack_sales,team_updates_subscribers,one_time_revenue_usd,mrr_usd,next_follow_up\n"
+        "rules_pack_sales,team_updates_subscribers,one_time_revenue_usd,mrr_usd,payment_reference,next_follow_up\n"
         "2026-08-30,test,sample,,,,,,,,,\n",
         encoding="utf-8",
     )
@@ -104,6 +104,7 @@ def test_offer_tier_signals_keep_unconfirmed_revenue_at_zero(tmp_path: Path):
                 offer_tier="Team Pilot",
                 team_updates_subscribers="1",
                 mrr_usd="99",
+                payment_reference="creem:subscription-99",
             ),
         ],
     )
@@ -120,4 +121,11 @@ def test_negative_revenue_is_rejected(tmp_path: Path):
     path = tmp_path / "log.csv"
     write_rows(path, [row(one_time_revenue_usd="-1")])
     with pytest.raises(ValueError, match="cannot be negative"):
+        report(path)
+
+
+def test_revenue_requires_payment_reference(tmp_path: Path):
+    path = tmp_path / "log.csv"
+    write_rows(path, [row(one_time_revenue_usd="49")])
+    with pytest.raises(ValueError, match="payment_reference"):
         report(path)

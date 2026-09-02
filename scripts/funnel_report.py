@@ -22,6 +22,7 @@ REQUIRED_COLUMNS = {
     "team_updates_subscribers",
     "one_time_revenue_usd",
     "mrr_usd",
+    "payment_reference",
     "next_follow_up",
 }
 
@@ -43,6 +44,16 @@ def _money(row: dict[str, str], key: str) -> float:
     return amount
 
 
+def _validate_payment_evidence(row: dict[str, str], row_number: int) -> None:
+    """Require a traceable reference whenever confirmed revenue is recorded."""
+    one_time = _money(row, "one_time_revenue_usd")
+    mrr = _money(row, "mrr_usd")
+    if (one_time > 0 or mrr > 0) and not row.get("payment_reference", "").strip():
+        raise ValueError(
+            f"row {row_number} needs payment_reference when revenue is greater than zero"
+        )
+
+
 def read_rows(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
@@ -51,7 +62,10 @@ def read_rows(path: Path) -> list[dict[str, str]]:
         if missing:
             names = ", ".join(sorted(missing))
             raise ValueError(f"{path} is missing required columns: {names}")
-        return [row for row in reader if any((value or "").strip() for value in row.values())]
+        rows = [row for row in reader if any((value or "").strip() for value in row.values())]
+        for row_number, row in enumerate(rows, start=2):
+            _validate_payment_evidence(row, row_number)
+        return rows
 
 
 def _tier_summary(rows: list[dict[str, str]]) -> list[str]:
