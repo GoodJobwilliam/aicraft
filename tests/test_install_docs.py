@@ -132,8 +132,11 @@ def test_published_package_contains_the_json_schema():
 
 
 def test_schema_command_is_documented_for_installed_consumers():
-    for path in [ROOT / "products/mcp-code-review/README.md", ROOT / "products/mcp-code-review/README.zh.md"]:
-        assert "mcp-code-review schema > review-result.schema.json" in path.read_text(encoding="utf-8")
+    english = (ROOT / "products/mcp-code-review/README.md").read_text(encoding="utf-8")
+    chinese = (ROOT / "products/mcp-code-review/README.zh.md").read_text(encoding="utf-8")
+    assert "next PyPI release" in english
+    assert "下一版 PyPI 发布后" in chinese
+    assert "当前公开的 `0.1.2` 尚未包含它" in (ROOT / "products/mcp-code-review/trial/README.zh.md").read_text(encoding="utf-8")
 
 
 def test_cli_json_output_validates_against_published_schema():

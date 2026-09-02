@@ -87,7 +87,7 @@ mcp-code-review review-code "import os; os.system('ls')"
 
 输出契约见 schema/review-result.schema.json。
 
-已安装软件包也可以直接输出同一份契约，不需要克隆仓库：
+下一版 PyPI 发布后，已安装软件包也可以直接输出同一份契约，不需要克隆仓库。在此之前，该命令可从仓库源码或本地构建包运行：
 
     mcp-code-review schema > review-result.schema.json
 

@@ -2,7 +2,7 @@
 
 This free, local trial lets a small team test shared review rules before discussing the paid Team Rules Pack or Team Updates. No source code leaves the machine, and no payment is created by running these commands.
 
-After the review, you can inspect the machine-readable contract with `mcp-code-review schema`; it is included in the installed package for CI consumers.
+After the review, a locally built package can print the machine-readable contract with `mcp-code-review schema`. This becomes part of the public installed package after the next PyPI release; the current public `0.1.2` release does not include it yet.
 
 ## 1. Install
 

@@ -118,7 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
-- 2026-09-03（收入主线 round 97）：为已安装用户增加 mcp-code-review schema 命令，直接输出随 Python 包携带的 JSON 结果契约，降低 CI 集成门槛；双语 README、试用说明和 CHANGELOG 已同步，CLI 测试 14 passed、安装文档测试 15 passed。尚未发布新的 PyPI 版本，未发送外部消息、未新增付费支出，漏斗仍为 0。
+- 2026-09-03（收入主线 round 97）：为下一版发布候选增加 mcp-code-review schema 命令，直接输出随 Python 包携带的 JSON 结果契约，降低 CI 集成门槛；双语 README、试用说明和 CHANGELOG 已同步，并明确当前公开 PyPI 0.1.2 尚未包含该命令。尚未发布新的 PyPI 版本，未发送外部消息、未新增付费支出，漏斗仍为 0。
 - 2026-09-03（收入主线 round 96）：核验新的高相关公开 prospect picatz/flowstate#1584：议题同时要求 CLI explanation、JSON/MCP 结构化结果和 CI widening gate，且标记为 security/cli；加入 A9 队列与架构回复草稿。未自动发帖、未写入联系人漏斗、未新增付费支出。
 - 2026-09-03（收入主线 round 95）：核验新的高相关公开 prospect SociableSteve/caroline#79：议题明确要求提交前与 CI 的同一 secret 检查，维护者已选择 secretlint 并讨论非 provider 模式和可审计 suppression。加入 A8 队列与技术回复草稿；未自动发帖、未写入联系人漏斗、未新增付费支出。
 - 2026-09-03（收入主线 round 94）：常规 git push 被 GitHub OAuth 的缺少 workflow scope 拒绝后，使用 Git Data API 将文档、schema、测试和更新后的免费 Server zip 同步到远端 main；远端提交为 f689160ef9a23a043ee66adbb28ab679f5a76c58，远端 zip 与本地 SHA-256 一致。发布 workflow 未强行绕过权限，仍只在本地等待具备 workflow scope 后同步；PyPI 仍为 0.1.2，未发布新版本、未发送外部消息、未新增付费支出，漏斗仍为 0。

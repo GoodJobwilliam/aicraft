@@ -88,7 +88,7 @@ For CI systems that consume structured data, add `--format json` to any CLI revi
 
 The output contract is documented in schema/review-result.schema.json.
 
-Installed-package consumers can print the same bundled contract without a repository checkout:
+The next PyPI release will also let installed-package consumers print the same bundled contract without a repository checkout. Until that release, this command is available from the repository source or a locally built package:
 
     mcp-code-review schema > review-result.schema.json
 

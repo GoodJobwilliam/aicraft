@@ -53,6 +53,6 @@ mcp-code-review review-file path/to/file.py
 
 可选的 **Team Rules Pack** 为一次性 `$49`，可[通过 Creem 安全结算](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0)。**Team Updates Starter** 是最多 3 人的 `$19/月` 或 `$190/年`；**Team Pilot** 是最多 10 人的 `$99/月` 或 `$990/年`，包含 CI 和调优支持。收费前会先确认范围和开始时间。
 
-试用后可以运行 `mcp-code-review schema` 查看机器可读的结果契约；该文件随安装包提供，CI 无需克隆仓库即可使用。
+试用后，本地构建包可以运行 `mcp-code-review schema` 查看机器可读的结果契约。该命令将在下一版 PyPI 发布后进入公开安装包；当前公开的 `0.1.2` 尚未包含它。
 
 English: [README.md](./README.md)
