@@ -43,6 +43,7 @@ These rows have a concrete public issue related to the product problem. They are
 | A5 | [Gabriel-GM5/rpguide#47](https://github.com/Gabriel-GM5/rpguide/issues/47) | Open task proposes Claude AI code-review Actions for every PR and mentions strict TDD/SDD conventions | Would a read-only deterministic review job plus a separate optional comment job make the workflow safer for fork PRs and keep team conventions versioned in the repository? |
 | A6 | [sourcery-ai/sourcery#477](https://github.com/sourcery-ai/sourcery/issues/477) | Open feature request asks for AI code review from the CLI, not only IDE or PR integrations | Would stable CLI exit codes and a local rules file make the CLI review useful as a CI gate as well as an interactive developer command? |
 | A8 | [SociableSteve/caroline#79](https://github.com/SociableSteve/caroline/issues/79) | Open issue defines a committed pre-commit and CI secret check; maintainer chose secretlint and left non-provider coverage as an explicit decision | How should the committed scanner rules distinguish blocking credential patterns from warning-level generic matches while keeping the local hook and CI result identical? |
+| A9 | [picatz/flowstate#1584](https://github.com/picatz/flowstate/issues/1584) | Open MCP/CLI/security issue requests a derived structured explanation, JSON output, an MCP tool, and CI detection of widened effects | Which fields should be mandatory in the versioned result so the CLI, MCP host, and CI widening gate can share one auditable contract? |
 
 ## Contact Protocol
 

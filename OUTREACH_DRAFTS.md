@@ -75,6 +75,14 @@ Issue: https://github.com/SociableSteve/caroline/issues/79
 
 Manual note: the maintainer has already chosen secretlint and documented its rationale. Do not pitch AICraft unless they ask for a comparison or an example of a separate local deterministic checker.
 
+## A9 — flowstate #1584
+
+Issue: https://github.com/picatz/flowstate/issues/1584
+
+> The proposed Explanation boundary makes sense for keeping human-readable output, MCP responses, and CI policy on one source of truth. I would version the machine-readable envelope separately from the rendered text and make each effect row carry a stable kind, address, and provenance flag (literal versus computed), while keeping secrets and credentials redacted by name. Then --against can compare normalized rows instead of parsing presentation output, and the MCP tool can return the same object an agent sees before a run. Which parts of the IR already have stable identifiers that you would want to use as the row keys?
+
+Manual note: this is an architecture discussion, not a product pitch. Share the free trial only if the maintainer asks for a working local checker or comparison.
+
 ## Manual send checklist
 
 - Confirm the issue is still open and the question is still relevant.
