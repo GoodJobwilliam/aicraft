@@ -1,8 +1,9 @@
-# Creem 产品清单 — 全部可售 🚀
+# Creem 产品与结账状态
 
-> 最后更新: 2026-07-24
+> 最后更新: 2026-09-03
 > 环境: live (正式)
-> 状态: ✅ 全部 9 个产品已通过审核，正式开始销售
+> 状态: 9 个一次性产品的结账页已配置；Team Updates recurring offer 仍在人工验证，尚未建立自动订阅。
+> 收入事实: 截至 2026-09-03，`OUTREACH_LOG.csv` 没有确认付款，Team Rules Pack 销售和 MRR 均为 0。
 
 ---
 
@@ -26,14 +27,13 @@
 - ✅ 9 个产品全部创建，定价 $19-$99，税收模式正确
 - ✅ 产品描述升级为卖点驱动的文案（2026-07-23）
 - ✅ ZIP 文件已上传到每个产品的文件下载
-- ✅ 重新审核已通过，商店正式开售
+- ✅ 重新审核已通过，现有一次性产品的结账页可用
 - ✅ 网站 https://aicraft.vip 已上线，含 Creem 购买按钮
 - ✅ 退款政策和支付信息已展示在网站底部
 
 ## 推广计划
 
-- [ ] 提交 MCP Code Review Server 到 MCPFind (mcpfind.org)
-- [ ] 提交到 MCP Marketplace (mcp-marketplace.org)
-- [ ] 在 GitHub 上加 topics 标签增加曝光
-- [ ] 社交媒体推广策略待定
-- [ ] 考虑订阅式产品增加 recurring revenue
+- [ ] 通过人工试用确认 Team Updates Starter / Team Pilot 的范围、开始时间和 cadence
+- [ ] 只有在团队书面确认范围后，才配置并分享对应 recurring checkout
+- [ ] 用 `python3 scripts/funnel_report.py` 每周核对真实付款、一次性收入和 MRR
+- [ ] 继续维护 MCPFind、MCP Marketplace 等免费分发渠道

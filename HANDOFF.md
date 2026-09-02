@@ -122,6 +122,7 @@
 - 2026-09-03（收入主线 round 79）：修复 AI agent 安装指南仍使用旧 uvx --with ... aicraft-code-review 命令的问题，统一到已实测的 uvx --from aicraft-code-review --with "mcp<2" mcp-code-review；新增安装文案回归覆盖该指南。未发送外部消息、未新增付费支出，公开试用与收入漏斗仍为 0。
 - 2026-09-03（收入主线 round 80）：审计公开分发元数据，修正 LAUNCHGUIDE、Glama 配置、MCP marketplace 提交模板和安装规则中的旧 OWASP/Top 10 承诺，统一为可验证的 deterministic local security-pattern checks；新增元数据回归测试。未发送外部消息、未新增付费支出，公开试用与收入漏斗仍为 0。
 - 2026-09-03（收入主线 round 81）：为独立试用包增加透明的 run-trial.sh 启动脚本，自动检查 uvx 并执行已验证的 PyPI review 命令，缺少依赖时返回 exit 2、示例发现时保留真实 exit 1；双语试用说明与归档同步测试已更新。未发送外部消息、未新增付费支出，公开试用与收入漏斗仍为 0。
+- 2026-09-03（收入主线 round 82）：审计 `CREEM_PRODUCTS.md` 的商业状态，移除“全部正式开售”导致的收入歧义，明确一次性结账页已配置、Team Updates 尚未自动订阅、确认付款和 MRR 仍为 0；新增状态文档回归测试。未进入 Creem 后台修改账户、未发送外部消息、未新增付费支出。
 - 2026-09-03（收入主线 round 77）：新增独立 `products/mcp-code-review-trial.zip` 试用包（示例、隐藏 JSON 配置、中英文说明），中英文试用页加入直接下载入口和归档同步测试；减少首次试用的文件复制摩擦，未新增付费支出。
 - 2026-09-03（收入主线 round 76）：在根 README 的 MCP 产品段增加免费 10 分钟试用、结构化反馈、团队试用和 Team Pilot 范围入口，并新增回归测试；缩短 GitHub 访问者从安装到反馈/团队转化的路径。未发送外部消息、未新增付费支出。
 - 2026-09-03（收入主线 round 75）：新增根目录 `pytest.ini`，将默认 `python3 -m pytest` 限定到仓库级漏斗、归档和文案测试，避免递归收集其他产品的独立依赖；MCP 产品仍通过其 `uv run --locked pytest` 单独验证。

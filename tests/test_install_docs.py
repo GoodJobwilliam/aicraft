@@ -62,6 +62,13 @@ def test_public_launch_metadata_matches_implemented_capabilities():
     assert "deterministic" in (ROOT / "LAUNCHGUIDE.md").read_text(encoding="utf-8").casefold()
 
 
+def test_creem_status_does_not_confuse_checkout_setup_with_revenue():
+    content = (ROOT / "CREEM_PRODUCTS.md").read_text(encoding="utf-8").casefold()
+    assert "尚未建立自动订阅" in content
+    assert "确认付款" in content
+    assert "mrr" in content
+
+
 def test_root_readme_exposes_trial_and_team_feedback_paths():
     content = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "https://aicraft.vip/trial.html" in content
