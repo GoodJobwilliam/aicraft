@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 73）：核验 Team Rules Pack 的 63 条规则和 CI 交付，新增精确规则数量回归测试（Python 21、JS/TS 16、Go 13、Java 13）；规则包测试 4 passed，未修改付费内容或收入数据。
 - 2026-09-03（收入主线 round 72）：收紧中文首页、PyPI 描述、官方 Registry 和 server card 的 MCP 能力表述，移除完整 OWASP/Top 10 暗示，统一为可验证的 deterministic local security-pattern checks；新增元数据回归测试，重建下载 ZIP。
 - 2026-09-03（收入主线 round 71）：将上述能力边界和 `uvx` 修复写入产品 `CHANGELOG.md`，让 PyPI 用户看到与当前版本一致的变更记录；重建下载 ZIP，文案/归档测试 21 passed。
 - 2026-09-03（收入主线 round 70）：对照免费服务器实际规则收紧公开承诺：移除未实现的竞态检测和完整 OWASP Top 10 扫描表述，改为可验证的本地安全模式、性能、质量和风格检查；新增文案回归测试防止重新出现该类夸大承诺。
