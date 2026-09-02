@@ -45,7 +45,8 @@ def test_free_server_archive_contains_current_tracked_runtime_files():
 
 def test_container_and_mcpb_distribution_metadata_use_current_runtime():
     dockerfile = (PRODUCT / "Dockerfile").read_text(encoding="utf-8")
-    assert "aicraft-code-review==0.1.2" in dockerfile
+    assert "pip install --no-cache-dir ." in dockerfile
+    assert "aicraft-code-review==0.1.2" not in dockerfile
     assert "a79a6fb" not in dockerfile
 
     with ZipFile(PRODUCT / "mcp-code-review.mcpb") as archive:

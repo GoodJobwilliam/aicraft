@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 69）：进一步修正产品 Dockerfile，改为构建时安装本地 `.`，避免镜像安装 PyPI 后与当前源码漂移；`pyproject.toml` 继续锁定 `mcp<2`，归档元数据测试同步更新。
 - 2026-09-03（收入主线 round 68）：审计 Docker 与 MCPB 分发入口，修复产品 Dockerfile 覆盖旧提交的问题，改为安装 PyPI `0.1.2` + `mcp<2`；将 `mcp-code-review.mcpb` 从 `0.1.0` 更新到 `0.1.2`，并修正内部 `uvx` 参数；新增归档元数据回归测试，相关测试 20 passed。未新增付费支出、未发送外部消息。
 - 2026-09-03（收入主线 round 67）：新增 OUTREACH_DRAFTS.md，为三条有具体公开痛点的 issue 准备技术回复草稿和人工发送检查清单；未自动发帖、不计入联系人或收入，后续只有真实发布和真实回复才能进入漏斗。
 - 2026-09-03（收入主线 round 66）：新增安装文案回归测试，覆盖中英文产品 README、自助试用页与首页，锁定已实测可用的 uvx --from aicraft-code-review --with ... mcp-code-review 入口并拒绝旧命令，防止免费试用再因 package/executable 名称不一致而中断。
