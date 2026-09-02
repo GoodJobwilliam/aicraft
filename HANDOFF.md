@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 95）：核验新的高相关公开 prospect SociableSteve/caroline#79：议题明确要求提交前与 CI 的同一 secret 检查，维护者已选择 secretlint 并讨论非 provider 模式和可审计 suppression。加入 A8 队列与技术回复草稿；未自动发帖、未写入联系人漏斗、未新增付费支出。
 - 2026-09-03（收入主线 round 94）：常规 git push 被 GitHub OAuth 的缺少 workflow scope 拒绝后，使用 Git Data API 将文档、schema、测试和更新后的免费 Server zip 同步到远端 main；远端提交为 f689160ef9a23a043ee66adbb28ab679f5a76c58，远端 zip 与本地 SHA-256 一致。发布 workflow 未强行绕过权限，仍只在本地等待具备 workflow scope 后同步；PyPI 仍为 0.1.2，未发布新版本、未发送外部消息、未新增付费支出，漏斗仍为 0。
 - 2026-09-03（收入主线 round 93）：发布候选变更触发归档字节同步测试，发现免费分发包仍是旧版 pyproject.toml；按精确文件清单重建 products/mcp-code-review.zip，排除缓存文件并通过归档校验。根测试 36 passed，MCP 产品测试 48 passed，Ruff 通过；PyPI 仍为 0.1.2，未发布新版本、未发送外部消息、未新增付费支出，漏斗仍为 0。
 - 2026-09-03（收入主线 round 92）：新增 products/mcp-code-review/RELEASING.md 与仅在维护者显式创建 aicraft-code-review-v* 标签时运行的 PyPI Trusted Publishing workflow；发布前自动执行 Ruff、48 项产品测试、wheel/sdist 构建和包内容检查。发现并修复原构建物遗漏 JSON schema 的真实断层，将 schema 纳入 Python package data 并加回归测试。当前 PyPI 仍为 0.1.2，未发布新版本、未发送外部消息、未新增付费支出；漏斗仍为 0。

@@ -67,6 +67,14 @@ Issue: https://github.com/lwgerhardt/agent-co-op-mcp/issues/40
 >
 > For the CI additions, a format check alongside lint catches a different class of drift than tests, so it seems useful to keep both. Would you prefer the shared result model to live in a small domain module, or remain close to the MCP tool definitions until another consumer needs it?
 
+## A8 — caroline #79
+
+Issue: https://github.com/SociableSteve/caroline/issues/79
+
+> The decision to keep one standing scanner in both the local hook and CI seems like the right boundary: the repository should own the rule configuration, while the hook gives fast feedback and CI remains the merge gate. For the unresolved non-provider toggle, I would start with explicit blocking patterns for private keys, connection strings, and the project's own token shapes, and keep broad generic matches warning-level until fixtures show they are useful. That keeps a false positive reviewable without weakening the required check. How are you planning to represent a deliberate suppression so the local and CI paths cannot drift?
+
+Manual note: the maintainer has already chosen secretlint and documented its rationale. Do not pitch AICraft unless they ask for a comparison or an example of a separate local deterministic checker.
+
 ## Manual send checklist
 
 - Confirm the issue is still open and the question is still relevant.
