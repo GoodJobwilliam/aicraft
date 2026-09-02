@@ -17,7 +17,7 @@ English docs: [README.md](./README.md)
 - **`review_diff`** — 合并前审查 git diff
 - **`review_file`** — 按路径审查本地文件
 
-内置 OWASP Top 10 模式扫描、N+1 查询检测、竞态分析，输出带严重度分级的结构化报告。
+内置常见注入、反序列化、硬编码凭据、N+1 查询、质量和风格模式检查，输出带严重度分级的结构化报告。
 
 ## 快速开始
 

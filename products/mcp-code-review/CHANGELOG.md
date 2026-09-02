@@ -11,6 +11,8 @@ All notable changes to the MCP Code Review Server are documented here.
 - MCP tool calls now validate required arguments and return actionable errors for invalid paths, unreadable files, or malformed input.
 - Invalid JSON/YAML team configs now return actionable errors in both CLI and MCP modes instead of raw parser tracebacks.
 - Tightened the built-in hardcoded-secret check to require a literal assignment, reducing false positives on comments, function names, and environment lookups.
+- Corrected the documented `uvx` invocation to use the PyPI package as the source and the exposed `mcp-code-review` console script.
+- Aligned public capability wording with the implemented deterministic checks; documentation no longer claims race-condition detection or complete OWASP Top 10 coverage.
 
 ## 0.1.2 — 2026-08-17
 

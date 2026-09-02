@@ -1,16 +1,16 @@
 # MCP Code Review Server — Launch Guide
 
 ## One-liner
-Code review as an MCP server — structured reviews with OWASP security scanning for Claude Code, Cursor, and any MCP client.
+Code review as an MCP server — structured local security-pattern reviews for Claude Code, Cursor, and any MCP client.
 
 ## Description
-MCP Code Review Server brings professional-grade code review to your AI assistant. Connect it to Claude Code, Cursor, or any MCP-compatible client and get structured code reviews with bug detection, security scanning (OWASP Top 10), performance analysis, and style checks — all with severity ratings and actionable fix suggestions.
+MCP Code Review Server brings local, structured code review to your AI assistant. Connect it to Claude Code, Cursor, or any MCP-compatible client and get deterministic checks for common injection, deserialization, credential, performance, quality, and style patterns, with severity ratings and actionable fix suggestions.
 
 ## Category
 Developer Tools
 
 ## Tags
-code-review, security, owasp, static-analysis, developer-tools, python
+code-review, security, static-analysis, developer-tools, python
 
 ## Use Cases
 - Review code before committing

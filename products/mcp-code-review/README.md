@@ -18,7 +18,7 @@ Code review as an MCP server. Connect it to Claude Code, Cursor, or any MCP-comp
 - **`review_diff`** — Review a git diff for potential issues before merging
 - **`review_file`** — Review a local file by path
 
-Powered by the same methodology as our Code Review Agent: OWASP Top 10 scanning, N+1 query detection, race condition analysis, and structured output with severity ratings.
+The free server runs deterministic checks for common injection, deserialization, credential, performance, quality, and style patterns, then returns structured findings with severity ratings.
 
 ## Quick Start
 

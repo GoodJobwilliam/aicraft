@@ -24,3 +24,18 @@ def test_public_install_docs_use_the_pypi_package_and_console_script_names():
         assert required_command in content, path
         assert "mcp-code-review" in content, path
         assert stale_command not in content, path
+
+
+def test_free_server_docs_do_not_claim_unimplemented_race_detection():
+    paths = [
+        ROOT / "README.md",
+        ROOT / "index.html",
+        ROOT / "products/mcp-code-review/README.md",
+        ROOT / "products/mcp-code-review/README.zh.md",
+    ]
+
+    for path in paths:
+        content = path.read_text(encoding="utf-8").casefold()
+        assert "race condition analysis" not in content, path
+        assert "race analysis" not in content, path
+        assert "竞态分析" not in content, path
