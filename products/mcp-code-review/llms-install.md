@@ -56,5 +56,8 @@ Then configure:
 - No API keys required
 - No environment variables needed
 
+## Team upgrade
+The server is free and MIT-licensed. Teams that need ready-made multi-language profiles, CI merge gates, and review prompts can [get the one-time $49 Team Rules Pack via Creem](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0).
+
 ## Verification
 After installation, ask: "Review this Python code: \`\`\`python\nprint('hello')\n\`\`\`"
