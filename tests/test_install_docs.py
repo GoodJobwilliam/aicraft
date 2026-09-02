@@ -96,7 +96,7 @@ def test_json_output_schema_is_present_and_versioned():
 def test_free_github_actions_starter_is_documented_and_secretless():
     workflow = (ROOT / "products/mcp-code-review/examples/github-actions/mcp-code-review.yml").read_text(encoding="utf-8")
     readme = (ROOT / "products/mcp-code-review/README.md").read_text(encoding="utf-8")
-    assert "uvx --from aicraft-code-review --with \"mcp<2\" mcp-code-review review-diff" in workflow
+    assert "uvx --from aicraft-code-review==0.1.2 --with \"mcp<2\" mcp-code-review review-diff" in workflow
     assert "actions/checkout@v4" in workflow
     assert "astral-sh/setup-uv@v6" in workflow
     assert "secrets." not in workflow

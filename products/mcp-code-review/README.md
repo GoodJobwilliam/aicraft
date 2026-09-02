@@ -82,7 +82,7 @@ Exit codes are CI-friendly: `0` clean, `1` high/medium issues, `2` critical issu
 
 ### Free GitHub Actions starter
 
-The repository includes a copy-paste [GitHub Actions starter workflow](./examples/github-actions/mcp-code-review.yml). It checks the pull-request diff with the current PyPI release, needs no API key, and keeps the existing exit-code policy. The starter runs the built-in checks only; the optional Team Rules Pack adds shared profiles, maintained CI templates, and team-specific policy.
+The repository includes a copy-paste [GitHub Actions starter workflow](./examples/github-actions/mcp-code-review.yml). It checks the pull-request diff with the pinned PyPI `0.1.2` release, needs no API key, and keeps the existing exit-code policy. The starter runs the built-in checks only; the optional Team Rules Pack adds shared profiles, maintained CI templates, and team-specific policy.
 
 For CI systems that consume structured data, add `--format json` to any CLI review command. The JSON response has a stable `schema_version`, finding records with check ids, severity counts, a `verdict`, and the same `exit_code` used by the default Markdown output. This mode is currently available from the repository source; the PyPI `0.1.2` install remains the documented stable release until the next package is published.
 

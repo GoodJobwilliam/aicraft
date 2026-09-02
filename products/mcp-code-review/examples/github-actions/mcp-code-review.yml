@@ -25,4 +25,4 @@ jobs:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           git diff --no-ext-diff --unified=0 "$BASE_SHA...$HEAD_SHA" \
-            | uvx --from aicraft-code-review --with "mcp<2" mcp-code-review review-diff
+            | uvx --from aicraft-code-review==0.1.2 --with "mcp<2" mcp-code-review review-diff
