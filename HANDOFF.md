@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 55）：中英文团队试用与试用反馈表单新增必填 `discovery-source` 渠道归因字段，GitHub 只读报告会展示来源；`OUTREACH_LOG.csv` 同步加入 `discovery_source`，为后续比较 Registry、Smithery、目录、Product Hunt、搜索和推荐的真实转化率做准备。当前没有线索，收入仍为 0。
 - 2026-09-03（收入主线 round 54）：在中英文 MCP 产品 README 增加直接的 Team Rules Pack `$49` Creem checkout CTA，明确免费 MIT Server 与付费规则包的边界，缩短 GitHub 产品页到购买的路径；同步重建 `products/mcp-code-review.zip`。没有新增付费服务。
 - 2026-09-03（收入主线 round 54）：在中英文 MCP 产品 README 增加直接的 Team Rules Pack `$49` Creem checkout CTA，明确免费 MIT Server 与付费规则包的边界，缩短 GitHub 产品页到购买的路径；没有新增付费服务。
 - 2026-09-03（收入主线 round 53）：修正中英文首页 MCP 产品卡的视觉报价歧义：服务器价格区现在明确显示免费 MIT Server，$49 只出现在 Team Rules Pack 购买按钮中，避免用户把免费主产品误解为付费。

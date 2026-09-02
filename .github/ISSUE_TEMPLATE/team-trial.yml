@@ -30,6 +30,22 @@ body:
       required: true
 
   - type: dropdown
+    id: discovery-source
+    attributes:
+      label: How did you find MCP Code Review?
+      options:
+        - GitHub
+        - Official MCP Registry
+        - Smithery
+        - mcpservers.org or cursor.directory
+        - Product Hunt
+        - Web search
+        - Recommendation
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
     id: workflow
     attributes:
       label: Current review workflow

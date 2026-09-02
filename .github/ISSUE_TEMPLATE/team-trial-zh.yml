@@ -30,6 +30,22 @@ body:
       required: true
 
   - type: dropdown
+    id: discovery-source
+    attributes:
+      label: 你从哪里知道 MCP Code Review？
+      options:
+        - GitHub
+        - 官方 MCP Registry
+        - Smithery
+        - mcpservers.org 或 cursor.directory
+        - Product Hunt
+        - 网页搜索
+        - 他人推荐
+        - 其他
+    validations:
+      required: true
+
+  - type: dropdown
     id: workflow
     attributes:
       label: 当前审查流程

@@ -11,6 +11,7 @@ HEADER = [
     "github_issue",
     "team_size",
     "main_languages",
+    "discovery_source",
     "current_workflow",
     "decision_role",
     "decision_window",

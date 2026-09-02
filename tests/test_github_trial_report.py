@@ -14,6 +14,9 @@ BODY = """### Team size
 ### Main languages
 Python, TypeScript
 
+### How did you find MCP Code Review?
+Official MCP Registry
+
 ### Offer tier discussed
 Team Updates Team Pilot
 
@@ -29,6 +32,7 @@ def test_parse_form_body_supports_english_fields():
     fields = parse_form_body(BODY)
     assert fields["team_size"] == "4"
     assert fields["languages"] == "Python, TypeScript"
+    assert fields["discovery_source"] == "Official MCP Registry"
     assert fields["precommitment"].startswith("Yes")
 
 
@@ -43,6 +47,7 @@ def test_issue_record_normalizes_pilot_without_counting_revenue():
         }
     )
     assert record["offer_tier"] == "Team Pilot"
+    assert record["discovery_source"] == "Official MCP Registry"
     assert record["date"] == "2026-09-03"
     assert "revenue" not in record
 
@@ -67,6 +72,7 @@ def test_report_is_explicitly_manual_and_zero_revenue():
     assert "Trial/feedback issues: 1" in output
     assert "manually verify scope, price, start date, and payment" in output
     assert "Only confirmed Creem payments belong in revenue fields" in output
+    assert "Discovery source: Official MCP Registry" in output
 
 
 def test_report_empty_issues_is_truthful():
