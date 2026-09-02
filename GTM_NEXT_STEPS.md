@@ -21,6 +21,7 @@
 - homepage and Chinese landing page focus on the MCP Code Review funnel
 - dedicated Team Updates pages are live, with a structured GitHub team-trial form
 - outreach copy and qualification questions are in `OUTREACH_PACK.md`; the dated public-evidence queue is in `OUTREACH_QUEUE.md`
+- issue-specific technical reply drafts are in `OUTREACH_DRAFTS.md`; review and send them manually when the issue context still fits
 - manual follow-up and conversion criteria are in `TRIAL_FOLLOWUP_PLAYBOOK.md`
 - weekly funnel reporting uses `OUTREACH_LOG.csv` and `scripts/funnel_report.py`
 - public launch guides and product READMEs use the current PyPI 0.1.2 install path
@@ -33,6 +34,7 @@
 5. Ask testers which tier they would explicitly pre-commit to before any recurring checkout is created; target Team Pilot when CI and tuning work is requested.
 6. Record `offer_tier` as `Starter`, `Team Pilot`, or `Team Rules Pack` for each qualified conversation. Run `python3 scripts/funnel_report.py` weekly; review the tier breakdown after 20 contacts and adjust the offer around repeated pain, not vanity metrics.
 7. When a team asks for recurring support, send `TEAM_PILOT_BRIEF.md`, ask them to confirm the four start facts, and only then discuss a written scope/start-date confirmation.
+8. Start with the three issue-backed drafts in `OUTREACH_DRAFTS.md`; log only replies that were actually posted and keep commercial fields empty until evidence meets `TRIAL_FOLLOWUP_PLAYBOOK.md` thresholds.
 
 ## External blockers
 - PyPI, V2EX, 掘金, Product Hunt, or Indie Hackers login/OTP/CAPTCHA may require an in-browser action.
