@@ -90,6 +90,33 @@ def test_json_output_schema_is_present_and_versioned():
     assert schema["$schema"].endswith("draft/2020-12/schema")
     assert schema["properties"]["schema_version"] == {"const": 1}
     assert set(schema["properties"]["verdict"]["enum"]) == {"clean", "conditional_pass", "block"}
+    assert schema["required"] == ["schema_version", "findings", "summary", "verdict", "exit_code"]
+
+
+def test_cli_json_output_validates_against_published_schema():
+    import json
+    import subprocess
+    import sys
+
+    product = ROOT / "products/mcp-code-review"
+    schema = json.loads((product / "schema/review-result.schema.json").read_text(encoding="utf-8"))
+    python = product / ".venv/bin/python"
+    result = subprocess.run(
+        [str(python), "-m", "mcp_code_review", "review-code", "eval('x')", "--format", "json"],
+        cwd=product,
+        env={"PYTHONPATH": str(product / "src"), "PATH": str(product / ".venv/bin")},
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    payload = json.loads(result.stdout)
+    assert payload["schema_version"] == schema["properties"]["schema_version"]["const"]
+    assert payload["verdict"] in schema["properties"]["verdict"]["enum"]
+    assert payload["exit_code"] in schema["properties"]["exit_code"]["enum"]
+    assert set(payload) == set(schema["properties"])
+    assert set(payload["summary"]) == {"critical", "high", "medium", "info"}
+    assert all(set(finding) == {"severity", "line", "issue", "category", "fix", "check"} for finding in payload["findings"])
+    assert result.returncode == payload["exit_code"] == 1
 
 
 def test_trial_pages_offer_a_low_friction_email_feedback_path():
