@@ -1,5 +1,14 @@
 # AICraft - 项目进度
 
+## 当前可验证状态（2026-09-03）
+
+- MCP Code Review Server：免费 MIT，本地运行；PyPI 稳定版本 `0.1.2`，官方 MCP Registry 状态为 active。
+- Team Rules Pack：一次性 `$49`，包含共享规则、CI 模板和提示词；Team Updates 仍处于早期验证，收费前确认范围和开始时间。
+- 免费试用：自助试用包、结构化 GitHub 表单、邮件反馈入口和 secretless GitHub Actions 起步模板均已上线。
+- 公共分发信号：PyPI 最近 30 天下载量为 `307`（Pypistats，2026-09-03 核验）；下载量不等于联系人、试用或收入。
+- 销售漏斗：contacts `0`、team tests `0`、pre-commitments `0`、确认收入 `$0`、MRR `$0`。
+- 下一步：人工发送 `OUTREACH_DRAFTS.md` 中经过公开线程核验的技术回复；真实发布后才写入 `OUTREACH_LOG.csv`。
+
 ## 2026-07-20 第一期进度报告
 
 ### 已完成

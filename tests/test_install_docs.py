@@ -74,6 +74,7 @@ def test_root_readme_exposes_trial_and_team_feedback_paths():
     assert "https://aicraft.vip/trial.html" in content
     assert "template=trial-feedback.yml" in content
     assert "template=team-trial.yml" in content
+    assert "examples/mcp-code-review" in content or "examples/github-actions/mcp-code-review.yml" in content
     assert "TEAM_PILOT_BRIEF.md" in content
 
 
