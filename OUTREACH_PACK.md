@@ -10,6 +10,7 @@ For teams, there is a companion rules pack with shared profiles and CI merge gat
 
 Try the free 10-minute trial: https://aicraft.vip/trial.html
 Team Updates details: https://aicraft.vip/team-updates.html
+Team Pilot scope sheet: https://github.com/GoodJobwilliam/aicraft/blob/main/TEAM_PILOT_BRIEF.md
 Free team trial form: https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request
 
 ## 中文短帖
@@ -45,3 +46,5 @@ If the workflow is useful, I can include your language mix and rollout needs in 
 Do not count impressions, likes, or directory listings as customer validation.
 
 For public replies, use the GitHub team-trial form so team size, workflow, timing, and offer signal are recorded consistently in the issue thread. Submitting the form creates no charge or subscription. Start with the public technical questions in `OUTREACH_QUEUE.md`; listed repositories are prospects, not customers.
+
+When a team asks about recurring support, share `TEAM_PILOT_BRIEF.md` before quoting a start date. The brief makes the first-30-day deliverables and acceptance checklist explicit; do not request payment until the team confirms scope, start date, and cadence in writing.
