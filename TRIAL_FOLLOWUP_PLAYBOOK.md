@@ -57,7 +57,7 @@ Record these in `OUTREACH_LOG.csv`:
 - **Qualified reply**: describes a recurring review pain and answers the workflow questions.
 - **Team test**: runs the sample or a real non-confidential test and reports an outcome.
 - **Paid signal**: explicitly says they would buy the `$49` pack or consider Team Updates Starter/Team Pilot at one of the stated prices; record the selected tier in `offer_tier`.
-- **Pre-commitment**: names a target start month and accepts the stated scope and price, subject to the final checkout link.
+- **Pre-commitment**: selects the conditional-start option in the team form (or states the equivalent in email), names a target start month, and accepts the selected tier's scope and price, subject to final scope confirmation and checkout. Record `precommitment=yes` only after manually verifying all three pieces.
 - **Customer**: payment is confirmed in Creem; a message or intent does not count as revenue.
 
 ## Revenue math

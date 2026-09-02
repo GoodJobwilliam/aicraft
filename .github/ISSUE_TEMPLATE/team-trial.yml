@@ -105,6 +105,18 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: precommitment
+    attributes:
+      label: Conditional start commitment
+      description: If the agreed scope matches the tier above, would you start at that price? This is not a charge or subscription.
+      options:
+        - Yes, subject to confirming scope and start date
+        - Maybe, I need more evidence
+        - No commitment yet
+    validations:
+      required: true
+
   - type: checkboxes
     id: contact
     attributes:

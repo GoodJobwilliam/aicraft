@@ -105,6 +105,18 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: precommitment
+    attributes:
+      label: 有条件的开始承诺
+      description: 如果最终范围符合上面选择的档位，你们是否愿意按该价格开始？这不会产生收费或订阅。
+      options:
+        - 愿意，确认范围和开始时间后开始
+        - 可能愿意，还需要更多证据
+        - 目前还不能承诺
+    validations:
+      required: true
+
   - type: checkboxes
     id: contact
     attributes:
