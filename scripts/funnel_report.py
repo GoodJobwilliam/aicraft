@@ -48,10 +48,29 @@ def _validate_payment_evidence(row: dict[str, str], row_number: int) -> None:
     """Require a traceable reference whenever confirmed revenue is recorded."""
     one_time = _money(row, "one_time_revenue_usd")
     mrr = _money(row, "mrr_usd")
-    if (one_time > 0 or mrr > 0) and not row.get("payment_reference", "").strip():
-        raise ValueError(
-            f"row {row_number} needs payment_reference when revenue is greater than zero"
-        )
+    if one_time > 0 or mrr > 0:
+        if not row.get("offer_tier", "").strip():
+            raise ValueError(f"row {row_number} needs offer_tier when revenue is greater than zero")
+        if not row.get("payment_reference", "").strip():
+            raise ValueError(f"row {row_number} needs payment_reference when revenue is greater than zero")
+
+
+def _rate(numerator: int, denominator: int) -> str:
+    if denominator == 0:
+        return "n/a"
+    return f"{numerator / denominator * 100:.1f}%"
+
+
+def _conversion_line(rows: list[dict[str, str]]) -> str:
+    contacts = len(rows)
+    tests = sum(_yes(row, "team_test") for row in rows)
+    signals = sum(_yes(row, "paid_signal") for row in rows)
+    commitments = sum(_yes(row, "precommitment") for row in rows)
+    return (
+        f"  Conversion: tests {tests}/{contacts} ({_rate(tests, contacts)}), "
+        f"paid signals {signals}/{contacts} ({_rate(signals, contacts)}), "
+        f"pre-commitments {commitments}/{contacts} ({_rate(commitments, contacts)})"
+    )
 
 
 def read_rows(path: Path) -> list[dict[str, str]]:
@@ -92,6 +111,7 @@ def _tier_summary(rows: list[dict[str, str]]) -> list[str]:
             f"- {tier}: {contacts} contacts, {tests} tests, {signals} paid signals, "
             f"{commitments} pre-commitments, {subscribers:g} subscribers, ${mrr:.2f} MRR"
         )
+        lines.append(_conversion_line(tier_rows))
     return lines
 
 
@@ -119,6 +139,7 @@ def _source_summary(rows: list[dict[str, str]]) -> list[str]:
             f"- {source}: {contacts} contacts, {tests} tests, {signals} paid signals, "
             f"{commitments} pre-commitments, {subscribers:g} subscribers, ${mrr:.2f} MRR"
         )
+        lines.append(_conversion_line(source_rows))
     return lines
 
 

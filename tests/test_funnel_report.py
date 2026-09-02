@@ -57,8 +57,8 @@ def test_revenue_and_mrr_are_separate(tmp_path: Path):
     write_rows(
         path,
         [
-            row(qualified_reply="yes", team_test="yes", paid_signal="yes", rules_pack_sales="1", one_time_revenue_usd="49", payment_reference="creem:order-1"),
-            row(precommitment="yes", team_updates_subscribers="1", mrr_usd="19", payment_reference="creem:subscription-1"),
+            row(qualified_reply="yes", team_test="yes", paid_signal="yes", offer_tier="Team Rules Pack", rules_pack_sales="1", one_time_revenue_usd="49", payment_reference="creem:order-1"),
+            row(precommitment="yes", offer_tier="Team Updates Starter", team_updates_subscribers="1", mrr_usd="19", payment_reference="creem:subscription-1"),
         ],
     )
     output = report(path)
@@ -134,6 +134,22 @@ def test_discovery_source_signals_are_grouped(tmp_path: Path):
     assert "Discovery source signals" in output
     assert "Official MCP Registry: 2 contacts, 1 tests, 1 paid signals, 0 pre-commitments, 0 subscribers, $0.00 MRR" in output
     assert "Product Hunt: 1 contacts, 0 tests, 0 paid signals, 1 pre-commitments, 0 subscribers, $0.00 MRR" in output
+    assert "Conversion: tests 1/2 (50.0%), paid signals 1/2 (50.0%), pre-commitments 0/2 (0.0%)" in output
+
+
+def test_offer_tier_conversion_rates_are_reported(tmp_path: Path):
+    path = tmp_path / "log.csv"
+    write_rows(
+        path,
+        [
+            row(offer_tier="Team Pilot", team_test="yes", paid_signal="yes", precommitment="yes"),
+            row(offer_tier="Team Pilot", team_test="yes"),
+        ],
+    )
+
+    output = report(path)
+
+    assert "Conversion: tests 2/2 (100.0%), paid signals 1/2 (50.0%), pre-commitments 1/2 (50.0%)" in output
 
 
 def test_negative_revenue_is_rejected(tmp_path: Path):
@@ -145,6 +161,13 @@ def test_negative_revenue_is_rejected(tmp_path: Path):
 
 def test_revenue_requires_payment_reference(tmp_path: Path):
     path = tmp_path / "log.csv"
-    write_rows(path, [row(one_time_revenue_usd="49")])
+    write_rows(path, [row(offer_tier="Team Rules Pack", one_time_revenue_usd="49")])
     with pytest.raises(ValueError, match="payment_reference"):
+        report(path)
+
+
+def test_revenue_requires_offer_tier(tmp_path: Path):
+    path = tmp_path / "log.csv"
+    write_rows(path, [row(one_time_revenue_usd="49", payment_reference="creem:order-1")])
+    with pytest.raises(ValueError, match="offer_tier"):
         report(path)
