@@ -1,5 +1,6 @@
 from pathlib import Path
 from zipfile import ZipFile
+import json
 
 ROOT = Path(__file__).resolve().parents[1]
 PRODUCT = ROOT / "products/mcp-code-review"
@@ -40,3 +41,18 @@ def test_free_server_archive_contains_current_tracked_runtime_files():
         assert set(archive.namelist()) == expected
         for name in expected:
             assert archive.read(name) == (PRODUCT / name).read_bytes()
+
+
+def test_container_and_mcpb_distribution_metadata_use_current_runtime():
+    dockerfile = (PRODUCT / "Dockerfile").read_text(encoding="utf-8")
+    assert "aicraft-code-review==0.1.2" in dockerfile
+    assert "a79a6fb" not in dockerfile
+
+    with ZipFile(PRODUCT / "mcp-code-review.mcpb") as archive:
+        manifest = json.loads(archive.read("manifest.json"))
+        server = archive.read("server/index.js").decode("utf-8")
+
+    assert manifest["version"] == "0.1.2"
+    args = manifest["server"]["mcp_config"]["args"]
+    assert args == ["--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"]
+    assert "--from" in server and "aicraft-code-review" in server
