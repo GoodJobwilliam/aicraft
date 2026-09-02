@@ -80,6 +80,12 @@ mcp-code-review review-code "import os; os.system('ls')"
 
 Exit codes are CI-friendly: `0` clean, `1` high/medium issues, `2` critical issues.
 
+For CI systems that consume structured data, add `--format json` to any CLI review command. The JSON response has a stable `schema_version`, finding records with check ids, severity counts, a `verdict`, and the same `exit_code` used by the default Markdown output. This mode is currently available from the repository source; the PyPI `0.1.2` install remains the documented stable release until the next package is published.
+
+```bash
+mcp-code-review review-file path/to/file.py --format json > review.json
+```
+
 ## Usage Examples
 
 ## 10-minute team trial

@@ -79,6 +79,12 @@ mcp-code-review review-code "import os; os.system('ls')"
 
 退出码适配 CI：`0` 干净 / `1` 存在 High 或 Medium / `2` 存在 Critical。
 
+如果 CI 需要机器可读结果，可以给 CLI 命令增加 `--format json`。JSON 包含稳定的 `schema_version`、带 check id 的问题记录、严重度计数、`verdict`，以及和 Markdown 输出一致的 `exit_code`。该模式目前已在仓库源码中提供；在新的软件包发布前，PyPI `0.1.2` 仍是文档中的稳定版本。
+
+```bash
+mcp-code-review review-file path/to/file.py --format json > review.json
+```
+
 ## 使用示例
 
 ## 10 分钟团队试用

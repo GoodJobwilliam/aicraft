@@ -14,6 +14,10 @@ All notable changes to the MCP Code Review Server are documented here.
 - Corrected the documented `uvx` invocation to use the PyPI package as the source and the exposed `mcp-code-review` console script.
 - Aligned public capability wording with the implemented deterministic checks; documentation no longer claims race-condition detection or complete OWASP Top 10 coverage.
 
+### Added
+
+- Added an opt-in CLI `--format json` output with a versioned schema, stable check ids, severity counts, verdict, and CI exit code. The feature is source-only until a new PyPI release is published.
+
 ## 0.1.2 — 2026-08-17
 
 ### Added

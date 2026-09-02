@@ -8,6 +8,7 @@ Usage:
     mcp-code-review review-code CODE
 """
 import argparse
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -34,6 +35,34 @@ def _exit_code(report: str) -> int:
     return 0
 
 
+def _findings_exit_code(findings: list) -> int:
+    """Return the same CI status used by the Markdown output."""
+    severities = {getattr(finding, "severity", "") for finding in findings}
+    if "critical" in severities:
+        return 2
+    if severities.intersection({"high", "medium"}):
+        return 1
+    return 0
+
+
+def _json_report(findings: list) -> str:
+    """Serialize findings without requiring consumers to parse Markdown."""
+    counts = {severity: sum(f.severity == severity for f in findings) for severity in ("critical", "high", "medium", "info")}
+    exit_code = _findings_exit_code(findings)
+    verdict = "block" if exit_code == 2 else "conditional_pass" if exit_code == 1 else "clean"
+    payload = {
+        "schema_version": 1,
+        "findings": [
+            {"severity": f.severity, "line": f.line, "issue": f.issue, "category": f.category, "fix": f.fix, "check": f.check}
+            for f in findings
+        ],
+        "summary": counts,
+        "verdict": verdict,
+        "exit_code": exit_code,
+    }
+    return json.dumps(payload, ensure_ascii=False, indent=2)
+
+
 def _git_diff(*, staged: bool = False) -> str:
     """Read a working-tree or staged diff and fail clearly outside a Git repo."""
     command = ["git", "diff"]
@@ -52,16 +81,19 @@ def main(argv: list[str] | None = None) -> int:
 
     p_file = sub.add_parser("review-file", help="Review a local file by path")
     p_file.add_argument("path", help="Path to the file to review")
+    p_file.add_argument("--format", choices=("markdown", "json"), default="markdown", dest="output_format", help="Output format")
 
     p_diff = sub.add_parser("review-diff", help="Review a git diff (argument, stdin, working tree, or index)")
     p_diff.add_argument("diff", nargs="?", help="Diff text (otherwise read from stdin)")
     git_group = p_diff.add_mutually_exclusive_group()
     git_group.add_argument("--git", action="store_true", help="Review unstaged working-tree changes")
     git_group.add_argument("--staged", action="store_true", help="Review staged changes in the index")
+    p_diff.add_argument("--format", choices=("markdown", "json"), default="markdown", dest="output_format", help="Output format")
 
     p_code = sub.add_parser("review-code", help="Review a code snippet")
     p_code.add_argument("code", help="Source code to review")
     p_code.add_argument("--language", default="auto", help="Programming language hint")
+    p_code.add_argument("--format", choices=("markdown", "json"), default="markdown", dest="output_format", help="Output format")
 
     args = parser.parse_args(argv)
 
@@ -69,7 +101,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "review-file":
             path = Path(args.path).resolve()
             reviewer = _reviewer_for(path.parent)
-            report = reviewer.review_code(path.read_text(encoding="utf-8", errors="replace"))
+            findings = reviewer.review_code_findings(path.read_text(encoding="utf-8", errors="replace"))
         elif args.command == "review-diff":
             if args.git or args.staged:
                 if args.diff is not None:
@@ -80,10 +112,10 @@ def main(argv: list[str] | None = None) -> int:
             else:
                 diff = sys.stdin.read()
             reviewer = _reviewer_for()
-            report = reviewer.review_diff(diff)
+            findings = reviewer.review_diff_findings(diff)
         elif args.command == "review-code":
             reviewer = _reviewer_for()
-            report = reviewer.review_code(args.code, args.language)
+            findings = reviewer.review_code_findings(args.code, args.language)
         else:
             parser.print_help()
             return 0
@@ -91,5 +123,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: {exc}", file=sys.stderr)
         return 2
 
+    if args.output_format == "json":
+        print(_json_report(findings))
+        return _findings_exit_code(findings)
+    report = reviewer._format_report(findings)
     print(report)
-    return _exit_code(report)
+    return _findings_exit_code(findings)

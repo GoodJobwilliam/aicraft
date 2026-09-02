@@ -31,6 +31,10 @@ class CodeReviewer:
 
     def review_code(self, code: str, language: str = "auto") -> str:
         """Review source code snippet."""
+        return self._format_report(self.review_code_findings(code, language))
+
+    def review_code_findings(self, code: str, language: str = "auto") -> list[Finding]:
+        """Return structured findings for a source code snippet."""
         lines = code.split("\n")
         findings: list[Finding] = []
 
@@ -39,11 +43,14 @@ class CodeReviewer:
         findings.extend(self._quality_pass(code, lines))
         findings.extend(self._style_pass(code, lines, language))
 
-        findings = self._apply_config(findings, code)
-        return self._format_report(findings)
+        return self._apply_config(findings, code)
 
     def review_diff(self, diff: str) -> str:
         """Review a git diff."""
+        return self._format_report(self.review_diff_findings(diff))
+
+    def review_diff_findings(self, diff: str) -> list[Finding]:
+        """Return structured findings for a git diff."""
         # Extract added/modified lines from diff
         added_lines = []
         for line in diff.split("\n"):
@@ -51,7 +58,7 @@ class CodeReviewer:
                 added_lines.append(line[1:])
 
         code = "\n".join(added_lines)
-        return self.review_code(code, "auto")
+        return self.review_code_findings(code, "auto")
 
     # ── Config application ────────────────────────────────────────
 

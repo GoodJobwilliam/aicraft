@@ -1,4 +1,5 @@
 """Tests for the CLI mode (no MCP client required)."""
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -30,6 +31,25 @@ class TestCliReviewCode:
         result = run_cli("review-code", "def add(a: int, b: int) -> int:\n    return a + b\n")
         assert result.returncode == 0
 
+    def test_review_code_json_is_machine_readable_and_keeps_exit_code(self):
+        result = run_cli("review-code", "API_KEY = 'sk-example'", "--format", "json")
+        payload = json.loads(result.stdout)
+        assert result.returncode == 1
+        assert payload["schema_version"] == 1
+        assert payload["verdict"] == "conditional_pass"
+        assert payload["exit_code"] == 1
+        assert payload["summary"]["high"] == 1
+        assert payload["findings"][0]["check"] == "hardcoded_secret"
+
+    def test_review_code_json_clean_has_stable_empty_summary(self):
+        result = run_cli("review-code", "x = 1", "--format", "json")
+        payload = json.loads(result.stdout)
+        assert result.returncode == 0
+        assert payload["verdict"] == "clean"
+        assert payload["exit_code"] == 0
+        assert payload["findings"] == []
+        assert payload["summary"] == {"critical": 0, "high": 0, "medium": 0, "info": 0}
+
 
 class TestCliReviewFile:
     def test_review_file_uses_adjacent_config(self, tmp_path):
@@ -54,6 +74,13 @@ class TestCliReviewDiff:
         result = run_cli("review-diff", stdin=diff)
         assert "dynamic code execution" in result.stdout
         assert result.returncode >= 1
+
+    def test_review_diff_json_preserves_ci_exit_code(self):
+        diff = "diff --git a/x.py b/x.py\n+++ b/x.py\n@@ -0,0 +1 @@\n+eval('1')\n"
+        result = run_cli("review-diff", "--format", "json", stdin=diff)
+        payload = json.loads(result.stdout)
+        assert result.returncode == payload["exit_code"] == 1
+        assert payload["findings"][0]["check"] == "dynamic_exec"
 
     def test_no_args_shows_help(self):
         result = run_cli("--help")
