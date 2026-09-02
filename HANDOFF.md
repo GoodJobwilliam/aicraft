@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 48）：重新核验 GitHub 公共 API 的候选仓库状态，刷新 `OUTREACH_QUEUE.md` 的日期、开放 issue 数和最近更新时间，并新增 `kopfrechner/gitlab-mr-mcp` 与 `mattzcarey/shippie` 两个技术问题候选。没有发送任何外部消息；候选仍不计入联系人、试用或收入。
 - 2026-09-03（收入主线 round 47）：修正 `products/mcp-code-review/uv.lock` 与 `pyproject.toml` 的本地包版本漂移（0.1.0 -> 0.1.2），使 `uv run --locked` 可复现安装；严格产品测试 45 passed，漏斗/issue 报告测试 12 passed，Ruff 与 `git diff --check` 通过。
 - 2026-09-03（收入主线 round 46）：新增只读 scripts/github_trial_report.py，从公开 GitHub Issues 提取中英文团队试用/试用反馈表单的团队规模、语言、报价档位、决策时间和有条件承诺，输出人工复核队列；不会发帖、修改 issue、写入 OUTREACH_LOG.csv，也不会把表单意向当作收入。中英文 trial-feedback Issue Forms 新增必填 offer-tier 与 precommitment 字段，避免反馈进入漏斗后缺少报价档位和条件开始承诺。脚本测试 12 passed（含漏斗回归），所有 Issue Form YAML 可解析且字段 ID 唯一；公开 GitHub API 当前仍为 0 条试用/反馈 issue，真实收入与 MRR 仍为 0。
 - 2026-09-03（收入主线 round 45）：修正根 README 将免费的 MCP Code Review Server 误标为 `$49` 的转化问题，明确 MIT 免费 server 与 `$49` Team Rules Pack 的边界；同步定价哲学，避免新用户在免费试用入口被错误价格拦截。
