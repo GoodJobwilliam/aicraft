@@ -57,7 +57,7 @@ The free MIT server is enough for local review. If your team needs ready-made pr
 
 ### Team Updates (early access)
 
-Teams that want ongoing rule drops, CI workflow refreshes, and rollout support can join the **Team Updates** early-access list: Starter is [$19/month or $190/year](https://aicraft.vip/team-updates.html) for up to 3 engineers, and Team Pilot is $99/month or $990/year for up to 10 engineers. The service is being validated with a small number of teams; delivery scope and launch date are confirmed before charging.
+Teams that want ongoing rule drops, CI workflow refreshes, and rollout support can join the **Team Updates** early-access list: Starter is [$19/month or $190/year](https://aicraft.vip/team-updates.html) for up to 3 engineers, and Team Pilot is $99/month or $990/year for up to 10 engineers. Read the [Team Pilot scope and acceptance checklist](https://github.com/GoodJobwilliam/aicraft/blob/main/TEAM_PILOT_BRIEF.md) before applying. The service is being validated with a small number of teams; delivery scope and launch date are confirmed before charging.
 
 For a structured, free team trial, [open the GitHub trial request form](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request). Do not include source code, credentials, or other confidential information.
 
