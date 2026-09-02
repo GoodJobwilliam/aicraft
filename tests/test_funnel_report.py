@@ -5,7 +5,6 @@ import pytest
 
 from scripts.funnel_report import report
 
-
 HEADER = [
     "date",
     "channel",
@@ -92,6 +91,29 @@ def test_offer_tier_column_is_required(tmp_path: Path):
     )
     with pytest.raises(ValueError, match="offer_tier"):
         report(path)
+
+
+def test_offer_tier_signals_keep_unconfirmed_revenue_at_zero(tmp_path: Path):
+    path = tmp_path / "log.csv"
+    write_rows(
+        path,
+        [
+            row(offer_tier="Team Pilot", team_test="yes", paid_signal="yes"),
+            row(offer_tier="Starter", precommitment="yes"),
+            row(
+                offer_tier="Team Pilot",
+                team_updates_subscribers="1",
+                mrr_usd="99",
+            ),
+        ],
+    )
+
+    output = report(path)
+
+    assert "Offer tier signals" in output
+    assert "Starter: 1 contacts, 0 tests, 0 paid signals, 1 pre-commitments, 0 subscribers, $0.00 MRR" in output
+    assert "Team Pilot: 2 contacts, 1 tests, 1 paid signals, 0 pre-commitments, 1 subscribers, $99.00 MRR" in output
+    assert "MRR (USD): 99.00" in output
 
 
 def test_negative_revenue_is_rejected(tmp_path: Path):

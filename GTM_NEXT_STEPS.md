@@ -30,7 +30,7 @@
 3. Offer the free server first; invite qualified teams to test the Team Rules Pack.
 4. Record decision role and paid-decision timing in `OUTREACH_LOG.md`; prioritize teams that can decide this month or next.
 5. Ask testers which tier they would explicitly pre-commit to before any recurring checkout is created; target Team Pilot when CI and tuning work is requested.
-6. Run `python3 scripts/funnel_report.py` weekly; review the log after 20 contacts and adjust the offer around repeated pain, not vanity metrics.
+6. Record `offer_tier` as `Starter`, `Team Pilot`, or `Team Rules Pack` for each qualified conversation. Run `python3 scripts/funnel_report.py` weekly; review the tier breakdown after 20 contacts and adjust the offer around repeated pain, not vanity metrics.
 
 ## External blockers
 - PyPI, V2EX, 掘金, Product Hunt, or Indie Hackers login/OTP/CAPTCHA may require an in-browser action.

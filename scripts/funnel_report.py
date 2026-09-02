@@ -5,8 +5,8 @@ from __future__ import annotations
 
 import argparse
 import csv
+from collections import defaultdict
 from pathlib import Path
-
 
 REQUIRED_COLUMNS = {
     "date",
@@ -54,6 +54,33 @@ def read_rows(path: Path) -> list[dict[str, str]]:
         return [row for row in reader if any((value or "").strip() for value in row.values())]
 
 
+def _tier_summary(rows: list[dict[str, str]]) -> list[str]:
+    """Return factual conversion counts grouped by the selected offer tier."""
+    tiers: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        tier = row.get("offer_tier", "").strip()
+        if tier:
+            tiers[tier].append(row)
+
+    if not tiers:
+        return []
+
+    lines = ["", "Offer tier signals"]
+    for tier in sorted(tiers, key=str.casefold):
+        tier_rows = tiers[tier]
+        contacts = len(tier_rows)
+        tests = sum(_yes(row, "team_test") for row in tier_rows)
+        signals = sum(_yes(row, "paid_signal") for row in tier_rows)
+        commitments = sum(_yes(row, "precommitment") for row in tier_rows)
+        subscribers = sum(_money(row, "team_updates_subscribers") for row in tier_rows)
+        mrr = sum(_money(row, "mrr_usd") for row in tier_rows)
+        lines.append(
+            f"- {tier}: {contacts} contacts, {tests} tests, {signals} paid signals, "
+            f"{commitments} pre-commitments, {subscribers:g} subscribers, ${mrr:.2f} MRR"
+        )
+    return lines
+
+
 def report(path: Path) -> str:
     rows = read_rows(path)
     counts = {
@@ -79,6 +106,7 @@ def report(path: Path) -> str:
             "Only confirmed payments belong in revenue fields. A paid signal or pre-commitment is not revenue.",
         ]
     )
+    lines.extend(_tier_summary(rows))
     return "\n".join(lines)
 
 
