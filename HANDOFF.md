@@ -118,6 +118,8 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 60）：修正根 README 路线图中初始产品数量（8 -> 9），与当前 Creem 产品清单一致；没有把产品数量当作收入证据。
+- 2026-09-03（收入主线 round 59）：更新 `OUTREACH_LOG.md` 的复核日期和证据字段说明，明确来源归因、报价档位、意向信号与 Creem 付款引用的边界，避免后续人工录入时把推断或意向当成收入。
 - 2026-09-03（收入主线 round 58）：在 AI agent 安装指南与发布指南增加 Team Rules Pack `$49` 的直接 Creem checkout CTA，并再次明确免费 MIT Server 边界，减少从自动发现/安装文档到购买的路径损失。
 - 2026-09-03（收入主线 round 57）：漏斗报告在保留原有计数的基础上，按 `offer_tier` 和 `discovery_source` 增加试用率、付费信号率、预承诺率；收入记录现在同时强制要求 `offer_tier` 与 `payment_reference`，每笔真实收入都能追溯到具体报价和 Creem 证据。根测试 18 passed，MCP 测试 45 passed，Ruff 与 `git diff --check` 通过。
 - 2026-09-03（收入主线 round 56）：漏斗报告新增按 `discovery_source` 分组的真实转化统计，展示各免费分发渠道的联系人、试用、付费信号、预承诺、订阅数与确认 MRR；空日志不显示虚假渠道，新增回归测试。根测试 16 passed，MCP 测试 45 passed，Ruff 与 `git diff --check` 通过。

@@ -57,7 +57,7 @@ Details: [Team Updates](./team-updates.html) · [中文页面](./team-updates.zh
 
 ## Roadmap
 
-- [x] Initial product lineup (8 products)
+- [x] Initial product lineup (9 products)
 - [x] GitHub Pages storefront with custom domain
 - [x] Creem store (checkout live)
 - [x] Official MCP Registry listing (0.1.2 active)
