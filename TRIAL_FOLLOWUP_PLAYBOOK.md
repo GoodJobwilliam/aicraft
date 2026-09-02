@@ -69,3 +69,7 @@ Do not treat one-time `$49` purchases as MRR. Track one-time revenue and recurri
 ## Weekly review
 
 Every seven days, count: contacts, qualified replies, team tests, paid signals, pre-commitments, Team Rules Pack sales, Team Updates subscribers, one-time revenue, and MRR. Update the offer only when several conversations show the same pain.
+
+## Public issue review
+
+Run `python3 scripts/github_trial_report.py` before each weekly review. The command reads public team-trial and trial-feedback issues and prints a manual-review queue; it never posts, edits issues, or writes `OUTREACH_LOG.csv`. Copy a row into the log only after verifying the issue URL, selected tier, agreed scope, intended start date, and any payment in the public thread or Creem record. A form answer, paid signal, or conditional commitment is never revenue by itself.

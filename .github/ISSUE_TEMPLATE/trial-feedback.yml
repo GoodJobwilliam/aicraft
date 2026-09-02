@@ -64,6 +64,20 @@ body:
       required: true
 
   - type: dropdown
+    id: offer-tier
+    attributes:
+      label: Offer tier discussed
+      description: Select the one commercial path that best matches this feedback. This records interest only; it is not a payment.
+      options:
+        - Free server only
+        - Team Rules Pack
+        - Team Updates Starter
+        - Team Updates Team Pilot
+        - Scope not clear yet
+    validations:
+      required: true
+
+  - type: dropdown
     id: decision-window
     attributes:
       label: Decision timing
@@ -72,6 +86,18 @@ body:
         - Next month
         - This quarter
         - No paid decision planned
+    validations:
+      required: true
+
+  - type: dropdown
+    id: precommitment
+    attributes:
+      label: Conditional start commitment
+      description: If the agreed scope matches the selected tier, would your team start at that price? This is not a charge or subscription.
+      options:
+        - Yes, subject to confirming scope and start date
+        - Maybe, I need more evidence
+        - No commitment yet
     validations:
       required: true
 

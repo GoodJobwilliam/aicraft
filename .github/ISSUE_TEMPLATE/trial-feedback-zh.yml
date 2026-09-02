@@ -64,6 +64,20 @@ body:
       required: true
 
   - type: dropdown
+    id: offer-tier
+    attributes:
+      label: 讨论的增值档位
+      description: 选择最符合本次反馈的一个商业路径。这里只记录意向，不会产生付款。
+      options:
+        - 只使用免费服务器
+        - Team Rules Pack
+        - Team Updates Starter
+        - Team Updates Team Pilot
+        - 还不清楚交付范围
+    validations:
+      required: true
+
+  - type: dropdown
     id: decision-window
     attributes:
       label: 决策时间
@@ -72,6 +86,18 @@ body:
         - 下月
         - 本季度
         - 暂无付费计划
+    validations:
+      required: true
+
+  - type: dropdown
+    id: precommitment
+    attributes:
+      label: 有条件的开始承诺
+      description: 如果最终交付范围符合所选档位，团队是否愿意按该价格开始？这不会产生收费或订阅。
+      options:
+        - 愿意，确认范围和开始时间后开始
+        - 可能愿意，还需要更多证据
+        - 目前还不能承诺
     validations:
       required: true
 

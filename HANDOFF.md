@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 46）：新增只读 scripts/github_trial_report.py，从公开 GitHub Issues 提取中英文团队试用/试用反馈表单的团队规模、语言、报价档位、决策时间和有条件承诺，输出人工复核队列；不会发帖、修改 issue、写入 OUTREACH_LOG.csv，也不会把表单意向当作收入。中英文 trial-feedback Issue Forms 新增必填 offer-tier 与 precommitment 字段，避免反馈进入漏斗后缺少报价档位和条件开始承诺。脚本测试 12 passed（含漏斗回归），所有 Issue Form YAML 可解析且字段 ID 唯一；公开 GitHub API 当前仍为 0 条试用/反馈 issue，真实收入与 MRR 仍为 0。
 - 2026-09-03（收入主线 round 45）：修正根 README 将免费的 MCP Code Review Server 误标为 `$49` 的转化问题，明确 MIT 免费 server 与 `$49` Team Rules Pack 的边界；同步定价哲学，避免新用户在免费试用入口被错误价格拦截。
 - 2026-08-30（收入主线 round 44）：中英文团队试用表单新增明确的 conditional-start 预承诺字段（确认范围和开始时间后是否按所选档位开始），并同步跟进手册证据标准；提交表单仍不会收费，只有人工核对“档位、开始月份、范围/价格”三项后才记录 `precommitment=yes`。
 - 2026-08-30（收入主线 round 43）：漏斗报告新增按 `offer_tier` 的联系人、试用、付费信号、预承诺、订阅数与确认 MRR 分段；空日志不显示该分段，避免制造不存在的信号。新增回归测试验证 Team Pilot 的确认订阅可记入 MRR，而 Starter 预承诺仍为 `$0 MRR`。
