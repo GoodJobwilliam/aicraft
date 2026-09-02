@@ -29,6 +29,24 @@ Issue: https://github.com/unoplatform/uno/issues/24305
 
 > The distinction between an advisory agent report and a blocking build signal seems important here. One practical split is to let the review job always publish its report and use a separate, deterministic policy job for findings that should block a merge. Then API failures, rate limits, and timeouts can stay neutral while a locally reproducible security or policy check still fails when the repository opts into it. Would that separation fit the workflow you are trying to preserve?
 
+## A4 — asterinas #4
+
+Issue: https://github.com/androidAppGuard/asterinas/issues/4
+
+> The domain-knowledge MCP idea could pair well with a deterministic local pre-check. One useful contract boundary may be stable rule IDs, severity values, and a machine-readable result, so known security and policy patterns remain testable even when retrieval misses context. Would you want that pre-check to run before the domain-specific review, or only as a merge-gate companion?
+
+## A5 — rpguide #47
+
+Issue: https://github.com/Gabriel-GM5/rpguide/issues/47
+
+> For a Claude code-review Action, I would separate the report from the blocking decision: run the review with read-only permissions, publish the report as an artifact, and let a small policy step decide whether Critical findings should fail the check. That keeps fork PRs safe while allowing repository-owned TDD/SDD conventions to become explicit rules. Does that fit the workflow you are designing?
+
+## A6 — Sourcery #477
+
+Issue: https://github.com/sourcery-ai/sourcery/issues/477
+
+> A CLI review path becomes much easier to compose when the output contract is stable: deterministic check IDs, severity counts, and exit codes for clean/high/critical results, alongside a human-readable report. A committed local rules file could then make the same command useful in CI without sending source to a hosted scanner. Which part of the CLI workflow is the highest priority for your users?
+
 ## Manual send checklist
 
 - Confirm the issue is still open and the question is still relevant.
