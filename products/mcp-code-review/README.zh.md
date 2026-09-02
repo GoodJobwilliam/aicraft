@@ -50,6 +50,10 @@ python -m mcp_code_review
 
 > 兼容性说明：PyPI `0.1.2` 已自动锁定 `mcp<2`。如果安装旧版 `0.1.0`，必须手动添加 `mcp<2`，因为 MCP 2.0 移除了 `Server.list_tools`。
 
+### Team Rules Pack（$49，一次性）
+
+免费的 MIT 服务器已经可以完成本地审查。如果团队需要现成规则档案和合并门禁，可通过 [Creem 购买 Team Rules Pack](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0)：包含 Python/JS·TS/Go/Java 共 63 条验证规则、GitHub Actions 与 GitLab CI 模板，以及 20 条 LLM 审查提示词，终身更新。
+
 ### Team Updates（早期体验）
 
 需要持续规则更新、CI 工作流刷新和上线支持的团队，可以加入 **Team Updates** 早期名单：Starter 为[$19/月或 $190/年](https://aicraft.vip/team-updates.zh.html)（最多 3 人），Team Pilot 为 $99/月或 $990/年（最多 10 人）。目前只和少量团队验证，收费前会先确认交付范围和上线时间。

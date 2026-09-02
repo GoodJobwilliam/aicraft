@@ -118,6 +118,8 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 54）：在中英文 MCP 产品 README 增加直接的 Team Rules Pack `$49` Creem checkout CTA，明确免费 MIT Server 与付费规则包的边界，缩短 GitHub 产品页到购买的路径；同步重建 `products/mcp-code-review.zip`。没有新增付费服务。
+- 2026-09-03（收入主线 round 54）：在中英文 MCP 产品 README 增加直接的 Team Rules Pack `$49` Creem checkout CTA，明确免费 MIT Server 与付费规则包的边界，缩短 GitHub 产品页到购买的路径；没有新增付费服务。
 - 2026-09-03（收入主线 round 53）：修正中英文首页 MCP 产品卡的视觉报价歧义：服务器价格区现在明确显示免费 MIT Server，$49 只出现在 Team Rules Pack 购买按钮中，避免用户把免费主产品误解为付费。
 - 2026-09-03（收入主线 round 52）：为 `OUTREACH_LOG.csv` 和 `scripts/funnel_report.py` 增加 `payment_reference` 证据字段；任何正的一次性收入或 MRR 若没有可核验的 Creem 订单/订阅引用都会被拒绝，避免误把表单意向或手工数字当成收入。空漏斗仍为 0，漏斗测试 8 passed。
 - 2026-09-03（收入主线 round 51）：将 `scripts/github_trial_report.py` 改为分页读取 GitHub 公共 Issues，并排除 Pull Request；新增分页回归测试，避免公开线索超过 100 条后静默漏读。工具仍只读、不写 issue、不更新收入。相关测试 14 passed，Ruff 与 `git diff --check` 通过；当前 API 仍为 0 条试用/反馈 issue。

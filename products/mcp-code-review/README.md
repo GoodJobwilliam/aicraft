@@ -51,6 +51,10 @@ python -m mcp_code_review
 
 > Compatibility note: PyPI `0.1.2` pins `mcp<2`. If you install the older `0.1.0` release, add the `mcp<2` constraint manually because MCP 2.0 removes `Server.list_tools`.
 
+### Team Rules Pack ($49, one-time)
+
+The free MIT server is enough for local review. If your team needs ready-made profiles and merge gates, the optional [Team Rules Pack is available through Creem](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0): 63 validated Python/JS·TS/Go/Java rules, GitHub Actions and GitLab CI templates, and 20 LLM review prompts with lifetime updates.
+
 ### Team Updates (early access)
 
 Teams that want ongoing rule drops, CI workflow refreshes, and rollout support can join the **Team Updates** early-access list: Starter is [$19/month or $190/year](https://aicraft.vip/team-updates.html) for up to 3 engineers, and Team Pilot is $99/month or $990/year for up to 10 engineers. The service is being validated with a small number of teams; delivery scope and launch date are confirmed before charging.
