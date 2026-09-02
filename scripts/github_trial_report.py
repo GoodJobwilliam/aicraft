@@ -13,6 +13,7 @@ import re
 from collections.abc import Callable
 from datetime import datetime
 from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 DEFAULT_REPO = "GoodJobwilliam/aicraft"
@@ -116,13 +117,23 @@ def fetch_issues(
     opener: Callable[..., object] = urlopen,
 ) -> list[dict[str, object]]:
     """Fetch public issues; pull requests are excluded from the lead queue."""
-    url = f"{api_base.rstrip('/')}/repos/{repo}/issues?state=all&per_page=100"
-    request = Request(url, headers={"Accept": "application/vnd.github+json", "User-Agent": "aicraft-trial-report"})
-    with opener(request, timeout=20) as response:  # type: ignore[call-arg]
-        payload = json.load(response)
-    if not isinstance(payload, list):
-        raise TypeError("GitHub API returned an unexpected payload")
-    return [item for item in payload if isinstance(item, dict) and "pull_request" not in item]
+    issues: list[dict[str, object]] = []
+    page = 1
+    while True:
+        query = urlencode({"state": "all", "per_page": 100, "page": page})
+        url = f"{api_base.rstrip('/')}/repos/{repo}/issues?{query}"
+        request = Request(
+            url,
+            headers={"Accept": "application/vnd.github+json", "User-Agent": "aicraft-trial-report"},
+        )
+        with opener(request, timeout=20) as response:  # type: ignore[call-arg]
+            payload = json.load(response)
+        if not isinstance(payload, list):
+            raise TypeError("GitHub API returned an unexpected payload")
+        issues.extend(item for item in payload if isinstance(item, dict) and "pull_request" not in item)
+        if len(payload) < 100:
+            return issues
+        page += 1
 
 
 def report(issues: list[dict[str, object]], *, repo: str = DEFAULT_REPO) -> str:

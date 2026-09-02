@@ -1,4 +1,8 @@
+import io
+import json
+
 from scripts.github_trial_report import (
+    fetch_issues,
     issue_record,
     parse_form_body,
     report,
@@ -69,3 +73,35 @@ def test_report_empty_issues_is_truthful():
     output = report([])
     assert "Trial/feedback issues: 0" in output
     assert "No trial or feedback issues found" in output
+
+
+class _Response:
+    def __init__(self, payload):
+        self._stream = io.StringIO(json.dumps(payload))
+
+    def __enter__(self):
+        return self._stream
+
+    def __exit__(self, *_args):
+        self._stream.close()
+
+
+def test_fetch_issues_reads_all_pages_and_excludes_pull_requests():
+    calls = []
+
+    def opener(request, timeout):
+        calls.append((request.full_url, timeout))
+        page = 1 if "page=1&" in request.full_url or request.full_url.endswith("page=1") else 2
+        if page == 1:
+            payload = [{"number": n} for n in range(100)]
+            payload.append({"number": 999, "pull_request": {"url": "https://example.test/pr/999"}})
+        else:
+            payload = [{"number": 1000}]
+        return _Response(payload)
+
+    issues = fetch_issues(api_base="https://api.example.test", opener=opener)
+
+    assert len(issues) == 101
+    assert issues[-1]["number"] == 1000
+    assert all("pull_request" not in issue for issue in issues)
+    assert len(calls) == 2
