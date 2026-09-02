@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 45）：修正根 README 将免费的 MCP Code Review Server 误标为 `$49` 的转化问题，明确 MIT 免费 server 与 `$49` Team Rules Pack 的边界；同步定价哲学，避免新用户在免费试用入口被错误价格拦截。
 - 2026-08-30（收入主线 round 44）：中英文团队试用表单新增明确的 conditional-start 预承诺字段（确认范围和开始时间后是否按所选档位开始），并同步跟进手册证据标准；提交表单仍不会收费，只有人工核对“档位、开始月份、范围/价格”三项后才记录 `precommitment=yes`。
 - 2026-08-30（收入主线 round 43）：漏斗报告新增按 `offer_tier` 的联系人、试用、付费信号、预承诺、订阅数与确认 MRR 分段；空日志不显示该分段，避免制造不存在的信号。新增回归测试验证 Team Pilot 的确认订阅可记入 MRR，而 Starter 预承诺仍为 `$0 MRR`。
 - 2026-08-30（收入主线 round 42）：将双层 Team Updates offer 统一到首页、中文页、产品 README、发布指南、试用包、Issue Form、GTM、推广包、跟进手册和市场提交说明；漏斗 `offer_tier` 已纳入必填字段并新增缺列回归测试。Starter 为最多 3 人 `$19/月`，Team Pilot 为最多 10 人 `$99/月`；当前仍无真实付款或预承诺。

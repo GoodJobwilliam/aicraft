@@ -25,7 +25,7 @@ Production-ready developer tools, code templates, and AI prompt packs. Built by 
 
 | Product | Price | Description |
 |---------|-------|-------------|
-| [MCP Code Review Server](./products/mcp-code-review/) | $49 | AI code review in your editor. OWASP scanning, N+1 detection, race analysis, severity ratings. Install in 10 seconds. |
+| [MCP Code Review Server](./products/mcp-code-review/) | Free (MIT) | AI code review in your editor. OWASP scanning, N+1 detection, race analysis, severity ratings. Install in 10 seconds. |
 
 Custom rules & team profiles: commit a `.mcp-code-review.yaml` to your repo for shared regex rules, disabled checks, severity overrides, and per-repo thresholds.
 
@@ -45,7 +45,7 @@ All products are priced based on market research and the value they deliver:
 
 - **Prompt packs** at $19-$29 solve specific, high-value problems for developers
 - **Code templates** at $49-$59 save 10-40 hours of setup time — priced at a fraction of the time they save
-- **MCP tools** at $49 are among the first paid MCP servers on the market
+- **MCP Code Review Server** is free and MIT-licensed; the optional Team Rules Pack is $49 for shared rules, CI gates, and prompts
 
 Most products are one-time purchases with lifetime updates. The MCP Code Review line also has a planned Team Updates add-on for teams that want monthly rule drops, CI workflow refreshes, and rollout support.
 
