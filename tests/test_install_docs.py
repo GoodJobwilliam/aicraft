@@ -50,3 +50,11 @@ def test_mcp_metadata_describes_deterministic_local_checks():
         content = path.read_text(encoding="utf-8").casefold()
         assert "deterministic" in content or "structured local security-pattern" in content, path
         assert "owasp top 10" not in content, path
+
+
+def test_root_readme_exposes_trial_and_team_feedback_paths():
+    content = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "https://aicraft.vip/trial.html" in content
+    assert "template=trial-feedback.yml" in content
+    assert "template=team-trial.yml" in content
+    assert "TEAM_PILOT_BRIEF.md" in content

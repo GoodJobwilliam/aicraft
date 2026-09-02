@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 76）：在根 README 的 MCP 产品段增加免费 10 分钟试用、结构化反馈、团队试用和 Team Pilot 范围入口，并新增回归测试；缩短 GitHub 访问者从安装到反馈/团队转化的路径。未发送外部消息、未新增付费支出。
 - 2026-09-03（收入主线 round 75）：新增根目录 `pytest.ini`，将默认 `python3 -m pytest` 限定到仓库级漏斗、归档和文案测试，避免递归收集其他产品的独立依赖；MCP 产品仍通过其 `uv run --locked pytest` 单独验证。
 - 2026-09-03（收入主线 round 74）：继续用 GitHub 公共 issue API 筛选 3 条具体需求（aster-code-review 领域知识 MCP、Claude AI PR 工作流、Sourcery CLI 审查），加入 `OUTREACH_QUEUE.md` 的 issue-backed signals；只记录公开证据和技术开场，不自动发帖、不计入联系人、试用或收入。
 - 2026-09-03（收入主线 round 73）：核验 Team Rules Pack 的 63 条规则和 CI 交付，新增精确规则数量回归测试（Python 21、JS/TS 16、Go 13、Java 13）；规则包测试 4 passed，未修改付费内容或收入数据。

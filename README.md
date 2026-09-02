@@ -29,6 +29,8 @@ Production-ready developer tools, code templates, and AI prompt packs. Built by 
 
 Custom rules & team profiles: commit a `.mcp-code-review.yaml` to your repo for shared regex rules, disabled checks, severity overrides, and per-repo thresholds.
 
+Start here: [run the free 10-minute trial](https://aicraft.vip/trial.html) · [share structured trial feedback](https://github.com/GoodJobwilliam/aicraft/issues/new?template=trial-feedback.yml&title=Trial%20feedback) · [request a free team trial](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request)
+
 Marketplaces: [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.GoodJobwilliam%2Faicraft-code-review) · [Smithery](https://smithery.ai/servers/yaohuixue1/mcp-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server) · [PyPI](https://pypi.org/project/aicraft-code-review/)
 
 ### AgentPowers Skills (Free)
