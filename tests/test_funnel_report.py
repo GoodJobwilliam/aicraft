@@ -118,6 +118,24 @@ def test_offer_tier_signals_keep_unconfirmed_revenue_at_zero(tmp_path: Path):
     assert "MRR (USD): 99.00" in output
 
 
+def test_discovery_source_signals_are_grouped(tmp_path: Path):
+    path = tmp_path / "log.csv"
+    write_rows(
+        path,
+        [
+            row(discovery_source="Official MCP Registry", team_test="yes"),
+            row(discovery_source="Official MCP Registry", paid_signal="yes"),
+            row(discovery_source="Product Hunt", precommitment="yes"),
+        ],
+    )
+
+    output = report(path)
+
+    assert "Discovery source signals" in output
+    assert "Official MCP Registry: 2 contacts, 1 tests, 1 paid signals, 0 pre-commitments, 0 subscribers, $0.00 MRR" in output
+    assert "Product Hunt: 1 contacts, 0 tests, 0 paid signals, 1 pre-commitments, 0 subscribers, $0.00 MRR" in output
+
+
 def test_negative_revenue_is_rejected(tmp_path: Path):
     path = tmp_path / "log.csv"
     write_rows(path, [row(one_time_revenue_usd="-1")])
