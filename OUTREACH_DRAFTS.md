@@ -59,6 +59,14 @@ Issue: https://github.com/sourcery-ai/sourcery/issues/477
 
 > A CLI review path becomes much easier to compose when the output contract is stable: deterministic check IDs, severity counts, and exit codes for clean/high/critical results, alongside a human-readable report. A committed local rules file could then make the same command useful in CI without sending source to a hosted scanner. Which part of the CLI workflow is the highest priority for your users?
 
+## A7 — agent-co-op-mcp #40
+
+Issue: https://github.com/lwgerhardt/agent-co-op-mcp/issues/40
+
+> The three items in this issue reinforce each other: a single package-version source prevents the CLI and MCP server from drifting, while a structured return type gives integrations a stable boundary to test. I would keep the human-readable rendering at the CLI or host layer and return a typed object from MCP, with an explicit schema/version when the result is persisted or sent to CI.
+>
+> For the CI additions, a format check alongside lint catches a different class of drift than tests, so it seems useful to keep both. Would you prefer the shared result model to live in a small domain module, or remain close to the MCP tool definitions until another consumer needs it?
+
 ## Manual send checklist
 
 - Confirm the issue is still open and the question is still relevant.
