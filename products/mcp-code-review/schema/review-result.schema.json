@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aicraft.vip/schemas/mcp-code-review/review-result.schema.json",
+  "title": "AICraft MCP Code Review result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "findings", "summary", "verdict", "exit_code"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["severity", "line", "issue", "category", "fix", "check"],
+        "properties": {
+          "severity": {"enum": ["critical", "high", "medium", "info"]},
+          "line": {"type": "integer", "minimum": 1},
+          "issue": {"type": "string"},
+          "category": {"type": "string"},
+          "fix": {"type": "string"},
+          "check": {"type": "string"}
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["critical", "high", "medium", "info"],
+      "properties": {
+        "critical": {"type": "integer", "minimum": 0},
+        "high": {"type": "integer", "minimum": 0},
+        "medium": {"type": "integer", "minimum": 0},
+        "info": {"type": "integer", "minimum": 0}
+      }
+    },
+    "verdict": {"enum": ["clean", "conditional_pass", "block"]},
+    "exit_code": {"enum": [0, 1, 2]}
+  }
+}

@@ -83,6 +83,15 @@ def test_ai_agent_install_guide_uses_the_real_console_script():
     assert '"--with", "mcp<2", "aicraft-code-review"' not in content
 
 
+def test_json_output_schema_is_present_and_versioned():
+    import json
+
+    schema = json.loads((ROOT / "products/mcp-code-review/schema/review-result.schema.json").read_text(encoding="utf-8"))
+    assert schema["$schema"].endswith("draft/2020-12/schema")
+    assert schema["properties"]["schema_version"] == {"const": 1}
+    assert set(schema["properties"]["verdict"]["enum"]) == {"clean", "conditional_pass", "block"}
+
+
 def test_trial_pages_offer_a_low_friction_email_feedback_path():
     english = (ROOT / "trial.html").read_text(encoding="utf-8")
     chinese = (ROOT / "trial.zh.html").read_text(encoding="utf-8")

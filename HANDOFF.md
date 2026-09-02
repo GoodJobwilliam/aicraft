@@ -125,6 +125,7 @@
 - 2026-09-03（收入主线 round 82）：审计 `CREEM_PRODUCTS.md` 的商业状态，移除“全部正式开售”导致的收入歧义，明确一次性结账页已配置、Team Updates 尚未自动订阅、确认付款和 MRR 仍为 0；新增状态文档回归测试。未进入 Creem 后台修改账户、未发送外部消息、未新增付费支出。
 - 2026-09-03（收入主线 round 83）：为 MCP CLI 增加可选 `--format json` 机器可读输出，包含 schema_version、稳定 check id、严重度计数、verdict 和一致的 CI exit code；默认 Markdown 行为保持不变，双语 README 明确该能力在新 PyPI 发布前仅保证于源码，避免把未发布代码冒充 `0.1.2`。新增 CLI JSON 回归测试。未发送外部消息、未新增付费支出。
 - 2026-09-03（收入主线 round 84）：重新核验 issue-backed signals A4-A6 仍为开放且相关，新增三条技术回复草稿到 `OUTREACH_DRAFTS.md`；草稿不代表已发帖，未写入联系人漏斗，也未新增付费支出。
+- 2026-09-03（收入主线 round 85）：为源码中的 `--format json` 增加独立 `schema/review-result.schema.json` 输出契约，并接入中英文 README 与归档/文档回归测试，方便团队验证 CI 消费格式；仍未发布新的 PyPI 版本，未发送外部消息、未新增付费支出。
 - 2026-09-03（收入主线 round 77）：新增独立 `products/mcp-code-review-trial.zip` 试用包（示例、隐藏 JSON 配置、中英文说明），中英文试用页加入直接下载入口和归档同步测试；减少首次试用的文件复制摩擦，未新增付费支出。
 - 2026-09-03（收入主线 round 76）：在根 README 的 MCP 产品段增加免费 10 分钟试用、结构化反馈、团队试用和 Team Pilot 范围入口，并新增回归测试；缩短 GitHub 访问者从安装到反馈/团队转化的路径。未发送外部消息、未新增付费支出。
 - 2026-09-03（收入主线 round 75）：新增根目录 `pytest.ini`，将默认 `python3 -m pytest` 限定到仓库级漏斗、归档和文案测试，避免递归收集其他产品的独立依赖；MCP 产品仍通过其 `uv run --locked pytest` 单独验证。
