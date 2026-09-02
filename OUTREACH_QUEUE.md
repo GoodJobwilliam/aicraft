@@ -29,6 +29,16 @@ These candidates were added after a second public-API search. The evidence is in
 | 14 | [kopfrechner/gitlab-mr-mcp](https://github.com/kopfrechner/gitlab-mr-mcp) | Issues enabled; 4 open issues; last push 2026-08-31; JavaScript MCP server for GitLab merge requests | [Issues](https://github.com/kopfrechner/gitlab-mr-mcp/issues) | Issue #41 reports IDE diff review gaps; would a local deterministic review step and shared severity policy help before a GitLab merge request? |
 | 15 | [mattzcarey/shippie](https://github.com/mattzcarey/shippie) | Issues enabled; 22 open issues; last push 2026-08-12; TypeScript code-review tooling | [Issues](https://github.com/mattzcarey/shippie/issues) | Which review findings need a stable local policy or CI gate alongside your current workflow? |
 
+## Issue-backed signals (API checked 2026-09-03)
+
+These rows have a concrete public issue related to the product problem. They are still prospects, not contacts. Read the full thread and contribution rules before deciding whether a technical reply is appropriate; do not turn a bug report into a sales pitch.
+
+| Priority | Public issue | Evidence | Suggested technical opener |
+|---:|---|---|---|
+| A1 | [tirth8205/code-review-graph#703](https://github.com/tirth8205/code-review-graph/issues/703) | Maintainer's project; open issue reports Cursor install failure and uncertainty about `uvx` command configuration on macOS | Could a documented stdio command plus a copy-paste config example make the Cursor install path deterministic? I maintain a separate local MCP reviewer and can compare the setup assumptions if useful. |
+| A2 | [sdempsay/agentic-review-tool#5](https://github.com/sdempsay/agentic-review-tool/issues/5) | Open task explicitly proposes an MCP stdio server for code review across Grok, Claude Desktop, Cursor, and OpenCode | For the stdio entry point, are stable severity IDs and CI exit codes part of the contract? That makes it easier to keep editor feedback and merge gates consistent. |
+| A3 | [unoplatform/uno#24305](https://github.com/unoplatform/uno/issues/24305) | Open issue says a failed or flaky Claude review agent should remain advisory instead of failing the whole PR check rollup | Would separating the advisory review report from the blocking build status solve the false-red signal, while keeping a deterministic local gate available for security findings? |
+
 ## Contact Protocol
 
 1. Ask the opener question in the project public channel; do not paste a sales pitch into an unrelated issue.
