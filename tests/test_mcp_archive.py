@@ -36,6 +36,7 @@ def test_free_server_archive_contains_current_tracked_runtime_files():
         "trial/README.zh.md",
         "trial/sample.py",
         "trial/trial-config.json",
+        "trial/run-trial.sh",
     }
     with ZipFile(ARCHIVE) as archive:
         assert set(archive.namelist()) == expected

@@ -22,6 +22,12 @@ From this directory, run:
 mcp-code-review review-file sample.py
 ```
 
+Or use the bundled launcher, which checks for uvx and runs the same review command:
+
+```bash
+./run-trial.sh
+```
+
 The adjacent `.mcp-code-review.json` is discovered automatically. You should see a high-severity command-injection finding and a medium-severity team-convention finding. The non-zero exit code is suitable for a merge gate.
 
 ## 3. Try your own file

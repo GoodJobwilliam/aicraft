@@ -81,6 +81,7 @@ def test_trial_pages_offer_a_low_friction_email_feedback_path():
     chinese = (ROOT / "trial.zh.html").read_text(encoding="utf-8")
     assert "mailto:731685147@qq.com?subject=AICraft%20trial%20feedback" in english
     assert "mailto:731685147@qq.com?subject=AICraft%20%E8%AF%95%E7%94%A8%E5%8F%8D%E9%A6%88" in chinese
+    assert "run-trial.sh" in (ROOT / "products/mcp-code-review/trial/README.md").read_text(encoding="utf-8")
 
 
 def test_homepage_exposes_a_three_step_mcp_path():

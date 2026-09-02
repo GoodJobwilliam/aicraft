@@ -22,6 +22,12 @@ pip install "aicraft-code-review==0.1.2" "mcp<2"
 mcp-code-review review-file sample.py
 ```
 
+也可以使用试用包自带的启动脚本；它会先检查 uvx，再执行同一条审查命令：
+
+```bash
+./run-trial.sh
+```
+
 相邻的 `.mcp-code-review.json` 会自动发现。你应该看到一个 High 级别的命令注入问题和一个 Medium 级别的团队规范问题；非零退出码可以直接用于合并门禁。
 
 ## 3. 试用自己的文件
