@@ -47,7 +47,7 @@ All products are priced based on market research and the value they deliver:
 - **Code templates** at $49-$59 save 10-40 hours of setup time — priced at a fraction of the time they save
 - **MCP Code Review Server** is free and MIT-licensed; the optional Team Rules Pack is $49 for shared rules, CI gates, and prompts
 
-Most products are one-time purchases with lifetime updates. The MCP Code Review line also has a planned Team Updates add-on for teams that want monthly rule drops, CI workflow refreshes, and rollout support.
+Most products are one-time purchases with lifetime updates. The MCP Code Review line is also validating a two-tier Team Updates offer for teams that want monthly rule drops, CI workflow refreshes, and rollout support.
 
 ### Team Updates (early access)
 
