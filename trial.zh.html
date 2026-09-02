@@ -54,7 +54,7 @@
     <div class="wrap">
         <section class="intro"><h2>你需要什么</h2><p class="muted">一个终端和 Python 工具链。下面命令使用当前 PyPI 版本 <code>0.1.2</code>，示例文件已经放在仓库中。</p></section>
         <section id="steps" class="steps">
-            <article class="step"><div><h3>安装服务器</h3><p class="muted">推荐使用隔离运行器 <code>uvx</code>。</p><pre><code>uvx --with "mcp&lt;2" aicraft-code-review</code></pre><p class="muted">或者安装到已有环境：</p><pre><code>pip install "aicraft-code-review==0.1.2" "mcp&lt;2"</code></pre></div></article>
+            <article class="step"><div><h3>安装服务器</h3><p class="muted">推荐使用隔离运行器 <code>uvx</code>。包名和可执行文件名不同，因此用 <code>--from</code> 明确指定来源包。</p><pre><code>uvx --from aicraft-code-review --with "mcp&lt;2" mcp-code-review</code></pre><p class="muted">或者安装到已有环境：</p><pre><code>pip install "aicraft-code-review==0.1.2" "mcp&lt;2"</code></pre></div></article>
             <article class="step"><div><h3>下载试用文件</h3><p class="muted">克隆仓库并进入试用目录，相邻的 JSON 配置会自动发现。</p><pre><code>git clone https://github.com/GoodJobwilliam/aicraft.git
 cd aicraft/products/mcp-code-review/trial</code></pre><p class="muted">不使用 Git？也可以直接下载文件：</p><pre><code>mkdir aicraft-trial &amp;&amp; cd aicraft-trial
 curl -O https://aicraft.vip/products/mcp-code-review/trial/sample.py

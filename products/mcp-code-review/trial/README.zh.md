@@ -5,7 +5,7 @@
 ## 1. 安装
 
 ```bash
-uvx --with "mcp<2" aicraft-code-review
+uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
 ```
 
 或者在已有 Python 环境中安装当前 PyPI 版本：

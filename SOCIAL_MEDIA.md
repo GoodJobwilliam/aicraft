@@ -17,7 +17,7 @@
 > It integrates with Claude Code, Cursor, Cline — any MCP client. The review includes OWASP security pattern scanning out of the box.
 >
 > GitHub: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
-> Install: `uvx --with "mcp<2" aicraft-code-review` (PyPI 0.1.2)
+> Install: `uvx --from aicraft-code-review --with "mcp<2" mcp-code-review` (PyPI 0.1.2)
 >
 > Would love feedback from the community!
 
@@ -31,8 +31,8 @@
 > Just discovered this workflow and wanted to share:
 >
 > ```
-> uvx --with "mcp<2" aicraft-code-review
-> claude mcp add code-review -- uvx --with "mcp<2" aicraft-code-review
+> uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
+> claude mcp add code-review -- uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
 > ```
 >
 > Now you can just ask Claude to "review this code" and it runs structural analysis + OWASP checks before responding. No more pasting into ChatGPT.
@@ -58,7 +58,7 @@
 > - 🔁 Team Pilot: $99/month or $990/year (up to 10 engineers)
 >
 > **How it works:**
-> 1. `uvx --with "mcp<2" aicraft-code-review` (PyPI 0.1.2)
+> 1. `uvx --from aicraft-code-review --with "mcp<2" mcp-code-review` (PyPI 0.1.2)
 > 2. Add to your MCP client config
 > 3. Ask your AI to review any code
 
@@ -80,7 +80,7 @@
 >
 > Tech stack: Python, MCP protocol, supports any LLM backend (OpenAI, Anthropic, Groq, local models).
 >
-> Install: uvx --with "mcp<2" aicraft-code-review (PyPI 0.1.2)
+> Install: uvx --from aicraft-code-review --with "mcp<2" mcp-code-review (PyPI 0.1.2)
 > Repo: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
 > Site: https://aicraft.vip
 

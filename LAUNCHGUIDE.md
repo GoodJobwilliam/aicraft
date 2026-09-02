@@ -45,7 +45,7 @@ code-review, security, owasp, static-analysis, developer-tools, python
 ## Install Commands
 ```bash
 # Via uvx (recommended, no install)
-uvx --with "mcp<2" aicraft-code-review
+uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
 
 # Via pip
 pip install "aicraft-code-review==0.1.2" "mcp<2"

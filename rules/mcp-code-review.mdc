@@ -17,7 +17,7 @@ The server is available as `aicraft-code-review` on PyPI and connects via stdio:
   "mcpServers": {
     "mcp-code-review": {
       "command": "uvx",
-      "args": ["aicraft-code-review"]
+      "args": ["--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"]
     }
   }
 }

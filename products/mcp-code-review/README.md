@@ -26,7 +26,7 @@ Powered by the same methodology as our Code Review Agent: OWASP Top 10 scanning,
 
 ```bash
 # Add to your Claude Code MCP config:
-claude mcp add code-review -- uvx --with "mcp<2" aicraft-code-review
+claude mcp add code-review -- uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
 ```
 
 Or add to your `~/.cursor/mcp.json` or `claude_desktop_config.json`:
@@ -36,7 +36,7 @@ Or add to your `~/.cursor/mcp.json` or `claude_desktop_config.json`:
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["--with", "mcp<2", "aicraft-code-review"]
+      "args": ["--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"]
     }
   }
 }
@@ -157,7 +157,7 @@ Commit the file to a shared repo, then wire every teammate's MCP client to it:
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["--with", "mcp<2", "aicraft-code-review"],
+      "args": ["--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"],
       "env": {
         "MCP_CODE_REVIEW_CONFIG": "/path/to/team-repo/.mcp-code-review.yaml"
       }

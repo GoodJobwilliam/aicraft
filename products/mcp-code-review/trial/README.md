@@ -5,7 +5,7 @@ This free, local trial lets a small team test shared review rules before discuss
 ## 1. Install
 
 ```bash
-uvx --with "mcp<2" aicraft-code-review
+uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
 ```
 
 Or install the current PyPI release into an existing environment:

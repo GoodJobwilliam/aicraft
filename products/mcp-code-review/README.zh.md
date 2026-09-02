@@ -25,7 +25,7 @@ English docs: [README.md](./README.md)
 
 ```bash
 # 添加到 Claude Code 的 MCP 配置：
-claude mcp add code-review -- uvx --with "mcp<2" aicraft-code-review
+claude mcp add code-review -- uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
 ```
 
 或写进 `~/.cursor/mcp.json` / `claude_desktop_config.json`：
@@ -35,7 +35,7 @@ claude mcp add code-review -- uvx --with "mcp<2" aicraft-code-review
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["--with", "mcp<2", "aicraft-code-review"]
+      "args": ["--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"]
     }
   }
 }
@@ -153,7 +153,7 @@ custom_rules:
   "mcpServers": {
     "code-review": {
       "command": "uvx",
-      "args": ["--with", "mcp<2", "aicraft-code-review"],
+      "args": ["--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"],
       "env": {
         "MCP_CODE_REVIEW_CONFIG": "/path/to/team-repo/.mcp-code-review.yaml"
       }

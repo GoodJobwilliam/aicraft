@@ -118,6 +118,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-03（收入主线 round 65）：实测发现 PyPI 包的 `uvx` 入口必须使用 `--from aicraft-code-review ... mcp-code-review`，原有 `uvx ... aicraft-code-review` 会因找不到 executable 失败；已统一修正首页、中英文试用页、README、MCP 配置、发布/市场文案和博客社交草稿，并验证正确命令在临时环境输出 High + Medium、退出码 1。同步重建下载 ZIP，测试通过；未新增付费支出、未发送外部消息。
 - 2026-09-03（收入主线 round 64）：修正中文首页 MCP 卡片将 `$49` 写成“终身授权”的歧义，明确付费项是 Team Rules Pack、服务器仍免费；中英文产品 README 接入 Team Pilot 范围与验收清单链接。未新增付费支出，未发送外部消息。
 - 2026-09-03（收入主线 round 63）：将 Team Pilot 范围说明和验收清单接入根 README 与中文首页，打通 GitHub/自然流量入口到免费试用和团队转化路径；未发送外部消息、未新增付费支出，漏斗仍以真实 issue 和 Creem 证据为准。
 - 2026-09-03（收入主线 round 62）：基于 GitHub 公共 issue API 核验三条具体痛点信号（Cursor 安装失败、MCP stdio code-review 任务、代理审查失败导致 PR 误红），加入 `OUTREACH_QUEUE.md` 的 issue-backed signals 区；只记录公开证据和技术开场，不发送外部消息，不计入联系人、试用或收入。
