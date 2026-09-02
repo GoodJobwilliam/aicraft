@@ -31,6 +31,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aicraft.vip/products/mcp-code-review-trial.zip</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://aicraft.vip/blog/distribution-playbook.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

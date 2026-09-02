@@ -53,6 +53,7 @@
 <main>
     <div class="wrap">
         <section class="intro"><h2>What you need</h2><p class="muted">A terminal and Python tooling. The commands below use the current PyPI release, <code>0.1.2</code>, and the sample files already stored in the repository.</p></section>
+        <p class="muted" style="margin-bottom:20px"><a href="/products/mcp-code-review-trial.zip">Download the standalone trial bundle</a> (sample, shared JSON profile, and both README files) if you do not want to clone the repository.</p>
         <section id="steps" class="steps">
             <article class="step"><div><h3>Install the server</h3><p class="muted">The recommended isolated runner is <code>uvx</code>. The package name and executable name differ, so <code>--from</code> makes the source package explicit.</p><pre><code>uvx --from aicraft-code-review --with "mcp&lt;2" mcp-code-review</code></pre><p class="muted">Or install into an existing environment:</p><pre><code>pip install "aicraft-code-review==0.1.2" "mcp&lt;2"</code></pre></div></article>
             <article class="step"><div><h3>Download the trial files</h3><p class="muted">Clone the repository, then enter the trial directory. The adjacent JSON profile is discovered automatically.</p><pre><code>git clone https://github.com/GoodJobwilliam/aicraft.git
