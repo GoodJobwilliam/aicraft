@@ -49,6 +49,14 @@
         footer { background:#0f0f23; color:#ccc; padding:32px 0; font-size:.85rem; }
         footer a { color:#00d4aa; text-decoration:none; }
         .payline { text-align:center; color:#666; font-size:.9rem; margin-top:24px; }
+        .mcp-path { background:#eefbf7; border-top:1px solid #d0f0e4; border-bottom:1px solid #d0f0e4; }
+        .mcp-path .path-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+        .mcp-path .path-step { background:#fff; border:1px solid #cfe8df; padding:22px; }
+        .mcp-path .step-label { color:#087f6a; font-size:.76rem; font-weight:800; letter-spacing:.08em; }
+        .mcp-path h3 { margin:8px 0; font-size:1.1rem; }
+        .mcp-path p { color:#4f625f; font-size:.92rem; margin-bottom:14px; }
+        .mcp-path a { color:#087f6a; font-weight:700; text-decoration:none; }
+        @media (max-width:768px) { .mcp-path .path-grid { grid-template-columns:1fr; } }
     </style>
 </head>
 <body>
@@ -69,6 +77,18 @@
         </div>
     </div>
 </header>
+
+<section id="mcp-path" class="mcp-path">
+    <div class="container">
+        <h2>从第一次运行到团队上线</h2>
+        <p class="subtitle">用最小的一步回答当前问题。只有你确认付费范围后才会收费。</p>
+        <div class="path-grid">
+            <article class="path-step"><div class="step-label">01 · 安装</div><h3>运行本地服务器</h3><p>使用当前 PyPI 版本接入编辑器或终端，源代码始终留在你的机器上。</p><a href="https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review" target="_blank" rel="noopener">查看安装文档 →</a></article>
+            <article class="path-step"><div class="step-label">02 · 验证</div><h3>完成 10 分钟试用</h3><p>运行故意不安全的示例，查看 High / Medium 结果，然后告诉我们哪些结果太吵。</p><a href="/trial.zh.html">打开试用包 →</a></article>
+            <article class="path-step"><div class="step-label">03 · 统一标准</div><h3>选择团队路径</h3><p>需要现成 CI 规则就购买 $49 规则包；需要接入和调优支持，可先申请免费 Team Pilot。</p><a href="/team-updates.zh.html">查看 Team Pilot 范围 →</a></article>
+        </div>
+    </div>
+</section>
 
 <section id="mcp">
     <div class="container">

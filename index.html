@@ -97,6 +97,14 @@
 
         /* Features / Benefits */
         .features { background: white; }
+        .mcp-path { background: #eefbf7; border-top: 1px solid #d0f0e4; border-bottom: 1px solid #d0f0e4; }
+        .mcp-path .path-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:18px; }
+        .mcp-path .path-step { background:#fff; border:1px solid #cfe8df; padding:22px; }
+        .mcp-path .path-step .step-label { color:#087f6a; font-size:.76rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+        .mcp-path .path-step h3 { margin:8px 0 8px; font-size:1.15rem; }
+        .mcp-path .path-step p { color:#4f625f; font-size:.92rem; margin-bottom:16px; }
+        .mcp-path .path-step a { color:#087f6a; font-weight:700; text-decoration:none; }
+        .mcp-path .path-step a:hover { text-decoration:underline; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
         .feature-card { text-align: center; padding: 24px; }
         .feature-card .icon { font-size: 2.2rem; margin-bottom: 12px; }
@@ -138,6 +146,7 @@
         @media (max-width: 768px) {
             header h1 { font-size: 2.2rem; }
             .product-grid, .free-grid { grid-template-columns: 1fr; }
+            .mcp-path .path-grid { grid-template-columns: 1fr; }
             footer .footer-grid { grid-template-columns: 1fr; gap: 24px; }
             footer .footer-bottom { flex-direction: column; text-align: center; }
         }
@@ -156,6 +165,33 @@
         </div>
     </div>
 </header>
+
+<section id="mcp-path" class="mcp-path">
+    <div class="container">
+        <h2>From first run to team rollout</h2>
+        <p class="subtitle">Use the smallest step that answers your question. Every step is free until you approve a paid scope.</p>
+        <div class="path-grid">
+            <article class="path-step">
+                <div class="step-label">01 · Install</div>
+                <h3>Run the local server</h3>
+                <p>Use the current PyPI release in your editor or terminal. Your source stays on your machine.</p>
+                <a href="https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review" target="_blank" rel="noopener">Read the install guide →</a>
+            </article>
+            <article class="path-step">
+                <div class="step-label">02 · Validate</div>
+                <h3>Finish the 10-minute trial</h3>
+                <p>Run the deliberately unsafe sample, inspect High and Medium findings, then tell us what was noisy.</p>
+                <a href="/trial.html">Open the trial kit →</a>
+            </article>
+            <article class="path-step">
+                <div class="step-label">03 · Standardize</div>
+                <h3>Choose the team path</h3>
+                <p>Buy the $49 rules pack for ready-made CI profiles, or apply for a free Team Pilot before any recurring charge.</p>
+                <a href="/team-updates.html">See Team Pilot scope →</a>
+            </article>
+        </div>
+    </div>
+</section>
 
 <!-- Features -->
 <section class="features">

@@ -58,3 +58,21 @@ def test_root_readme_exposes_trial_and_team_feedback_paths():
     assert "template=trial-feedback.yml" in content
     assert "template=team-trial.yml" in content
     assert "TEAM_PILOT_BRIEF.md" in content
+
+
+def test_trial_pages_offer_a_low_friction_email_feedback_path():
+    english = (ROOT / "trial.html").read_text(encoding="utf-8")
+    chinese = (ROOT / "trial.zh.html").read_text(encoding="utf-8")
+    assert "mailto:731685147@qq.com?subject=AICraft%20trial%20feedback" in english
+    assert "mailto:731685147@qq.com?subject=AICraft%20%E8%AF%95%E7%94%A8%E5%8F%8D%E9%A6%88" in chinese
+
+
+def test_homepage_exposes_a_three_step_mcp_path():
+    content = (ROOT / "index.html").read_text(encoding="utf-8")
+    assert 'id="mcp-path"' in content
+    assert "/trial.html" in content
+    assert "/team-updates.html" in content
+    zh = (ROOT / "zh.html").read_text(encoding="utf-8")
+    assert 'id="mcp-path"' in zh
+    assert "/trial.zh.html" in zh
+    assert "/team-updates.zh.html" in zh
