@@ -33,7 +33,7 @@ Start here: [run the free 10-minute trial](https://aicraft.vip/trial.html) · [s
 
 For a real pull-request check, copy the [secretless GitHub Actions starter](./products/mcp-code-review/examples/github-actions/mcp-code-review.yml). It uses the pinned PyPI `0.1.2` release; no API key or paid service is required.
 
-Marketplaces: [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.GoodJobwilliam%2Faicraft-code-review) · [Smithery](https://smithery.ai/servers/yaohuixue1/mcp-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server) · [PyPI](https://pypi.org/project/aicraft-code-review/)
+Marketplaces: [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.GoodJobwilliam%2Faicraft-code-review) · [LightNow](https://lightnow.ai/servers/io.github.GoodJobwilliam/aicraft-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server) · [PyPI](https://pypi.org/project/aicraft-code-review/)
 
 ### AgentPowers Skills (Free)
 
