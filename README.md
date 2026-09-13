@@ -41,7 +41,7 @@ For a repeatable, read-only distribution audit, run `python3 scripts/distributio
 
 | Skill | Description |
 |-------|-------------|
-| Code Review Agent | 4-pass code review with OWASP scanning, performance analysis, quality checks |
+| Code Review Agent | 4-pass code review with local security-pattern checks, performance analysis, and quality checks |
 | Git Commit Assistant | Conventional Commits from git diff. Auto-detects type, scope, breaking changes |
 | PR Description Generator | Auto-generates PR descriptions from git history and diff |
 

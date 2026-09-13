@@ -63,11 +63,18 @@ def test_public_launch_metadata_matches_implemented_capabilities():
 
 
 def test_public_mcp_copy_does_not_overstate_owasp_coverage():
-    for path in [ROOT / "index.html", ROOT / "SOCIAL_MEDIA.md"]:
+    for path in [
+        ROOT / "index.html",
+        ROOT / "SOCIAL_MEDIA.md",
+        ROOT / "README.md",
+        ROOT / "blog/index.html",
+        ROOT / "blog/distribution-playbook.html",
+    ]:
         content = path.read_text(encoding="utf-8").casefold()
         assert "owasp security scanning" not in content
         assert "owasp top 10" not in content
     assert "deterministic security-pattern checks" in (ROOT / "index.html").read_text(encoding="utf-8").casefold()
+    assert "deterministic local security-pattern checks" in (ROOT / "SOCIAL_MEDIA.md").read_text(encoding="utf-8").casefold()
 
 
 def test_creem_status_does_not_confuse_checkout_setup_with_revenue():

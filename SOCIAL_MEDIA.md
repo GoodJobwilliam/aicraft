@@ -2,7 +2,7 @@
 
 ## Reddit — r/MCP
 
-> **Title:** I built an open-source MCP server for AI code review with OWASP scanning
+> **Title:** I built an open-source MCP server for local AI code review with security-pattern checks
 >
 > **Body:**
 > Hey r/MCP,
@@ -14,7 +14,7 @@
 > - `review_diff` — review git diffs before merging
 > - `review_file` — review local files by path
 >
-> It integrates with Claude Code, Cursor, Cline — any MCP client. The review includes OWASP security pattern scanning out of the box.
+> It integrates with Claude Code, Cursor, Cline — any MCP client. The review includes deterministic local security-pattern checks out of the box; these checks are focused patterns, not a claim of complete industry-framework coverage.
 >
 > GitHub: https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review
 > Install: `uvx --from aicraft-code-review --with "mcp<2" mcp-code-review` (PyPI 0.1.2)
@@ -35,7 +35,7 @@
 > claude mcp add code-review -- uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
 > ```
 >
-> Now you can just ask Claude to "review this code" and it runs structural analysis + OWASP checks before responding. No more pasting into ChatGPT.
+> Now you can just ask Claude to "review this code" and it runs structural analysis plus deterministic local security-pattern checks before responding. No more pasting into ChatGPT.
 >
 > It's an open MCP server, works with Cursor/Cline too. The review output is way more detailed than what Claude gives you by default because it's running purpose-built analysis tools. The optional Team Rules Pack is a one-time $49 add-on; Team Updates is still an early-access offer, not a live subscription.
 
@@ -46,7 +46,7 @@
 > **Tagline:** AI code review that works in your editor — no SaaS fees, no uploads
 >
 > **Description:**
-> MCP Code Review Server brings production-grade code review to your AI coding assistant.
+> MCP Code Review Server brings structured local code review to your AI coding assistant.
 >
 > **Key Features:**
 > - 🔒 Deterministic local security-pattern checks built in
