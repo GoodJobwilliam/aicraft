@@ -11,6 +11,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 5. **A3** is closed as of 2026-09-08. Do not contact; retain as research. **A5**, **A6**, and **A8** already have discussion or promotional replies; do not add an unsolicited tool pitch.
 6. **A10** is a fresh research candidate with no comments. Recheck the issue and repository instructions before any send; require explicit user confirmation.
 7. **A11** is a fresh MCP design candidate with a maintainer decision already recorded. Recheck the protocol details before any send; require explicit user confirmation and do not pitch the product.
+8. **A12** is a maintainer-authored local-model experiment in NetworKit. Recheck the experiment and current comments before any send; require explicit user confirmation and keep the reply focused on a deterministic pre-check, not a product pitch.
 
 ## A1 — code-review-graph #703
 
@@ -100,6 +101,14 @@ Issue: https://github.com/dheerajjha/reviewer/issues/4
 > The decision to keep MCP on the existing local HTTP server gives the pull-side workflow a clear boundary. I would version the review document separately from the renderer and keep each comment response addressable by a stable id, severity, file/line location, and surrounding context. That lets an agent fetch one comment at a time without parsing Markdown, while the server can still render the same object for humans. Would the `code-review/v1` document be the canonical schema for both `get_review` and the per-comment tools, or do you expect those responses to evolve independently?
 
 Manual note: this is an architecture discussion, not a product pitch. Do not include the trial URL unless the maintainer asks for a working local checker or comparison.
+
+## A12 — NetworKit #1471
+
+Issue: https://github.com/networkit/networkit/issues/1471
+
+> This is a useful experiment because it separates local-model discovery from independent validation and a reproduction script. One way to keep the slow model pass focused could be a fast, deterministic pre-check over the changed files first: classify obvious security/quality patterns, report stable locations, and let the Qwen pass spend its time on novel behavior, reproduction, and proposed fixes. The pre-check should remain advisory and never replace the independent validation step. Would a staged workflow like that help reduce the number of files or hypotheses the local model has to inspect, or is broad exploratory coverage the main goal here?
+
+Manual note: this is a technical workflow question based on the maintainer's local-model experiment. Do not include a product or trial link unless the maintainer asks for a working comparison.
 
 ## Manual send checklist
 
