@@ -115,6 +115,18 @@ def test_trial_feedback_forms_capture_decision_role():
         assert "decision maker" in content or "决策者" in content
 
 
+def test_trial_forms_capture_target_start_month():
+    for path in [
+        ROOT / ".github/ISSUE_TEMPLATE/team-trial.yml",
+        ROOT / ".github/ISSUE_TEMPLATE/team-trial-zh.yml",
+        ROOT / ".github/ISSUE_TEMPLATE/trial-feedback.yml",
+        ROOT / ".github/ISSUE_TEMPLATE/trial-feedback-zh.yml",
+    ]:
+        content = path.read_text(encoding="utf-8")
+        assert "id: target-start-month" in content
+        assert "YYYY-MM" in content
+
+
 def test_ai_agent_install_guide_uses_the_real_console_script():
     content = (ROOT / "products/mcp-code-review/llms-install.md").read_text(encoding="utf-8")
     assert '"--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"' in content

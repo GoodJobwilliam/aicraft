@@ -1,5 +1,9 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 109）
+- 中英文 team-trial 与 trial-feedback 表单新增必填 target-start-month（YYYY-MM），补齐“有条件承诺”所需的明确目标开始月份；只读报告现在显示该字段。
+- 新增回归测试，PYTHONPATH=. pytest -q：49 passed；公开 trial/feedback issues 仍为 0，漏斗仍为 1 contact / 0 tests / $0 MRR。未发送外部消息、未新增付费支出。
+
 ## 2026-09-14（收入主线 round 108）
 - 中英文 trial-feedback Issue Form 新增必填 decision-role 字段，区分购买决策者、推荐者、实际测试工程师和纯调研者；只读报告现在会输出该字段，便于优先跟进可决策线索。
 - 新增回归测试，PYTHONPATH=. pytest -q：48 passed；未发送外部消息、未新增付费支出，当前公开 trial/feedback issues 仍为 0，漏斗仍为 1 contact / 0 tests / $0 MRR。

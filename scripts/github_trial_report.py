@@ -38,6 +38,8 @@ _FIELD_ALIASES = {
     "你在决策中的角色": "decision_role",
     "decision timing": "decision_window",
     "决策时间": "decision_window",
+    "target start month": "target_start_month",
+    "目标开始月份": "target_start_month",
     "conditional start commitment": "precommitment",
     "有条件的开始承诺": "precommitment",
     "offer tier discussed": "offer_tier",
@@ -110,6 +112,7 @@ def issue_record(issue: dict[str, object]) -> dict[str, str]:
         "updates_interest": answers.get("updates_interest", ""),
         "decision_role": answers.get("decision_role", ""),
         "decision_window": answers.get("decision_window", ""),
+        "target_start_month": answers.get("target_start_month", ""),
         "precommitment": answers.get("precommitment", ""),
         "next_step": answers.get("next_step", ""),
     }
@@ -169,6 +172,7 @@ def report(issues: list[dict[str, object]], *, repo: str = DEFAULT_REPO) -> str:
                 f"   Offer signal: {record['offer_tier'] or 'unselected'}",
                 f"   Decision role: {record['decision_role'] or 'unknown'}",
                 f"   Decision window: {record['decision_window'] or 'unknown'}",
+                f"   Target start month: {record['target_start_month'] or 'unknown'}",
                 f"   Conditional commitment: {record['precommitment'] or 'not answered'}",
                 "   Action: manually verify scope, price, start date, and payment before updating OUTREACH_LOG.csv.",
             ]
