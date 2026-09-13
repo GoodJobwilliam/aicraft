@@ -1,5 +1,11 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 111）
+- 重新通过 GitHub 公共 API 核验 A9（picatz/flowstate#1584）：issue 仍 open，评论仍只有 GoodJobwilliam 于 2026-09-13 发布的技术评论，维护者尚未回复；保持等待，不发送重复跟进。
+- 独立试用包解压后实跑成功：输出 High command injection 与 Medium team-convention，预期退出码为 1；`products/mcp-code-review-trial.zip` 与源码脚本 SHA-256 一致，产品 ZIP 归档校验通过。
+- 线上 `https://aicraft.vip/`、`/trial.html`、`/team-updates.html` 和试用 ZIP 均 HTTP 200；`PYTHONPATH=. pytest -q`：50 passed。
+- 当前真实漏斗仍为 1 contact / 0 tests / $0 MRR；未发送外部消息、未新增付费支出。Team Updates recurring checkout 尚未自动化，继续只通过范围确认后的人工流程推进。
+
 ## 2026-09-14（收入主线 round 110）
 - 只读试用报告现在校验 target-start-month：只接受真实日历月份的 YYYY-MM，缺失或非法值会分别标记 missing/invalid，不会被误当作合格的开始承诺。
 - 跟进手册同步要求有效 YYYY-MM；新增回归测试，PYTHONPATH=. pytest -q：50 passed。公开 trial/feedback issues 仍为 0，漏斗仍为 1 contact / 0 tests / $0 MRR；未发送外部消息、未新增付费支出。
