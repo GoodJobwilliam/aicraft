@@ -55,6 +55,7 @@
         <section class="intro"><h2>你需要什么</h2><p class="muted">一个终端和 Python 工具链。下面命令使用当前 PyPI 版本 <code>0.1.2</code>，示例文件已经放在仓库中。</p></section>
         <p class="muted" style="margin-bottom:20px"><a href="/products/mcp-code-review-trial.zip">下载独立试用包</a>（包含示例、共享 JSON 配置和中英文说明），不想克隆仓库时可直接使用。</p>
         <p class="muted" style="margin-bottom:20px">如果使用下面的克隆或直接下载路径，请先完成文件下载，再运行示例命令。独立试用包解压后可以直接运行 <code>./run-trial.sh</code>。</p>
+        <p class="muted" style="margin-bottom:20px">最快路径：<code>mkdir -p aicraft-trial &amp;&amp; cd aicraft-trial &amp;&amp; curl -fsSLO https://aicraft.vip/products/mcp-code-review-trial.zip &amp;&amp; unzip -q mcp-code-review-trial.zip &amp;&amp; ./run-trial.sh</code></p>
         <section id="steps" class="steps">
             <article class="step"><div><h3>运行示例审查</h3><p class="muted">最快路径是用 <code>uvx</code> 隔离运行一次审查；它会为本次运行安装公开包并直接调用审查命令。</p><pre><code>uvx --from aicraft-code-review --with "mcp&lt;2" mcp-code-review review-file sample.py</code></pre><p class="muted">或者先安装当前 PyPI 版本，再运行同一条命令：</p><pre><code>pip install "aicraft-code-review==0.1.2" "mcp&lt;2"&#10;mcp-code-review review-file sample.py</code></pre><p class="muted">独立试用包还包含 <code>./run-trial.sh</code>，会自动选择 <code>uvx</code> 或临时 Python fallback。</p></div></article>
             <article class="step"><div><h3>下载试用文件</h3><p class="muted">克隆仓库并进入试用目录，相邻的 JSON 配置会自动发现。</p><pre><code>git clone https://github.com/GoodJobwilliam/aicraft.git

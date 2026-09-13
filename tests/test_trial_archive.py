@@ -39,6 +39,8 @@ def test_trial_pages_use_a_directly_executable_first_review_command():
     assert chinese.count("试试自己的规则") == 1
     assert "Complete that file download first" in english
     assert "先完成文件下载" in chinese
+    assert "curl -fsSLO https://aicraft.vip/products/mcp-code-review-trial.zip" in english
+    assert "curl -fsSLO https://aicraft.vip/products/mcp-code-review-trial.zip" in chinese
 
 
 def test_trial_launcher_prefers_uvx_and_has_a_python_fallback():
