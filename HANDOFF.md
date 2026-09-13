@@ -75,7 +75,7 @@
 
 ## PATROL LOG
 
-- **2026-09-14（收入主线 round 98）**：通过 GitHub 公共 API 核验新候选 `techie2000/template-docs#61`（Copilot PR review 的 repo-owned skill / MCP context 设计，open、0 comments、2026-09-03 更新），加入 `OUTREACH_QUEUE.md` 和 `OUTREACH_DRAFTS.md` 的 A10；仅准备技术问题，不发送评论、不计联系人或收入，发送前仍需用户明确确认。随后将独立试用包的 `run-trial.sh` 改为优先使用 `uvx`，缺少 `uvx` 时把公开 PyPI `0.1.2` 安装到临时目录并在退出时清理；中英文说明同步，重建两个分发 ZIP，归档/安装测试 `21 passed`。未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / $0 MRR。
+- **2026-09-14（收入主线 round 98）**：通过 GitHub 公共 API 核验新候选 `techie2000/template-docs#61`（Copilot PR review 的 repo-owned skill / MCP context 设计，open、0 comments、2026-09-03 更新），加入 `OUTREACH_QUEUE.md` 和 `OUTREACH_DRAFTS.md` 的 A10；仅准备技术问题，不发送评论、不计联系人或收入，发送前仍需用户明确确认。随后将独立试用包的 `run-trial.sh` 改为优先使用 `uvx`，缺少 `uvx` 时把公开 PyPI `0.1.2` 安装到临时目录并在退出时清理；中英文说明同步，重建两个分发 ZIP，归档/安装测试 `21 passed`。中英文试用页已直接展示 `./run-trial.sh` 和 fallback 说明；live 页面与 live ZIP 核验为当前内容。未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / $0 MRR。
 
 - **2026-09-14（收入主线 round 97）**：将中英文 Team Trial Issue Form 增加必填 `offer-tier` 字段（免费服务器 / Team Rules Pack / Starter / Team Pilot / 范围未清晰），并让只读报告解析新字段；新增回归测试，根测试 `39 passed`。该改动已通过 Git Data API 同步到远端 commit `741f0d7`，使团队试用线索能直接归因到具体 offer；当前仍无真实试用、预承诺或付款。
 
