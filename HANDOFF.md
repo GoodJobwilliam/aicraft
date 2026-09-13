@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 121）
+- GitHub Release `mcp-code-review-0.1.2` 说明已补充两个资产的直接下载链接和 SHA-256：试用包 `6e33ea89dbdd8cc9742c461678ab180aebaa2cfc75d539bb2dde8e8a4b51a052`，源码包 `7f5bebd7b9d428e0796002a600766c63427744f81c8133934b025aaa0778fa1e`。
+- A9 仍只有 GoodJobwilliam 的一条评论，维护者没有回复；A2 仍未获用户明确发送确认，因此没有发布任何新的外部评论。
+- 未新增付费支出；公开分发与产品测试状态不改变，真实漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR。
+
 ## 2026-09-14（收入主线 round 120）
 - 首页生产核验完成：`https://aicraft.vip/` 与 `/zh.html` 均 HTTP 200，英文出现 `Release downloads`，中文出现 `版本下载`；远端 `main` 为 `61261d8...`。
 - `PYTHONPATH=. pytest -q`：54 passed。GitHub Release 资产下载量仍为 0；PyPI Stats 最近一次成功快照仍是 2 / 33 / 352（1 日 / 7 日 / 30 日），随后请求被 API 429 限流，未把限流当作数据变化。
