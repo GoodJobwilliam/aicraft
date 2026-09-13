@@ -13,6 +13,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 7. **A11** is a fresh MCP design candidate with a maintainer decision already recorded. Recheck the protocol details before any send; require explicit user confirmation and do not pitch the product.
 8. **A12** is a maintainer-authored local-model experiment in NetworKit. Recheck the experiment and current comments before any send; require explicit user confirmation and keep the reply focused on a deterministic pre-check, not a product pitch.
 9. **A13** is a fresh Graft issue about a free AI code-review first pass. Recheck the issue and repository context before any send; require explicit user confirmation and keep the reply technical, with no product pitch.
+10. **A14** is a FinOps Toolkit issue requesting a GitHub Copilot code-review skill from existing repository standards. Recheck the issue and repository instructions before any send; require explicit user confirmation and keep the reply technical, with no product pitch.
 
 ## A1 — code-review-graph #703
 
@@ -118,6 +119,14 @@ Issue: https://github.com/trailhq/Graft/issues/368
 > A free first-pass reviewer seems useful when it is clearly separated from the merge decision. I would keep the first pass local and deterministic where possible: stable finding IDs, severity values, and a CI exit code, with the hosted or agentic review adding context rather than silently becoming the policy gate. That gives maintainers a readable PR report while keeping repository-owned rules reproducible. Would you want the free service to run only on public repositories, or should the workflow also support a local mode for teams that cannot upload source?
 
 Manual note: this is a technical design question based on the maintainer's issue. Do not include a product or trial link unless the maintainer asks for a working local comparison.
+
+## A14 — FinOps Toolkit #2274
+
+Issue: https://github.com/microsoft/finops-toolkit/issues/2274
+
+> Grounding Copilot in the existing coding guidelines and lint tests seems like the right starting point. For conventions that are already testable, I would give the skill stable rule identifiers and severity levels, then link each instruction back to its source guideline or test. That lets a review comment be specific enough to verify locally, while the skill still supplies the language and path context that a generic lint result cannot. Would you prefer the first version to list only rules with an existing automated test, or include the style-guide conventions as advisory findings from the start?
+
+Manual note: this is a technical review-skill design question, not a product pitch. Do not include the trial URL unless the maintainer asks for a working comparison.
 
 ## Manual send checklist
 
