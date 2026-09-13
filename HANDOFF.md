@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 114）
+- 将中英文试用页的反馈/团队邮件模板与 Issue Form 对齐：试用结果邮件现在也收集 offer tier、决策角色、决策时间、目标开始月份和有条件承诺，避免最接近转化的反馈无法进入资格化流程。
+- 新增回归测试，`PYTHONPATH=. pytest -q`：52 passed；`git diff --check` 通过。仅修改网站入口，不涉及试用 ZIP。
+- 未发送外部消息、未新增付费支出；公开 trial/feedback issues 仍为 0，漏斗仍为 1 contact / 0 tests / 0 paid signals / $0 MRR。
+
 ## 2026-09-14（收入主线 round 113）
 - 通过 GitHub 公共 API 重新核验候选外联：A2 `sdempsay/agentic-review-tool#5` 仍 open、0 comments；A13 `trailhq/Graft#368` 仍 open、0 comments；A14 `microsoft/finops-toolkit#2274` 仍 open、1 条微软机器人确认。
 - A2 与产品的 MCP stdio / 稳定结果契约最贴合，保留为下一条候选；A13/A14 继续排队。未发送任何评论，未新增联系人或收入，等待用户对具体草稿明确确认。
