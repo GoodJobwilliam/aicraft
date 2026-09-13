@@ -1,4 +1,5 @@
 import csv
+from datetime import date
 from pathlib import Path
 
 import pytest
@@ -83,6 +84,30 @@ def test_target_gap_reports_reached_status(tmp_path: Path):
     assert "Remaining: $0.00 MRR" in output
     assert "Target status: reached" in output
     assert "additional customers" not in output
+
+
+def test_follow_up_queue_marks_due_and_upcoming_rows(tmp_path: Path):
+    path = tmp_path / "log.csv"
+    write_rows(
+        path,
+        [
+            row(contact_or_audience="due-team", next_follow_up="2026-08-30", next_action="send scope sheet"),
+            row(contact_or_audience="later-team", next_follow_up="2026-09-20", next_action="wait for reply"),
+        ],
+    )
+
+    output = report(path, date(2026, 9, 14))
+
+    assert "Follow-up queue (as of 2026-09-14)" in output
+    assert "due: 2026-08-30 — due-team — send scope sheet" in output
+    assert "upcoming: 2026-09-20 — later-team — wait for reply" in output
+
+
+def test_follow_up_date_must_be_iso_format(tmp_path: Path):
+    path = tmp_path / "log.csv"
+    write_rows(path, [row(next_follow_up="next week")])
+    with pytest.raises(ValueError, match="next_follow_up"):
+        report(path, date(2026, 9, 14))
 
 
 def test_yes_accepts_chinese_values(tmp_path: Path):

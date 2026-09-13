@@ -7,6 +7,7 @@ import argparse
 import csv
 import math
 from collections import defaultdict
+from datetime import date
 from pathlib import Path
 
 TARGET_MRR = 2000.0
@@ -165,7 +166,32 @@ def _target_gap(mrr: float) -> list[str]:
     return lines
 
 
-def report(path: Path) -> str:
+def _follow_up_summary(rows: list[dict[str, str]], as_of: date | None = None) -> list[str]:
+    """List due and upcoming follow-ups without changing funnel counts."""
+    today = as_of or date.today()
+    scheduled: list[tuple[date, dict[str, str]]] = []
+    for row in rows:
+        raw = row.get("next_follow_up", "").strip()
+        if not raw:
+            continue
+        try:
+            scheduled.append((date.fromisoformat(raw), row))
+        except ValueError as exc:
+            raise ValueError(f"next_follow_up must be YYYY-MM-DD, got {raw!r}") from exc
+
+    if not scheduled:
+        return []
+
+    lines = ["", f"Follow-up queue (as of {today.isoformat()})"]
+    for due, row in sorted(scheduled, key=lambda item: item[0]):
+        status = "due" if due <= today else "upcoming"
+        contact = row.get("contact_or_audience", "unknown contact").strip() or "unknown contact"
+        action = row.get("next_action", "").strip() or "review the conversation and choose one next step"
+        lines.append(f"- {status}: {due.isoformat()} — {contact} — {action}")
+    return lines
+
+
+def report(path: Path, as_of: date | None = None) -> str:
     rows = read_rows(path)
     counts = {
         "contacts": len(rows),
@@ -191,6 +217,7 @@ def report(path: Path) -> str:
         ]
     )
     lines.extend(_target_gap(mrr))
+    lines.extend(_follow_up_summary(rows, as_of))
     lines.extend(_tier_summary(rows))
     lines.extend(_source_summary(rows))
     return "\n".join(lines)
@@ -199,9 +226,10 @@ def report(path: Path) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Report AICraft customer-funnel evidence.")
     parser.add_argument("csv_path", nargs="?", type=Path, default=Path("OUTREACH_LOG.csv"))
+    parser.add_argument("--as-of", type=date.fromisoformat, help="Evaluate follow-ups as of YYYY-MM-DD")
     args = parser.parse_args()
     try:
-        print(report(args.csv_path))
+        print(report(args.csv_path, args.as_of))
     except (OSError, ValueError) as exc:
         parser.error(str(exc))
     return 0

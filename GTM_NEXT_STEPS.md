@@ -22,6 +22,7 @@
 - Qualified replies: 0; team tests: 0; paid signals: 0; pre-commitments: 0
 - Confirmed one-time revenue: $0; confirmed MRR: $0
 - `python3 scripts/funnel_report.py` now reports the remaining MRR gap and the additional customer count at Starter and Team Pilot pricing; the current evidence requires 21 additional Team Pilot customers (or 106 Starter customers) to reach $2,000 MRR.
+- The same report now prints a dated follow-up queue; use `python3 scripts/funnel_report.py --as-of YYYY-MM-DD` during weekly review so scheduled contacts are marked due or upcoming without changing funnel counts.
 - The public trial was run end-to-end from PyPI 0.1.2 in a clean temporary environment: High command-injection + Medium team-convention, exit code 1.
 - The local release candidate passes 49 MCP tests, 39 root tests, Ruff, and wheel/sdist schema-content checks. PyPI 0.1.3 is not published.
 
