@@ -43,6 +43,13 @@ def test_trial_pages_use_a_directly_executable_first_review_command():
     assert "curl -fsSLO https://aicraft.vip/products/mcp-code-review-trial.zip" in chinese
 
 
+def test_trial_pages_put_file_setup_before_sample_execution():
+    english = (ROOT / "trial.html").read_text(encoding="utf-8")
+    chinese = (ROOT / "trial.zh.html").read_text(encoding="utf-8")
+    assert english.index("Download the trial files") < english.index("Run the sample review")
+    assert chinese.index("下载试用文件") < chinese.index("运行示例审查")
+
+
 def test_trial_launcher_prefers_uvx_and_has_a_python_fallback():
     launcher = (TRIAL / "run-trial.sh").read_text(encoding="utf-8")
     assert "uvx --from aicraft-code-review --with 'mcp<2' mcp-code-review review-file sample.py" in launcher

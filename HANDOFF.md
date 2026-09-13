@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 105）
+- 将中英文自助试用页的三步顺序调整为“下载试用文件 → 运行示例审查 → 试试自己的规则”，修复首次访问者先运行 \`sample.py\` 但尚未取得示例文件的转化摩擦；新增回归断言确保顺序不会回退。
+- 生产环境 \`https://aicraft.vip/trial.html\` 与 \`/trial.zh.html\` 均返回 HTTP 200；远端页面当前仍是旧顺序，待本地提交通过 GitHub API 同步后再复核。
+- \`PYTHONPATH=. pytest -q\`：44 passed；试用/安装定向测试：21 passed；\`git diff --check\` 通过。未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / \`$0 MRR\`。
+
 ## CURRENT STATE
 - **目标**: aicraft 达到 $2,000 MRR；预算 $0；工作区 `/Users/william/work/AIcompany/aicraft`
 - **策略更新（2026-08-30）**: 聚焦 `mcp-code-review` 主线；免费开源 server + $49 Team Rules Pack + Team Updates 早期体验（$19/月或 $190/年）。不新增任何付费工具、广告或基础设施。
