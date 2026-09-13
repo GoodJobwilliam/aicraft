@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 119）
+- 中英文首页 MCP 产品卡新增版本化 GitHub Release 下载入口，连接免费试用包和源码包；新增回归断言，`PYTHONPATH=. pytest -q`：54 passed，`git diff --check` 通过。
+- 本地改动尚未同步到 Pages，当前线上首页仍 HTTP 200 但还未出现该新按钮；待 Git Data API 同步后再复核，不把本地结果当作生产结果。
+- 未发送外部评论、未新增付费支出；漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR。
+
 ## 2026-09-14（收入主线 round 118）
 - 新增只读 `scripts/distribution_report.py`：汇总 PyPI 最近 1/7/30 天下载量和 GitHub Release 资产下载量，并明确声明下载量不是联系人、试用、客户或收入；新增 2 条回归测试。
 - 测试结果：`PYTHONPATH=. pytest -q` 54 passed，`git diff --check` 通过。PyPI Stats curl 当前返回 `last_day=2`、`last_week=33`、`last_month=352`；GitHub Release 两个资产当前下载量均为 0。脚本直连 PyPI Stats 遇到临时 429，已改为清晰错误而非 traceback。

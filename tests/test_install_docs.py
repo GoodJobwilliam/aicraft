@@ -240,6 +240,9 @@ def test_homepage_exposes_a_three_step_mcp_path():
     assert 'id="mcp-path"' in zh
     assert "/trial.zh.html" in zh
     assert "/team-updates.zh.html" in zh
+    release = "releases/tag/mcp-code-review-0.1.2"
+    assert release in content
+    assert release in zh
 
 
 def test_team_updates_email_path_captures_qualification_fields():
