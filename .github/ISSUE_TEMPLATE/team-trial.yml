@@ -96,6 +96,20 @@ body:
       required: true
 
   - type: dropdown
+    id: offer-tier
+    attributes:
+      label: Offer tier to validate
+      description: Which single path should the free trial validate? This records interest only; it is not a payment.
+      options:
+        - Free server only
+        - Team Rules Pack
+        - Team Updates Starter
+        - Team Updates Team Pilot
+        - Scope not clear yet
+    validations:
+      required: true
+
+  - type: dropdown
     id: decision-role
     attributes:
       label: Role in the decision

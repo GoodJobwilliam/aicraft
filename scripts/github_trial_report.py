@@ -42,6 +42,8 @@ _FIELD_ALIASES = {
     "有条件的开始承诺": "precommitment",
     "offer tier discussed": "offer_tier",
     "讨论的增值档位": "offer_tier",
+    "offer tier to validate": "offer_tier",
+    "要验证的增值档位": "offer_tier",
     "next step": "next_step",
     "下一步": "next_step",
 }

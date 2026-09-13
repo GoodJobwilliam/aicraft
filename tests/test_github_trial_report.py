@@ -57,6 +57,13 @@ def test_chinese_fields_are_supported():
     assert fields == {"team_size": "3", "offer_tier": "Team Updates Starter"}
 
 
+def test_team_trial_offer_tier_label_is_supported():
+    fields = parse_form_body(
+        "### Team size\n4\n\n### Offer tier to validate\nTeam Updates Team Pilot\n"
+    )
+    assert fields == {"team_size": "4", "offer_tier": "Team Updates Team Pilot"}
+
+
 def test_report_is_explicitly_manual_and_zero_revenue():
     output = report(
         [

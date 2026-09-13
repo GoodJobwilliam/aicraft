@@ -78,6 +78,17 @@ def test_root_readme_exposes_trial_and_team_feedback_paths():
     assert "TEAM_PILOT_BRIEF.md" in content
 
 
+def test_team_trial_forms_capture_an_explicit_offer_tier():
+    for path in [
+        ROOT / ".github/ISSUE_TEMPLATE/team-trial.yml",
+        ROOT / ".github/ISSUE_TEMPLATE/team-trial-zh.yml",
+    ]:
+        content = path.read_text(encoding="utf-8")
+        assert "id: offer-tier" in content
+        assert "Scope not clear yet" in content or "还不清楚具体范围" in content
+        assert "This records interest only" in content or "这里只记录意向" in content
+
+
 def test_ai_agent_install_guide_uses_the_real_console_script():
     content = (ROOT / "products/mcp-code-review/llms-install.md").read_text(encoding="utf-8")
     assert '"--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"' in content

@@ -96,6 +96,20 @@ body:
       required: true
 
   - type: dropdown
+    id: offer-tier
+    attributes:
+      label: 要验证的增值档位
+      description: 免费试用最需要验证哪条路径？这里只记录意向，不会产生付款。
+      options:
+        - 仅使用免费服务器
+        - Team Rules Pack
+        - Team Updates Starter
+        - Team Updates Team Pilot
+        - 还不清楚具体范围
+    validations:
+      required: true
+
+  - type: dropdown
     id: decision-role
     attributes:
       label: 你在决策中的角色
