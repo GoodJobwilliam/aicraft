@@ -35,6 +35,8 @@ For a real pull-request check, copy the [secretless GitHub Actions starter](./pr
 
 Marketplaces: [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.GoodJobwilliam%2Faicraft-code-review) · [Smithery](https://smithery.ai/servers/yaohuixue1/mcp-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server) · [PyPI](https://pypi.org/project/aicraft-code-review/)
 
+For a repeatable, read-only distribution audit, run `python3 scripts/distribution_report.py`. It reports PyPI and GitHub Release downloads separately; downloads are distribution signals, not contacts, customers, or revenue.
+
 ### AgentPowers Skills (Free)
 
 | Skill | Description |

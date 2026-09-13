@@ -1,5 +1,9 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 122）
+- 根 README 新增只读分发审计命令 `python3 scripts/distribution_report.py` 及“下载量不等于联系人、客户或收入”的说明；新增回归断言。
+- `PYTHONPATH=. pytest -q`：54 passed，`git diff --check` 通过；未发送外部评论、未新增付费支出，真实漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR。
+
 ## 2026-09-14（收入主线 round 121）
 - GitHub Release `mcp-code-review-0.1.2` 说明已补充两个资产的直接下载链接和 SHA-256：试用包 `6e33ea89dbdd8cc9742c461678ab180aebaa2cfc75d539bb2dde8e8a4b51a052`，源码包 `7f5bebd7b9d428e0796002a600766c63427744f81c8133934b025aaa0778fa1e`。
 - A9 仍只有 GoodJobwilliam 的一条评论，维护者没有回复；A2 仍未获用户明确发送确认，因此没有发布任何新的外部评论。
