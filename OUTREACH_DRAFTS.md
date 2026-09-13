@@ -10,6 +10,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 4. **A9** was sent on 2026-09-13 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 5. **A3** is closed as of 2026-09-08. Do not contact; retain as research. **A5**, **A6**, and **A8** already have discussion or promotional replies; do not add an unsolicited tool pitch.
 6. **A10** is a fresh research candidate with no comments. Recheck the issue and repository instructions before any send; require explicit user confirmation.
+7. **A11** is a fresh MCP design candidate with a maintainer decision already recorded. Recheck the protocol details before any send; require explicit user confirmation and do not pitch the product.
 
 ## A1 — code-review-graph #703
 
@@ -91,6 +92,14 @@ Issue: https://github.com/techie2000/template-docs/issues/61
 > The separation between repo-owned review context and host-level model review seems useful. I would keep deterministic checks in a repo-committed config or MCP server and let Copilot consume a stable result envelope (finding id, severity, location, and decision) rather than asking the model to infer policy from prose. That preserves a reproducible CI gate while allowing Copilot to explain findings. Would you expect the skill to own the policy wording, or should the MCP result be the canonical source for both Copilot and CI?
 
 Manual note: this is a technical design question, not a product pitch. Do not include the trial URL unless the maintainer asks for a working local example.
+
+## A11 — reviewer #4
+
+Issue: https://github.com/dheerajjha/reviewer/issues/4
+
+> The decision to keep MCP on the existing local HTTP server gives the pull-side workflow a clear boundary. I would version the review document separately from the renderer and keep each comment response addressable by a stable id, severity, file/line location, and surrounding context. That lets an agent fetch one comment at a time without parsing Markdown, while the server can still render the same object for humans. Would the `code-review/v1` document be the canonical schema for both `get_review` and the per-comment tools, or do you expect those responses to evolve independently?
+
+Manual note: this is an architecture discussion, not a product pitch. Do not include the trial URL unless the maintainer asks for a working local checker or comparison.
 
 ## Manual send checklist
 
