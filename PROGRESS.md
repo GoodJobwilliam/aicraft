@@ -32,7 +32,7 @@
 | Git Commit Assistant | Agent Skill | 免费 | AgentPowers | ✅ 已上架 |
 | Python CLI Generator | 代码模板 | $49 | Creem | ✅ 已打包 |
 | Python CLI 中文模板 | 代码模板 | $19 | Creem | ✅ 已打包 |
-| MCP Code Review Server | MCP 工具 | $49 | Creem | ✅ 已打包 |
+| MCP Code Review Server | MCP 工具 | 免费 MIT；Team Rules Pack $49 | GitHub / PyPI + Creem add-on | ✅ 已打包 |
 | FastAPI Starter Kit | 代码模板 | $59 | Creem | ✅ 已打包 |
 | AI Agent Prompts Pack | Prompt 合集 | $29 | Creem | ✅ 已打包 |
 | API Development Prompts | Prompt 合集 | $19 | Creem | ✅ 已打包 |
