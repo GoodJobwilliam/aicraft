@@ -1,4 +1,4 @@
-# HANDOFF CONTEXT (updated 2026-08-30 CST)
+# HANDOFF CONTEXT (updated 2026-09-13 CST)
 
 ## CURRENT STATE
 - **目标**: aicraft 达到 $2,000 MRR；预算 $0；工作区 `/Users/william/work/AIcompany/aicraft`
@@ -6,8 +6,8 @@
 - **本轮已完成**: 英文/中文首页首屏收敛到 MCP Code Review；新增 `team-updates.html` / `team-updates.zh.html`；新增预售说明、价格、邮件收集入口和中英文 GitHub team-trial Issue Forms（使用仓库已有 `question` 标签和标题前缀，避免依赖额外权限）；仓库禁用空白 issue 并提供文档/早期体验联系入口；中英文产品 README 也接入对应试用表单与 10 分钟自助试用包；README、发布指南、市场提交信息和社交草稿同步 Team Updates 口径；新增 `OUTREACH_LOG.md`；新增同域名中英文自助试用页 `trial.html` / `trial.zh.html`，首页与 Team Updates CTA 已切换，sitemap 已收录。
 - **新增分发资产**: `OUTREACH_PACK.md`（中英文短帖、私信模板、资格问题和以付费承诺为准的验证标准）、`OUTREACH_TARGETS.md`（20 个公开 GitHub 候选项目和技术切入点）、`TRIAL_FOLLOWUP_PLAYBOOK.md`（人工跟进、证据阈值和收入统计口径）以及 `OUTREACH_LOG.csv` + `scripts/funnel_report.py`（可重复的漏斗统计）。
 - **Website**: https://aicraft.vip (EN) + /zh.html (CN) — live；新增 `/trial.html` 与 `/trial.zh.html` 自助试用页，生产环境已返回 200。首页示例报告区展示 Team Rules Pack 真实输出（`MCP_CODE_REVIEW_CONFIG=rules/python.yaml mcp-code-review review-file main.py`，3 Critical / 5 High / Block，exit 2）并直链 Creem $49 结算页（本轮 commit `b5ae2b7`）
-- **Creem**: 9 产品 live，**0 销售 / 0 订阅 / 0 客户**（2026-08-17 复查，无变化）。账号 731685147@qq.com。增值产品 Team Rules Pack `prod_6Z3S3jGNPsCyRSqNi397ZY`（63 条规则 + CI playbook + LLM prompts，$49）
-- **GitHub**: GoodJobwilliam/aicraft，2 stars / 0 forks。⚠️ github.com 直连被墙（api.github.com 可达）→ **推送必须走 API**（recipe 见 TOOLING NOTES）。OAuth token 无 `workflow` scope → `.github/workflows/ci.yml` 无法推送（本地就绪，等 PAT）
+- **Creem**: 9 产品 live，**0 销售 / 0 订阅 / 0 客户**（漏斗复查：2026-09-13）。账号 731685147@qq.com。增值产品 Team Rules Pack `prod_6Z3S3jGNPsCyRSqNi397ZY`（63 条规则 + CI playbook + LLM prompts，$49）
+- **GitHub**: GoodJobwilliam/aicraft，2 stars / 0 forks。⚠️ github.com 直连被墙（api.github.com 可达）→ **推送必须走 API**（recipe 见 TOOLING NOTES）。OAuth token 无 `workflow` scope → `.github/workflows/ci.yml` 和 MCP Trusted Publishing workflow 无法推送；后者已在本地验证，但远端 workflow API 当前只显示 Pages 部署。
 - **登录状态（in-app browser, CDP 9229）**: Google ✅ / GitHub ✅ / Smithery ✅ / Glama ✅ / Creem ✅（QQ 账号）/ IH ✅（Firebase，但 Firestore 被墙不可用）。⚠️ Product Hunt 会话已过期（需重新登录）；PyPI / V2EX / 掘金 未登录——**登录页标签已开好**（PyPI=E60305F8、V2EX=76D6EA55、掘金=BC42B4FB）
 - **网络**: github.com、googleapis.com（Firestore/identitytoolkit）不通——**用户 VPN（MotionPro 同济 vpn.tongji.cn）当前断开**。其余（PyPI/PH/Glama/Dev.to/Smithery/Creem/mcpservers）均可达
 - **PyPI 0.1.2 live**: package metadata now pins `mcp>=1.6,<2`; public install path and docs are aligned.
@@ -47,7 +47,7 @@
 - **YAML 示例修复**（2abd0e2）: README regex pattern 单引号
 - **Glama Dockerfile**（8dca404）: pinned git commit 安装（防 mcp 2.x）
 - **mcp pin fix**（2940d6e，已上线）: package metadata and all install guides use `mcp<2`; the live PyPI 0.1.2 release no longer needs a manual compatibility workaround.
-- **待推送（本地）**: `.github/workflows/ci.yml`（需 PAT workflow scope，Git Data API 也会 404）
+- **待推送（本地）**: `.github/workflows/ci.yml` 与 `.github/workflows/mcp-code-review-release.yml`（需 PAT `workflow` scope，Git Data API 也会 404）
 
 ## TOOLING NOTES
 - **GitHub 推送（github.com 被墙时的标准流程）**: 走 api.github.com Git Data API——① GET `/git/refs/heads/main` 取 BASE；② POST `/git/blobs`（base64 文件内容）；③ GET `/git/commits/BASE` 取 parent tree，POST `/git/trees`（`base_tree` + 变更文件）；④ POST `/git/commits`（注意：GitHub 会把 date 的时区归一化成 UTC 存盘，本地重建 commit 无法字节对齐——接受 SHA 分歧，本地分支与远端树内容保持一致即可，**不要** git pull/push 覆盖远端）；⑤ PATCH `/git/refs/heads/main`。token 取法: `printf "protocol=https\nhost=github.com\n\n" | git credential fill`（password 行）。⚠️ token 无 workflow scope → `.github/workflows/*` 的 tree POST 返回 404
@@ -74,6 +74,8 @@
 7. Creem 销售每周复查（当前 $0）；Dev.to 文章 6 选题: Glama badge + registry 收录 roundup
 
 ## PATROL LOG
+
+- **2026-09-13（收入主线 round 93）**：用户明确确认后，向 `picatz/flowstate#1584` 发布 1 条不带销售链接的技术评论（[issue comment](https://github.com/picatz/flowstate/issues/1584#issuecomment-5654286581)）；真实联系已记录到 `OUTREACH_LOG.csv` 并通过 Git Data API 同步到远端 commit `466855d`。维护者尚未回复，不能计入 qualified reply、试用、意向或收入；当前漏斗为 1 contact / 0 tests / $0 MRR。核验公开 PyPI `0.1.2` wheel 仍不含 bundled schema，因此保留“下一版发布后可用”的文档表述；本地 Trusted Publishing workflow 尚未进入远端 Actions（token 缺少 `workflow` scope）。
 - **2026-08-30（收入主线 round 2）**: 统一公开发布指南、市场提交信息、社交草稿与产品 README 到 PyPI 0.1.2；明确免费 MIT server、$49 Team Rules Pack 与尚未自动收费的 Team Updates；新增 `OUTREACH_LOG.md` 记录 20 个零预算定向触达目标；通过官方 Registry API 核实 0.1.2 已为 `active`，并在临时干净环境安装成功。
 - **2026-08-30（收入主线 round 3）**: 基于公开 GitHub 搜索整理 `OUTREACH_TARGETS.md`，为 20 个相关项目添加公开信号、技术切入点和合规触达顺序；未发送外部消息。
 - **2026-08-30（收入主线 round 4）**: 在临时干净环境安装 PyPI `aicraft-code-review==0.1.2` 并完成 CLI review smoke test；官方 Registry 查询、官网四个页面和两个 Creem 结算链接均返回 200。当前仍无已验证销售或付费预承诺。

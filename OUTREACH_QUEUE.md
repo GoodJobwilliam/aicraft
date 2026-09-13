@@ -1,6 +1,6 @@
 # Outreach Queue (public evidence)
 
-Generated 2026-09-03 from the public GitHub repository API. Every row is a prospect, not a customer or endorsement. This file records public metadata and suggested technical questions only; it does not send messages or create issues.
+Generated 2026-09-13 from the public GitHub repository API. Every row is a prospect, not a customer or endorsement. This file records public metadata and suggested technical questions only; it does not send messages or create issues.
 
 Read each repository README, contribution guide, and recent issues before contacting a maintainer. Record any real contact or reply in `OUTREACH_LOG.csv`.
 
@@ -30,7 +30,7 @@ These candidates were added after a second public-API search. The evidence is in
 | 15 | [mattzcarey/shippie](https://github.com/mattzcarey/shippie) | Issues enabled; 22 open issues; last push 2026-08-12; TypeScript code-review tooling | [Issues](https://github.com/mattzcarey/shippie/issues) | Which review findings need a stable local policy or CI gate alongside your current workflow? |
 | 16 | [lwgerhardt/agent-co-op-mcp](https://github.com/lwgerhardt/agent-co-op-mcp) | Open issue #40 covers MCP DX, structured tool returns, version drift, and CI polish; Python/MCP project | [Issue #40](https://github.com/lwgerhardt/agent-co-op-mcp/issues/40) | Would a versioned structured result contract and a single package-version source make the MCP/CLI boundary easier to maintain? |
 
-## Issue-backed signals (API checked 2026-09-03)
+## Issue-backed signals (API checked 2026-09-13)
 
 These rows have a concrete public issue related to the product problem. They are still prospects, not contacts. Read the full thread and contribution rules before deciding whether a technical reply is appropriate; do not turn a bug report into a sales pitch.
 
@@ -38,7 +38,7 @@ These rows have a concrete public issue related to the product problem. They are
 |---:|---|---|---|
 | A1 | [tirth8205/code-review-graph#703](https://github.com/tirth8205/code-review-graph/issues/703) | Maintainer's project; open issue reports Cursor install failure and uncertainty about `uvx` command configuration on macOS | Could a documented stdio command plus a copy-paste config example make the Cursor install path deterministic? I maintain a separate local MCP reviewer and can compare the setup assumptions if useful. |
 | A2 | [sdempsay/agentic-review-tool#5](https://github.com/sdempsay/agentic-review-tool/issues/5) | Open task explicitly proposes an MCP stdio server for code review across Grok, Claude Desktop, Cursor, and OpenCode | For the stdio entry point, are stable severity IDs and CI exit codes part of the contract? That makes it easier to keep editor feedback and merge gates consistent. |
-| A3 | [unoplatform/uno#24305](https://github.com/unoplatform/uno/issues/24305) | Open issue says a failed or flaky Claude review agent should remain advisory instead of failing the whole PR check rollup | Would separating the advisory review report from the blocking build status solve the false-red signal, while keeping a deterministic local gate available for security findings? |
+| A3 | [unoplatform/uno#24305](https://github.com/unoplatform/uno/issues/24305) | **Closed 2026-09-08** after discussion of provider authentication and advisory checks; research reference only | Do not contact; retain the technical distinction between advisory agent output and deterministic blocking policy as research |
 | A4 | [androidAppGuard/asterinas#4](https://github.com/androidAppGuard/asterinas/issues/4) | Open issue says domain-knowledge retrieval needs a clear MCP interface to improve `aster-code-review` recall | Would a local, deterministic pre-check layer with stable rule IDs complement domain retrieval, so known security and policy patterns stay testable even when external lookup is incomplete? |
 | A5 | [Gabriel-GM5/rpguide#47](https://github.com/Gabriel-GM5/rpguide/issues/47) | Open task proposes Claude AI code-review Actions for every PR and mentions strict TDD/SDD conventions | Would a read-only deterministic review job plus a separate optional comment job make the workflow safer for fork PRs and keep team conventions versioned in the repository? |
 | A6 | [sourcery-ai/sourcery#477](https://github.com/sourcery-ai/sourcery/issues/477) | Open feature request asks for AI code review from the CLI, not only IDE or PR integrations | Would stable CLI exit codes and a local rules file make the CLI review useful as a CI gate as well as an interactive developer command? |
@@ -52,4 +52,18 @@ These rows have a concrete public issue related to the product problem. They are
 3. Discuss the `$49` Team Rules Pack only after the problem is confirmed; discuss Team Updates only when ongoing maintenance is requested.
 4. Log the date, URL, response, and next follow-up. A public reply is a contact, not revenue; only a confirmed payment belongs in revenue fields.
 
-These are public prospects, not customers. Do not infer interest from stars, downloads, or open-issue counts. The candidate metadata is an audit snapshot checked 2026-09-03, not evidence of contact, trial, pre-commitment, or payment.
+These are public prospects, not customers. Do not infer interest from stars, downloads, or open-issue counts. The candidate metadata is an audit snapshot checked 2026-09-13, not evidence of contact, trial, pre-commitment, or payment.
+
+## Current-state recheck (2026-09-13)
+
+The issue-backed rows were rechecked against the public GitHub API before selecting any next contact. A closed issue is research only; it must not receive a new reply.
+
+| Row | Current state | Contact decision | Evidence |
+|---|---|---|---|
+| A1 | Open; maintainer clarified that the reported Add-to-Cursor payload is generated by the website, outside the repository | Do not send the draft unless a new repository-side question appears | [latest maintainer comment](https://github.com/tirth8205/code-review-graph/issues/703#issuecomment-5094872267) |
+| A2 | Open; 0 comments; last updated 2026-07-08 | Candidate for a future technical reply after checking current project activity | [issue #5](https://github.com/sdempsay/agentic-review-tool/issues/5) |
+| A3 | **Closed 2026-09-08**; discussion documented provider authentication and advisory checks | **Do not contact**; retain as research reference | [issue #24305](https://github.com/unoplatform/uno/issues/24305) |
+| A4 | Open; 0 comments; last updated 2026-08-25 | Candidate only if the maintainer is inviting implementation discussion | [issue #4](https://github.com/androidAppGuard/asterinas/issues/4) |
+| A7 | Open; 1 comment authored by GoodJobwilliam on 2026-09-03; no maintainer reply | Wait; do not send a duplicate follow-up | [our comment](https://github.com/lwgerhardt/agent-co-op-mcp/issues/40#issuecomment-5518368662) |
+| A8 | Open; maintainer documented a secretlint decision on 2026-08-23 | Do not pitch AICraft unless asked for a comparison | [maintainer decision](https://github.com/SociableSteve/caroline/issues/79#issuecomment-5387853077) |
+| A9 | Open; 1 comment authored by GoodJobwilliam on 2026-09-13; no maintainer reply | Wait for a reply; no second comment before one arrives | [our comment](https://github.com/picatz/flowstate/issues/1584#issuecomment-5654286581) |
