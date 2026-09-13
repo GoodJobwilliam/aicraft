@@ -29,6 +29,16 @@ def test_trial_pages_link_to_standalone_archive():
         assert "./run-trial.sh" in content
 
 
+def test_trial_pages_use_a_directly_executable_first_review_command():
+    english = (ROOT / "trial.html").read_text(encoding="utf-8")
+    chinese = (ROOT / "trial.zh.html").read_text(encoding="utf-8")
+    command = "uvx --from aicraft-code-review --with \"mcp&lt;2\" mcp-code-review review-file sample.py"
+    assert command in english
+    assert command in chinese
+    assert english.count("Try your own rule") == 1
+    assert chinese.count("试试自己的规则") == 1
+
+
 def test_trial_launcher_prefers_uvx_and_has_a_python_fallback():
     launcher = (TRIAL / "run-trial.sh").read_text(encoding="utf-8")
     assert "uvx --from aicraft-code-review --with 'mcp<2' mcp-code-review review-file sample.py" in launcher

@@ -14,6 +14,7 @@
 - 私密转化入口：中英文试用页新增预填团队资格邮件，覆盖团队规模、语言、流程、痛点、试用时间、档位、决策角色、决策时间和有条件开始承诺；不要求源代码或密钥。
 - 下一步：等待 A7/A9 回复；A2/A10 仅在用户明确确认后发送。远端 Trusted Publishing workflow 仍受 GitHub token 缺少 `workflow` scope 限制。
 - 漏斗报告增强（2026-09-14）：`scripts/funnel_report.py` 现在显示 `$2,000 MRR` 目标、剩余缺口、Starter/Team Pilot 所需新增客户数和下一动作；当前真实日志仍为 `$0 MRR`，对应 106 个 Starter 或 21 个 Team Pilot。
+- 试用路径修复（2026-09-14）：中英文官网试用页和独立 README 的首条命令现在直接执行 `review-file sample.py`，不再出现“只安装后就调用未安装命令”的断链；重建两个 MCP ZIP，并新增页面/归档回归覆盖。
 
 ## 2026-07-20 第一期进度报告
 

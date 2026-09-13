@@ -7,28 +7,25 @@ After the review, a locally built package can print the machine-readable contrac
 ## 1. Install
 
 ```bash
-uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
+uvx --from aicraft-code-review --with "mcp<2" mcp-code-review review-file sample.py
 ```
 
-Or install the current PyPI release into an existing environment:
+If you already use an environment with the package installed, run the same review command directly:
 
 ```bash
 pip install "aicraft-code-review==0.1.2" "mcp<2"
+mcp-code-review review-file sample.py
 ```
 
 ## 2. Run the sample
 
-From this directory, run:
-
-```bash
-mcp-code-review review-file sample.py
-```
-
-Or use the bundled launcher. It uses uvx when available; otherwise it installs the pinned public package into a temporary directory and removes that directory on exit:
+From this directory, run the bundled launcher (it uses the same isolated path and falls back to a temporary Python install):
 
 ```bash
 ./run-trial.sh
 ```
+
+The launcher uses uvx when available; otherwise it installs the pinned public package into a temporary directory and removes that directory on exit.
 
 The adjacent `.mcp-code-review.json` is discovered automatically. You should see a high-severity command-injection finding and a medium-severity team-convention finding. The non-zero exit code is suitable for a merge gate.
 

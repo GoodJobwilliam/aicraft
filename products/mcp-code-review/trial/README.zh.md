@@ -5,28 +5,25 @@
 ## 1. 安装
 
 ```bash
-uvx --from aicraft-code-review --with "mcp<2" mcp-code-review
+uvx --from aicraft-code-review --with "mcp<2" mcp-code-review review-file sample.py
 ```
 
-或者在已有 Python 环境中安装当前 PyPI 版本：
+如果已有环境安装了这个包，直接运行同一条审查命令：
 
 ```bash
 pip install "aicraft-code-review==0.1.2" "mcp<2"
+mcp-code-review review-file sample.py
 ```
 
 ## 2. 运行示例
 
-在这个目录执行：
-
-```bash
-mcp-code-review review-file sample.py
-```
-
-也可以使用试用包自带的启动脚本；有 uvx 时优先使用，否则把固定版本的公开包安装到临时目录，并在退出时删除该目录：
+在这个目录运行自带启动脚本（它使用同一条隔离路径，并在缺少 uvx 时回退到临时 Python 安装）：
 
 ```bash
 ./run-trial.sh
 ```
+
+启动脚本有 uvx 时优先使用，否则把固定版本的公开包安装到临时目录，并在退出时删除该目录。
 
 相邻的 `.mcp-code-review.json` 会自动发现。你应该看到一个 High 级别的命令注入问题和一个 Medium 级别的团队规范问题；非零退出码可以直接用于合并门禁。
 

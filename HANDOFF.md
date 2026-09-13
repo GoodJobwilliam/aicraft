@@ -3,7 +3,7 @@
 ## CURRENT STATE
 - **目标**: aicraft 达到 $2,000 MRR；预算 $0；工作区 `/Users/william/work/AIcompany/aicraft`
 - **策略更新（2026-08-30）**: 聚焦 `mcp-code-review` 主线；免费开源 server + $49 Team Rules Pack + Team Updates 早期体验（$19/月或 $190/年）。不新增任何付费工具、广告或基础设施。
-- **本轮已完成**: 英文/中文首页首屏收敛到 MCP Code Review；新增 `team-updates.html` / `team-updates.zh.html`；新增预售说明、价格、邮件收集入口和中英文 GitHub team-trial Issue Forms（使用仓库已有 `question` 标签和标题前缀，避免依赖额外权限）；仓库禁用空白 issue 并提供文档/早期体验联系入口；中英文产品 README 也接入对应试用表单与 10 分钟自助试用包；README、发布指南、市场提交信息和社交草稿同步 Team Updates 口径；新增 `OUTREACH_LOG.md`；新增同域名中英文自助试用页 `trial.html` / `trial.zh.html`，首页与 Team Updates CTA 已切换，sitemap 已收录。漏斗报告现在还会输出 `$2,000 MRR` 剩余缺口和按 Starter/Team Pilot 价格计算的新增客户数。
+- **本轮已完成**: 英文/中文首页首屏收敛到 MCP Code Review；新增 `team-updates.html` / `team-updates.zh.html`；新增预售说明、价格、邮件收集入口和中英文 GitHub team-trial Issue Forms（使用仓库已有 `question` 标签和标题前缀，避免依赖额外权限）；仓库禁用空白 issue 并提供文档/早期体验联系入口；中英文产品 README 也接入对应试用表单和 10 分钟自助试用包；README、发布指南、市场提交信息和社交草稿同步 Team Updates 口径；新增 `OUTREACH_LOG.md`；新增同域名中英文自助试用页 `trial.html` / `trial.zh.html`，首页与 Team Updates CTA 已切换，sitemap 已收录。漏斗报告现在还会输出 `$2,000 MRR` 剩余缺口和按 Starter/Team Pilot 价格计算的新增客户数；本轮还修复了试用页首条命令未直接执行审查的断链，并重建两个 MCP ZIP。
 - **新增分发资产**: `OUTREACH_PACK.md`（中英文短帖、私信模板、资格问题和以付费承诺为准的验证标准）、`OUTREACH_TARGETS.md`（20 个公开 GitHub 候选项目和技术切入点）、`TRIAL_FOLLOWUP_PLAYBOOK.md`（人工跟进、证据阈值和收入统计口径）以及 `OUTREACH_LOG.csv` + `scripts/funnel_report.py`（可重复的漏斗统计）。
 - **Website**: https://aicraft.vip (EN) + /zh.html (CN) — live；新增 `/trial.html` 与 `/trial.zh.html` 自助试用页，生产环境已返回 200。首页示例报告区展示 Team Rules Pack 真实输出（`MCP_CODE_REVIEW_CONFIG=rules/python.yaml mcp-code-review review-file main.py`，3 Critical / 5 High / Block，exit 2）并直链 Creem $49 结算页（本轮 commit `b5ae2b7`）
 - **Creem**: 9 产品 live，**0 销售 / 0 订阅 / 0 客户**（漏斗复查：2026-09-13）。账号 731685147@qq.com。增值产品 Team Rules Pack `prod_6Z3S3jGNPsCyRSqNi397ZY`（63 条规则 + CI playbook + LLM prompts，$49）
@@ -132,6 +132,7 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-14（收入主线 round 100）：审计自助试用路径，发现官网首步仅运行服务器、下一步却调用未安装到 PATH 的 `mcp-code-review`，会让正确安装的试用者失败。已将中英文试用页、独立试用 README 的首条命令改为直接执行 `review-file sample.py`，保留 `./run-trial.sh` 作为统一 fallback；删除页面重复的自定义规则步骤，重建 `products/mcp-code-review-trial.zip` 与 `products/mcp-code-review.zip`。页面、安装文档、归档回归共 `21 passed`，未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / `$0 MRR`。
 - 2026-09-14（收入主线 round 99）：重新核验 A9 `picatz/flowstate#1584` 和候选 A12 `networkit/networkit#1471` 的公开状态；A9 只有 GoodJobwilliam 于 2026-09-13 发布的 1 条评论且维护者未回复，A12 仍为维护者发起的 open 实验且只有 1 条社区评论，因此没有重复触达或未经确认发帖。增强 `scripts/funnel_report.py` 输出目标缺口：当前日志为 1 contact / 0 tests / 0 paid signals / 0 pre-commitments / `$0 MRR`，距离 `$2,000 MRR` 还需 21 个 Team Pilot 或 106 个 Starter；新增回归测试，根测试 `40 passed`，并通过 shell、compileall、diff 检查。远端同步提交 `c85e86b` 与 `0ffdb8d`，未触碰受 workflow scope 限制的发布 workflow，未新增付费支出。
 - 2026-09-14（收入主线 round 98）：降低独立试用包的安装摩擦：`run-trial.sh` 继续优先使用 `uvx`，缺少 `uvx` 时自动创建临时 Python 环境安装公开 PyPI `0.1.2`，并在退出时清理；中英文试用说明同步，重建 `products/mcp-code-review-trial.zip` 和 `products/mcp-code-review.zip`，归档/安装测试 `21 passed`，shell 语法检查和 `git diff --check` 通过。未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / $0 MRR。
 - 2026-09-03（收入主线 round 97）：为下一版发布候选增加 mcp-code-review schema 命令，直接输出随 Python 包携带的 JSON 结果契约，降低 CI 集成门槛；双语 README、试用说明和 CHANGELOG 已同步，并明确当前公开 PyPI 0.1.2 尚未包含该命令。尚未发布新的 PyPI 版本，未发送外部消息、未新增付费支出，漏斗仍为 0。
