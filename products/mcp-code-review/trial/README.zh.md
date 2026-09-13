@@ -22,7 +22,7 @@ pip install "aicraft-code-review==0.1.2" "mcp<2"
 mcp-code-review review-file sample.py
 ```
 
-也可以使用试用包自带的启动脚本；有 uvx 时优先使用，否则创建临时 Python 环境、安装固定版本的公开包，并在退出时删除临时环境：
+也可以使用试用包自带的启动脚本；有 uvx 时优先使用，否则把固定版本的公开包安装到临时目录，并在退出时删除该目录：
 
 ```bash
 ./run-trial.sh
