@@ -5,8 +5,12 @@ from __future__ import annotations
 
 import argparse
 import csv
+import math
 from collections import defaultdict
 from pathlib import Path
+
+TARGET_MRR = 2000.0
+TARGET_OFFERS = (("Starter", 19.0), ("Team Pilot", 99.0))
 
 REQUIRED_COLUMNS = {
     "date",
@@ -143,6 +147,24 @@ def _source_summary(rows: list[dict[str, str]]) -> list[str]:
     return lines
 
 
+def _target_gap(mrr: float) -> list[str]:
+    """Show the remaining MRR gap and the customer count at each recurring tier."""
+    gap = max(0.0, TARGET_MRR - mrr)
+    lines = ["", "MRR target gap", f"- Target: ${TARGET_MRR:.2f} MRR", f"- Remaining: ${gap:.2f} MRR"]
+    if gap == 0:
+        lines.append("- Target status: reached")
+        return lines
+
+    lines.append("- Target status: not reached")
+    for label, monthly_price in TARGET_OFFERS:
+        customers = math.ceil(gap / monthly_price)
+        lines.append(
+            f"- At ${monthly_price:.0f}/month {label}: {customers} additional customers"
+        )
+    lines.append("- Next action: convert qualified trial feedback into a paid-scope confirmation before recording revenue.")
+    return lines
+
+
 def report(path: Path) -> str:
     rows = read_rows(path)
     counts = {
@@ -163,11 +185,12 @@ def report(path: Path) -> str:
         [
             f"- One-time revenue (USD): {one_time:.2f}",
             f"- MRR (USD): {mrr:.2f}",
-            f"- MRR target progress: {mrr / 2000 * 100:.2f}%",
+            f"- MRR target progress: {mrr / TARGET_MRR * 100:.2f}%",
             "",
             "Only confirmed payments belong in revenue fields. A paid signal or pre-commitment is not revenue.",
         ]
     )
+    lines.extend(_target_gap(mrr))
     lines.extend(_tier_summary(rows))
     lines.extend(_source_summary(rows))
     return "\n".join(lines)

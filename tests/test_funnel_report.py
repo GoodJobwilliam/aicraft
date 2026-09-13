@@ -50,6 +50,9 @@ def test_empty_log_reports_zero(tmp_path: Path):
     output = report(path)
     assert "contacts: 0" in output
     assert "MRR (USD): 0.00" in output
+    assert "Remaining: $2000.00 MRR" in output
+    assert "At $19/month Starter: 106 additional customers" in output
+    assert "At $99/month Team Pilot: 21 additional customers" in output
 
 
 def test_revenue_and_mrr_are_separate(tmp_path: Path):
@@ -65,6 +68,21 @@ def test_revenue_and_mrr_are_separate(tmp_path: Path):
     assert "pre-commitments: 1" in output
     assert "One-time revenue (USD): 49.00" in output
     assert "MRR (USD): 19.00" in output
+    assert "Target status: not reached" in output
+
+
+def test_target_gap_reports_reached_status(tmp_path: Path):
+    path = tmp_path / "log.csv"
+    write_rows(
+        path,
+        [row(offer_tier="Team Pilot", team_updates_subscribers="1", mrr_usd="2000", payment_reference="creem:subscription-target")],
+    )
+
+    output = report(path)
+
+    assert "Remaining: $0.00 MRR" in output
+    assert "Target status: reached" in output
+    assert "additional customers" not in output
 
 
 def test_yes_accepts_chinese_values(tmp_path: Path):
