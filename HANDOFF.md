@@ -10,7 +10,7 @@
 - **GitHub**: GoodJobwilliam/aicraft，2 stars / 0 forks。⚠️ github.com 直连被墙（api.github.com 可达）→ **推送必须走 API**（recipe 见 TOOLING NOTES）。OAuth token 无 `workflow` scope → `.github/workflows/ci.yml` 和 MCP Trusted Publishing workflow 无法推送；后者已在本地验证，但远端 workflow API 当前只显示 Pages 部署。
 - **登录状态（in-app browser, CDP 9229）**: Google ✅ / GitHub ✅ / Smithery ✅ / Glama ✅ / Creem ✅（QQ 账号）/ IH ✅（Firebase，但 Firestore 被墙不可用）。⚠️ Product Hunt 会话已过期（需重新登录）；PyPI / V2EX / 掘金 未登录——**登录页标签已开好**（PyPI=E60305F8、V2EX=76D6EA55、掘金=BC42B4FB）
 - **网络**: github.com、googleapis.com（Firestore/identitytoolkit）不通——**用户 VPN（MotionPro 同济 vpn.tongji.cn）当前断开**。其余（PyPI/PH/Glama/Dev.to/Smithery/Creem/mcpservers）均可达
-- **PyPI 0.1.2 live**: package metadata now pins `mcp>=1.6,<2`; public install path and docs are aligned.
+- **PyPI 0.1.2 live**: package metadata now pins `mcp>=1.6,<2`; public install path and docs are aligned. A local 0.1.2 release-candidate build passes the full product suite (49 tests), lint, and wheel/sdist schema-content checks; publishing 0.1.3 still requires PyPI credentials or the remote Trusted Publishing workflow.
 
 ## LAUNCH STATUS (2026-08-17)
 
@@ -74,6 +74,8 @@
 7. Creem 销售每周复查（当前 $0）；Dev.to 文章 6 选题: Glama badge + registry 收录 roundup
 
 ## PATROL LOG
+
+- **2026-09-14（收入主线 round 94）**：完成发布候选验证：`uv sync --locked --extra dev --extra yaml`、Ruff、MCP 产品测试 `49 passed`，并确认 wheel/sdist 均包含 `mcp_code_review/schema/review-result.schema.json`。同时修复 Trusted Publishing workflow 的两个真实缺陷：测试未安装 YAML extra，以及将输出目录 .gitignore 误算为第三个 artifact；根测试 `37 passed`。本地修复尚未能同步到 GitHub，因为当前 token 缺少 `workflow` scope；远端 Actions 仍只有 Pages。PyPI 公开版本仍为 0.1.2，未声称 0.1.3 已发布。
 
 - **2026-09-13（收入主线 round 93）**：用户明确确认后，向 `picatz/flowstate#1584` 发布 1 条不带销售链接的技术评论（[issue comment](https://github.com/picatz/flowstate/issues/1584#issuecomment-5654286581)）；真实联系已记录到 `OUTREACH_LOG.csv` 并通过 Git Data API 同步到远端 commit `466855d`。维护者尚未回复，不能计入 qualified reply、试用、意向或收入；当前漏斗为 1 contact / 0 tests / $0 MRR。核验公开 PyPI `0.1.2` wheel 仍不含 bundled schema，因此保留“下一版发布后可用”的文档表述；本地 Trusted Publishing workflow 尚未进入远端 Actions（token 缺少 `workflow` scope）。
 - **2026-08-30（收入主线 round 2）**: 统一公开发布指南、市场提交信息、社交草稿与产品 README 到 PyPI 0.1.2；明确免费 MIT server、$49 Team Rules Pack 与尚未自动收费的 Team Updates；新增 `OUTREACH_LOG.md` 记录 20 个零预算定向触达目标；通过官方 Registry API 核实 0.1.2 已为 `active`，并在临时干净环境安装成功。
