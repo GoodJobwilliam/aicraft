@@ -13,6 +13,7 @@
 - 试用页同步：中英文试用页已直接说明独立包可运行 `./run-trial.sh`，并标注无 `uvx` 时的隔离 Python fallback；live 页面和 live ZIP 均已核验为 `200` / 当前内容。
 - 私密转化入口：中英文试用页新增预填团队资格邮件，覆盖团队规模、语言、流程、痛点、试用时间、档位、决策角色、决策时间和有条件开始承诺；不要求源代码或密钥。
 - 下一步：等待 A7/A9 回复；A2/A10 仅在用户明确确认后发送。远端 Trusted Publishing workflow 仍受 GitHub token 缺少 `workflow` scope 限制。
+- 漏斗报告增强（2026-09-14）：`scripts/funnel_report.py` 现在显示 `$2,000 MRR` 目标、剩余缺口、Starter/Team Pilot 所需新增客户数和下一动作；当前真实日志仍为 `$0 MRR`，对应 106 个 Starter 或 21 个 Team Pilot。
 
 ## 2026-07-20 第一期进度报告
 
