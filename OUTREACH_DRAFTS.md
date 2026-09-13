@@ -2,13 +2,13 @@
 
 These drafts are prepared for manual review and sending. They are not sent automatically. Before posting, read the current issue thread, check whether the project welcomes external suggestions, and remove any sentence that is no longer accurate.
 
-## Verified send order (2026-09-03)
+## Verified send order (2026-09-13)
 
-1. **A3** has the freshest active discussion (updated 2026-08-31) and asks a concrete workflow-design question. Use the revised reply below; do not introduce the product unless a maintainer asks for an example.
-2. **A2** has no comments and a well-defined MCP acceptance checklist. Use it as a concise architecture suggestion, not a promotion.
-3. **A4** is an active design proposal and is suitable only if the maintainer is inviting implementation discussion.
-4. **A1** remains open, but its maintainer has already identified both the nested Cursor payload and missing `uvx` prerequisite. The earlier generic question is obsolete; use the updated test-oriented reply below only if it adds something to the website-side fix.
-5. **A5** and **A6** already contain promotional replies from unrelated tools. Do not add another unsolicited tool pitch. Keep them as research references unless someone explicitly asks for alternatives.
+1. **A2** is the next candidate: open, zero comments, and a concrete MCP stdio acceptance checklist. Send only after explicit user confirmation.
+2. **A4** is an active design proposal and is suitable only if the maintainer is inviting implementation discussion; recheck before any send.
+3. **A1** remains open, but its maintainer clarified that the defect is in the website Add-to-Cursor payload, outside the repository. Do not send unless a new repository-side question appears.
+4. **A9** was sent on 2026-09-13 and is waiting for a maintainer reply; do not send a duplicate follow-up.
+5. **A3** is closed as of 2026-09-08. Do not contact; retain as research. **A5**, **A6**, and **A8** already have discussion or promotional replies; do not add an unsolicited tool pitch.
 
 ## A1 — code-review-graph #703
 
