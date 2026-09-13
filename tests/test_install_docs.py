@@ -239,3 +239,12 @@ def test_homepage_exposes_a_three_step_mcp_path():
     assert 'id="mcp-path"' in zh
     assert "/trial.zh.html" in zh
     assert "/team-updates.zh.html" in zh
+
+
+def test_team_updates_email_path_captures_qualification_fields():
+    english = (ROOT / "team-updates.html").read_text(encoding="utf-8")
+    chinese = (ROOT / "team-updates.zh.html").read_text(encoding="utf-8")
+    for field in ("Offer%20tier%20to%20validate", "Decision%20role", "Decision%20timing", "Target%20start%20month", "Conditional%20start%20commitment"):
+        assert field in english
+    for field in ("%E8%A6%81%E9%AA%8C%E8%AF%81%E7%9A%84%E5%A2%9E%E5%80%BC%E6%A1%A3%E4%BD%8D", "%E5%86%B3%E7%AD%96%E8%A7%92%E8%89%B2", "%E5%86%B3%E7%AD%96%E6%97%B6%E9%97%B4", "%E7%9B%AE%E6%A0%87%E5%BC%80%E5%A7%8B%E6%9C%88%E4%BB%BD", "%E6%9C%89%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%BC%80%E5%A7%8B%E6%89%BF%E8%AF%BA"):
+        assert field in chinese

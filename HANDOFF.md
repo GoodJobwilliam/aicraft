@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 112）
+- 将首页、中文首页和中英文 Team Updates 页的邮件申请模板与团队试用表单对齐：新增痛点、offer tier、决策角色、决策时间、目标开始月份和有条件承诺字段，降低私下邮件线索无法资格化的风险。
+- 新增页面回归测试，`PYTHONPATH=. pytest -q`：51 passed；`git diff --check` 和 `sh -n products/mcp-code-review/trial/run-trial.sh` 通过。
+- 未发送外部消息、未新增付费支出；公开 trial/feedback issues 仍为 0，漏斗仍为 1 contact / 0 tests / $0 MRR。
+
 ## 2026-09-14（收入主线 round 111）
 - 重新通过 GitHub 公共 API 核验 A9（picatz/flowstate#1584）：issue 仍 open，评论仍只有 GoodJobwilliam 于 2026-09-13 发布的技术评论，维护者尚未回复；保持等待，不发送重复跟进。
 - 独立试用包解压后实跑成功：输出 High command injection 与 Medium team-convention，预期退出码为 1；`products/mcp-code-review-trial.zip` 与源码脚本 SHA-256 一致，产品 ZIP 归档校验通过。
