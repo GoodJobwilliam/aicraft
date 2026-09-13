@@ -62,6 +62,14 @@ def test_public_launch_metadata_matches_implemented_capabilities():
     assert "deterministic" in (ROOT / "LAUNCHGUIDE.md").read_text(encoding="utf-8").casefold()
 
 
+def test_public_mcp_copy_does_not_overstate_owasp_coverage():
+    for path in [ROOT / "index.html", ROOT / "SOCIAL_MEDIA.md"]:
+        content = path.read_text(encoding="utf-8").casefold()
+        assert "owasp security scanning" not in content
+        assert "owasp top 10" not in content
+    assert "deterministic security-pattern checks" in (ROOT / "index.html").read_text(encoding="utf-8").casefold()
+
+
 def test_creem_status_does_not_confuse_checkout_setup_with_revenue():
     content = (ROOT / "CREEM_PRODUCTS.md").read_text(encoding="utf-8").casefold()
     assert "尚未建立自动订阅" in content

@@ -1,5 +1,11 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 107）
+- 审计官方 MCP Registry：现有 0.1.2 条目仍为 active，但公开描述仍是历史性的 “OWASP security scanning”；当前环境无法安装 mcp-publisher，因此未冒险修改或伪称已更新 Registry。
+- 修正首页和社交文案，把 MCP 主产品能力统一为 deterministic security-pattern checks；新增回归断言，避免重新出现 OWASP Top 10 扫描承诺。
+- 由于中文产品 README 更新，重建并同步免费 mcp-code-review.zip；线上 ZIP HTTP 200 且归档内容与源码一致。
+- PYTHONPATH=. pytest -q：47 passed；未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / $0 MRR。
+
 ## 2026-09-14（收入主线 round 106）
 - 将英文和中文试用页首屏主按钮改为直接下载独立试用包，保留团队方案按钮；新增回归测试，确保首屏 CTA 与可下载 ZIP 一致。
 - GitHub main 已同步提交 4b704568c4a88f87bf5997464dc6cc1d83d70876；生产环境两种语言页面均呈现新 CTA，试用 ZIP 返回 HTTP 200 且 unzip 校验通过。

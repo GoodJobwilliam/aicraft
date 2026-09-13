@@ -49,7 +49,7 @@
 > MCP Code Review Server brings production-grade code review to your AI coding assistant.
 >
 > **Key Features:**
-> - 🔒 OWASP security scanning built-in
+> - 🔒 Deterministic local security-pattern checks built in
 > - 🐛 Bug and vulnerability detection
 > - 📊 Structured severity ratings
 > - 🔌 Works with Claude Code, Cursor, Cline
