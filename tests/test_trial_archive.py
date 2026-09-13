@@ -29,6 +29,13 @@ def test_trial_pages_link_to_standalone_archive():
         assert "./run-trial.sh" in content
 
 
+def test_trial_page_primary_actions_download_the_standalone_bundle():
+    english = (ROOT / "trial.html").read_text(encoding="utf-8")
+    chinese = (ROOT / "trial.zh.html").read_text(encoding="utf-8")
+    assert '<a class="button primary" href="/products/mcp-code-review-trial.zip">Download the trial bundle</a>' in english
+    assert '<a class="button primary" href="/products/mcp-code-review-trial.zip">下载试用包</a>' in chinese
+
+
 def test_trial_pages_use_a_directly_executable_first_review_command():
     english = (ROOT / "trial.html").read_text(encoding="utf-8")
     chinese = (ROOT / "trial.zh.html").read_text(encoding="utf-8")
