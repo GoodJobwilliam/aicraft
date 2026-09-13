@@ -75,6 +75,8 @@
 
 ## PATROL LOG
 
+- **2026-09-14（收入主线 round 95）**：在干净的临时 Python 3.12 环境中从公开 PyPI 安装 `aicraft-code-review==0.1.2` + `mcp<2`，从官网下载试用样例和 JSON 配置，完成端到端试用：输出 1 High（command injection）+ 1 Medium（team-convention），退出码 `1`。同时确认公开 PyPI `0.1.2` 仍不含 `schema` 子命令（返回 argparse exit `2`），与当前文档口径一致；本地构建包才包含该能力。
+
 - **2026-09-14（收入主线 round 94）**：完成发布候选验证：`uv sync --locked --extra dev --extra yaml`、Ruff、MCP 产品测试 `49 passed`，并确认 wheel/sdist 均包含 `mcp_code_review/schema/review-result.schema.json`。同时修复 Trusted Publishing workflow 的两个真实缺陷：测试未安装 YAML extra，以及将输出目录 .gitignore 误算为第三个 artifact；根测试 `37 passed`。本地修复尚未能同步到 GitHub，因为当前 token 缺少 `workflow` scope；远端 Actions 仍只有 Pages。PyPI 公开版本仍为 0.1.2，未声称 0.1.3 已发布。
 
 - **2026-09-13（收入主线 round 93）**：用户明确确认后，向 `picatz/flowstate#1584` 发布 1 条不带销售链接的技术评论（[issue comment](https://github.com/picatz/flowstate/issues/1584#issuecomment-5654286581)）；真实联系已记录到 `OUTREACH_LOG.csv` 并通过 Git Data API 同步到远端 commit `466855d`。维护者尚未回复，不能计入 qualified reply、试用、意向或收入；当前漏斗为 1 contact / 0 tests / $0 MRR。核验公开 PyPI `0.1.2` wheel 仍不含 bundled schema，因此保留“下一版发布后可用”的文档表述；本地 Trusted Publishing workflow 尚未进入远端 Actions（token 缺少 `workflow` scope）。
