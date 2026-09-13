@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 106）
+- 将英文和中文试用页首屏主按钮改为直接下载独立试用包，保留团队方案按钮；新增回归测试，确保首屏 CTA 与可下载 ZIP 一致。
+- GitHub main 已同步提交 4b704568c4a88f87bf5997464dc6cc1d83d70876；生产环境两种语言页面均呈现新 CTA，试用 ZIP 返回 HTTP 200 且 unzip 校验通过。
+- PYTHONPATH=. pytest -q：45 passed；未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / $0 MRR。
+
 ## 2026-09-14（收入主线 round 105）
 - 将中英文自助试用页的三步顺序调整为“下载试用文件 → 运行示例审查 → 试试自己的规则”，修复首次访问者先运行 \`sample.py\` 但尚未取得示例文件的转化摩擦；新增回归断言确保顺序不会回退。
 - 生产环境 \`https://aicraft.vip/trial.html\` 与 \`/trial.zh.html\` 均返回 HTTP 200；远端页面当前仍是旧顺序，待本地提交通过 GitHub API 同步后再复核。
