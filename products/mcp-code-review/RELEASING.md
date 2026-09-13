@@ -7,7 +7,7 @@ has been checked.
 
 ## No-cost release path
 
-1. Run 'uv sync --extra dev', 'uv run ruff check src/ tests/', and
+1. Run 'uv sync --extra dev --extra yaml', 'uv run ruff check src/ tests/', and
    'uv run pytest tests/ -q' from this directory.
 2. Update 'version' in 'pyproject.toml', 'uv.lock', the changelog, and public
    install examples in one reviewed change. Keep the JSON schema version

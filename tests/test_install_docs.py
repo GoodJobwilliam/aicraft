@@ -112,6 +112,9 @@ def test_release_workflow_is_tagged_trusted_and_validates_artifacts():
     assert "uv build --clear --out-dir dist-release" in workflow
     assert "uv publish dist-release/* --trusted-publishing always" in workflow
     assert "schema/review-result.schema.json" in workflow
+    assert 'if path.suffix in {".whl", ".gz"}' in workflow
+    assert "uv sync --extra dev --extra yaml" in workflow
+    assert "uv sync --extra dev --extra yaml" in releasing
     assert "long-lived PyPI" in releasing
     assert "0.1.2" in releasing
 
