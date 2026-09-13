@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 116）
+- 创建了公开 GitHub Release `mcp-code-review-0.1.2`（无付费、非预售）：上传 `mcp-code-review-trial.zip`（5,374 bytes）和 `mcp-code-review.zip`（89,169 bytes），两个 ZIP 均已通过 `unzip -tq`，可作为版本化免费分发入口。
+- 中英文试用页新增 GitHub Release 链接，并通过回归测试；`PYTHONPATH=. pytest -q`：52 passed，`git diff --check` 通过。
+- 未发送外部评论、未新增付费支出；漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR。
+
 ## 2026-09-14（收入主线 round 115）
 - 生产验证完成：`https://aicraft.vip/trial.html` 与 `/trial.zh.html` 均 HTTP 200，线上页面已包含试用反馈邮件中的 offer tier、决策角色和目标开始月份字段；远端 `main` 为 `33faa989153fe0c21e724a810df00651ca2c8c22`。
 - 当前真实漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR；未发送外部消息、未新增付费支出。

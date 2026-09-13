@@ -257,3 +257,6 @@ def test_trial_email_paths_capture_offer_and_decision_fields():
         assert field in english
     for field in ("%E8%A6%81%E9%AA%8C%E8%AF%81%E7%9A%84%E5%A2%9E%E5%80%BC%E6%A1%A3%E4%BD%8D", "%E5%86%B3%E7%AD%96%E8%A7%92%E8%89%B2", "%E5%86%B3%E7%AD%96%E6%97%B6%E9%97%B4", "%E7%9B%AE%E6%A0%87%E5%BC%80%E5%A7%8B%E6%9C%88%E4%BB%BD", "%E6%9C%89%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%BC%80%E5%A7%8B%E6%89%BF%E8%AF%BA"):
         assert field in chinese
+    release = "https://github.com/GoodJobwilliam/aicraft/releases/tag/mcp-code-review-0.1.2"
+    assert release in english
+    assert release in chinese
