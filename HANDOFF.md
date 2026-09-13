@@ -77,6 +77,7 @@
 
 - **2026-09-14（收入主线 round 98）**：通过 GitHub 公共 API 核验新候选 `techie2000/template-docs#61`（Copilot PR review 的 repo-owned skill / MCP context 设计，open、0 comments、2026-09-03 更新），加入 `OUTREACH_QUEUE.md` 和 `OUTREACH_DRAFTS.md` 的 A10；仅准备技术问题，不发送评论、不计联系人或收入，发送前仍需用户明确确认。随后将独立试用包的 `run-trial.sh` 改为优先使用 `uvx`，缺少 `uvx` 时把公开 PyPI `0.1.2` 安装到临时目录并在退出时清理；中英文说明同步，重建两个分发 ZIP，归档/安装测试 `21 passed`。中英文试用页已直接展示 `./run-trial.sh` 和 fallback 说明；live 页面与 live ZIP 核验为当前内容。未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / $0 MRR。
 - **2026-09-14（收入主线 round 99）**：通过 GitHub 公共 API 核验维护者 `clstaudt` 发起的 NetworKit #1471（open，1 条非维护者评论，记录本地 Qwen 代码审查实验及低 tokens/s 延迟），加入 A12 队列和草稿；建议讨论快速确定性预检如何减少慢模型的搜索范围，保持模型复现/修复验证为权威步骤。未发送评论、未写入联系人漏斗、未新增付费支出。
+- **2026-09-14（收入主线 round 101）**：通过 GitHub 公共 API 核验 `trailhq/Graft#368`（active MIT coding-agent 项目，维护者讨论免费 AI PR 首轮审查，open、0 comments，仓库 2026-09-13 有更新），加入 A13 队列和纯技术草稿；未发送公开消息、未计入联系人或收入，等待用户明确确认。
 - **2026-09-14（收入主线 round 100）**：中英文试用页新增预填团队资格邮件入口，覆盖 GitHub 表单同等的团队规模、语言、流程、痛点、试用时间、档位和决策字段，并加回归测试；根测试 `39 passed`。未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / $0 MRR。
 
 - **2026-09-14（收入主线 round 97）**：将中英文 Team Trial Issue Form 增加必填 `offer-tier` 字段（免费服务器 / Team Rules Pack / Starter / Team Pilot / 范围未清晰），并让只读报告解析新字段；新增回归测试，根测试 `39 passed`。该改动已通过 Git Data API 同步到远端 commit `741f0d7`，使团队试用线索能直接归因到具体 offer；当前仍无真实试用、预承诺或付款。

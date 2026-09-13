@@ -12,6 +12,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 6. **A10** is a fresh research candidate with no comments. Recheck the issue and repository instructions before any send; require explicit user confirmation.
 7. **A11** is a fresh MCP design candidate with a maintainer decision already recorded. Recheck the protocol details before any send; require explicit user confirmation and do not pitch the product.
 8. **A12** is a maintainer-authored local-model experiment in NetworKit. Recheck the experiment and current comments before any send; require explicit user confirmation and keep the reply focused on a deterministic pre-check, not a product pitch.
+9. **A13** is a fresh Graft issue about a free AI code-review first pass. Recheck the issue and repository context before any send; require explicit user confirmation and keep the reply technical, with no product pitch.
 
 ## A1 — code-review-graph #703
 
@@ -109,6 +110,14 @@ Issue: https://github.com/networkit/networkit/issues/1471
 > This is a useful experiment because it separates local-model discovery from independent validation and a reproduction script. One way to keep the slow model pass focused could be a fast, deterministic pre-check over the changed files first: classify obvious security/quality patterns, report stable locations, and let the Qwen pass spend its time on novel behavior, reproduction, and proposed fixes. The pre-check should remain advisory and never replace the independent validation step. Would a staged workflow like that help reduce the number of files or hypotheses the local model has to inspect, or is broad exploratory coverage the main goal here?
 
 Manual note: this is a technical workflow question based on the maintainer's local-model experiment. Do not include a product or trial link unless the maintainer asks for a working comparison.
+
+## A13 — Graft #368
+
+Issue: https://github.com/trailhq/Graft/issues/368
+
+> A free first-pass reviewer seems useful when it is clearly separated from the merge decision. I would keep the first pass local and deterministic where possible: stable finding IDs, severity values, and a CI exit code, with the hosted or agentic review adding context rather than silently becoming the policy gate. That gives maintainers a readable PR report while keeping repository-owned rules reproducible. Would you want the free service to run only on public repositories, or should the workflow also support a local mode for teams that cannot upload source?
+
+Manual note: this is a technical design question based on the maintainer's issue. Do not include a product or trial link unless the maintainer asks for a working local comparison.
 
 ## Manual send checklist
 
