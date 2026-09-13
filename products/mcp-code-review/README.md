@@ -100,7 +100,7 @@ mcp-code-review review-file path/to/file.py --format json > review.json
 
 ## 10-minute team trial
 
-Run the [self-serve trial kit](https://aicraft.vip/trial.html) to test a shared JSON profile against a deliberately unsafe sample. It uses the free local server, creates no charge, and gives the team a concrete basis for evaluating the optional Team Rules Pack and Team Updates.
+Run the [self-serve trial kit](https://aicraft.vip/trial.html) to test a shared JSON profile against a deliberately unsafe sample. It uses the free local server, creates no charge, and gives the team a concrete basis for evaluating the optional Team Rules Pack and Team Updates. You can also download the [versioned trial and source bundles from GitHub Releases](https://github.com/GoodJobwilliam/aicraft/releases/tag/mcp-code-review-0.1.2).
 
 Once connected, ask your AI assistant:
 

@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 117）
+- 将根 README 与产品中英文 README 接入版本化 GitHub Release 下载入口；归档回归发现 `products/mcp-code-review.zip` 旧于 README，已按精确清单重建并替换 Release 同名资产。当前产品 ZIP SHA-256：`7f5bebd7b9d428e0796002a600766c63427744f81c8133934b025aaa0778fa1e`，Release 资产大小 89,374 bytes。
+- `PYTHONPATH=. pytest -q`：52 passed，归档校验与 `git diff --check` 通过。GitHub Release API 显示试用包和源码包均存在；直接下载仍受当前 github.com 网络超时影响，未把下载超时误记为成功。
+- 未发送外部评论、未新增付费支出；漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR。
+
 ## 2026-09-14（收入主线 round 116）
 - 创建了公开 GitHub Release `mcp-code-review-0.1.2`（无付费、非预售）：上传 `mcp-code-review-trial.zip`（5,374 bytes）和 `mcp-code-review.zip`（89,169 bytes），两个 ZIP 均已通过 `unzip -tq`，可作为版本化免费分发入口。
 - 中英文试用页新增 GitHub Release 链接，并通过回归测试；`PYTHONPATH=. pytest -q`：52 passed，`git diff --check` 通过。

@@ -99,7 +99,7 @@ mcp-code-review review-file path/to/file.py --format json > review.json
 
 ## 10 分钟团队试用
 
-运行[中文自助试用包](https://aicraft.vip/trial.zh.html)，用一个故意包含风险的示例测试共享 JSON 规则。它使用免费的本地服务器，不会产生收费，并帮助团队判断是否需要 Team Rules Pack 或 Team Updates。
+运行[中文自助试用包](https://aicraft.vip/trial.zh.html)，用一个故意包含风险的示例测试共享 JSON 规则。它使用免费的本地服务器，不会产生收费，并帮助团队判断是否需要 Team Rules Pack 或 Team Updates。也可以从 [GitHub Releases 下载带版本的试用包和源码包](https://github.com/GoodJobwilliam/aicraft/releases/tag/mcp-code-review-0.1.2)。
 
 接好后直接问你的 AI 助手：
 

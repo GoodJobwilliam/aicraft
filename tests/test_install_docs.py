@@ -92,6 +92,7 @@ def test_root_readme_exposes_trial_and_team_feedback_paths():
     assert "template=team-trial.yml" in content
     assert "examples/mcp-code-review" in content or "examples/github-actions/mcp-code-review.yml" in content
     assert "TEAM_PILOT_BRIEF.md" in content
+    assert "releases/tag/mcp-code-review-0.1.2" in content
 
 
 def test_team_trial_forms_capture_an_explicit_offer_tier():
