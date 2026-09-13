@@ -75,6 +75,10 @@
 
 ## PATROL LOG
 
+- **2026-09-14（收入主线 round 97）**：将中英文 Team Trial Issue Form 增加必填 `offer-tier` 字段（免费服务器 / Team Rules Pack / Starter / Team Pilot / 范围未清晰），并让只读报告解析新字段；新增回归测试，根测试 `39 passed`。该改动已通过 Git Data API 同步到远端 commit `741f0d7`，使团队试用线索能直接归因到具体 offer；当前仍无真实试用、预承诺或付款。
+
+- **2026-09-14（收入主线 round 96）**：将本地已验证的 MCP Schema、CLI、产品 README、测试、试用包和交接/触达审计文件通过 Git Data API 同步到远端 `main`（commit `2f20164628cb7af8d15b1e612f92c411664078a7`）；未触碰因 token scope 限制而无法写入的 `.github/workflows/*`。复查官网 `mcp-code-review.zip` 和 `mcp-code-review-trial.zip` 均返回 200，产品 ZIP 已包含 `schema/review-result.schema.json`。
+
 - **2026-09-14（收入主线 round 95）**：在干净的临时 Python 3.12 环境中从公开 PyPI 安装 `aicraft-code-review==0.1.2` + `mcp<2`，从官网下载试用样例和 JSON 配置，完成端到端试用：输出 1 High（command injection）+ 1 Medium（team-convention），退出码 `1`。同时确认公开 PyPI `0.1.2` 仍不含 `schema` 子命令（返回 argparse exit `2`），与当前文档口径一致；本地构建包才包含该能力。
 
 - **2026-09-14（收入主线 round 94）**：完成发布候选验证：`uv sync --locked --extra dev --extra yaml`、Ruff、MCP 产品测试 `49 passed`，并确认 wheel/sdist 均包含 `mcp_code_review/schema/review-result.schema.json`。同时修复 Trusted Publishing workflow 的两个真实缺陷：测试未安装 YAML extra，以及将输出目录 .gitignore 误算为第三个 artifact；根测试 `37 passed`。本地修复尚未能同步到 GitHub，因为当前 token 缺少 `workflow` scope；远端 Actions 仍只有 Pages。PyPI 公开版本仍为 0.1.2，未声称 0.1.3 已发布。
