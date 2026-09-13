@@ -44,6 +44,20 @@ def test_parse_form_body_supports_english_fields():
     assert fields["target_start_month"] == "2026-10"
 
 
+def test_issue_record_flags_invalid_target_start_month():
+    record = issue_record(
+        {
+            "title": "[Team trial] invalid month",
+            "html_url": "https://github.com/GoodJobwilliam/aicraft/issues/3",
+            "created_at": "2026-09-03T01:02:03Z",
+            "user": {"login": "example"},
+            "body": BODY.replace("2026-10", "2026-13"),
+        }
+    )
+    assert record["target_start_month"] == ""
+    assert record["target_start_month_status"] == "invalid"
+
+
 def test_issue_record_normalizes_pilot_without_counting_revenue():
     record = issue_record(
         {

@@ -51,6 +51,7 @@ _FIELD_ALIASES = {
 }
 
 _HEADING = re.compile(r"^###\s+(.+?)\s*$")
+_TARGET_START_MONTH = re.compile(r"^\d{4}-(0[1-9]|1[0-2])$")
 
 
 def _clean(value: str) -> str:
@@ -87,8 +88,16 @@ def normalize_offer_tier(value: str) -> str:
     return ""
 
 
+def normalize_target_start_month(value: str) -> str:
+    """Keep only an explicit, calendar-valid YYYY-MM start month."""
+    value = _clean(value)
+    return value if _TARGET_START_MONTH.fullmatch(value) else ""
+
+
 def issue_record(issue: dict[str, object]) -> dict[str, str]:
     answers = parse_form_body(str(issue.get("body") or ""))
+    raw_start_month = answers.get("target_start_month", "")
+    target_start_month = normalize_target_start_month(raw_start_month)
     title = _clean(str(issue.get("title") or "Untitled issue"))
     created = str(issue.get("created_at") or "")
     try:
@@ -112,7 +121,8 @@ def issue_record(issue: dict[str, object]) -> dict[str, str]:
         "updates_interest": answers.get("updates_interest", ""),
         "decision_role": answers.get("decision_role", ""),
         "decision_window": answers.get("decision_window", ""),
-        "target_start_month": answers.get("target_start_month", ""),
+        "target_start_month": target_start_month,
+        "target_start_month_status": "valid" if target_start_month else ("invalid" if raw_start_month else "missing"),
         "precommitment": answers.get("precommitment", ""),
         "next_step": answers.get("next_step", ""),
     }
@@ -172,7 +182,7 @@ def report(issues: list[dict[str, object]], *, repo: str = DEFAULT_REPO) -> str:
                 f"   Offer signal: {record['offer_tier'] or 'unselected'}",
                 f"   Decision role: {record['decision_role'] or 'unknown'}",
                 f"   Decision window: {record['decision_window'] or 'unknown'}",
-                f"   Target start month: {record['target_start_month'] or 'unknown'}",
+                f"   Target start month: {record['target_start_month'] or record['target_start_month_status']}",
                 f"   Conditional commitment: {record['precommitment'] or 'not answered'}",
                 "   Action: manually verify scope, price, start date, and payment before updating OUTREACH_LOG.csv.",
             ]

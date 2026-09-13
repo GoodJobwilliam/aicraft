@@ -1,5 +1,9 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 110）
+- 只读试用报告现在校验 target-start-month：只接受真实日历月份的 YYYY-MM，缺失或非法值会分别标记 missing/invalid，不会被误当作合格的开始承诺。
+- 跟进手册同步要求有效 YYYY-MM；新增回归测试，PYTHONPATH=. pytest -q：50 passed。公开 trial/feedback issues 仍为 0，漏斗仍为 1 contact / 0 tests / $0 MRR；未发送外部消息、未新增付费支出。
+
 ## 2026-09-14（收入主线 round 109）
 - 中英文 team-trial 与 trial-feedback 表单新增必填 target-start-month（YYYY-MM），补齐“有条件承诺”所需的明确目标开始月份；只读报告现在显示该字段。
 - 新增回归测试，PYTHONPATH=. pytest -q：49 passed；公开 trial/feedback issues 仍为 0，漏斗仍为 1 contact / 0 tests / $0 MRR。未发送外部消息、未新增付费支出。
