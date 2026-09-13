@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 123）
+- 收尾核验：`PYTHONPATH=. pytest -q` 54 passed，`git diff --check` 通过；首页、中文首页、试用页和 Team Updates 页均 HTTP 200。
+- 当前公开分发快照：PyPI 最近 1/7/30 天为 2/33/352，GitHub Release 两个资产下载量均为 0；这些数字仍只作分发信号，不进入收入漏斗。
+- 真实漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR；A9 无维护者回复，A2 未获发送确认；未发送外部评论、未新增付费支出。
+
 ## 2026-09-14（收入主线 round 122）
 - 根 README 新增只读分发审计命令 `python3 scripts/distribution_report.py` 及“下载量不等于联系人、客户或收入”的说明；新增回归断言。
 - `PYTHONPATH=. pytest -q`：54 passed，`git diff --check` 通过；未发送外部评论、未新增付费支出，真实漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR。
