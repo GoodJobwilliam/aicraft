@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 120）
+- 首页生产核验完成：`https://aicraft.vip/` 与 `/zh.html` 均 HTTP 200，英文出现 `Release downloads`，中文出现 `版本下载`；远端 `main` 为 `61261d8...`。
+- `PYTHONPATH=. pytest -q`：54 passed。GitHub Release 资产下载量仍为 0；PyPI Stats 最近一次成功快照仍是 2 / 33 / 352（1 日 / 7 日 / 30 日），随后请求被 API 429 限流，未把限流当作数据变化。
+- 当前真实漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR；未发送外部评论、未新增付费支出。A2 仍需用户明确确认后才能发布。
+
 ## 2026-09-14（收入主线 round 119）
 - 中英文首页 MCP 产品卡新增版本化 GitHub Release 下载入口，连接免费试用包和源码包；新增回归断言，`PYTHONPATH=. pytest -q`：54 passed，`git diff --check` 通过。
 - 本地改动尚未同步到 Pages，当前线上首页仍 HTTP 200 但还未出现该新按钮；待 Git Data API 同步后再复核，不把本地结果当作生产结果。
