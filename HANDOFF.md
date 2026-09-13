@@ -1,5 +1,9 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 115）
+- 生产验证完成：`https://aicraft.vip/trial.html` 与 `/trial.zh.html` 均 HTTP 200，线上页面已包含试用反馈邮件中的 offer tier、决策角色和目标开始月份字段；远端 `main` 为 `33faa989153fe0c21e724a810df00651ca2c8c22`。
+- 当前真实漏斗仍为 1 contact / 0 qualified replies / 0 team tests / 0 paid signals / $0 MRR；未发送外部消息、未新增付费支出。
+
 ## 2026-09-14（收入主线 round 114）
 - 将中英文试用页的反馈/团队邮件模板与 Issue Form 对齐：试用结果邮件现在也收集 offer tier、决策角色、决策时间、目标开始月份和有条件承诺，避免最接近转化的反馈无法进入资格化流程。
 - 新增回归测试，`PYTHONPATH=. pytest -q`：52 passed；`git diff --check` 通过。仅修改网站入口，不涉及试用 ZIP。
