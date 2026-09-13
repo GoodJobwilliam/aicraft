@@ -75,6 +75,8 @@
 
 ## PATROL LOG
 
+- **2026-09-14（收入主线 round 98）**：通过 GitHub 公共 API 核验新候选 `techie2000/template-docs#61`（Copilot PR review 的 repo-owned skill / MCP context 设计，open、0 comments、2026-09-03 更新），加入 `OUTREACH_QUEUE.md` 和 `OUTREACH_DRAFTS.md` 的 A10；仅准备技术问题，不发送评论、不计联系人或收入，发送前仍需用户明确确认。
+
 - **2026-09-14（收入主线 round 97）**：将中英文 Team Trial Issue Form 增加必填 `offer-tier` 字段（免费服务器 / Team Rules Pack / Starter / Team Pilot / 范围未清晰），并让只读报告解析新字段；新增回归测试，根测试 `39 passed`。该改动已通过 Git Data API 同步到远端 commit `741f0d7`，使团队试用线索能直接归因到具体 offer；当前仍无真实试用、预承诺或付款。
 
 - **2026-09-14（收入主线 round 96）**：将本地已验证的 MCP Schema、CLI、产品 README、测试、试用包和交接/触达审计文件通过 Git Data API 同步到远端 `main`（commit `2f20164628cb7af8d15b1e612f92c411664078a7`）；未触碰因 token scope 限制而无法写入的 `.github/workflows/*`。复查官网 `mcp-code-review.zip` 和 `mcp-code-review-trial.zip` 均返回 200，产品 ZIP 已包含 `schema/review-result.schema.json`。

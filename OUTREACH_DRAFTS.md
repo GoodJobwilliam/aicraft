@@ -9,6 +9,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 3. **A1** remains open, but its maintainer clarified that the defect is in the website Add-to-Cursor payload, outside the repository. Do not send unless a new repository-side question appears.
 4. **A9** was sent on 2026-09-13 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 5. **A3** is closed as of 2026-09-08. Do not contact; retain as research. **A5**, **A6**, and **A8** already have discussion or promotional replies; do not add an unsolicited tool pitch.
+6. **A10** is a fresh research candidate with no comments. Recheck the issue and repository instructions before any send; require explicit user confirmation.
 
 ## A1 — code-review-graph #703
 
@@ -82,6 +83,14 @@ Issue: https://github.com/picatz/flowstate/issues/1584
 > The proposed Explanation boundary makes sense for keeping human-readable output, MCP responses, and CI policy on one source of truth. I would version the machine-readable envelope separately from the rendered text and make each effect row carry a stable kind, address, and provenance flag (literal versus computed), while keeping secrets and credentials redacted by name. Then --against can compare normalized rows instead of parsing presentation output, and the MCP tool can return the same object an agent sees before a run. Which parts of the IR already have stable identifiers that you would want to use as the row keys?
 
 Manual note: this is an architecture discussion, not a product pitch. Share the free trial only if the maintainer asks for a working local checker or comparison.
+
+## A10 — template-docs #61
+
+Issue: https://github.com/techie2000/template-docs/issues/61
+
+> The separation between repo-owned review context and host-level model review seems useful. I would keep deterministic checks in a repo-committed config or MCP server and let Copilot consume a stable result envelope (finding id, severity, location, and decision) rather than asking the model to infer policy from prose. That preserves a reproducible CI gate while allowing Copilot to explain findings. Would you expect the skill to own the policy wording, or should the MCP result be the canonical source for both Copilot and CI?
+
+Manual note: this is a technical design question, not a product pitch. Do not include the trial URL unless the maintainer asks for a working local example.
 
 ## Manual send checklist
 

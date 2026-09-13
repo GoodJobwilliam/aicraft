@@ -30,7 +30,7 @@ These candidates were added after a second public-API search. The evidence is in
 | 15 | [mattzcarey/shippie](https://github.com/mattzcarey/shippie) | Issues enabled; 22 open issues; last push 2026-08-12; TypeScript code-review tooling | [Issues](https://github.com/mattzcarey/shippie/issues) | Which review findings need a stable local policy or CI gate alongside your current workflow? |
 | 16 | [lwgerhardt/agent-co-op-mcp](https://github.com/lwgerhardt/agent-co-op-mcp) | Open issue #40 covers MCP DX, structured tool returns, version drift, and CI polish; Python/MCP project | [Issue #40](https://github.com/lwgerhardt/agent-co-op-mcp/issues/40) | Would a versioned structured result contract and a single package-version source make the MCP/CLI boundary easier to maintain? |
 
-## Issue-backed signals (API checked 2026-09-13)
+## Issue-backed signals (API checked 2026-09-14)
 
 These rows have a concrete public issue related to the product problem. They are still prospects, not contacts. Read the full thread and contribution rules before deciding whether a technical reply is appropriate; do not turn a bug report into a sales pitch.
 
@@ -44,6 +44,7 @@ These rows have a concrete public issue related to the product problem. They are
 | A6 | [sourcery-ai/sourcery#477](https://github.com/sourcery-ai/sourcery/issues/477) | Open feature request asks for AI code review from the CLI, not only IDE or PR integrations | Would stable CLI exit codes and a local rules file make the CLI review useful as a CI gate as well as an interactive developer command? |
 | A8 | [SociableSteve/caroline#79](https://github.com/SociableSteve/caroline/issues/79) | Open issue defines a committed pre-commit and CI secret check; maintainer chose secretlint and left non-provider coverage as an explicit decision | How should the committed scanner rules distinguish blocking credential patterns from warning-level generic matches while keeping the local hook and CI result identical? |
 | A9 | [picatz/flowstate#1584](https://github.com/picatz/flowstate/issues/1584) | Open MCP/CLI/security issue requests a derived structured explanation, JSON output, an MCP tool, and CI detection of widened effects | Which fields should be mandatory in the versioned result so the CLI, MCP host, and CI widening gate can share one auditable contract? |
+| A10 | [techie2000/template-docs#61](https://github.com/techie2000/template-docs/issues/61) | Open investigation asks whether a repo-owned code-review skill or MCP server should provide Copilot PR reviews with repository-specific context; 0 comments, updated 2026-09-03 | Would a stable, machine-readable review result let Copilot explain findings while a repo-owned policy remains the reproducible CI gate? |
 
 ## Contact Protocol
 
@@ -52,7 +53,7 @@ These rows have a concrete public issue related to the product problem. They are
 3. Discuss the `$49` Team Rules Pack only after the problem is confirmed; discuss Team Updates only when ongoing maintenance is requested.
 4. Log the date, URL, response, and next follow-up. A public reply is a contact, not revenue; only a confirmed payment belongs in revenue fields.
 
-These are public prospects, not customers. Do not infer interest from stars, downloads, or open-issue counts. The candidate metadata is an audit snapshot checked 2026-09-13, not evidence of contact, trial, pre-commitment, or payment.
+These are public prospects, not customers. Do not infer interest from stars, downloads, or open-issue counts. The candidate metadata is an audit snapshot checked 2026-09-14, not evidence of contact, trial, pre-commitment, or payment.
 
 ## Current-state recheck (2026-09-13)
 
