@@ -9,6 +9,7 @@
 - 销售漏斗：contacts `1`、qualified replies `0`、team tests `0`、pre-commitments `0`、确认收入 `$0`、MRR `$0`。
 - 已验证联系：2026-09-13 经用户确认向 Flowstate #1584 发布 1 条技术评论；A7/A9 均暂无维护者回复，不能计入试用或收入。
 - 发布准备：本地 MCP 产品测试 `49 passed`、根测试 `39 passed`、Ruff 通过；wheel/sdist 均包含 JSON Schema。公开 PyPI 仍为 `0.1.2`，未将本地未发布能力计入线上承诺。
+- 试用路径修复（2026-09-14）：独立试用包的 `run-trial.sh` 现在优先使用 `uvx`，没有 `uvx` 时自动创建临时 Python 环境安装公开 PyPI `0.1.2`，退出时清理；中英文说明和两个分发 ZIP 已同步，归档/安装相关测试 `21 passed`。
 - 下一步：等待 A7/A9 回复；A2/A10 仅在用户明确确认后发送。远端 Trusted Publishing workflow 仍受 GitHub token 缺少 `workflow` scope 限制。
 
 ## 2026-07-20 第一期进度报告

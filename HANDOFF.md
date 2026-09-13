@@ -1,4 +1,4 @@
-# HANDOFF CONTEXT (updated 2026-09-13 CST)
+# HANDOFF CONTEXT (updated 2026-09-14 CST)
 
 ## CURRENT STATE
 - **目标**: aicraft 达到 $2,000 MRR；预算 $0；工作区 `/Users/william/work/AIcompany/aicraft`
@@ -130,6 +130,8 @@
 - 不虚构数据；所有公开数字来自真实平台复查
 
 ## LATEST ROUND
+- 2026-09-14（收入主线 round 98）：降低独立试用包的安装摩擦：`run-trial.sh` 继续优先使用 `uvx`，缺少 `uvx` 时自动创建临时 Python 环境安装公开 PyPI `0.1.2`，并在退出时清理；中英文试用说明同步，重建 `products/mcp-code-review-trial.zip` 和 `products/mcp-code-review.zip`，归档/安装测试 `21 passed`，shell 语法检查和 `git diff --check` 通过。未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / $0 MRR。
+- 2026-09-14（收入主线 round 98）：降低独立试用包的安装摩擦：`run-trial.sh` 继续优先使用 `uvx`，缺少 `uvx` 时自动创建临时 Python 环境安装公开 PyPI `0.1.2`，并在退出时清理；中英文试用说明同步，重建 `products/mcp-code-review-trial.zip` 和 `products/mcp-code-review.zip`，归档/安装测试 `21 passed`，shell 语法检查和 `git diff --check` 通过。未发送外部消息、未新增付费支出，漏斗仍为 1 contact / 0 tests / $0 MRR。
 - 2026-09-03（收入主线 round 97）：为下一版发布候选增加 mcp-code-review schema 命令，直接输出随 Python 包携带的 JSON 结果契约，降低 CI 集成门槛；双语 README、试用说明和 CHANGELOG 已同步，并明确当前公开 PyPI 0.1.2 尚未包含该命令。尚未发布新的 PyPI 版本，未发送外部消息、未新增付费支出，漏斗仍为 0。
 - 2026-09-03（收入主线 round 96）：核验新的高相关公开 prospect picatz/flowstate#1584：议题同时要求 CLI explanation、JSON/MCP 结构化结果和 CI widening gate，且标记为 security/cli；加入 A9 队列与架构回复草稿。未自动发帖、未写入联系人漏斗、未新增付费支出。
 - 2026-09-03（收入主线 round 95）：核验新的高相关公开 prospect SociableSteve/caroline#79：议题明确要求提交前与 CI 的同一 secret 检查，维护者已选择 secretlint 并讨论非 provider 模式和可审计 suppression。加入 A8 队列与技术回复草稿；未自动发帖、未写入联系人漏斗、未新增付费支出。

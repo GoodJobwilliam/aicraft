@@ -24,7 +24,7 @@ From this directory, run:
 mcp-code-review review-file sample.py
 ```
 
-Or use the bundled launcher, which checks for uvx and runs the same review command:
+Or use the bundled launcher. It uses uvx when available; otherwise it creates a temporary Python environment, installs the pinned public package, and removes that environment on exit:
 
 ```bash
 ./run-trial.sh
