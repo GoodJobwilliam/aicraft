@@ -26,6 +26,7 @@ def test_trial_pages_link_to_standalone_archive():
     for name in ("trial.html", "trial.zh.html"):
         content = (ROOT / name).read_text(encoding="utf-8")
         assert "/products/mcp-code-review-trial.zip" in content
+        assert "./run-trial.sh" in content
 
 
 def test_trial_launcher_prefers_uvx_and_has_a_python_fallback():
