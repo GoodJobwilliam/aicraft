@@ -182,5 +182,5 @@ custom_rules:
 
 - 仓库：<https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review>
 - 协议：MIT，免费安装使用
-- 可选支持：$49 终身授权用于资助开发，并解锁终身更新与邮件支持（[aicraft.vip/zh.html](https://aicraft.vip/zh.html)）
+- 可选增值项：一次性 $49 的 Team Rules Pack，包含共享规则档案、CI 模板和提示词，并提供规则包终身更新（[查看 Team Rules Pack](https://aicraft.vip/zh.html)）。免费服务器仍按 MIT 协议提供。
 - 中文分发复盘：《0 预算把 MCP 工具铺到 12 个分发渠道》见 <https://aicraft.vip/blog/distribution-playbook.html>

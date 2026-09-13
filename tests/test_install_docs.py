@@ -69,6 +69,14 @@ def test_creem_status_does_not_confuse_checkout_setup_with_revenue():
     assert "mrr" in content
 
 
+def test_chinese_product_offer_matches_team_rules_pack_scope():
+    content = (ROOT / "products/mcp-code-review/README.zh.md").read_text(encoding="utf-8")
+    assert "一次性 $49 的 Team Rules Pack" in content
+    assert "终身授权" not in content
+    assert "邮件支持" not in content
+    assert "免费服务器仍按 MIT 协议提供" in content
+
+
 def test_root_readme_exposes_trial_and_team_feedback_paths():
     content = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "https://aicraft.vip/trial.html" in content
