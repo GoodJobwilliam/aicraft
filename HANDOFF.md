@@ -1,5 +1,9 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 113）
+- 通过 GitHub 公共 API 重新核验候选外联：A2 `sdempsay/agentic-review-tool#5` 仍 open、0 comments；A13 `trailhq/Graft#368` 仍 open、0 comments；A14 `microsoft/finops-toolkit#2274` 仍 open、1 条微软机器人确认。
+- A2 与产品的 MCP stdio / 稳定结果契约最贴合，保留为下一条候选；A13/A14 继续排队。未发送任何评论，未新增联系人或收入，等待用户对具体草稿明确确认。
+
 ## 2026-09-14（收入主线 round 112）
 - 将首页、中文首页和中英文 Team Updates 页的邮件申请模板与团队试用表单对齐：新增痛点、offer tier、决策角色、决策时间、目标开始月份和有条件承诺字段，降低私下邮件线索无法资格化的风险。
 - 新增页面回归测试，`PYTHONPATH=. pytest -q`：51 passed；`git diff --check` 和 `sh -n products/mcp-code-review/trial/run-trial.sh` 通过。
