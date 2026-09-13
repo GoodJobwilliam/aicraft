@@ -105,6 +105,16 @@ def test_team_trial_forms_capture_an_explicit_offer_tier():
         assert "This records interest only" in content or "这里只记录意向" in content
 
 
+def test_trial_feedback_forms_capture_decision_role():
+    for path in [
+        ROOT / ".github/ISSUE_TEMPLATE/trial-feedback.yml",
+        ROOT / ".github/ISSUE_TEMPLATE/trial-feedback-zh.yml",
+    ]:
+        content = path.read_text(encoding="utf-8")
+        assert "id: decision-role" in content
+        assert "decision maker" in content or "决策者" in content
+
+
 def test_ai_agent_install_guide_uses_the_real_console_script():
     content = (ROOT / "products/mcp-code-review/llms-install.md").read_text(encoding="utf-8")
     assert '"--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"' in content

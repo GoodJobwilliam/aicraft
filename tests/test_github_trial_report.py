@@ -20,6 +20,9 @@ Official MCP Registry
 ### Offer tier discussed
 Team Updates Team Pilot
 
+### Role in the decision
+I make the purchase decision
+
 ### Decision timing
 This month
 
@@ -34,6 +37,7 @@ def test_parse_form_body_supports_english_fields():
     assert fields["languages"] == "Python, TypeScript"
     assert fields["discovery_source"] == "Official MCP Registry"
     assert fields["precommitment"].startswith("Yes")
+    assert fields["decision_role"] == "I make the purchase decision"
 
 
 def test_issue_record_normalizes_pilot_without_counting_revenue():
@@ -80,6 +84,7 @@ def test_report_is_explicitly_manual_and_zero_revenue():
     assert "manually verify scope, price, start date, and payment" in output
     assert "Only confirmed Creem payments belong in revenue fields" in output
     assert "Discovery source: Official MCP Registry" in output
+    assert "Decision role: I make the purchase decision" in output
 
 
 def test_report_empty_issues_is_truthful():

@@ -106,6 +106,19 @@ body:
       required: true
 
   - type: dropdown
+    id: decision-role
+    attributes:
+      label: 你在决策中的角色
+      description: 哪一项最符合你在购买增值服务决策中的角色？
+      options:
+        - 我负责购买决策
+        - 我向决策者推荐工具
+        - 我是参与测试的工程师
+        - 我只是调研选项
+    validations:
+      required: true
+
+  - type: dropdown
     id: precommitment
     attributes:
       label: 有条件的开始承诺

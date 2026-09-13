@@ -106,6 +106,19 @@ body:
       required: true
 
   - type: dropdown
+    id: decision-role
+    attributes:
+      label: Role in the decision
+      description: Which best describes your role when deciding on a paid add-on?
+      options:
+        - I make the purchase decision
+        - I recommend tools to the decision maker
+        - I am testing as an engineer
+        - I am researching options
+    validations:
+      required: true
+
+  - type: dropdown
     id: precommitment
     attributes:
       label: Conditional start commitment

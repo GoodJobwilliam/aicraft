@@ -167,6 +167,7 @@ def report(issues: list[dict[str, object]], *, repo: str = DEFAULT_REPO) -> str:
                 f"   Team/languages: {record['team_size'] or 'unknown'} / {record['languages'] or 'unknown'}",
                 f"   Discovery source: {record['discovery_source'] or 'unknown'}",
                 f"   Offer signal: {record['offer_tier'] or 'unselected'}",
+                f"   Decision role: {record['decision_role'] or 'unknown'}",
                 f"   Decision window: {record['decision_window'] or 'unknown'}",
                 f"   Conditional commitment: {record['precommitment'] or 'not answered'}",
                 "   Action: manually verify scope, price, start date, and payment before updating OUTREACH_LOG.csv.",

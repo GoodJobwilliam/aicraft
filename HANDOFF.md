@@ -1,5 +1,9 @@
 # HANDOFF CONTEXT (updated 2026-09-14 CST)
 
+## 2026-09-14（收入主线 round 108）
+- 中英文 trial-feedback Issue Form 新增必填 decision-role 字段，区分购买决策者、推荐者、实际测试工程师和纯调研者；只读报告现在会输出该字段，便于优先跟进可决策线索。
+- 新增回归测试，PYTHONPATH=. pytest -q：48 passed；未发送外部消息、未新增付费支出，当前公开 trial/feedback issues 仍为 0，漏斗仍为 1 contact / 0 tests / $0 MRR。
+
 ## 2026-09-14（收入主线 round 107）
 - 审计官方 MCP Registry：现有 0.1.2 条目仍为 active，但公开描述仍是历史性的 “OWASP security scanning”；当前环境无法安装 mcp-publisher，因此未冒险修改或伪称已更新 Registry。
 - 修正首页和社交文案，把 MCP 主产品能力统一为 deterministic security-pattern checks；新增回归断言，避免重新出现 OWASP Top 10 扫描承诺。
