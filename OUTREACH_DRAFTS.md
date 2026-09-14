@@ -5,7 +5,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 ## Verified send order (2026-09-13)
 
 1. **A2** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
-2. **A4** is an active design proposal and is suitable only if the maintainer is inviting implementation discussion; recheck before any send.
+2. **A4** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 3. **A1** remains open, but its maintainer clarified that the defect is in the website Add-to-Cursor payload, outside the repository. Do not send unless a new repository-side question appears.
 4. **A9** was sent on 2026-09-13 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 5. **A3** is closed as of 2026-09-08. Do not contact; retain as research. **A5**, **A6**, and **A8** already have discussion or promotional replies; do not add an unsolicited tool pitch.
