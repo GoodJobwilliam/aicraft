@@ -21,6 +21,7 @@ Zero-budget customer validation for MCP Code Review. Keep this file factual: rec
 | 2026-09-15 | GitHub issue comment | androidAppGuard/asterinas maintainer | — | — | Staged deterministic pre-check before domain-knowledge MCP retrieval | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #4](https://github.com/androidAppGuard/asterinas/issues/4#issuecomment-5667259683); do not follow up before a response |
 | 2026-09-15 | GitHub issue comment | microsoft/finops-toolkit maintainer | — | — | Stable rule IDs mapped to Copilot skill source tests | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #2274](https://github.com/microsoft/finops-toolkit/issues/2274#issuecomment-5667294339); do not follow up before a response |
 | 2026-09-15 | GitHub issue comment | techie2000/template-docs maintainer | — | — | Repo-owned Copilot review skill and MCP result contract | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #61](https://github.com/techie2000/template-docs/issues/61#issuecomment-5672479252); do not follow up before a response |
+| 2026-09-15 | GitHub issue comment | Gabriel-GM5/rpguide maintainer | — | — | Safe Claude review workflow with read-only report and separate policy gate | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #47](https://github.com/Gabriel-GM5/rpguide/issues/47#issuecomment-5672511425); do not follow up before a response |
 
 ## Weekly review
 
