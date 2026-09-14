@@ -14,6 +14,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 8. **A12** is a maintainer-authored local-model experiment in NetworKit. Recheck the experiment and current comments before any send and keep the reply focused on a deterministic pre-check, not a product pitch.
 9. **A13** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 10. **A14** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
+11. **A15** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 
 ## A1 — code-review-graph #703
 
@@ -127,6 +128,14 @@ Issue: https://github.com/microsoft/finops-toolkit/issues/2274
 > Grounding Copilot in the existing coding guidelines and lint tests seems like the right starting point. For conventions that are already testable, I would give the skill stable rule identifiers and severity levels, then link each instruction back to its source guideline or test. That lets a review comment be specific enough to verify locally, while the skill still supplies the language and path context that a generic lint result cannot. Would you prefer the first version to list only rules with an existing automated test, or include the style-guide conventions as advisory findings from the start?
 
 Manual note: this is a technical review-skill design question, not a product pitch. Do not include the trial URL unless the maintainer asks for a working comparison.
+
+## A15 — template-docs #61
+
+Issue: https://github.com/techie2000/template-docs/issues/61
+
+Sent 2026-09-15: [issue comment](https://github.com/techie2000/template-docs/issues/61#issuecomment-5672479252)
+
+Manual note: posted as a technical architecture question, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
 
 ## Manual send checklist
 
