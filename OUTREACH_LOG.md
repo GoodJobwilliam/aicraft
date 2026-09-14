@@ -19,6 +19,7 @@ Zero-budget customer validation for MCP Code Review. Keep this file factual: rec
 | 2026-09-15 | GitHub issue comment | trailhq/Graft maintainer | — | — | Free AI first-pass review versus repository-owned merge policy | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #368](https://github.com/trailhq/Graft/issues/368#issuecomment-5667168734); do not follow up before a response |
 | 2026-09-15 | GitHub issue comment | dheerajjha/reviewer maintainer | — | — | Versioned MCP review-result envelope for pull-side tools | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #4](https://github.com/dheerajjha/reviewer/issues/4#issuecomment-5667220058); do not follow up before a response |
 | 2026-09-15 | GitHub issue comment | androidAppGuard/asterinas maintainer | — | — | Staged deterministic pre-check before domain-knowledge MCP retrieval | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #4](https://github.com/androidAppGuard/asterinas/issues/4#issuecomment-5667259683); do not follow up before a response |
+| 2026-09-15 | GitHub issue comment | microsoft/finops-toolkit maintainer | — | — | Stable rule IDs mapped to Copilot skill source tests | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #2274](https://github.com/microsoft/finops-toolkit/issues/2274#issuecomment-5667294339); do not follow up before a response |
 
 ## Weekly review
 

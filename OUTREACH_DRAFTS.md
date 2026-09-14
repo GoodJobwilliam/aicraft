@@ -13,7 +13,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 7. **A11** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 8. **A12** is a maintainer-authored local-model experiment in NetworKit. Recheck the experiment and current comments before any send and keep the reply focused on a deterministic pre-check, not a product pitch.
 9. **A13** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
-10. **A14** is a FinOps Toolkit issue requesting a GitHub Copilot code-review skill from existing repository standards. Recheck the issue and repository instructions before any send and keep the reply technical, with no product pitch.
+10. **A14** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 
 ## A1 — code-review-graph #703
 
