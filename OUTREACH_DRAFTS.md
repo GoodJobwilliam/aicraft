@@ -10,7 +10,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 4. **A9** was sent on 2026-09-13 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 5. **A3** is closed as of 2026-09-08. Do not contact; retain as research. **A5**, **A6**, and **A8** already have discussion or promotional replies; do not add an unsolicited tool pitch.
 6. **A10** is a fresh research candidate with no comments. Recheck the issue and repository instructions before any send.
-7. **A11** is a fresh MCP design candidate with a maintainer decision already recorded. Recheck the protocol details before any send and do not pitch the product.
+7. **A11** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 8. **A12** is a maintainer-authored local-model experiment in NetworKit. Recheck the experiment and current comments before any send and keep the reply focused on a deterministic pre-check, not a product pitch.
 9. **A13** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 10. **A14** is a FinOps Toolkit issue requesting a GitHub Copilot code-review skill from existing repository standards. Recheck the issue and repository instructions before any send and keep the reply technical, with no product pitch.
