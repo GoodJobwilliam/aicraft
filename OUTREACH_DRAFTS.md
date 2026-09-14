@@ -16,6 +16,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 10. **A14** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 11. **A15** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 12. **A16** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
+13. **A17** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 
 ## A1 — code-review-graph #703
 
@@ -145,6 +146,14 @@ Issue: https://github.com/Gabriel-GM5/rpguide/issues/47
 Sent 2026-09-15: [issue comment](https://github.com/Gabriel-GM5/rpguide/issues/47#issuecomment-5672511425)
 
 Manual note: the thread already contained a third-party tool mention; this reply adds only implementation and permission-boundary guidance. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
+
+## A17 — uncle #59
+
+Issue: https://github.com/unclehq/uncle/issues/59
+
+Sent 2026-09-15: [issue comment](https://github.com/unclehq/uncle/issues/59#issuecomment-5672534319)
+
+Manual note: posted as a technical provenance and result-contract question, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
 
 ## Manual send checklist
 

@@ -15,6 +15,7 @@
 - 外部触达更新（2026-09-15）：向 `microsoft/finops-toolkit#2274` 发布 1 条关于 Copilot review skill 的规则 ID 与测试源映射的技术评论（[issue comment](https://github.com/microsoft/finops-toolkit/issues/2274#issuecomment-5667294339)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 外部触达更新（2026-09-15）：向 `techie2000/template-docs#61` 发布 1 条关于 repo-owned Copilot skill、MCP 结果契约与可复现 CI 门禁边界的技术评论（[issue comment](https://github.com/techie2000/template-docs/issues/61#issuecomment-5672479252)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 外部触达更新（2026-09-15）：向 `Gabriel-GM5/rpguide#47` 发布 1 条关于 Claude review workflow 权限边界、artifact 与独立策略门禁的技术评论（[issue comment](https://github.com/Gabriel-GM5/rpguide/issues/47#issuecomment-5672511425)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
+- 外部触达更新（2026-09-15）：向 `unclehq/uncle#59` 发布 1 条关于 tree-bound provenance、canonical review result envelope 与 `pass/fail/unavailable` 状态的技术评论（[issue comment](https://github.com/unclehq/uncle/issues/59#issuecomment-5672534319)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 发布准备：本地 MCP 产品测试 `49 passed`、根测试 `39 passed`、Ruff 通过；wheel/sdist 均包含 JSON Schema。公开 PyPI 仍为 `0.1.2`，未将本地未发布能力计入线上承诺。
 - 试用路径修复（2026-09-14）：独立试用包的 `run-trial.sh` 现在优先使用 `uvx`，没有 `uvx` 时把公开 PyPI `0.1.2` 安装到临时目录，退出时清理；中英文说明和两个分发 ZIP 已同步，归档/安装相关测试 `21 passed`。
 - 试用页同步：中英文试用页已直接说明独立包可运行 `./run-trial.sh`，并标注无 `uvx` 时的隔离 Python fallback；live 页面和 live ZIP 均已核验为 `200` / 当前内容。
