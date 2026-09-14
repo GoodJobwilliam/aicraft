@@ -8,13 +8,15 @@ Zero-budget customer validation for MCP Code Review. Keep this file factual: rec
 - Qualified replies: 0
 - Teams testing: 0
 - Paid or explicitly pre-committed Team Updates customers: 0
-- Last reviewed: 2026-09-13
+- Last reviewed: 2026-09-15
 
 ## Contact ledger
 
 | Date | Channel | Contact / audience | Team size | Main languages | Current workflow | Decision role | Decision window | Reply | Test | Offer signal | Next action |
 |---|---|---|---:|---|---|---|---|---|---|---|---|
 | 2026-09-13 | GitHub issue comment | picatz/flowstate maintainer | — | — | Structured explanation / MCP / CI design discussion | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #1584](https://github.com/picatz/flowstate/issues/1584#issuecomment-5654286581); do not follow up before a response |
+| 2026-09-15 | GitHub issue comment | sdempsay/agentic-review-tool maintainer | — | — | MCP stdio server and shared review-result contract | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #5](https://github.com/sdempsay/agentic-review-tool/issues/5#issuecomment-5667114560); do not follow up before a response |
+| 2026-09-15 | GitHub issue comment | trailhq/Graft maintainer | — | — | Free AI first-pass review versus repository-owned merge policy | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #368](https://github.com/trailhq/Graft/issues/368#issuecomment-5667168734); do not follow up before a response |
 
 ## Weekly review
 

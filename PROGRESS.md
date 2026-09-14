@@ -8,6 +8,8 @@
 - 公共分发信号：PyPI 最近 30 天下载量为 `307`（Pypistats，2026-09-03 核验）；下载量不等于联系人、试用或收入。
 - 销售漏斗：contacts `1`、qualified replies `0`、team tests `0`、pre-commitments `0`、确认收入 `$0`、MRR `$0`。
 - 已验证联系：2026-09-13 经用户确认向 Flowstate #1584 发布 1 条技术评论；A7/A9 均暂无维护者回复，不能计入试用或收入。
+- 外部触达更新（2026-09-15）：向 `sdempsay/agentic-review-tool#5` 发布 1 条针对 MCP stdio 结果契约的技术评论（[issue comment](https://github.com/sdempsay/agentic-review-tool/issues/5#issuecomment-5667114560)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
+- 外部触达更新（2026-09-15）：向 `trailhq/Graft#368` 发布 1 条关于免费 AI 初审与仓库合并策略边界的技术评论（[issue comment](https://github.com/trailhq/Graft/issues/368#issuecomment-5667168734)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 发布准备：本地 MCP 产品测试 `49 passed`、根测试 `39 passed`、Ruff 通过；wheel/sdist 均包含 JSON Schema。公开 PyPI 仍为 `0.1.2`，未将本地未发布能力计入线上承诺。
 - 试用路径修复（2026-09-14）：独立试用包的 `run-trial.sh` 现在优先使用 `uvx`，没有 `uvx` 时把公开 PyPI `0.1.2` 安装到临时目录，退出时清理；中英文说明和两个分发 ZIP 已同步，归档/安装相关测试 `21 passed`。
 - 试用页同步：中英文试用页已直接说明独立包可运行 `./run-trial.sh`，并标注无 `uvx` 时的隔离 Python fallback；live 页面和 live ZIP 均已核验为 `200` / 当前内容。

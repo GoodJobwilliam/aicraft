@@ -4,16 +4,16 @@ These drafts are prepared for manual review and sending. They are not sent autom
 
 ## Verified send order (2026-09-13)
 
-1. **A2** is the next candidate: open, zero comments, and a concrete MCP stdio acceptance checklist. Send only after explicit user confirmation.
+1. **A2** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 2. **A4** is an active design proposal and is suitable only if the maintainer is inviting implementation discussion; recheck before any send.
 3. **A1** remains open, but its maintainer clarified that the defect is in the website Add-to-Cursor payload, outside the repository. Do not send unless a new repository-side question appears.
 4. **A9** was sent on 2026-09-13 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 5. **A3** is closed as of 2026-09-08. Do not contact; retain as research. **A5**, **A6**, and **A8** already have discussion or promotional replies; do not add an unsolicited tool pitch.
-6. **A10** is a fresh research candidate with no comments. Recheck the issue and repository instructions before any send; require explicit user confirmation.
-7. **A11** is a fresh MCP design candidate with a maintainer decision already recorded. Recheck the protocol details before any send; require explicit user confirmation and do not pitch the product.
-8. **A12** is a maintainer-authored local-model experiment in NetworKit. Recheck the experiment and current comments before any send; require explicit user confirmation and keep the reply focused on a deterministic pre-check, not a product pitch.
-9. **A13** is a fresh Graft issue about a free AI code-review first pass. Recheck the issue and repository context before any send; require explicit user confirmation and keep the reply technical, with no product pitch.
-10. **A14** is a FinOps Toolkit issue requesting a GitHub Copilot code-review skill from existing repository standards. Recheck the issue and repository instructions before any send; require explicit user confirmation and keep the reply technical, with no product pitch.
+6. **A10** is a fresh research candidate with no comments. Recheck the issue and repository instructions before any send.
+7. **A11** is a fresh MCP design candidate with a maintainer decision already recorded. Recheck the protocol details before any send and do not pitch the product.
+8. **A12** is a maintainer-authored local-model experiment in NetworKit. Recheck the experiment and current comments before any send and keep the reply focused on a deterministic pre-check, not a product pitch.
+9. **A13** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
+10. **A14** is a FinOps Toolkit issue requesting a GitHub Copilot code-review skill from existing repository standards. Recheck the issue and repository instructions before any send and keep the reply technical, with no product pitch.
 
 ## A1 — code-review-graph #703
 
