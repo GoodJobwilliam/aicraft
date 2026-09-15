@@ -1,5 +1,13 @@
 # HANDOFF CONTEXT (updated 2026-09-15 CST)
 
+## 2026-09-15（收入主线 round 132）
+- 向 AgentsKit code-review #137 发布 1 条纯技术评论，讨论确定性 evidence envelope、逐 hunk 覆盖状态、去重指纹和 unavailable 证据的选择性重试：[issue comment](https://github.com/AgentsKit-io/code-review/issues/137#issuecomment-5673266802)。目前无维护者直接回复，未分享试用链接或收费信息。
+- 真实触达从 17 增至 18；qualified replies、team tests、paid signals、pre-commitments、one-time revenue 和 MRR 仍全部为 0。Docker MCP Registry #4699 的文案修正仍是分发审核，不计为 contact。
+
+## 2026-09-15（收入主线 round 131）
+- 修正 Docker MCP Registry PR [#4699](https://github.com/docker/mcp-registry/pull/4699) 的过时产品描述：移除未被当前版本证明的 OWASP 全覆盖、AI-powered、漏洞/N+1/性能 profiling 表述，改为本地确定性模式检查、结构化 finding、CI 退出码、PyPI 0.1.2 和版本化免费试用入口；PR 仍 open，等待 Registry 审核。
+- 该 PR 元数据更新属于分发审核，不计为新的 contact；`OUTREACH_LOG.csv` 的真实漏斗仍为 17 contacts / 0 qualified replies / 0 team tests / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR。未新增付费支出。
+
 ## 2026-09-15（收入主线 round 130）
 - 重新核验最近三条外部技术评论：agents-shipgate #623、NetworKit #1471 和 fullsend-ai/agents #1216；前两条线程虽有维护者背景评论，但均早于 AICraft 的评论，尚无针对 AICraft 的直接回复，第三条仍无维护者评论。未发送重复跟进、未分享试用链接、未新增联系人或商业漏斗记录。
 - 公开 team-trial / trial-feedback issue 仍为 0；当前真实漏斗保持 17 contacts / 0 qualified replies / 0 team tests / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR。

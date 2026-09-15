@@ -6,8 +6,8 @@
 - Team Rules Pack：一次性 `$49`，包含共享规则、CI 模板和提示词；Team Updates 仍处于早期验证，收费前确认范围和开始时间。
 - 免费试用：自助试用包、结构化 GitHub 表单、邮件反馈入口和 secretless GitHub Actions 起步模板均已上线。
 - 公共分发信号：PyPI 下载量和 GitHub Release 下载量仅作分发信号，不等于联系人、试用或收入。
-- 销售漏斗：contacts `16`、qualified replies `0`、team tests `0`、pre-commitments `0`、确认收入 `$0`、MRR `$0`。
-- 已验证联系：截至 2026-09-15 已向 16 个公开 GitHub 技术线程发布评论；全部等待维护者回复，不能计入试用或收入。
+- 销售漏斗：contacts `18`、qualified replies `0`、team tests `0`、pre-commitments `0`、确认收入 `$0`、MRR `$0`。
+- 已验证联系：截至 2026-09-15 已向 18 个公开 GitHub 技术线程发布评论；全部等待维护者回复，不能计入试用或收入。Docker MCP Registry #4699 是独立的分发审核 PR，不计为 contact。
 - 外部触达更新（2026-09-15）：向 `sdempsay/agentic-review-tool#5` 发布 1 条针对 MCP stdio 结果契约的技术评论（[issue comment](https://github.com/sdempsay/agentic-review-tool/issues/5#issuecomment-5667114560)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 外部触达更新（2026-09-15）：向 `trailhq/Graft#368` 发布 1 条关于免费 AI 初审与仓库合并策略边界的技术评论（[issue comment](https://github.com/trailhq/Graft/issues/368#issuecomment-5667168734)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 外部触达更新（2026-09-15）：向 `dheerajjha/reviewer#4` 发布 1 条关于版本化 MCP review-result 契约的技术评论（[issue comment](https://github.com/dheerajjha/reviewer/issues/4#issuecomment-5667220058)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
@@ -24,6 +24,8 @@
 - 外部触达更新（2026-09-15）：向 `ThreeMoonsLab/agents-shipgate#623` 发布 1 条关于 packaging backend provenance、lock digest 与锁定/联网构建结果区分的技术评论（[issue comment](https://github.com/ThreeMoonsLab/agents-shipgate/issues/623#issuecomment-5672798379)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 外部触达更新（2026-09-15）：向 `networkit/networkit#1471` 发布 1 条关于在慢速本地模型 bug 发现前加入快速确定性边界预检、并分离记录预检覆盖率与模型候选的技术评论（[issue comment](https://github.com/networkit/networkit/issues/1471#issuecomment-5672854060)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 外部触达更新（2026-09-15）：向 `fullsend-ai/agents#1216` 发布 1 条关于区分 cosmetic 与 functional 低影响 finding、并用固定回放 fixture 验证 severity/threshold 标定的技术评论（[issue comment](https://github.com/fullsend-ai/agents/issues/1216#issuecomment-5672935404)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
+- 分发审核更新（2026-09-15）：修正 Docker MCP Registry [#4699](https://github.com/docker/mcp-registry/pull/4699) 中过时的 OWASP/AI-powered 能力描述，改为当前可验证的本地确定性模式检查、结构化 finding、CI 退出码、PyPI 0.1.2 和免费 Release 入口；PR 仍 open，等待 Registry 审核，不计入 contact、试用或收入。
+- 外部触达更新（2026-09-15）：向 `AgentsKit-io/code-review#137` 发布 1 条关于确定性证据 envelope、hunk 覆盖状态、去重指纹和选择性重试的技术评论（[issue comment](https://github.com/AgentsKit-io/code-review/issues/137#issuecomment-5673266802)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 反馈门槛修正（2026-09-15）：英文/中文 `trial-feedback` 现在允许只提交“发现了什么、希望共享的规则、误报或遗漏”三项技术观察，团队规模、语言和来源改为可选；团队试用申请仍要求完整资格信息。`PYTHONPATH=. pytest -q`：56 passed，公开试用反馈仍为 0。
 - 反馈门槛修正（2026-09-15）：`trial-feedback` 的“下一步”也改为可选，用户可以只提交三项技术观察而不先选择商业路径；YAML 解析和回归测试通过，公开试用反馈仍为 0。
 - 产品可靠性修正（2026-09-15）：`review-diff` findings 现在映射到 unified diff 的新文件真实行号，避免 CI 报告指向拼接缓冲区的相对行；英文/中文 README、CHANGELOG、归档和回归测试已更新。根测试 `56 passed`、MCP 产品测试 `50 passed`、Ruff 通过；公开 PyPI 仍为 `0.1.2`，未把源码改动冒充线上能力。
