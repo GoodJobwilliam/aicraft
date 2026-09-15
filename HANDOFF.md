@@ -1,4 +1,10 @@
-# HANDOFF CONTEXT (updated 2026-09-14 CST)
+# HANDOFF CONTEXT (updated 2026-09-15 CST)
+
+## 2026-09-15（收入主线 round 124）
+- 收尾核验：`PYTHONPATH=. pytest -q` 55 passed，`git diff --check` 通过；官网首页与试用页均 HTTP 200，公开 PyPI 版本仍为 `0.1.2`。
+- 当前真实漏斗：16 contacts / 0 qualified replies / 0 team tests / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR。下载量、评论和公开 issue 互动均不计入收入。
+- 本轮向 `ThreeMoonsLab/agents-shipgate#623` 与 `networkit/networkit#1471` 发布纯技术评论；两处均等待维护者回复，不发送重复跟进，不分享付费报价。
+- 本地审计记录已提交为 `14f418d`，并通过 Git Data API 同步到远端 `main`，远端 commit 为 `243cc4267278e0545548e9ead3324a34d9b1711c`。未跟踪的 `.github/workflows/ci.yml` 与 `assets/*` 用户文件保持不动。
 
 ## 2026-09-14（收入主线 round 123）
 - 收尾核验：`PYTHONPATH=. pytest -q` 54 passed，`git diff --check` 通过；首页、中文首页、试用页和 Team Updates 页均 HTTP 200。
