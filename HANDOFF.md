@@ -1,5 +1,10 @@
 # HANDOFF CONTEXT (updated 2026-09-15 CST)
 
+## 2026-09-15（收入主线 round 129）
+- 刷新 GitHub Release mcp-code-review-0.1.2 的公开资产：当前试用包为 5,771 bytes、源码包为 91,966 bytes；旧副本保留为 mcp-code-review-trial-legacy.zip 与 mcp-code-review-legacy.zip，避免破坏历史下载引用。
+- 公开下载 URL 已复核：两个 canonical ZIP 均 HTTP 成功，unzip -tq 通过，下载后 SHA-256 与本地一致：试用包 9908060e9bb53ffa1c80d3e0bf65b120cd77ed6c6e4fdaeacd0bd0534089d858，源码包 01c2f404f680dcf40109cb9cf923520697a75f323959810377eaa4dcd32f46b4。
+- Release 说明已同步当前哈希并明确下载量不计入联系人、试用、客户或收入；本轮未新增付费支出，真实漏斗仍为 17 contacts / 0 qualified replies / 0 team tests / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR。
+
 ## 2026-09-15（收入主线 round 128）
 - 收尾核验：`PYTHONPATH=. pytest -q` 55 passed，`git diff --check` 通过；官网首页与试用页均 HTTP 200，公开 PyPI 版本仍为 `0.1.2`。
 - 当前真实漏斗：17 contacts / 0 qualified replies / 0 team tests / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR。下载量、评论和公开 issue 互动均不计入收入。
