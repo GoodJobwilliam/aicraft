@@ -27,6 +27,7 @@ Zero-budget customer validation for MCP Code Review. Keep this file factual: rec
 | 2026-09-15 | GitHub issue comment | githubnext/gh-aw-cao maintainer | — | — | Source/lock boundary and normalized security finding envelope for agentic workflows | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #11352](https://github.com/githubnext/gh-aw-cao/issues/11352#issuecomment-5672590846); do not follow up before a response |
 | 2026-09-15 | GitHub issue comment | lgtm-hq/py-lintro maintainer | — | — | Complete-review coverage, provider status, and resumable result contract | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #2555](https://github.com/lgtm-hq/py-lintro/issues/2555#issuecomment-5672652884); do not follow up before a response |
 | 2026-09-15 | GitHub issue comment | LeoMo42/sudoku-cc maintainer | — | — | Codex review credential failure diagnostics and unavailable-review policy | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #285](https://github.com/LeoMo42/sudoku-cc/issues/285#issuecomment-5672744793); do not follow up before a response |
+| 2026-09-15 | GitHub issue comment | Towheads/temperloop maintainer | — | — | Review coverage telemetry for timed-out routed reviewers | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #2038](https://github.com/Towheads/temperloop/issues/2038#issuecomment-5672768260); do not follow up before a response |
 
 ## Weekly review
 

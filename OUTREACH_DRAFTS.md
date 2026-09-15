@@ -21,6 +21,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 15. **A19** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 16. **A20** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 17. **A21** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
+18. **A22** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 
 ## A1 — code-review-graph #703
 
@@ -190,6 +191,14 @@ Issue: https://github.com/LeoMo42/sudoku-cc/issues/285
 Sent 2026-09-15: [issue comment](https://github.com/LeoMo42/sudoku-cc/issues/285#issuecomment-5672744793)
 
 Manual note: posted as a provider-failure diagnostics and unavailable-review policy question, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
+
+## A22 — temperloop #2038
+
+Issue: https://github.com/Towheads/temperloop/issues/2038
+
+Sent 2026-09-15: [issue comment](https://github.com/Towheads/temperloop/issues/2038#issuecomment-5672768260)
+
+Manual note: posted as review coverage telemetry and timeout instrumentation guidance, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
 
 ## Manual send checklist
 
