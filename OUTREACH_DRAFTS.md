@@ -20,6 +20,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 14. **A18** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 15. **A19** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 16. **A20** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
+17. **A21** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 
 ## A1 — code-review-graph #703
 
@@ -181,6 +182,14 @@ Issue: https://github.com/lgtm-hq/py-lintro/issues/2555
 Sent 2026-09-15: [issue comment](https://github.com/lgtm-hq/py-lintro/issues/2555#issuecomment-5672652884)
 
 Manual note: posted as a review-result and CI-state contract question, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
+
+## A21 — sudoku-cc #285
+
+Issue: https://github.com/LeoMo42/sudoku-cc/issues/285
+
+Sent 2026-09-15: [issue comment](https://github.com/LeoMo42/sudoku-cc/issues/285#issuecomment-5672744793)
+
+Manual note: posted as a provider-failure diagnostics and unavailable-review policy question, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
 
 ## Manual send checklist
 
