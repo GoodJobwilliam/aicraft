@@ -24,6 +24,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 18. **A22** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 19. **A23** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 20. **A24** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
+21. **A25** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 
 ## A1 — code-review-graph #703
 
