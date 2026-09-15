@@ -24,6 +24,7 @@ Zero-budget customer validation for MCP Code Review. Keep this file factual: rec
 | 2026-09-15 | GitHub issue comment | Gabriel-GM5/rpguide maintainer | — | — | Safe Claude review workflow with read-only report and separate policy gate | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #47](https://github.com/Gabriel-GM5/rpguide/issues/47#issuecomment-5672511425); do not follow up before a response |
 | 2026-09-15 | GitHub issue comment | unclehq/uncle maintainer | — | — | Tree-bound provenance attestation and canonical review result envelope | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #59](https://github.com/unclehq/uncle/issues/59#issuecomment-5672534319); do not follow up before a response |
 | 2026-09-15 | GitHub issue comment | nold-ai/specfact-cli maintainer | — | — | Normalized Code Review command/options parity and immutable fixture evidence | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #728](https://github.com/nold-ai/specfact-cli/issues/728#issuecomment-5672561544); do not follow up before a response |
+| 2026-09-15 | GitHub issue comment | githubnext/gh-aw-cao maintainer | — | — | Source/lock boundary and normalized security finding envelope for agentic workflows | — | — | Awaiting reply | No | No commercial offer | Wait for a maintainer reply on [issue #11352](https://github.com/githubnext/gh-aw-cao/issues/11352#issuecomment-5672590846); do not follow up before a response |
 
 ## Weekly review
 

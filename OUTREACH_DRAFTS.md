@@ -18,6 +18,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 12. **A16** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 13. **A17** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 14. **A18** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
+15. **A19** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 
 ## A1 — code-review-graph #703
 
@@ -163,6 +164,14 @@ Issue: https://github.com/nold-ai/specfact-cli/issues/728
 Sent 2026-09-15: [issue comment](https://github.com/nold-ai/specfact-cli/issues/728#issuecomment-5672561544)
 
 Manual note: posted as a narrow command-parity and fixture-integrity question, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
+
+## A19 — gh-aw-cao #11352
+
+Issue: https://github.com/githubnext/gh-aw-cao/issues/11352
+
+Sent 2026-09-15: [issue comment](https://github.com/githubnext/gh-aw-cao/issues/11352#issuecomment-5672590846)
+
+Manual note: posted as a source/generated-artifact and security-policy contract question, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
 
 ## Manual send checklist
 
