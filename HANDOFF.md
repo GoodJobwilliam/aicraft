@@ -1,11 +1,12 @@
 # HANDOFF CONTEXT (updated 2026-09-15 CST)
 
-## 2026-09-15（收入主线 round 125）
+## 2026-09-15（收入主线 round 126）
 - 收尾核验：`PYTHONPATH=. pytest -q` 55 passed，`git diff --check` 通过；官网首页与试用页均 HTTP 200，公开 PyPI 版本仍为 `0.1.2`。
 - 当前真实漏斗：17 contacts / 0 qualified replies / 0 team tests / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR。下载量、评论和公开 issue 互动均不计入收入。
 - 本轮向 `ThreeMoonsLab/agents-shipgate#623`、`networkit/networkit#1471` 与 `fullsend-ai/agents#1216` 发布纯技术评论；三处均等待维护者回复，不发送重复跟进，不分享付费报价。
 - 本地审计记录已提交为 `5cc5ae2`，并通过 Git Data API 同步到远端 `main`，远端 commit 为 `8797a8e3dd0b8cd22f6dc6b1dbdf9355e9c4a592`。未跟踪的 `.github/workflows/ci.yml` 与 `assets/*` 用户文件保持不动。
 - 官方 MCP Registry 条目仍为 `active`、版本 `0.1.2`；本地准确 `server.json` 的官方发布接口拒绝重复版本，编辑接口返回 `403`（当前 token 没有 edit permission），因此远端旧描述未被伪称为已更新。
+- 降低反馈门槛：英文/中文 `trial-feedback` 表单现在只要求三项核心技术观察，团队规模、语言、发现来源和商业资格字段均可留空；团队试用申请仍保留完整资格字段。回归测试 `56 passed`，提交 `b50dbdb` 已通过 Git Data API 同步到远端 `4af2a076cd1dc36c42faaa771744e80eb3dc894d`。
 
 ## 2026-09-14（收入主线 round 123）
 - 收尾核验：`PYTHONPATH=. pytest -q` 54 passed，`git diff --check` 通过；首页、中文首页、试用页和 Team Updates 页均 HTTP 200。
