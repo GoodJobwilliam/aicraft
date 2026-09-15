@@ -1,5 +1,9 @@
 # HANDOFF CONTEXT (updated 2026-09-15 CST)
 
+## 2026-09-15（收入主线 round 130）
+- 重新核验最近三条外部技术评论：agents-shipgate #623、NetworKit #1471 和 fullsend-ai/agents #1216；前两条线程虽有维护者背景评论，但均早于 AICraft 的评论，尚无针对 AICraft 的直接回复，第三条仍无维护者评论。未发送重复跟进、未分享试用链接、未新增联系人或商业漏斗记录。
+- 公开 team-trial / trial-feedback issue 仍为 0；当前真实漏斗保持 17 contacts / 0 qualified replies / 0 team tests / 0 paid signals / 0 pre-commitments / $0 one-time revenue / $0 MRR。
+
 ## 2026-09-15（收入主线 round 129）
 - 刷新 GitHub Release mcp-code-review-0.1.2 的公开资产：当前试用包为 5,771 bytes、源码包为 91,966 bytes；旧副本保留为 mcp-code-review-trial-legacy.zip 与 mcp-code-review-legacy.zip，避免破坏历史下载引用。
 - 公开下载 URL 已复核：两个 canonical ZIP 均 HTTP 成功，unzip -tq 通过，下载后 SHA-256 与本地一致：试用包 9908060e9bb53ffa1c80d3e0bf65b120cd77ed6c6e4fdaeacd0bd0534089d858，源码包 01c2f404f680dcf40109cb9cf923520697a75f323959810377eaa4dcd32f46b4。
