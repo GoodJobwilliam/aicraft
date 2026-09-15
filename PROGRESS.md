@@ -20,6 +20,7 @@
 - 外部触达更新（2026-09-15）：向 `githubnext/gh-aw-cao#11352` 发布 1 条关于 workflow 源文件/生成 lock 边界、规范化安全 finding envelope 与分层策略门禁的技术评论（[issue comment](https://github.com/githubnext/gh-aw-cao/issues/11352#issuecomment-5672590846)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 外部触达更新（2026-09-15）：向 `lgtm-hq/py-lintro#2555` 发布 1 条关于完整审查覆盖率、provider/transport 状态、可恢复结果与显式 CI 决策的技术评论（[issue comment](https://github.com/lgtm-hq/py-lintro/issues/2555#issuecomment-5672652884)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 试用转化摩擦修正（2026-09-15）：保留中英文 `team-trial` 的完整团队资格字段，将 `trial-feedback` 的档位、决策角色、开始月份和承诺字段改为可选；用户可先提交三项核心技术观察，再由公开回复补齐商业资格。新增回归测试确保团队申请仍要求完整字段，`PYTHONPATH=. pytest -q`：55 passed。
+- 试用结果后续 CTA（2026-09-15）：独立 `run-trial.sh` 现在保留原审查退出码，并在结果后打印三项非机密反馈问题、GitHub feedback form 和邮箱入口；实测从独立 ZIP 在临时目录运行得到 1 High + 1 Medium、退出码 `1`，反馈链接正常输出。已重建 `products/mcp-code-review-trial.zip`。
 - 发布准备：本地 MCP 产品测试 `49 passed`、根测试 `39 passed`、Ruff 通过；wheel/sdist 均包含 JSON Schema。公开 PyPI 仍为 `0.1.2`，未将本地未发布能力计入线上承诺。
 - 试用路径修复（2026-09-14）：独立试用包的 `run-trial.sh` 现在优先使用 `uvx`，没有 `uvx` 时把公开 PyPI `0.1.2` 安装到临时目录，退出时清理；中英文说明和两个分发 ZIP 已同步，归档/安装相关测试 `21 passed`。
 - 试用页同步：中英文试用页已直接说明独立包可运行 `./run-trial.sh`，并标注无 `uvx` 时的隔离 Python fallback；live 页面和 live ZIP 均已核验为 `200` / 当前内容。

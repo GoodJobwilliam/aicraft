@@ -67,3 +67,6 @@ def test_trial_launcher_prefers_uvx_and_has_a_python_fallback():
     assert "PYTHONPATH=" in launcher
     assert "trap cleanup EXIT INT TERM" in launcher
     assert "exit 2" in launcher
+    assert "Trial complete. Share three non-confidential observations:" in launcher
+    assert "template=trial-feedback.yml" in launcher
+    assert "review_exit" in launcher

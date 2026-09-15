@@ -26,6 +26,7 @@ From this directory, run the bundled launcher (it uses the same isolated path an
 ```
 
 The launcher uses uvx when available; otherwise it installs the pinned public package into a temporary directory and removes that directory on exit.
+After the result, it prints the three feedback questions and a copyable GitHub feedback link. The launcher's exit code remains the review exit code (`1` for this sample).
 
 The adjacent `.mcp-code-review.json` is discovered automatically. You should see a high-severity command-injection finding and a medium-severity team-convention finding. The non-zero exit code is suitable for a merge gate.
 
