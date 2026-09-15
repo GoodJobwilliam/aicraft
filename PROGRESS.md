@@ -1,13 +1,13 @@
 # AICraft - 项目进度
 
-## 当前可验证状态（2026-09-14）
+## 当前可验证状态（2026-09-15）
 
 - MCP Code Review Server：免费 MIT，本地运行；PyPI 稳定版本 `0.1.2`，官方 MCP Registry 状态为 active。
 - Team Rules Pack：一次性 `$49`，包含共享规则、CI 模板和提示词；Team Updates 仍处于早期验证，收费前确认范围和开始时间。
 - 免费试用：自助试用包、结构化 GitHub 表单、邮件反馈入口和 secretless GitHub Actions 起步模板均已上线。
-- 公共分发信号：PyPI 最近 30 天下载量为 `307`（Pypistats，2026-09-03 核验）；下载量不等于联系人、试用或收入。
-- 销售漏斗：contacts `1`、qualified replies `0`、team tests `0`、pre-commitments `0`、确认收入 `$0`、MRR `$0`。
-- 已验证联系：2026-09-13 经用户确认向 Flowstate #1584 发布 1 条技术评论；A7/A9 均暂无维护者回复，不能计入试用或收入。
+- 公共分发信号：PyPI 下载量和 GitHub Release 下载量仅作分发信号，不等于联系人、试用或收入。
+- 销售漏斗：contacts `16`、qualified replies `0`、team tests `0`、pre-commitments `0`、确认收入 `$0`、MRR `$0`。
+- 已验证联系：截至 2026-09-15 已向 16 个公开 GitHub 技术线程发布评论；全部等待维护者回复，不能计入试用或收入。
 - 外部触达更新（2026-09-15）：向 `sdempsay/agentic-review-tool#5` 发布 1 条针对 MCP stdio 结果契约的技术评论（[issue comment](https://github.com/sdempsay/agentic-review-tool/issues/5#issuecomment-5667114560)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 外部触达更新（2026-09-15）：向 `trailhq/Graft#368` 发布 1 条关于免费 AI 初审与仓库合并策略边界的技术评论（[issue comment](https://github.com/trailhq/Graft/issues/368#issuecomment-5667168734)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
 - 外部触达更新（2026-09-15）：向 `dheerajjha/reviewer#4` 发布 1 条关于版本化 MCP review-result 契约的技术评论（[issue comment](https://github.com/dheerajjha/reviewer/issues/4#issuecomment-5667220058)）；目前等待维护者回复，仍不能计入试用、付费意向或收入。
