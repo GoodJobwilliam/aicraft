@@ -139,7 +139,7 @@ def test_trial_feedback_keeps_core_observations_required_but_qualification_optio
         for marker in ["id: caught", "id: shared-rule", "id: noisy"]:
             start = content.index(marker)
             assert "required: true" in content[start : start + 500]
-        for marker in ["id: offer-tier", "id: decision-window", "id: decision-role", "id: target-start-month", "id: precommitment"]:
+        for marker in ["id: next-step", "id: offer-tier", "id: decision-window", "id: decision-role", "id: target-start-month", "id: precommitment"]:
             start = content.index(marker)
             next_field = content.find("\n  - type:", start)
             section = content[start : next_field if next_field != -1 else len(content)]

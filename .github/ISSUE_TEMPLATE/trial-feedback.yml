@@ -67,14 +67,13 @@ body:
     id: next-step
     attributes:
       label: Next step
+      description: Optional. Leave blank if you are only reporting the technical result.
       options:
         - Free server only
         - Test the $49 Team Rules Pack
         - Discuss Team Updates Starter at $19/month or $190/year
         - Discuss Team Pilot at $99/month or $990/year
         - Need scope clarification first
-    validations:
-      required: true
 
   - type: dropdown
     id: offer-tier

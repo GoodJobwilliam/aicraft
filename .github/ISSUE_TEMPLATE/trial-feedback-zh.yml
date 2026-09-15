@@ -67,14 +67,13 @@ body:
     id: next-step
     attributes:
       label: 下一步
+      description: 可选。如果只报告技术结果，可以留空。
       options:
         - 只使用免费服务器
         - 测试 $49 Team Rules Pack
         - 讨论 $19/月或 $190/年的 Team Updates Starter
         - 讨论 $99/月或 $990/年的 Team Pilot
         - 需要先了解交付范围
-    validations:
-      required: true
 
   - type: dropdown
     id: offer-tier
