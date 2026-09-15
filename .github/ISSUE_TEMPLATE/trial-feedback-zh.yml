@@ -83,61 +83,52 @@ body:
     id: offer-tier
     attributes:
       label: 讨论的增值档位
-      description: 选择最符合本次反馈的一个商业路径。这里只记录意向，不会产生付款。
+      description: 可选：如果已经有意向，选择最符合本次反馈的商业路径。只报告技术结果也可以留空；这里只记录意向，不会产生付款。
       options:
         - 只使用免费服务器
         - Team Rules Pack
         - Team Updates Starter
         - Team Updates Team Pilot
         - 还不清楚交付范围
-    validations:
-      required: true
 
   - type: dropdown
     id: decision-window
     attributes:
       label: 决策时间
+      description: 可选：如果只是报告技术结果，可以留空。
       options:
         - 本月
         - 下月
         - 本季度
         - 暂无付费计划
-    validations:
-      required: true
 
   - type: dropdown
     id: decision-role
     attributes:
       label: 你在决策中的角色
-      description: 哪一项最符合你在购买增值服务决策中的角色？
+      description: 可选：哪一项最符合你在购买增值服务决策中的角色？
       options:
         - 我负责购买决策
         - 我向决策者推荐工具
         - 我是参与测试的工程师
         - 我只是调研选项
-    validations:
-      required: true
 
   - type: input
     id: target-start-month
     attributes:
       label: 目标开始月份
-      description: 如果试用有效，计划从哪个月份开始所选档位？请使用 YYYY-MM 格式。
+      description: 可选：如果试用有效，计划从哪个月份开始所选档位？请使用 YYYY-MM 格式。
       placeholder: 例如：2026-10
-    validations:
-      required: true
 
   - type: dropdown
     id: precommitment
     attributes:
       label: 有条件的开始承诺
-      description: 如果最终交付范围符合所选档位，团队是否愿意按该价格开始？这不会产生收费或订阅。
+      description: 可选：如果最终交付范围符合所选档位，团队是否愿意按该价格开始？这不会产生收费或订阅。
       options:
         - 愿意，确认范围和开始时间后开始
         - 可能愿意，还需要更多证据
         - 目前还不能承诺
-    validations:
-      required: true
 
   - type: checkboxes
     id: contact

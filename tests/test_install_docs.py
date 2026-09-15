@@ -125,15 +125,26 @@ def test_trial_feedback_forms_capture_decision_role():
 
 
 def test_trial_forms_capture_target_start_month():
-    for path in [
-        ROOT / ".github/ISSUE_TEMPLATE/team-trial.yml",
-        ROOT / ".github/ISSUE_TEMPLATE/team-trial-zh.yml",
-        ROOT / ".github/ISSUE_TEMPLATE/trial-feedback.yml",
-        ROOT / ".github/ISSUE_TEMPLATE/trial-feedback-zh.yml",
-    ]:
+    for path in [ROOT / ".github/ISSUE_TEMPLATE/team-trial.yml", ROOT / ".github/ISSUE_TEMPLATE/team-trial-zh.yml"]:
         content = path.read_text(encoding="utf-8")
         assert "id: target-start-month" in content
         assert "YYYY-MM" in content
+        marker = content.index("id: target-start-month")
+        assert "required: true" in content[marker : marker + 500]
+
+
+def test_trial_feedback_keeps_core_observations_required_but_qualification_optional():
+    for path in [ROOT / ".github/ISSUE_TEMPLATE/trial-feedback.yml", ROOT / ".github/ISSUE_TEMPLATE/trial-feedback-zh.yml"]:
+        content = path.read_text(encoding="utf-8")
+        for marker in ["id: caught", "id: shared-rule", "id: noisy"]:
+            start = content.index(marker)
+            assert "required: true" in content[start : start + 500]
+        for marker in ["id: offer-tier", "id: decision-window", "id: decision-role", "id: target-start-month", "id: precommitment"]:
+            start = content.index(marker)
+            next_field = content.find("\n  - type:", start)
+            section = content[start : next_field if next_field != -1 else len(content)]
+            assert "可选" in section or "Optional" in section
+            assert "required: true" not in section
 
 
 def test_ai_agent_install_guide_uses_the_real_console_script():

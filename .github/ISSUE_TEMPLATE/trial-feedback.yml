@@ -83,61 +83,52 @@ body:
     id: offer-tier
     attributes:
       label: Offer tier discussed
-      description: Select the one commercial path that best matches this feedback. This records interest only; it is not a payment.
+      description: Optional: select a commercial path if you already have one in mind. Leaving this blank is fine; this records interest only and is not a payment.
       options:
         - Free server only
         - Team Rules Pack
         - Team Updates Starter
         - Team Updates Team Pilot
         - Scope not clear yet
-    validations:
-      required: true
 
   - type: dropdown
     id: decision-window
     attributes:
       label: Decision timing
+      description: Optional. Leave blank if you are only reporting the technical result.
       options:
         - This month
         - Next month
         - This quarter
         - No paid decision planned
-    validations:
-      required: true
 
   - type: dropdown
     id: decision-role
     attributes:
       label: Role in the decision
-      description: Which best describes your role when deciding on a paid add-on?
+      description: Optional. Which best describes your role when deciding on a paid add-on?
       options:
         - I make the purchase decision
         - I recommend tools to the decision maker
         - I am testing as an engineer
         - I am researching options
-    validations:
-      required: true
 
   - type: input
     id: target-start-month
     attributes:
       label: Target start month
-      description: If the trial works, which month would you target for starting the selected tier? Use YYYY-MM.
+      description: Optional. If the trial works, which month would you target for starting the selected tier? Use YYYY-MM.
       placeholder: e.g. 2026-10
-    validations:
-      required: true
 
   - type: dropdown
     id: precommitment
     attributes:
       label: Conditional start commitment
-      description: If the agreed scope matches the selected tier, would your team start at that price? This is not a charge or subscription.
+      description: Optional. If the agreed scope matches the selected tier, would your team start at that price? This is not a charge or subscription.
       options:
         - Yes, subject to confirming scope and start date
         - Maybe, I need more evidence
         - No commitment yet
-    validations:
-      required: true
 
   - type: checkboxes
     id: contact
