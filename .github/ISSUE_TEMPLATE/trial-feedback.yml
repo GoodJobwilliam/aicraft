@@ -13,22 +13,21 @@ body:
     id: team-size
     attributes:
       label: Team size
+      description: Optional. Leave blank if you only want to share the technical result.
       placeholder: e.g. 4
-    validations:
-      required: true
 
   - type: input
     id: languages
     attributes:
       label: Main languages
+      description: Optional. Leave blank if you prefer not to classify the repository.
       placeholder: e.g. Python, TypeScript
-    validations:
-      required: true
 
   - type: dropdown
     id: discovery-source
     attributes:
       label: How did you find MCP Code Review?
+      description: Optional. This helps us understand distribution, but is not needed for feedback.
       options:
         - GitHub
         - Official MCP Registry
@@ -38,8 +37,6 @@ body:
         - Web search
         - Recommendation
         - Other
-    validations:
-      required: true
 
   - type: textarea
     id: caught
@@ -83,7 +80,7 @@ body:
     id: offer-tier
     attributes:
       label: Offer tier discussed
-      description: Optional: select a commercial path if you already have one in mind. Leaving this blank is fine; this records interest only and is not a payment.
+      description: "Optional: select a commercial path if you already have one in mind. Leaving this blank is fine; this records interest only and is not a payment."
       options:
         - Free server only
         - Team Rules Pack

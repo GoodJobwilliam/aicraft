@@ -13,22 +13,21 @@ body:
     id: team-size
     attributes:
       label: 团队规模
+      description: 可选。如果只想分享技术结果，可以留空。
       placeholder: 例如：4
-    validations:
-      required: true
 
   - type: input
     id: languages
     attributes:
       label: 主要语言
+      description: 可选。如果不想分类仓库，可以留空。
       placeholder: 例如：Python、TypeScript
-    validations:
-      required: true
 
   - type: dropdown
     id: discovery-source
     attributes:
       label: 你从哪里知道 MCP Code Review？
+      description: 可选。这个信息有助于了解分发渠道，但不是提交反馈的必要条件。
       options:
         - GitHub
         - 官方 MCP Registry
@@ -38,8 +37,6 @@ body:
         - 网页搜索
         - 他人推荐
         - 其他
-    validations:
-      required: true
 
   - type: textarea
     id: caught

@@ -147,6 +147,17 @@ def test_trial_feedback_keeps_core_observations_required_but_qualification_optio
             assert "required: true" not in section
 
 
+def test_trial_feedback_allows_technical_only_submissions():
+    for path in [ROOT / ".github/ISSUE_TEMPLATE/trial-feedback.yml", ROOT / ".github/ISSUE_TEMPLATE/trial-feedback-zh.yml"]:
+        content = path.read_text(encoding="utf-8")
+        for marker in ["id: team-size", "id: languages", "id: discovery-source"]:
+            start = content.index(marker)
+            next_field = content.find("\n  - type:", start)
+            section = content[start : next_field if next_field != -1 else len(content)]
+            assert "required: true" not in section
+            assert "可选" in section or "Optional" in section
+
+
 def test_ai_agent_install_guide_uses_the_real_console_script():
     content = (ROOT / "products/mcp-code-review/llms-install.md").read_text(encoding="utf-8")
     assert '"--from", "aicraft-code-review", "--with", "mcp<2", "mcp-code-review"' in content
