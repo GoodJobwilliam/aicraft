@@ -103,6 +103,19 @@ class TestDiffReview:
         result = reviewer.review_diff(diff)
         assert "credential" in result.lower() or "Command injection" in result
 
+    def test_review_diff_reports_new_file_line_numbers(self, reviewer: CodeReviewer):
+        diff = (
+            "diff --git a/app.py b/app.py\n"
+            "--- a/app.py\n"
+            "+++ b/app.py\n"
+            "@@ -10,2 +20,3 @@\n"
+            " context = True\n"
+            "+API_KEY = \"sk-example\"\n"
+            " return context\n"
+        )
+        findings = reviewer.review_diff_findings(diff)
+        assert any(finding.check == "hardcoded_secret" and finding.line == 21 for finding in findings)
+
 
 class TestFormatReport:
     def test_empty_findings(self, reviewer: CodeReviewer):

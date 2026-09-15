@@ -77,6 +77,8 @@ mcp-code-review review-diff --staged
 mcp-code-review review-code "import os; os.system('ls')"
 ```
 
+对于 unified diff，报告会使用每个 hunk 中的新文件行号，因此 CI 输出可以直接对应 Pull Request 中显示的实际行。
+
 退出码适配 CI：`0` 干净 / `1` 存在 High 或 Medium / `2` 存在 Critical。
 
 ### 免费 GitHub Actions 起步模板

@@ -51,14 +51,41 @@ class CodeReviewer:
 
     def review_diff_findings(self, diff: str) -> list[Finding]:
         """Return structured findings for a git diff."""
-        # Extract added/modified lines from diff
-        added_lines = []
-        for line in diff.split("\n"):
-            if line.startswith("+") and not line.startswith("+++"):
-                added_lines.append(line[1:])
+        code, line_map = self._diff_code_and_line_map(diff)
+        findings = self.review_code_findings(code, "auto")
+        # Findings are produced against the compact added-line buffer. Map them
+        # back to new-file line numbers so CI output points at the actual diff.
+        return [
+            finding._replace(line=line_map[finding.line - 1])
+            if 0 < finding.line <= len(line_map)
+            else finding
+            for finding in findings
+        ]
 
-        code = "\n".join(added_lines)
-        return self.review_code_findings(code, "auto")
+    @staticmethod
+    def _diff_code_and_line_map(diff: str) -> tuple[str, list[int]]:
+        """Extract added lines and their new-file line numbers from a unified diff."""
+        added_lines: list[str] = []
+        line_map: list[int] = []
+        new_line = 0
+        saw_hunk = False
+        for raw_line in diff.splitlines():
+            if raw_line.startswith("@@"):
+                match = re.search(r"\+(\d+)(?:,(\d+))?", raw_line)
+                if match:
+                    new_line = int(match.group(1))
+                    saw_hunk = True
+                continue
+            if raw_line.startswith("+++") or raw_line.startswith("---"):
+                continue
+            if raw_line.startswith("+"):
+                added_lines.append(raw_line[1:])
+                line_map.append(new_line if saw_hunk else len(line_map) + 1)
+                if saw_hunk:
+                    new_line += 1
+            elif saw_hunk and raw_line.startswith(" "):
+                new_line += 1
+        return "\n".join(added_lines), line_map
 
     # ── Config application ────────────────────────────────────────
 

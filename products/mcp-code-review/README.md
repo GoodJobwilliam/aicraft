@@ -78,6 +78,8 @@ mcp-code-review review-diff --staged
 mcp-code-review review-code "import os; os.system('ls')"
 ```
 
+For unified diffs, findings use the new-file line numbers from each hunk, so CI output points to the same lines shown in the pull request.
+
 Exit codes are CI-friendly: `0` clean, `1` high/medium issues, `2` critical issues.
 
 ### Free GitHub Actions starter
