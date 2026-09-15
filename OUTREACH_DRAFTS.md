@@ -22,6 +22,7 @@ These drafts are prepared for manual review and sending. They are not sent autom
 16. **A20** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 17. **A21** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 18. **A22** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
+19. **A23** was sent on 2026-09-15 and is waiting for a maintainer reply; do not send a duplicate follow-up.
 
 ## A1 — code-review-graph #703
 
@@ -199,6 +200,14 @@ Issue: https://github.com/Towheads/temperloop/issues/2038
 Sent 2026-09-15: [issue comment](https://github.com/Towheads/temperloop/issues/2038#issuecomment-5672768260)
 
 Manual note: posted as review coverage telemetry and timeout instrumentation guidance, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
+
+## A23 — agents-shipgate #623
+
+Issue: https://github.com/ThreeMoonsLab/agents-shipgate/issues/623
+
+Sent 2026-09-15: [issue comment](https://github.com/ThreeMoonsLab/agents-shipgate/issues/623#issuecomment-5672798379)
+
+Manual note: posted as packaging provenance and locked/network result-contract guidance, not a product pitch. Wait for a maintainer reply before sharing the free trial or discussing a paid offer.
 
 ## Manual send checklist
 
