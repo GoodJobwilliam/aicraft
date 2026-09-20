@@ -63,7 +63,7 @@ Then configure:
 - No environment variables needed
 
 ## Team upgrade
-The server is free and MIT-licensed. Teams that need ready-made multi-language profiles, CI merge gates, and review prompts can [get the one-time $49 Team Rules Pack via Creem](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0).
+The server is free and MIT-licensed. Teams that need ready-made multi-language profiles, CI merge gates, and review prompts can [get the one-time $49 Team Rules Pack via Creem](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20checkout%20request&body=Team%20size%3A%20%5B%5D%0AMain%20languages%3A%20%5B%5D%0ACurrent%20review%20workflow%3A%20%5B%5D%0AWhat%20you%20need%20from%20the%20pack%3A%20%5B%5D).
 
 ## Verification
 After installation, ask: "Review this Python code: \`\`\`python\nprint('hello')\n\`\`\`"

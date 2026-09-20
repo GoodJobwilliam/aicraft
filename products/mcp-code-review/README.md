@@ -53,7 +53,7 @@ python -m mcp_code_review
 
 ### Team Rules Pack ($49, one-time)
 
-The free MIT server is enough for local review. If your team needs ready-made profiles and merge gates, the optional [Team Rules Pack is available through Creem](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0): 63 validated Python/JS·TS/Go/Java rules, GitHub Actions and GitLab CI templates, and 20 LLM review prompts with lifetime updates.
+The free MIT server is enough for local review. If your team needs ready-made profiles and merge gates, the optional [Team Rules Pack is available through Creem](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20checkout%20request&body=Team%20size%3A%20%5B%5D%0AMain%20languages%3A%20%5B%5D%0ACurrent%20review%20workflow%3A%20%5B%5D%0AWhat%20you%20need%20from%20the%20pack%3A%20%5B%5D): 63 validated Python/JS·TS/Go/Java rules, GitHub Actions and GitLab CI templates, and 20 LLM review prompts with lifetime updates.
 
 ### Team Updates (early access)
 
