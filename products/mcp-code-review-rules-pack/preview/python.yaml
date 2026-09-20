@@ -7,13 +7,13 @@ severity_overrides:
 
 custom_rules:
   - name: no-eval
-    pattern: '\\beval\\s*\\('
+    pattern: '\beval\s*\('
     severity: critical
     category: security
     issue: "Dynamic evaluation can execute untrusted input."
     fix: "Use a typed parser or an explicit allowlist."
   - name: no-debug-print
-    pattern: '\\bprint\\s*\\('
+    pattern: '\bprint\s*\('
     severity: info
     category: team-convention
     issue: "Debug output should not reach production paths."
