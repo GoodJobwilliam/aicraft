@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Run a Local AI Code Review Trial Before Adding a Team CI Gate — AICraft</title>
+<meta name="description" content="Run AICraft MCP Code Review locally in 10 minutes, see a command-injection finding and CI exit code, then decide whether the $49 Team Rules Pack is right for your team.">
+<link rel="canonical" href="https://aicraft.vip/blog/team-code-review-trial-en.html">
+<link rel="alternate" hreflang="zh-CN" href="https://aicraft.vip/blog/team-code-review-trial.html">
+<style>
+:root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--text:#c4c4cf;--heading:#e4e4ed;--accent:#6366f1;--accent2:#22d3ee;--muted:#9ca3af}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;padding:2rem}.container{max-width:760px;margin:0 auto}h1{color:var(--heading);font-size:2rem;margin-bottom:.6rem;line-height:1.3}h2{color:var(--heading);font-size:1.35rem;margin:2.2rem 0 .8rem}p{margin-bottom:1rem}a{color:var(--accent2)}code{background:var(--card);padding:.15em .4em;border-radius:4px;color:var(--accent2)}pre{background:var(--card);padding:1rem;border:1px solid var(--border);border-radius:8px;overflow-x:auto;margin:1rem 0}pre code{padding:0;background:none}.header{text-align:center;padding:2rem 0 3rem}.header a{color:var(--accent);text-decoration:none}.meta{color:var(--muted);font-size:.9rem}.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin:1rem 0}.cta{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;padding:1.5rem;text-align:center;margin:2rem 0}.cta h2{color:#fff;margin:0 0 .4rem}.cta p{color:#fff;margin-bottom:1rem}.btn{display:inline-block;background:#fff;color:#0a0a0f;padding:.65rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:700;margin:.25rem}.btn.secondary{background:transparent;border:1px solid #fff;color:#fff}ul,ol{margin:0 0 1rem 1.5rem}li{margin-bottom:.35rem}.label{color:var(--accent2);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em}
+</style>
+</head>
+<body><div class="container">
+<header class="header"><a href="/">← AICraft home</a><h1>Run a local AI code review trial before adding a team CI gate</h1><p class="meta">September 20, 2026 · For teams using Claude Code, Cursor, Cline, or CI</p></header>
+<p class="label">See evidence before buying a tool</p>
+<p>Code review becomes inconsistent when every developer uses different prompts and CI only notices problems after merge. AICraft MCP Code Review runs locally. The trial does not upload source code, create a payment, or start a subscription.</p>
+<h2>What the 10-minute trial shows</h2>
+<div class="card"><ul><li><strong>High:</strong> a command-injection finding for <code>os.system(user_input)</code>.</li><li><strong>Medium:</strong> a team-convention rule, such as flagging direct <code>print</code> calls in production code.</li><li><strong>Exit code 1:</strong> high or medium findings are visible to CI; critical findings use exit code 2.</li><li><strong>Local output:</strong> a readable report stays in the terminal or CI log.</li></ul></div>
+<p>This is not a claim to cover an entire security framework. It is a deterministic local pattern-checking workflow with structured findings, so a team can decide whether the rules are useful before standardizing them.</p>
+<h2>Run it</h2><ol><li>Download and unzip the standalone trial bundle.</li><li>Run <code>./run-trial.sh</code> from its directory.</li><li>Record what it caught, which rule to share, and which result needs tuning.</li></ol><pre><code>./run-trial.sh
+# Expected: High command injection + Medium team convention; exit status 1</code></pre>
+<div class="cta"><h2>Validate it free first</h2><p>If the trial does not catch a useful issue, there is nothing to buy.</p><a class="btn" href="/trial.html">Run the free 10-minute trial</a><a class="btn secondary" href="https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&amp;title=Team%20trial%20request">Apply for a free team trial</a></div>
+<h2>When the Team Rules Pack is useful</h2><p>The free server is for validating the workflow locally. The one-time <strong>$49 Team Rules Pack</strong> is for teams that need shared rules and merge gates:</p><ul><li>63 rules for Python, JavaScript/TypeScript, Go, and Java.</li><li>GitHub Actions and GitLab CI merge-gate templates.</li><li>20 LLM review prompts for security, reliability, performance, and test gaps.</li><li>Lifetime updates for the purchased rules pack.</li></ul><p>After checkout, email only a non-sensitive order reference for delivery. Do not send source code, credentials, or secrets.</p>
+<div class="cta"><h2>Buy for a team when the rules fit</h2><p>$49 one-time purchase, with secure checkout provided by Creem.</p><a class="btn" href="https://www.creem.io/payment/prod_6Z3S3jGNPsCyRSqNi397ZY">Buy Team Rules Pack — $49</a></div>
+<h2>Need continuing help?</h2><p>Teams that need monthly rule updates, a CI configuration review, or false-positive tuning can apply for a free team trial. Team Updates is early access: scope, start date, and acceptance criteria are confirmed in writing before any charge.</p>
+<hr style="border-color:var(--border);margin:3rem 0"><p style="text-align:center;color:var(--muted);font-size:.9rem">AICraft · Local-first MCP code review<br><a href="/products/mcp-code-review/">Install and documentation</a> · <a href="/blog/team-code-review-trial.html">中文试用指南</a></p>
+</div></body></html>
