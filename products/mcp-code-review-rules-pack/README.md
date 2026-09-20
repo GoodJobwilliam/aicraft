@@ -1,83 +1,27 @@
-# MCP Code Review — Team Rules Pack & CI Playbook
+# MCP Code Review — Team Rules Pack
 
-The paid companion pack for the free open-source [`aicraft-code-review`](https://github.com/GoodJobwilliam/aicraft) MCP server.
+The free, MIT-licensed [`aicraft-code-review`](https://github.com/GoodJobwilliam/aicraft/tree/main/products/mcp-code-review) server lets every team create and commit its own local rule profile. This directory intentionally contains only a small, runnable preview.
 
-You get in **minutes** what normally takes teams weeks: production-grade rule profiles for 4 languages, CI wiring that gates merges, and 20 LLM review prompts.
+## Try the preview
 
-## What's inside
-
-| File | What it does |
-|------|--------------|
-| `rules/python.yaml` | 21 security/correctness/quality rules for Python |
-| `rules/javascript.yaml` | 16 rules for JavaScript & TypeScript (React, Vue, Node) |
-| `rules/go.yaml` | 13 rules for Go |
-| `rules/java.yaml` | 13 rules for Java |
-| `ci/github-actions.yml` | GitHub Actions workflow: review every PR, comment the report, **block merge on critical findings** |
-| `ci/gitlab-ci.yml` | GitLab CI MR gate with the same behavior; keeps `review-report.txt` as an artifact |
-| `llm-prompts.md` | 20 prompts for deep semantic review with Claude/GPT/Gemini |
-
-Every rule uses the stable `custom_rules` schema (name / pattern / severity / category / issue / fix) plus tuned `severity_overrides` for the built-in checks — validated against MCP Code Review v0.1.2.
-
-## Install (2 minutes)
+Copy [`preview/python.yaml`](./preview/python.yaml) to a test repository as `.mcp-code-review.yaml`, then run the free server:
 
 ```bash
 pip install "aicraft-code-review==0.1.2" "mcp<2"
-
-# Copy the profile for your language to your repo root
-cp rules/python.yaml .mcp-code-review.yaml
-
-# Or keep profiles shared and point the whole team at one file:
-export MCP_CODE_REVIEW_CONFIG=/path/to/rules/python.yaml
+cp preview/python.yaml /path/to/repository/.mcp-code-review.yaml
+mcp-code-review review-file /path/to/repository/example.py
 ```
 
-Now every teammate's Claude Code / Cursor / Windsurf session reviews diffs with the **same rules** — no config drift.
+The preview demonstrates the configuration shape and representative policy checks; it is not the full Team Rules Pack.
 
-## Wire up CI (5 minutes)
+## Team Rules Pack — $49, one-time
 
-```bash
-cp ci/github-actions.yml .github/workflows/code-review.yml
-```
+The paid delivery contains the complete, versioned set of 63 security, correctness, and team-policy rules for Python, JavaScript/TypeScript, Go, and Java; GitHub Actions and GitLab CI merge-gate templates; and 20 prompts for semantic review. It also includes lifetime updates for that pack version.
 
-What you get:
+After [secure checkout through Creem](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0), email the non-secret receipt or order reference to [731685147@qq.com](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20delivery) for manual delivery. Do not send source code, credentials, or secrets.
 
-- Exit code `0` — clean, nothing happens.
-- Exit code `1` — high/medium findings → a report comment is posted on the PR, merge stays open.
-- Exit code `2` — critical findings → **the workflow fails and blocks the merge.**
-- GitLab CI keeps `review-report.txt` as an artifact even when the review job fails, so reviewers can inspect the findings.
-- Both templates keep the text report as a downloadable artifact. The GitHub Actions template runs review code with read-only permissions, then uses a separate write-scoped comment job only for same-repository PRs; fork PRs still receive the downloadable report without write access.
-- Critical findings are gated in the read-only review job before the optional comment job runs.
-
-## How to customize
-
-Rules are plain YAML. Example:
-
-```yaml
-custom_rules:
-  - name: no-internal-export
-    pattern: 'export .*[Ii]nternal'
-    severity: medium
-    category: team-convention
-    issue: "Internal API exported by accident"
-    fix: "Move behind the internal package boundary"
-```
-
-Tune built-in checks without writing regex:
-
-```yaml
-severity_overrides:
-  long_lines: info      # relax
-  hardcoded_secret: critical   # tighten
-
-disabled_checks:
-  - snake_case          # skip naming style
-```
-
-Full docs: <https://github.com/GoodJobwilliam/aicraft>
-
-## Purchase
-
-The Team Rules Pack is a one-time **$49** purchase with lifetime updates. [Open secure checkout via Creem](https://creem.io/checkout/prod_6Z3S3jGNPsCyRSqNi397ZY/ch_6wLlsvodjjvKq73eBpZCP0).
+For a team that needs a shared profile, CI setup review, and ongoing tuning rather than a one-time package, start with a [free Team Trial request](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request). Scope and start date are confirmed before any Team Updates charge.
 
 ## License
 
-You may use these rule files and workflows in any number of projects, including commercial ones, within your team. Redistribution/resale of the pack itself is not permitted.
+The preview is provided for evaluation with the free server. A purchased Team Rules Pack may be used by the purchasing team in any number of its projects, including commercial projects; redistribution or resale of the full pack is not permitted.
