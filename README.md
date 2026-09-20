@@ -29,9 +29,11 @@ Production-ready developer tools, code templates, and AI prompt packs. Built by 
 
 Custom rules & team profiles: commit a `.mcp-code-review.yaml` to your repo for shared regex rules, disabled checks, severity overrides, and per-repo thresholds.
 
-Start here: [run the free 10-minute trial](https://aicraft.vip/trial.html) · [download the versioned trial bundle](https://github.com/GoodJobwilliam/aicraft/releases/tag/mcp-code-review-0.1.2) · [share structured trial feedback](https://github.com/GoodJobwilliam/aicraft/issues/new?template=trial-feedback.yml&title=Trial%20feedback) · [request a free team trial](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request)
+Start with the [free 10-minute trial](https://aicraft.vip/trial.html) or [download the versioned trial bundle](https://github.com/GoodJobwilliam/aicraft/releases/tag/mcp-code-review-0.1.2). It uses an intentionally unsafe sample, not your repository, and produces a structured local report.
 
-For a real pull-request check, copy the [secretless GitHub Actions starter](./products/mcp-code-review/examples/github-actions/mcp-code-review.yml). It uses the pinned PyPI `0.1.2` release; no API key or paid service is required.
+If that workflow proves useful for a shared team baseline, the optional [Team Rules Pack](https://www.creem.io/payment/prod_6Z3S3jGNPsCyRSqNi397ZY) is a one-time **$49** purchase. It includes 63 ready-made rules for Python, JavaScript/TypeScript, Go, and Java; GitHub Actions and GitLab CI merge-gate templates; and 20 review prompts. For a real pull-request check, copy the [secretless GitHub Actions starter](./products/mcp-code-review/examples/github-actions/mcp-code-review.yml). It uses the pinned PyPI `0.1.2` release; no API key or paid service is required.
+
+[Share structured trial feedback](https://github.com/GoodJobwilliam/aicraft/issues/new?template=trial-feedback.yml&title=Trial%20feedback) or [request a free team trial](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request). Do not include source code or credentials.
 
 Marketplaces: [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.GoodJobwilliam%2Faicraft-code-review) · [Smithery](https://smithery.ai/servers/yaohuixue1/mcp-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server) · [PyPI](https://pypi.org/project/aicraft-code-review/)
 
@@ -53,13 +55,7 @@ All products are priced based on market research and the value they deliver:
 - **Code templates** at $49-$59 save 10-40 hours of setup time — priced at a fraction of the time they save
 - **MCP Code Review Server** is free and MIT-licensed; the optional Team Rules Pack is $49 for shared rules, CI gates, and prompts
 
-Most products are one-time purchases with lifetime updates. The MCP Code Review line is also validating a two-tier Team Updates offer for teams that want monthly rule drops, CI workflow refreshes, and rollout support.
-
-### Team Updates (early access)
-
-The free MCP server and the one-time Team Rules Pack remain available. Team Updates is being validated in two tiers: **Starter ($19/month or $190/year, up to 3 engineers)** and **Team Pilot ($99/month or $990/year, up to 10 engineers)**. Early access is collected by email first; the delivery scope and launch date are confirmed before charging.
-
-Details: [Team Updates](./team-updates.html) · [Team Pilot scope and acceptance checklist](./TEAM_PILOT_BRIEF.md) · [中文页面](./team-updates.zh.html)
+Most products are one-time purchases with lifetime updates. MCP Code Review has a free, MIT-licensed local workflow and an optional one-time Team Rules Pack for teams that want a versioned shared baseline.
 
 ## Roadmap
 
@@ -68,7 +64,6 @@ Details: [Team Updates](./team-updates.html) · [Team Pilot scope and acceptance
 - [x] Creem merchant setup (stable Team Rules Pack payment link active)
 - [x] Official MCP Registry listing (0.1.2 active)
 - [ ] Next.js SaaS Starter Kit
-- [ ] Team Updates recurring offer (early access validation in progress)
 
 ## Tech Stack
 
