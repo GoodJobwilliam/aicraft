@@ -54,7 +54,7 @@ python -m mcp_code_review
 
 The `mcp<2` constraint keeps the server compatible with the current MCP Python SDK API.
 
-For the optional paid upgrade, [request a current Team Rules Pack checkout link](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20checkout%20request&body=Team%20size%3A%20%5B%5D%0AMain%20languages%3A%20%5B%5D%0ACurrent%20review%20workflow%3A%20%5B%5D%0AWhat%20you%20need%20from%20the%20pack%3A%20%5B%5D). It is a one-time $49 purchase; the server itself remains free and MIT-licensed.
+For the optional paid upgrade, [buy the Team Rules Pack securely through Creem](https://www.creem.io/payment/prod_6Z3S3jGNPsCyRSqNi397ZY). It is a one-time $49 purchase; the server itself remains free and MIT-licensed.
 
 ## Repository
 https://github.com/GoodJobwilliam/aicraft

@@ -18,7 +18,7 @@ The preview demonstrates the configuration shape and representative policy check
 
 The paid delivery contains the complete, versioned set of 63 security, correctness, and team-policy rules for Python, JavaScript/TypeScript, Go, and Java; GitHub Actions and GitLab CI merge-gate templates; and 20 prompts for semantic review. It also includes lifetime updates for that pack version.
 
-First [request a current secure Creem checkout link](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20checkout%20request&body=Team%20size%3A%20%5B%5D%0AMain%20languages%3A%20%5B%5D%0ACurrent%20review%20workflow%3A%20%5B%5D%0AWhat%20you%20need%20from%20the%20pack%3A%20%5B%5D). After checkout, email the non-secret receipt or order reference to [731685147@qq.com](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20delivery) for manual delivery. Do not send source code, credentials, or secrets.
+[Buy securely through Creem](https://www.creem.io/payment/prod_6Z3S3jGNPsCyRSqNi397ZY). After checkout, email the non-secret receipt or order reference to [731685147@qq.com](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20delivery) for manual delivery. Do not send source code, credentials, or secrets.
 
 For a team that needs a shared profile, CI setup review, and ongoing tuning rather than a one-time package, start with a [free Team Trial request](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request). Scope and start date are confirmed before any Team Updates charge.
 

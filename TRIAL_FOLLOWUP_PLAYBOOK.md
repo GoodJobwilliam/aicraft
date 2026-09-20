@@ -22,7 +22,7 @@ If they report a real finding, ask whether the same rule should run in every rep
 ### 3. Offer selection
 
 - **Rules only**: point to the free config workflow first; offer the `$49` Team Rules Pack when the team wants the validated multi-language profiles, CI templates, and prompts.
-- **Rules-only checkout**: after the team confirms the pack solves the stated problem, send the [Creem checkout link](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20checkout%20request&body=Team%20size%3A%20%5B%5D%0AMain%20languages%3A%20%5B%5D%0ACurrent%20review%20workflow%3A%20%5B%5D%0AWhat%20you%20need%20from%20the%20pack%3A%20%5B%5D) and record the payment only after Creem confirms it.
+- **Rules-only checkout**: after the team confirms the pack solves the stated problem, send the [Creem checkout link](https://www.creem.io/payment/prod_6Z3S3jGNPsCyRSqNi397ZY) and record the payment only after Creem confirms it.
 - **Ongoing maintenance**: offer Starter at `$19/month` or `$190/year` for up to 3 engineers, or Team Pilot at `$99/month` or `$990/year` for up to 10 engineers with the first-30-day CI and tuning reviews. Confirm exact scope and start date before charging.
 - **No decision yet**: leave the free server and trial kit as the next step; do not push a checkout link.
 
