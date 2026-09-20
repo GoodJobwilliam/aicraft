@@ -65,7 +65,7 @@ Details: [Team Updates](./team-updates.html) · [Team Pilot scope and acceptance
 
 - [x] Initial product lineup (9 products)
 - [x] GitHub Pages storefront with custom domain
-- [x] Creem store (checkout live)
+- [x] Creem merchant setup (current checkout links are issued on request)
 - [x] Official MCP Registry listing (0.1.2 active)
 - [ ] Next.js SaaS Starter Kit
 - [ ] Team Updates recurring offer (early access validation in progress)

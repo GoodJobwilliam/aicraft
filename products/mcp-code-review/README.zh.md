@@ -52,7 +52,7 @@ python -m mcp_code_review
 
 ### Team Rules Pack（$49，一次性）
 
-免费的 MIT 服务器已经可以完成本地审查。如果团队需要现成规则档案和合并门禁，可通过 [Creem 购买 Team Rules Pack](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20checkout%20request&body=Team%20size%3A%20%5B%5D%0AMain%20languages%3A%20%5B%5D%0ACurrent%20review%20workflow%3A%20%5B%5D%0AWhat%20you%20need%20from%20the%20pack%3A%20%5B%5D)：包含 Python/JS·TS/Go/Java 共 63 条验证规则、GitHub Actions 与 GitLab CI 模板，以及 20 条 LLM 审查提示词，终身更新。
+免费的 MIT 服务器已经可以完成本地审查。如果团队需要现成规则档案和合并门禁，可[索取 Team Rules Pack 的当前 Creem 安全结算链接](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20checkout%20request&body=Team%20size%3A%20%5B%5D%0AMain%20languages%3A%20%5B%5D%0ACurrent%20review%20workflow%3A%20%5B%5D%0AWhat%20you%20need%20from%20the%20pack%3A%20%5B%5D)：包含 Python/JS·TS/Go/Java 共 63 条验证规则、GitHub Actions 与 GitLab CI 模板，以及 20 条 LLM 审查提示词，终身更新。
 
 ### Team Updates（早期体验）
 

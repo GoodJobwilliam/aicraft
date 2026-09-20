@@ -49,7 +49,7 @@ mcp-code-review review-file path/to/file.py
 
 如果答案指向持续的团队需求，可以提交[中文结构化试用反馈](https://github.com/GoodJobwilliam/aicraft/issues/new?template=trial-feedback-zh.yml&title=%5B%E8%AF%95%E7%94%A8%E5%8F%8D%E9%A6%88%5D)，或使用[中文团队试用申请表](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial-zh.yml&title=%5B%E5%9B%A2%E9%98%9F%E8%AF%95%E7%94%A8%5D)开始一次引导式团队测试。填写团队规模、语言、流程和痛点即可。请勿提交源代码或密钥。
 
-可选的 **Team Rules Pack** 为一次性 `$49`，可[通过 Creem 安全结算](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20checkout%20request&body=Team%20size%3A%20%5B%5D%0AMain%20languages%3A%20%5B%5D%0ACurrent%20review%20workflow%3A%20%5B%5D%0AWhat%20you%20need%20from%20the%20pack%3A%20%5B%5D)。**Team Updates Starter** 是最多 3 人的 `$19/月` 或 `$190/年`；**Team Pilot** 是最多 10 人的 `$99/月` 或 `$990/年`，包含 CI 和调优支持。收费前会先确认范围和开始时间。
+可选的 **Team Rules Pack** 为一次性 `$49`，可[索取当前 Creem 安全结算链接](mailto:731685147@qq.com?subject=AICraft%20Team%20Rules%20Pack%20checkout%20request&body=Team%20size%3A%20%5B%5D%0AMain%20languages%3A%20%5B%5D%0ACurrent%20review%20workflow%3A%20%5B%5D%0AWhat%20you%20need%20from%20the%20pack%3A%20%5B%5D)。**Team Updates Starter** 是最多 3 人的 `$19/月` 或 `$190/年`；**Team Pilot** 是最多 10 人的 `$99/月` 或 `$990/年`，包含 CI 和调优支持。收费前会先确认范围和开始时间。
 
 试用后，本地构建包可以运行 `mcp-code-review schema` 查看机器可读的结果契约。该命令将在下一版 PyPI 发布后进入公开安装包；当前公开的 `0.1.2` 尚未包含它。
 
