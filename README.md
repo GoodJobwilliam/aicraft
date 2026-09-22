@@ -35,7 +35,7 @@ If that workflow proves useful for a shared team baseline, the optional [Team Ru
 
 [Share structured trial feedback](https://github.com/GoodJobwilliam/aicraft/issues/new?template=trial-feedback.yml&title=Trial%20feedback) or [request a free team trial](https://github.com/GoodJobwilliam/aicraft/issues/new?template=team-trial.yml&title=Team%20trial%20request). Do not include source code or credentials.
 
-Marketplaces: [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.GoodJobwilliam%2Faicraft-code-review) · [Smithery](https://smithery.ai/servers/yaohuixue1/mcp-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server) · [PyPI](https://pypi.org/project/aicraft-code-review/)
+Marketplaces: [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.GoodJobwilliam%2Faicraft-code-review) · [LightNow](https://lightnow.ai/servers/io.github.GoodJobwilliam/aicraft-code-review) · [mcpservers.org](https://mcpservers.org/servers/goodjobwilliam/aicraft) · [cursor.directory](https://cursor.directory/plugins/mcp-code-review-server) · [PyPI](https://pypi.org/project/aicraft-code-review/)
 
 For a repeatable, read-only distribution audit, run `python3 scripts/distribution_report.py`. It reports PyPI and GitHub Release downloads separately; downloads are distribution signals, not contacts, customers, or revenue.
 
